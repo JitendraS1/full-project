@@ -18,12 +18,37 @@ function Footer() {
             <div className="w-20 h-1 bg-blue-600 my-6"></div>
             <div className="flex space-x-4 mt-6">
               <a
+                href="http://www.youtube.com/@nestoriagroup"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-400 transition duration-300"
+              >
+                <i className="fab fa-youtube"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/nestoria.group"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-400 transition duration-300"
+              >
+                <i className="fab fa-instagram"></i>
+              </a>
+              <a
                 href="https://www.facebook.com/nestoriagroup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-blue-400 transition duration-300"
               >
                 <i className="fab fa-facebook-f"></i>
+              </a>
+              
+              <a
+                href="https://www.linkedin.com/company/nestoriagroup"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-400 transition duration-300"
+              >
+                <i className="fab fa-linkedin-in"></i>
               </a>
               <a
                 href="https://www.twitter.com/nestoriagroup"
@@ -32,22 +57,6 @@ function Footer() {
                 className="text-gray-400 hover:text-blue-400 transition duration-300"
               >
                 <i className="fab fa-twitter"></i>
-              </a>
-              <a
-                href="https://www.instagram.com/nestoriagroup"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition duration-300"
-              >
-                <i className="fab fa-instagram"></i>
-              </a>
-              <a
-                href="https://www.linkedin.com/company/nestoriagroup"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition duration-300"
-              >
-                <i className="fab fa-linkedin-in"></i>
               </a>
             </div>
           </div>

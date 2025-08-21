@@ -7,10 +7,10 @@ import connectivityIcon from '../assets/img/icon/connectivity-icon.svg';
 import investmentIcon from '../assets/img/icon/investment-icon.svg';
 
 // Import images
-import dholeraLogo from '../assets/img/dholera-logo.svg';
+import dholeraLogo from '../assets/img/aboutdholera.png';
 import semiconductorImg from '../assets/img/semiconductor.svg';
 import connectivityImg from '../assets/img/connectivity.svg';
-import investmentImg from '../assets/img/investment.svg';
+import investmentImg from '../assets/img/growth.png';
 
 const TabsComponent = () => {
   const [activeTab, setActiveTab] = useState('overview');

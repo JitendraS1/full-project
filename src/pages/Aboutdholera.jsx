@@ -9,19 +9,20 @@ function Aboutdholera() {
     <>
       {/* Header Start */}
       <ParallaxSection
-        backgroundImage="/src/assets/img/dholera-banner.svg"
+        backgroundImage="/src/assets/img/aboutdholera.png"
         height="auto"
-        overlayColor="rgba(25, 55, 100, 0.6)"
+        overlayColor="#673a377e"
         speed={0.4}
-        className="py-16 overflow-hidden"
+        className="py-16 flex items-center justify-center text-center"
       >
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative z-10 mt-20">
           <div className="flex flex-col items-center justify-center">
             <ParallaxScroll speed={-0.2}>
-              <img src="/src/assets/img/dholera-logo.svg" alt="Dholera SIR Logo" className="h-20 mb-6 animate-fade-in" />
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 animate-slide-up text-shadow">About Dholera SIR</h1>
-              <p className="text-xl text-white mb-6 max-w-2xl text-center animate-slide-up opacity-0 animation-delay-200 text-shadow">India's First Planned Smart Industrial City</p>
-              <nav className="flex justify-center animate-slide-up opacity-0 animation-delay-300" aria-label="Breadcrumb">
+              {/* <img src="/src/assets/img/dholera-logo.svg" alt="Dholera SIR Logo" className="h-20 mb-6 animate-fade-in" /> */}
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 animate-slide-up text-shadow-lg">About Dholera SIR</h1>
+              <div className="h-1 w-24 bg-blue-500 mx-auto mb-8 animate-slide-up"></div>
+              <p className="text-xl text-white mb-6 max-w-2xl text-center animate-slide-up opacity-0 animation-delay-200 text-shadow-lg">India's First Planned Smart Industrial City</p>
+              <nav className="flex justify-center animate-slide-up opacity-0 animation-delay-300 text-shadow-lg" aria-label="Breadcrumb">
                 <ol className="flex space-x-2 text-white">
                   <li><Link to="/" className="hover:text-blue-200 transition-colors duration-300">Home</Link></li>
                   <li><span className="mx-2">/</span></li>
@@ -67,7 +68,7 @@ function Aboutdholera() {
               <div className="relative overflow-hidden rounded-lg shadow-lg">
                 <img 
                   className="w-full h-auto object-cover" 
-                  src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1844&q=80" 
+                  src="/src/assets/img/futuredholera.png" 
                   alt="Overview of Dholera SIR" 
                 />
               </div>
@@ -178,7 +179,7 @@ function Aboutdholera() {
               <div className="relative overflow-hidden rounded-lg shadow-lg">
                 <img 
                   className="w-full h-auto object-cover" 
-                  src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1844&q=80" 
+                  src="/src/assets/img/futuredholera.png" 
                   alt="Strategic Location of Dholera SIR" 
                 />
               </div>
@@ -257,9 +258,9 @@ function Aboutdholera() {
 
       {/* Call to Action Section */}
       <ParallaxSection
-        backgroundImage="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1844&q=80"
+        backgroundImage="/src/assets/img/aboutdholera.png" //https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1844&q=80
         height="auto"
-        overlayColor="rgba(0, 0, 0, 0.7)"
+        overlayColor="#673a377e"
         speed={0.3}
         className="py-12"
       >

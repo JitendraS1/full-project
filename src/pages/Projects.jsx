@@ -89,9 +89,9 @@ function Projects() {
       <ParallaxSection
         backgroundImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070"
         height="auto"
-        overlayColor="rgba(0, 0, 0, 0.7)"
+        overlayColor="#673a377e"
         speed={0.4}
-        className="py-20"
+        className="py-32 flex items-center justify-center text-center"
       >
         <div className="container mx-auto px-4">
           <div className="text-center">
@@ -105,7 +105,7 @@ function Projects() {
                 <ol className="flex space-x-2 text-gray-300">
                   <li><Link to="/" className="text-white hover:text-blue-400 transition duration-300">Home</Link></li>
                   <li><span className="mx-2">/</span></li>
-                  <li className="text-blue-400">Projects</li>
+                  <li className="breadcrumb-item text-blue-200 active">Projects</li>
                 </ol>
               </nav>
             </ParallaxScroll>
@@ -205,9 +205,9 @@ function Projects() {
       <ParallaxSection
         backgroundImage="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2070"
         height="auto"
-        overlayColor="rgba(17, 24, 39, 0.85)"
+        overlayColor="#673a377e"
         speed={0.3}
-        className="py-20"
+        className="py-32 mb-8  flex items-center justify-center text-center"
       >
         <div className="container mx-auto px-4 text-center">
           <ParallaxScroll speed={-0.15}>

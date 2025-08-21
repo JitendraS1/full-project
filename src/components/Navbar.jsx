@@ -36,7 +36,7 @@ function Navbar() {
         <Link to="/" className="flex-shrink-0">
           <img 
             className="h-20 w-auto" 
-            src="/logo.svg" 
+            src="/logonew.png" 
             alt="Nestoria Group" 
           />
         </Link>

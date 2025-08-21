@@ -10,17 +10,17 @@ function Services() {
       <ParallaxSection 
         backgroundImage="/src/assets/img/parallax-bg-1.svg"
         height="50vh"
-        overlayColor="rgba(25, 55, 100, 0.7)"
+        overlayColor="#673a377e"
         speed={0.5}
-        className="flex items-center justify-center mb-12"
+        className="py-32 flex items-center justify-center text-center"
       >
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <ParallaxScroll speed={-0.1}>
-              <div className="h-1 w-24 bg-blue-500 mx-auto mb-8 animate-slide-up"></div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-slide-up font-condor">
                 Our Services
               </h1>
+              <div className="h-1 w-24 bg-blue-500 mx-auto mb-8 animate-slide-up"></div>
               <nav aria-label="breadcrumb" className="animate-slide-in-down">
                 <ol className="flex justify-center space-x-2 mb-0">
                   <li><Link className="text-white hover:text-blue-300 transition duration-300" to="/">Home</Link></li>

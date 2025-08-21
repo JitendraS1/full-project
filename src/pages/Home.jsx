@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Carousel from '../components/Carousel';
 import ParallaxSection from '../components/ParallaxSection';
 import ParallaxScroll from '../components/ParallaxScroll';
-import dholeraBanner from '../assets/img/HomePage.svg';
+import dholeraBanner from '../assets/img/Home-banner.svg';
 
 function Home() {
   return (
@@ -14,16 +14,19 @@ function Home() {
         height="100vh"
         overlayColor="#673a377e"
         speed={0.4}
-        className="py-32 mb-8  flex items-center justify-center text-center"
+        className="py-32 flex items-center justify-center text-center"
       >
         
-        <div className="relative z-10 px-4 w-full">
+        <div className="relative z-10 px-4 w-full mt-80">
           <div className="max-w-4xl mx-auto">
            
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-slide-up font-condor">
-                Premium Real Estate in Dholera SIR
+                Think Dholera Think Nestoria.
               </h1>
+              {/* <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-slide-up font-condor">
+                Premium Real Estate in Dholera SIR
+              </h1> */}
               <div className="h-1 w-24 bg-blue-500 mx-auto mb-8 animate-slide-up"></div>
               <p className="text-lg md:text-xl text-white mb-8 animate-slide-up opacity-0 animation-delay-300 max-w-2xl mx-auto">
                 Discover exclusive properties and investment opportunities in India's first smart city.
