@@ -1,4 +1,13 @@
 import React from 'react';
+import kuldeepSoniImg from '../assets/img/team/sales/Kuldeepsoni.jpg';
+import ankitjiiImg from '../assets/img/team/sales/ankitji.jpg';
+import arvindjiiImg from '../assets/img/team/sales/arvindji.jpg';
+import devendrajiiImg from '../assets/img/team/sales/devendraji.jpg';
+import ramendrajiiImg from '../assets/img/team/sales/ramendraji.jpg';
+import jagdishjiiImg from '../assets/img/team/sales/jagdishji.jpg';
+import garimajiiImg from '../assets/img/team/management/garimaji0.jpg';
+import bhavnajiImg from '../assets/img/team/management/bhavnaji.jpg';
+
 
 function Team() {
   // Team members data
@@ -9,6 +18,7 @@ function Team() {
       position: "Founder & CEO",
       bio: "With over 25 years of experience in real estate development, Rajesh has led Nestoria Group to become one of the leading developers in Dholera SIR. His vision and strategic leadership have been instrumental in the company's growth.",
       image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2149",
+      
       socialLinks: {
         linkedin: "#",
         twitter: "#",
@@ -39,18 +49,18 @@ function Team() {
         email: "amit@nestoriagroup.com"
       }
     },
-    {
-      id: 4,
-      name: "Neha Verma",
-      position: "Marketing Director",
-      bio: "Neha leads our marketing initiatives with innovative strategies. Her expertise in digital marketing and brand development has significantly enhanced Nestoria Group's market presence and customer engagement.",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2061",
-      socialLinks: {
-        linkedin: "#",
-        twitter: "#",
-        email: "neha@nestoriagroup.com"
-      }
-    }
+    // {
+    //   id: 4,
+    //   name: "Neha Verma",
+    //   position: "Marketing Director",
+    //   bio: "Neha leads our marketing initiatives with innovative strategies. Her expertise in digital marketing and brand development has significantly enhanced Nestoria Group's market presence and customer engagement.",
+    //   image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2061",
+    //   socialLinks: {
+    //     linkedin: "#",
+    //     twitter: "#",
+    //     email: "neha@nestoriagroup.com"
+    //   }
+    // }
   ];
 
   const departmentTeams = [
@@ -60,72 +70,115 @@ function Team() {
       members: [
         {
           id: 1,
-          name: "Vikram Singh",
-          position: "Head of Sales",
-          image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2187"
+          name: "Kuldeep Soni",
+          position: "Sales ",
+          image: kuldeepSoniImg
         },
         {
           id: 2,
-          name: "Ananya Reddy",
-          position: "Senior Sales Executive",
-          image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2187"
+           name: "Kuldeep Soni",
+          position: "Sales ",
+          image: devendrajiiImg
         },
         {
           id: 3,
-          name: "Rahul Kapoor",
-          position: "Sales Executive",
-          image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2187"
+           name: "Ramendra Singh Tomar",
+          position: "Sales ",
+          image: ramendrajiiImg
+        },
+        {
+          id: 4,
+           name: "Arvind Singh Tomar",
+          position: "Sales ",
+          image: arvindjiiImg
+        },
+        {
+          id: 5,
+          name: "Jagdish Patel",
+          position: "Sales ",
+          image: jagdishjiiImg
+        },
+        {
+          id: 5,
+          name: "Ankit Singh Chauhan",
+          position: "Sales ",
+          image: ankitjiiImg
         }
+       
       ]
     },
     {
       id: 2,
-      name: "Project Management",
+      name: "Management",
       members: [
         {
           id: 1,
-          name: "Sanjay Mehta",
-          position: "Project Director",
-          image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=2187"
-        },
-        {
-          id: 2,
-          name: "Divya Joshi",
-          position: "Senior Project Manager",
-          image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=2187"
-        },
-        {
-          id: 3,
-          name: "Arjun Kumar",
-          position: "Project Engineer",
-          image: "https://images.unsplash.com/photo-1552058544-f2b08422138a?q=80&w=2199"
+          name: "Garima Bora",
+          position: "HR Admin",
+          image: garimajiiImg
         }
+        // {
+        //   id: 2,
+        //   name: "Divya Joshi",
+        //   position: "Senior Project Manager",
+        //   image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=2187"
+        // },
+        // {
+        //   id: 3,
+        //   name: "Arjun Kumar",
+        //   position: "Project Engineer",
+        //   image: "https://images.unsplash.com/photo-1552058544-f2b08422138a?q=80&w=2199"
+        // }
       ]
     },
     {
       id: 3,
-      name: "Customer Relations",
+      name: "Legal Team",
       members: [
         {
           id: 1,
-          name: "Meera Iyer",
-          position: "Customer Relations Manager",
-          image: "https://images.unsplash.com/photo-1598550874175-4d0ef436c909?q=80&w=2187"
+          name: "Bhavna Vyas",
+          position: "Legal Advisor",
+          image: bhavnajiImg
         },
-        {
-          id: 2,
-          name: "Karan Malhotra",
-          position: "Customer Support Specialist",
-          image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=2187"
-        },
-        {
-          id: 3,
-          name: "Pooja Shah",
-          position: "Client Relationship Officer",
-          image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=2188"
-        }
+        // {
+        //   id: 2,
+        //   name: "Sneha Kapoor",
+        //   position: "Paralegal",
+        //   image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=2187"
+        // },
+        // {
+        //   id: 3,
+        //   name: "Vikram Singh",
+        //   position: "Contract Specialist",
+        //   image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=2187"
+        // }
       ]
-    }
+    },
+    // {
+    //   id: 4,
+    //   name: "Customer Support Team",
+    //   members: [
+    //     {
+    //       id: 1,
+    //       name: "Ajay Toamr",
+    //       position: "Customer Relations Manager",
+    //       image: "https://images.unsplash.com/photo-1598550874175-4d0ef436c909?q=80&w=2187"
+    //     },
+    //     {
+    //       id: 2,
+    //       name: "Karan Malhotra",
+    //       position: "Customer Support Specialist",
+    //       image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=2187"
+    //     },
+    //     {
+    //       id: 3,
+    //       name: "Pooja Shah",
+    //       position: "Client Relationship Officer",
+    //       image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=2188"
+    //     }
+    //   ]
+    // }
   ];
 
   return (
@@ -155,10 +208,10 @@ function Team() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {leadershipTeam.map(leader => (
-              <div key={leader.id}>
-                <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300 h-full">
+              <div key={leader.id} >
+                <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300 h-full align-middle ">
                   <div className="relative">
                     <img 
                       src={leader.image} 

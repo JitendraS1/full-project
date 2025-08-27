@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="bg-#673a37 text-white pt-16 pb-8 py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+    <footer className="bg-gray-900 text-white pt-16 pb-8 py-20 bg-gradient-to-l from-blue-900 to-yellow-800 text-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap">
           {/* Company Info */}
@@ -50,14 +50,14 @@ function Footer() {
               >
                 <i className="fab fa-linkedin-in"></i>
               </a>
-              <a
+              {/* <a
                 href="https://www.twitter.com/nestoriagroup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-blue-400 transition duration-300"
               >
                 <i className="fab fa-twitter"></i>
-              </a>
+              </a> */}
             </div>
           </div>
 
@@ -196,7 +196,7 @@ function Footer() {
                 href="tel:+919876543210"
                 className="text-gray-400 hover:text-blue-400 transition duration-300"
               >
-                +91 98765 43210
+                +919274411705
               </a>
             </p>
             <p className="flex items-center mb-4">

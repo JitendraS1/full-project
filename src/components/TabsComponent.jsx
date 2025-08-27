@@ -8,8 +8,8 @@ import investmentIcon from '../assets/img/icon/investment-icon.svg';
 
 // Import images
 import dholeraLogo from '../assets/img/aboutdholera.png';
-import semiconductorImg from '../assets/img/semiconductor.svg';
-import connectivityImg from '../assets/img/connectivity.svg';
+import semiconductorImg from '../assets/img/semiconductor.png';
+import connectivityImg from '../assets/img/connectivity.png';
 import investmentImg from '../assets/img/growth.png';
 
 const TabsComponent = () => {
@@ -60,7 +60,7 @@ const TabsComponent = () => {
           <div className="animate-fade-in">
             <div className="flex flex-col md:flex-row items-center mb-6">
               <div className="md:w-1/3 flex justify-center mb-6 md:mb-0">
-                <img src={dholeraLogo} alt="Dholera SIR Logo" className="h-40 md:h-48" />
+                <img src={dholeraLogo} alt="Dholera SIR Logo" className="h-40 md:h-48 rounded-md " />
               </div>
               <div className="md:w-2/3">
                 <h2 className="text-2xl font-bold mb-4">Dholera Special Investment Region (SIR)</h2>
@@ -130,7 +130,7 @@ const TabsComponent = () => {
             <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500 mb-6 shadow-md">
               <div className="flex flex-col md:flex-row items-center">
                 <div className="md:w-1/3 flex justify-center mb-6 md:mb-0">
-                  <img src={semiconductorImg} alt="Semiconductor Chip" className="w-full max-w-xs" />
+                  <img src={semiconductorImg} alt="Semiconductor Chip" className="w-full max-w-xs rounded-md" />
                 </div>
                 <div className="md:w-2/3 md:pl-6">
                   <h3 className="text-xl font-semibold mb-2 text-blue-800">Semiconductor Fabrication Plant</h3>
@@ -170,7 +170,7 @@ const TabsComponent = () => {
             
             <div className="flex flex-col md:flex-row items-center mb-8 bg-white p-6 rounded-lg shadow-md">
               <div className="md:w-1/2 flex justify-center mb-6 md:mb-0">
-                <img src={connectivityImg} alt="Dholera SIR Connectivity" className="w-full max-w-md" />
+                <img src={connectivityImg} alt="Dholera SIR Connectivity" className="w-full max-w-md rounded-md" />
               </div>
               <div className="md:w-1/2 md:pl-6">
                 <h3 className="text-xl font-semibold mb-3 text-blue-800">Comprehensive Transportation Network</h3>
@@ -266,7 +266,7 @@ const TabsComponent = () => {
                 </p>
               </div>
               <div className="md:w-1/2 flex justify-center mt-6 md:mt-0">
-                <img src={investmentImg} alt="Dholera SIR Investment Growth" className="w-full max-w-md" />
+                <img src={investmentImg} alt="Dholera SIR Investment Growth" className="w-full max-w-md rounded-md" />
               </div>
             </div>
             

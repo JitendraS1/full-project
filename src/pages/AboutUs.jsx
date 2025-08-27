@@ -52,8 +52,8 @@ function AboutUs() {
                   alt="About Nestoria Group" 
                 />
                 <div className="absolute top-0 left-0 bg-blue-600 p-4 w-48 h-48 flex flex-col justify-center items-center shadow-lg">
-                  <h1 className="text-5xl font-bold text-white">13</h1>
-                  <h2 className="text-2xl font-semibold text-white-400">Years</h2>
+                  <h1 className="text-5xl font-bold text-white">15+</h1>
+                  <h2 className="text-2xl font-semibold text-white">Years</h2>
                   <h5 className="text-lg text-white">Experience</h5>
                 </div>
               </div>
@@ -222,7 +222,7 @@ function AboutUs() {
                 <div className="mb-6">
                   <img 
                     className="w-48 h-48 rounded-full mx-auto object-cover mb-4 border-2 border-blue-500 shadow-md" 
-                    src="https://nestoriagroup.com/wp-content/uploads/2023/03/nitin-singh-tomar.jpg" 
+                    src="https://raw.githubusercontent.com/JitendraS1/assets/refs/heads/master/nitinsir.jpg" 
                     alt="Nitin Singh Tomar" 
                   />
                   <h3 className="text-xl font-bold text-gray-800 mt-4">Nitin Singh Tomar</h3>
@@ -236,7 +236,7 @@ function AboutUs() {
                 <div className="mb-6">
                   <img 
                     className="w-48 h-48 rounded-full mx-auto object-cover mb-4 border-2 border-blue-500 shadow-md" 
-                    src="https://nestoriagroup.com/wp-content/uploads/2023/03/team-member.jpg" 
+                    src="https://raw.githubusercontent.com/JitendraS1/assets/refs/heads/master/mohansir.jpg" 
                     alt="Team Member" 
                   />
                   <h3 className="text-xl font-bold text-gray-800 mt-4">Leadership Team</h3>
@@ -250,7 +250,7 @@ function AboutUs() {
                 <div className="mb-6">
                   <img 
                     className="w-48 h-48 rounded-full mx-auto object-cover mb-4 border-2 border-blue-500 shadow-md" 
-                    src="https://nestoriagroup.com/wp-content/uploads/2023/03/dholera-sir.jpg" 
+                    src="/src/assets/img/" 
                     alt="Dholera SIR" 
                   />
                   <h3 className="text-xl font-bold text-gray-800 mt-4">Dholera SIR</h3>
@@ -289,14 +289,14 @@ function AboutUs() {
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <div className="w-full lg:w-2/3 animate-fade-in-left">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Invest in Dholera SIR?</h2>
-              <div className="h-1 w-24 bg-yellow-400 mb-6"></div>
+              <div className="h-1 w-24 bg-blue-400 mb-6"></div>
               <p className="text-xl mb-8 text-white/90 leading-relaxed">Contact our expert team today to explore premium investment opportunities in Dholera SIR. We'll guide you through every step of your investment journey.</p>
-              <Link to="/contact" className="inline-block px-8 py-4 bg-yellow-400 text-blue-900 font-bold rounded-lg shadow-lg hover:bg-yellow-300 hover:shadow-xl transform hover:-translate-y-1 transition duration-300">Contact Us Now</Link>
+              <Link to="/contact" className="inline-block px-8 py-4 bg-blue-700 text-white font-bold rounded-lg shadow-lg hover:bg-blue-800 hover:shadow-xl transform hover:-translate-y-1 transition duration-300">Contact Us Now</Link>
             </div>
             <div className="w-full lg:w-1/3 animate-fade-in-right">
               <div className="rounded-lg overflow-hidden shadow-2xl border-4 border-white/10">
                 <img 
-                  className="w-full h-auto transform transition-transform duration-500 hover:scale-110" 
+                  className="contrast-100 w-full h-auto transform transition-transform duration-500 hover:scale-110" 
                   src="https://nestoriagroup.com/wp-content/uploads/2022/11/dholera-dp-map.png" 
                   alt="Dholera SIR" 
                 />

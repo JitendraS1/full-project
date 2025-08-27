@@ -146,10 +146,10 @@ const Contact = () => {
                     Our Office
                   </h3>
                   <p className="text-gray-600 mb-1">
-                    3RD FLOOR, SARTHIK ANNEX, SATELLITE ROAD,
+                    3rd Floor, Sarthik Annex, Satellite Road,
                   </p>
                   <p className="text-gray-600">
-                    ISCKON CROSS ROAD, AHMEDABAD - 380015, Gujarat, India
+                    Iscon Cross Road, Ahmedabad - 380015, Gujarat, India
                   </p>
                 </div>
               </div>
@@ -166,7 +166,7 @@ const Contact = () => {
                       href="tel:+919876543210"
                       className="hover:text-blue-600 transition-colors"
                     >
-                      +91 98765 43210
+                    +919274411705
                     </a>
                   </p>
                   <p className="text-gray-600 mb-0">
@@ -188,7 +188,7 @@ const Contact = () => {
                     Office Hours
                   </h3>
                   <p className="text-gray-600 mb-1">
-                    Monday - Friday: 9:00 AM - 6:00 PM
+                    Monday - Saturday : 9:00 AM - 6:00 PM
                   </p>
                   <p className="text-gray-600 mb-0">
                     Saturday: 10:00 AM - 4:00 PM
@@ -219,10 +219,10 @@ const Contact = () => {
                 <p className="text-gray-600">
                   <strong>Support Phone:</strong>{" "}
                   <a
-                    href="tel:+919876543211"
+                    href="tel:+919274411705"
                     className="text-blue-600 hover:text-blue-500 transition-colors"
                   >
-                    +91 98765 43211
+                    +919274411705
                   </a>
                 </p>
               </div>
@@ -236,31 +236,33 @@ const Contact = () => {
                 </p>
                 <div className="flex space-x-4">
                   <a
-                    href="https://facebook.com"
+                    href="http://www.youtube.com/@nestoriagroup"
+                    className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-colors transform hover:scale-110 duration-300 animate-fade-in animation-delay-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-youtube"></i>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/nestoria.group"
+                    className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-colors transform hover:scale-110 duration-300 animate-fade-in animation-delay-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-instagram"></i>
+                  </a>
+    
+                  <a
+                    href="https://www.facebook.com/nestoriagroup"
                     className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-colors transform hover:scale-110 duration-300 animate-fade-in animation-delay-1"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <i className="fab fa-facebook-f"></i>
                   </a>
+                  
                   <a
-                    href="https://twitter.com"
-                    className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-colors transform hover:scale-110 duration-300 animate-fade-in animation-delay-2"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fab fa-twitter"></i>
-                  </a>
-                  <a
-                    href="https://instagram.com"
-                    className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-colors transform hover:scale-110 duration-300 animate-fade-in animation-delay-3"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fab fa-instagram"></i>
-                  </a>
-                  <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/company/nestoriagroup"
                     className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-colors transform hover:scale-110 duration-300 animate-fade-in animation-delay-4"
                     target="_blank"
                     rel="noopener noreferrer"

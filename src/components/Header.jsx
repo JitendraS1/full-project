@@ -9,7 +9,7 @@ function Header() {
           <div className="flex text-white mb-2 md:mb-0 text-sm">
             <div className="mr-6">
               <i className="fas fa-phone-alt mr-2 text-blue-400"></i>
-              <a href="tel:+919876543210" className="text-white hover:text-blue-400 transition-colors duration-300">+91 98765 43210</a>
+              <a href="tel:+919274411705" className="text-white hover:text-blue-400 transition-colors duration-300">+91 98765 43210</a>
             </div>
             <div>
               <i className="fas fa-envelope mr-2 text-blue-400"></i>
@@ -17,15 +17,18 @@ function Header() {
             </div>
           </div>
           <div className="flex space-x-4">
+            <a href="http://www.youtube.com/@nestoriagroup" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 transition-colors duration-300">
+              <i className="fab fa-youtube"></i>
+            </a>
+            <a href="https://www.instagram.com/nestoria.group/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 transition-colors duration-300">
+              <i className="fab fa-instagram"></i>
+            </a>
             <a href="https://www.facebook.com/nestoriagroup/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 transition-colors duration-300">
               <i className="fab fa-facebook-f"></i>
             </a>
-            <a href="https://www.instagram.com/nestoriagroup/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 transition-colors duration-300">
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a href="https://twitter.com/nestoriagroup" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 transition-colors duration-300">
+            {/* <a href="https://twitter.com/nestoriagroup" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 transition-colors duration-300">
               <i className="fab fa-twitter"></i>
-            </a>
+            </a> */}
             <a href="https://www.linkedin.com/company/nestoriagroup" target="_blank" rel="noopener noreferrer" className="text-white hover:text-blue-400 transition-colors duration-300">
               <i className="fab fa-linkedin-in"></i>
             </a>

@@ -178,8 +178,8 @@ function Aboutdholera() {
             <div className="w-full lg:w-1/2 wow fadeInUp" data-wow-delay="0.1s">
               <div className="relative overflow-hidden rounded-lg shadow-lg">
                 <img 
-                  className="w-full h-auto object-cover" 
-                  src="/src/assets/img/futuredholera.png" 
+                  className="w-full h-auto object-cover  rounded-sm" 
+                  src="/src/assets/img/dholeraconnectivity.png" 
                   alt="Strategic Location of Dholera SIR" 
                 />
               </div>

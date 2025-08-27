@@ -95,7 +95,7 @@ function Navbar() {
             <Link to="/faq" className="text-gray-800 hover:text-blue-600 transition-colors duration-300 font-medium px-3 py-2 rounded-md text-sm">FAQ</Link>
           </div>
           
-          <Link to="/contact" className="bg-blue-600 text-white font-bold py-2 px-4 rounded-sm hidden md:block hover:bg-blue-700 transition duration-300">
+          <Link to="/contact" className="bg-blue-800 text-white font-bold py-2 px-4 rounded-lg hidden md:block hover:bg-blue-700 transition duration-300">
             Contact Us
           </Link>
         </div>

@@ -8,15 +8,15 @@ function Services() {
     <>
       {/* Page Header */}
       <ParallaxSection 
-        backgroundImage="/src/assets/img/parallax-bg-1.svg"
-        height="50vh"
+        backgroundImage="/src/assets/img/services.png"
+        height="40vh"
         overlayColor="#673a377e"
         speed={0.5}
         className="py-32 flex items-center justify-center text-center"
       >
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative text-center z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <ParallaxScroll speed={-0.1}>
+            
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-slide-up font-condor">
                 Our Services
               </h1>
@@ -28,21 +28,21 @@ function Services() {
                   <li className="text-blue-300" aria-current="page">Services</li>
                 </ol>
               </nav>
-            </ParallaxScroll>
+            
           </div>
         </div>
       </ParallaxSection>
 
       {/* Services Overview */}
-      <section className="py-20 bg-white">
+      <section className="py-5 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <ParallaxScroll speed={0.1}>
+            
               <h6 className="text-blue-600 font-semibold text-lg mb-2 uppercase tracking-wider animate-fade-in font-condor">What We Offer</h6>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-slide-up font-condor">Our <span className="text-blue-600">Services</span></h2>
               <div className="h-1 w-24 bg-blue-600 mx-auto mb-6 animate-slide-up"></div>
               <p className="text-gray-600 text-lg animate-fade-in">At Nestoria Group, we offer comprehensive real estate services focused on Dholera SIR. Our expertise spans across residential, commercial, and industrial sectors, providing end-to-end solutions for investors and buyers.</p>
-            </ParallaxScroll>
+            
           </div>
           <ParallaxScroll speed={0.05} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
@@ -135,7 +135,7 @@ function Services() {
 
       {/* Residential Plots Section */}
       <ParallaxSection 
-        backgroundImage="/src/assets/img/residential-plot.svg"
+        backgroundImage="/src/assets/img/services.png"
         height="auto"
         overlayColor="rgba(243, 244, 246, 0.92)"
         speed={0.3}
@@ -144,12 +144,12 @@ function Services() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <div className="w-full lg:w-1/2">
-              <ParallaxScroll speed={0.1}>
+              
                 <h6 className="text-blue-600 font-semibold text-lg mb-2 uppercase tracking-wider animate-fade-in">Our Specialty</h6>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-slide-up">Residential Plots in Dholera SIR</h2>
+                <h2 className="text-3xl md:text-4xl text-white font-bold mb-4 animate-slide-up">Residential Plots in Dholera SIR</h2>
                 <div className="h-1 w-24 bg-blue-600 mb-6 animate-slide-up"></div>
-                <p className="text-gray-600 mb-6 animate-fade-in">Our residential plots in Dholera SIR offer the perfect opportunity to build your dream home in India's first planned smart city. With various plot sizes available, we cater to different needs and budgets.</p>
-              </ParallaxScroll>
+                <p className="text-white mb-6 animate-fade-in">Our residential plots in Dholera SIR offer the perfect opportunity to build your dream home in India's first planned smart city. With various plot sizes available, we cater to different needs and budgets.</p>
+              
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                 <div className="flex items-center p-4 bg-white rounded-lg shadow-md transform transition duration-300 hover:-translate-y-1 hover:shadow-lg">
                   <div className="flex-shrink-0 mr-4 bg-blue-100 p-3 rounded-full">
@@ -188,7 +188,7 @@ function Services() {
                   </div>
                 </div>
               </div>
-              <p className="text-gray-600 mb-6">Our residential plots are strategically located in areas with excellent connectivity, proximity to essential amenities, and planned infrastructure development. Investing in a residential plot in Dholera SIR today means securing a valuable asset for the future.</p>
+              <p className="text-white mb-6">Our residential plots are strategically located in areas with excellent connectivity, proximity to essential amenities, and planned infrastructure development. Investing in a residential plot in Dholera SIR today means securing a valuable asset for the future.</p>
               <Link to="/contact" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-md shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">Enquire Now</Link>
             </div>
             <div className="w-full lg:w-1/2">
@@ -211,11 +211,11 @@ function Services() {
 
       {/* Commercial Properties Section */}
       <ParallaxSection 
-        backgroundImage="/src/assets/img/commercial-property.svg"
+        backgroundImage="/src/assets/img/services.png"
         height="auto"
-        overlayColor="rgba(255, 255, 255, 0.92)"
+        overlayColor="rgba(243, 244, 246, 0.92)"
         speed={0.3}
-        className="py-20"
+        className="py-20 flex items-center justify-center text-center"
       >
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-8">
@@ -234,12 +234,12 @@ function Services() {
               </ParallaxScroll>
             </div>
             <div className="w-full lg:w-1/2">
-              <ParallaxScroll speed={0.1}>
-                <h6 className="text-blue-600 font-semibold text-lg mb-2 uppercase tracking-wider animate-fade-in">Business Opportunities</h6>
+             
+                <h6 className="text-white font-semibold text-lg mb-2 uppercase tracking-wider animate-fade-in">Business Opportunities</h6>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-slide-up">Commercial Properties in Dholera SIR</h2>
                 <div className="h-1 w-24 bg-blue-600 mb-6 animate-slide-up"></div>
                 <p className="text-gray-600 mb-6 animate-fade-in">Our commercial properties in Dholera SIR offer excellent opportunities for businesses looking to establish a presence in this emerging economic hub. From retail spaces to office complexes, we have options to suit various business needs.</p>
-              </ParallaxScroll>
+             
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                 <div className="flex items-center p-4 bg-white rounded-lg shadow-md transform transition duration-300 hover:-translate-y-1 hover:shadow-lg">
                   <div className="flex-shrink-0 mr-4 bg-blue-100 p-3 rounded-full">
@@ -287,7 +287,7 @@ function Services() {
 
       {/* Industrial Plots Section */}
       <ParallaxSection 
-        backgroundImage="/src/assets/img/industrial-plot.svg"
+        backgroundImage="/src/assets/img/services.png"
         height="auto"
         overlayColor="rgba(243, 244, 246, 0.92)"
         speed={0.3}
@@ -296,12 +296,12 @@ function Services() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <div className="w-full lg:w-1/2">
-              <ParallaxScroll speed={0.1}>
+              
                 <h6 className="text-blue-600 font-semibold text-lg mb-2 uppercase tracking-wider animate-fade-in">Industrial Growth</h6>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-slide-up">Industrial Plots in Dholera SIR</h2>
                 <div className="h-1 w-24 bg-blue-600 mb-6 animate-slide-up"></div>
                 <p className="text-gray-600 mb-6 animate-fade-in">Our industrial plots in Dholera SIR are designed to meet the needs of manufacturing, warehousing, and other industrial operations. Located in designated industrial zones, these plots offer excellent infrastructure and connectivity.</p>
-              </ParallaxScroll>
+              
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                 <div className="flex items-center p-4 bg-white rounded-lg shadow-md transform transition duration-300 hover:-translate-y-1 hover:shadow-lg">
                   <div className="flex-shrink-0 mr-4 bg-blue-100 p-3 rounded-full">
@@ -363,9 +363,9 @@ function Services() {
 
       {/* Call to Action Section */}
       <ParallaxSection 
-        backgroundImage="/src/assets/img/parallax-bg-2.svg"
+        backgroundImage="/src/assets/img/services.png"
         height="500px"
-        overlayColor="rgba(17, 24, 39, 0.85)"
+        overlayColor="#673a377e"
         speed={0.5}
       >
         <div className="container mx-auto px-4 h-full flex items-center justify-center">

@@ -4,6 +4,7 @@ import Carousel from '../components/Carousel';
 import ParallaxSection from '../components/ParallaxSection';
 import ParallaxScroll from '../components/ParallaxScroll';
 import dholeraBanner from '../assets/img/Home-banner.svg';
+import aboutimage from '../assets/img/about.png';
 
 function Home() {
   return (
@@ -59,7 +60,7 @@ function Home() {
               <div className="relative overflow-hidden rounded-lg shadow-2xl group">
                 <img 
                   className="w-full h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-700" 
-                  src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1773&q=80" 
+                  src= {aboutimage}
                   alt="Dholera SIR Overview" 
                 />
                 <div className="absolute inset-0 bg-blue-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -212,7 +213,7 @@ function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-blue-900 text-white">
+      <section className="py-16 bg-gray-900 text-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
