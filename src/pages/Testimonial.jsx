@@ -239,7 +239,7 @@ function Testimonial() {
               src= {testomonialvid} // replace with your video link
               title="Gulshan Kumar Testimonial"
               frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
           </div>
@@ -264,7 +264,7 @@ function Testimonial() {
               src={ownervid} // replace with your video link
               title="Nitin Singh Tomar Testimonial"
               frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
           </div>

@@ -197,9 +197,11 @@ function Achievements() {
       variants={pageVariants}
       className="w-full"
     >
+      
+      
       {/* Page Header */}
       <div
-        className="bg-blue-600 text-white py-12"
+        className="bg-blue-600 text-white py-12 "
         style={{
           backgroundImage: `url(${achievementBg})`,
           backgroundSize: "cover",
@@ -370,7 +372,7 @@ function Achievements() {
       <div className="container mx-auto px-4">
         {/* Heading */}
         <motion.div 
-          className="mb-12 text-center"
+          className="mb-12 text-center "
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}

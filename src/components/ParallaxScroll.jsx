@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const ParallaxScroll = ({ 
   children, 
@@ -9,10 +9,28 @@ const ParallaxScroll = ({
 }) => {
   const elementRef = useRef(null);
   const initialOffsetRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+  
+  // Check if device is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Initial check
+    checkMobile();
+    
+    // Add resize listener
+    window.addEventListener('resize', checkMobile);
+    
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, []);
   
   useEffect(() => {
     const element = elementRef.current;
-    if (!element) return;
+    if (!element || isMobile) return; // Skip parallax effect on mobile
     
     // Store the initial position
     const calculateOffset = () => {
@@ -58,7 +76,7 @@ const ParallaxScroll = ({
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', calculateOffset);
     };
-  }, [speed, direction]);
+  }, [speed, direction, isMobile]);
   
   return (
     <div 

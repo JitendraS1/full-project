@@ -2,13 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ParallaxSection from "../components/ParallaxSection";
 import ParallaxScroll from "../components/ParallaxScroll";
-
+import servicebanner from "/src/assets/img/services.png"
+import residentialimg from "/src/assets/img/Residential-project.png"
+import commercialimg from "/src/assets/img/COMMERCIAL-project.png"
+import industrialimg from "/src/assets/img/Industrial-project.png"
 function Services() {
   return (
     <>
       {/* Page Header */}
       <ParallaxSection
-        backgroundImage="/src/assets/img/services.png"
+        backgroundImage={servicebanner}
         height="40vh"
         overlayColor="#673a377e"
         speed={0.5}
@@ -206,7 +209,7 @@ function Services() {
 
       {/* Residential Plots Section */}
       <ParallaxSection
-        backgroundImage="/src/assets/img/services.png"
+        backgroundImage={servicebanner}
         height="auto"
         overlayColor="rgba(243, 244, 246, 0.92)"
         speed={0.3}
@@ -286,7 +289,7 @@ function Services() {
                 <div className="relative overflow-hidden rounded-lg shadow-2xl group">
                   <img
                     className="w-full h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-700"
-                    src="/src/assets/img/Residential -project.png"
+                    src={residentialimg}
                     alt="Residential Plots in Dholera SIR"
                   />
                   <div className="absolute inset-0 bg-blue-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -303,7 +306,7 @@ function Services() {
 
       {/* Commercial Properties Section */}
       <ParallaxSection
-        backgroundImage="/src/assets/img/services.png"
+        backgroundImage={servicebanner}
         height="auto"
         overlayColor="rgba(243, 244, 246, 0.92)"
         speed={0.3}
@@ -316,7 +319,7 @@ function Services() {
                 <div className="relative overflow-hidden rounded-lg shadow-2xl group">
                   <img
                     className="w-full h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-700"
-                    src="/src/assets/img/COMMERCIAL-landdeal.png"
+                    src={commercialimg}
                     alt="Commercial Properties in Dholera SIR"
                   />
                   <div className="absolute inset-0 bg-blue-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -406,7 +409,7 @@ function Services() {
 
       {/* Industrial Plots Section */}
       <ParallaxSection
-        backgroundImage="/src/assets/img/services.png"
+        backgroundImage={servicebanner}
         height="auto"
         overlayColor="rgba(243, 244, 246, 0.92)"
         speed={0.3}
@@ -495,7 +498,7 @@ function Services() {
                 <div className="relative overflow-hidden rounded-lg shadow-2xl group">
                   <img
                     className="w-full h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-700"
-                    src="/src/assets/img/industrial.png"
+                    src={industrialimg}
                     alt="Industrial Plots in Dholera SIR"
                   />
                   <div className="absolute inset-0 bg-blue-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -512,7 +515,7 @@ function Services() {
 
       {/* Call to Action Section */}
       <ParallaxSection
-        backgroundImage="/src/assets/img/services.png"
+        backgroundImage={servicebanner}
         height="500px"
         overlayColor="#673a377e"
         speed={0.5}

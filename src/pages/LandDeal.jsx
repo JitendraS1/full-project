@@ -5,7 +5,7 @@ import commercialProperty from '../assets/img/commercial-property.svg';
 import industrialPlot from '../assets/img/industrial-plot.svg';
 import LandDealService from '../services/LandDealService';
 import teamBg from '/src/assets/img/icon/counter-bg-2.webp';
-import Industrialimg from '/src/assets/img/Industrial -project.png';
+import Industrialimg from '/src/assets/img/Industrial-project.png';
 import COMMERCIALimg from '/src/assets/img/COMMERCIAL-landdeal.png';
 import Residentialimg from '/src/assets/img/Residential-land.png';
 
