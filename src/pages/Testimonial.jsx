@@ -9,8 +9,7 @@ import testomonial5 from '/src/assets/img/testomonials/Mr-K-C-Anand.webp'
 import testomonial6 from '/src/assets/img/testomonials/Mr.-Dayananda-Reddy.webp'
 import testomonial7 from '/src/assets/img/testomonials/Shahnawaz-Choudhary.webp'
 import testomonial8 from '/src/assets/img/testomonials/Jasbir-Singh-Arora.webp'
-import testomonialvid from '/src/assets/videos/gulshan-kumar.mp4'
-import ownervid from '/src/assets/videos/nitin-singh-tomar.mp4'
+// Video imports removed as files don't exist in the assets directory
 
 
 function Testimonial() {
@@ -269,10 +268,10 @@ function Testimonial() {
           <div className="relative pb-[56.25%]">
             <iframe
               className="absolute inset-0 w-full h-full"
-              src= {testomonialvid} // replace with your video link
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ" // placeholder - replace with actual YouTube video ID
               title="Gulshan Kumar Testimonial"
               frameBorder="0"
-              allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
           </div>
@@ -294,10 +293,10 @@ function Testimonial() {
           <div className="relative pb-[56.25%]">
             <iframe
               className="absolute inset-0 w-full h-full"
-              src={ownervid} // replace with your video link
+              src="https://www.youtube.com/embed/jNQXAC9IVRw" // placeholder - replace with actual YouTube video ID
               title="Nitin Singh Tomar Testimonial"
               frameBorder="0"
-              allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
           </div>
