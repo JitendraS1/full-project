@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { getReviewSchema } from '../utils/SchemaMarkup';
 import testomonial1 from '/src/assets/img/testomonials/D-P-Kaushik.webp'
 import testomonial2 from '/src/assets/img/testomonials/Khargeswar-Brahma.webp'
 import testomonial3 from '/src/assets/img/testomonials/Miss.-Arti-Nagpal.webp'
@@ -23,6 +25,11 @@ function Testimonial() {
 
   // State for active category
   const [activeCategory, setActiveCategory] = useState('all');
+  
+  // Scroll to top on component mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // Testimonial data
   const testimonials = [
@@ -135,8 +142,34 @@ function Testimonial() {
     return stars;
   };
 
+  // Generate schema markup for testimonials
+  const testimonialSchemas = testimonials.map(testimonial => {
+    return getReviewSchema({
+      author: testimonial.name,
+      rating: testimonial.rating,
+      content: testimonial.testimonial,
+      date: testimonial.date || new Date().toISOString().split('T')[0],
+      title: `${testimonial.name}'s experience with Nestoria Group`
+    });
+  });
+
   return (
     <div className="testimonial-page">
+      {/* SEO Helmet */}
+      <Helmet>
+        <title>Client Testimonials - Nestoria Group | Real Estate Developer in Dholera SIR</title>
+        <meta name="description" content="Read authentic testimonials from our satisfied clients who have invested in Dholera SIR through Nestoria Group. Discover why we are the most trusted real estate developer." />
+        <meta name="keywords" content="Nestoria Group testimonials, client reviews, Dholera SIR investment reviews, real estate testimonials" />
+        <link rel="canonical" href="https://nestoriagroup.com/testimonial" />
+        
+        {/* Add schema markup for testimonials */}
+        {testimonialSchemas.map((schema, index) => (
+          <script key={index} type="application/ld+json">
+            {JSON.stringify(schema)}
+          </script>
+        ))}
+      </Helmet>
+      
       {/* Page Header */}
       <div className="bg-blue-600 text-white py-12">
         <div className="container mx-auto px-4">

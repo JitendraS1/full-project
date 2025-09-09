@@ -76,7 +76,8 @@ function Home() {
                 <img
                   className="w-full h-64 sm:h-80 md:h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-700"
                   src={aboutimage}
-                  alt="Dholera SIR Overview"
+                  alt="Nestoria Group - Premier Real Estate Developer in Dholera SIR Gujarat"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-blue-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <span className="text-white text-xl md:text-3xl font-bold px-4 md:px-6 py-2 md:py-3 border-2 border-white rounded-md">

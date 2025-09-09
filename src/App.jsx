@@ -24,6 +24,7 @@ import Seo from './components/Seo'; // Import Seo component
 import { ThemeProvider } from './contexts/ThemeContext';
 import ParallaxBackground from './components/ParallaxBackground';
 import Loader from './components/Loader';
+import { getOrganizationSchema } from './utils/SchemaMarkup'; // Import schema markup utility
 
 
 function App() {
@@ -47,12 +48,24 @@ function App() {
   // Opacity for each layer
   const parallaxOpacities = [0.1, 0.1, 0.05, 0.03];
 
+  // Generate organization schema for global SEO
+  const organizationSchema = getOrganizationSchema();
+
   return (
     <ThemeProvider>
       <HelmetProvider>
         <Router>
           {loading && <Loader onLoadingComplete={handleLoadingComplete} />}
           <div className={`relative ${loading ? 'hidden' : ''}`}>
+            {/* Global SEO with Organization Schema */}
+            <Seo 
+              title="Nestoria Group - Most Trusted Real Estate Developer in Dholera SIR"
+              description="Nestoria Group is the most trusted and award-winning real estate developer in Dholera SIR, offering premium residential, commercial & industrial land parcels in India's first greenfield smart city."
+              keywords="Nestoria Group, Dholera SIR, Real Estate, Smart City, Investment, Land Deals, Property"
+              schemaMarkup={organizationSchema}
+              canonicalUrl="https://nestoriagroup.com"
+            />
+            
             {/* Global parallax background */}
             <ParallaxBackground 
               images={parallaxBackgrounds}

@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import ContactService from "../services/ContactService";
 import ParallaxSection from "../components/ParallaxSection";
 import ParallaxScroll from "../components/ParallaxScroll";
+import BreadcrumbNav from "../components/BreadcrumbNav";
+import { getLocalBusinessSchema } from "../utils/SchemaMarkup";
 
 const Contact = () => {
+  // Scroll to top on component mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,6 +24,27 @@ const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  
+  // Generate local business schema for SEO
+  const businessSchema = getLocalBusinessSchema({
+    name: "Nestoria Group",
+    description: "Premier real estate developer in Dholera SIR, Gujarat offering residential, commercial and industrial properties.",
+    url: "https://nestoriagroup.com",
+    telephone: "+91-9999999999",
+    email: "info@nestoriagroup.com",
+    address: {
+      streetAddress: "Dholera SIR",
+      addressLocality: "Dholera",
+      addressRegion: "Gujarat",
+      postalCode: "382455",
+      addressCountry: "IN"
+    },
+    geo: {
+      latitude: "22.2472",
+      longitude: "72.1833"
+    },
+    openingHours: "Mo,Tu,We,Th,Fr,Sa 09:00-18:00"
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -89,6 +118,19 @@ const Contact = () => {
 
   return (
     <div className="w-full">
+      {/* SEO Helmet */}
+      <Helmet>
+        <title>Contact Nestoria Group | Real Estate Developer in Dholera SIR</title>
+        <meta name="description" content="Contact Nestoria Group for premium real estate investment opportunities in Dholera SIR. Our team of experts is ready to assist you with residential, commercial, and industrial properties." />
+        <meta name="keywords" content="contact Nestoria Group, Dholera SIR real estate contact, property investment inquiry, real estate developer contact" />
+        <link rel="canonical" href="https://nestoriagroup.com/contact" />
+        
+        {/* Add schema markup for local business */}
+        <script type="application/ld+json">
+          {JSON.stringify(businessSchema)}
+        </script>
+      </Helmet>
+      
       {/* Page Header */}
       <ParallaxSection
         backgroundImage="/src/assets/img/contact.png"
@@ -106,24 +148,13 @@ const Contact = () => {
             <p className="text-lg md:text-xl text-white mb-8 animate-slide-up opacity-0 animation-delay-300 max-w-2xl mx-auto">
               We're here to answer any questions you may have about our services
             </p>
-            <nav aria-label="breadcrumb" className="animate-slide-in-down">
-              <ol className="flex justify-center space-x-2 mb-0">
-                <li>
-                  <Link
-                    className="text-white hover:text-blue-300 transition duration-300"
-                    to="/"
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <span className="text-white mx-2">/</span>
-                </li>
-                <li className="text-blue-300" aria-current="page">
-                  Contact
-                </li>
-              </ol>
-            </nav>
+            <BreadcrumbNav
+              items={[
+                { name: 'Home', path: '/' },
+                { name: 'Contact', path: '/contact' }
+              ]}
+              className="animate-slide-in-down"
+            />
           </div>
         </div>
       </ParallaxSection>

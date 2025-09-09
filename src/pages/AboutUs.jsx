@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import ParallaxSection from '../components/ParallaxSection';
+import BreadcrumbNav from '../components/BreadcrumbNav';
 import aboutbanner from '/src/assets/img/about.png'
 import shivsirimg from '/src/assets/img/team/management/shivji.png'
 import mohansirimg from '/src/assets/img/team/management/mohanji.png'
@@ -28,6 +29,36 @@ function AboutUs() {
         <div className="container mx-auto px-4 relative text-center z-10">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 animate-slide-up">About Us</h1>
           <div className="h-1 w-24 bg-blue-400 mx-auto mb-6"></div>
+          <BreadcrumbNav
+             items={[
+               { name: 'Home', path: '/' },
+               { name: 'About Us', path: '/about' }
+             ]}
+           />
+          {/* Schema markup for About page */}
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Nestoria Group",
+              "url": "https://nestoriagroup.com",
+              "logo": "https://nestoriagroup.com/logo.png",
+              "description": "Nestoria Group is one of the fastest-growing real estate companies with prime focus on Dholera Special Investment Region.",
+              "foundingDate": "2010",
+              "founders": [
+                {
+                  "@type": "Person",
+                  "name": "Shivkumar Singh Tomar"
+                }
+              ],
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Dholera",
+                "addressRegion": "Gujarat",
+                "addressCountry": "India"
+              }
+            })}
+          </script>
           <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8 animate-slide-up opacity-0 animation-delay-200">Learn about Nestoria Group's journey, vision, and commitment to excellence in Dholera SIR</p>
           <nav aria-label="breadcrumb" className="animate-slide-up opacity-0 animation-delay-300">
             <ol className="flex justify-center items-center space-x-2 text-white">

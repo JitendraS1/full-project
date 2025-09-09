@@ -64,5 +64,20 @@ app.post('/api/send-email', async (req, res) => {
   }
 });
 
-// Export the Express API
-export default app;
+// For local development
+if (process.env.NODE_ENV !== 'production') {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
+
+// Export the Express API as a serverless function for Vercel
+export default async function handler(req, res) {
+  // Forward the request to the Express app
+  return new Promise((resolve) => {
+    app(req, res, (result) => {
+      resolve(result);
+    });
+  });
+}

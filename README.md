@@ -19,6 +19,7 @@ A modern, responsive website for Nestoria Group, a real estate company specializ
 - **Email**: Nodemailer
 - **Styling**: Tailwind CSS, Font Awesome
 - **Animations**: CSS animations, Tailwind transitions
+- **Deployment**: Vercel
 
 ## Getting Started
 
@@ -29,15 +30,85 @@ A modern, responsive website for Nestoria Group, a real estate company specializ
 
 ### Installation
 
-1. Clone the repository
-   ```bash
-   git clone https://github.com/yourusername/nestoria-project.git
-   cd nestoria-project
+```bash
+# Clone the repository
+git clone <repository-url>
+cd nestoria-project
+
+# Install dependencies
+npm install
+
+# Create .env file (copy from .env.example)
+cp .env.example .env
+
+# Fill in your email credentials in .env
+
+# Run development server
+npm run dev:all
+```
+
+## Deployment to Vercel
+
+### Prerequisites
+
+- Vercel account
+- Vercel CLI (optional)
+
+### Deployment Steps
+
+1. **Set up environment variables in Vercel**
+
+   Add the following environment variables in your Vercel project settings:
+   ```
+   EMAIL_HOST=your-smtp-host
+   EMAIL_PORT=587
+   EMAIL_SECURE=false
+   EMAIL_USER=your-email
+   EMAIL_PASS=your-password
+   TO_EMAIL=recipient-email
+   BCC_EMAIL=bcc-email (optional)
    ```
 
-2. Install dependencies
+2. **Deploy using Vercel Dashboard**
+
+   - Connect your GitHub repository
+   - Configure the project with the following settings:
+     - Framework Preset: Vite
+     - Build Command: `npm run build`
+     - Output Directory: `dist`
+
+3. **Deploy using Vercel CLI**
+
    ```bash
-   npm install
+   # Install Vercel CLI
+   npm install -g vercel
+
+   # Login to Vercel
+   vercel login
+
+   # Deploy
+   vercel
+   ```
+
+### Troubleshooting Vercel Deployment
+
+- **API Routes Not Working**: Ensure the vercel.json file is properly configured with the correct routes.
+- **Environment Variables**: Verify all required environment variables are set in the Vercel dashboard.
+- **Build Errors**: Check the build logs in Vercel for specific error messages.
+- **API Timeout**: If the API calls timeout, check your email service provider settings and ensure they allow connections from Vercel's IP ranges.
+
+## Development
+
+```bash
+# Start development server
+npm run dev
+
+# Start API server
+npm run server
+
+# Start both frontend and backend
+npm run dev:all
+
    ```
 
 3. Configure environment variables

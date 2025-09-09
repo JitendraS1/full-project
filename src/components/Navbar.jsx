@@ -113,9 +113,10 @@ function Navbar() {
               Home
             </Link>
 
-            <div className="relative">
+            <div className="relative" onMouseLeave={() => !isMobile && setIsAboutDropdownOpen(false)}>
               <button 
-                onClick={toggleAboutDropdown}
+                onClick={() => isMobile && toggleAboutDropdown()}
+                onMouseEnter={() => !isMobile && setIsAboutDropdownOpen(true)}
                 className="w-full text-left text-gray-800 hover:text-blue-600 transition-colors duration-300 font-medium px-3 py-2 rounded-md text-sm flex items-center justify-between" 
                 aria-expanded={isAboutDropdownOpen ? 'true' : 'false'}
               >
@@ -131,6 +132,7 @@ function Navbar() {
                 </svg>
               </button>
               <ul 
+                onMouseEnter={() => !isMobile && setIsAboutDropdownOpen(true)}
                 className={`${isMobile ? 'relative' : 'absolute'} ${isAboutDropdownOpen ? 'block' : 'hidden'} ${isMobile ? 'pl-4' : 'bg-gray-50 shadow-lg rounded-md'} py-2 w-48 z-50`}
               >
                 <li><Link to="/about" onClick={() => isMobile && setIsOpen(false)} className="block px-4 py-2 text-sm text-gray-800 hover:bg-blue-600 hover:text-white transition duration-300">About Us</Link></li>
