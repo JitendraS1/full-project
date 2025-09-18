@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import ParallaxSection from '../components/ParallaxSection';
-import BreadcrumbNav from '../components/BreadcrumbNav';
 import aboutbanner from '/src/assets/img/about.png'
 import shivsirimg from '/src/assets/img/team/management/shivji.png'
 import mohansirimg from '/src/assets/img/team/management/mohanji.png'
@@ -29,12 +28,6 @@ function AboutUs() {
         <div className="container mx-auto px-4 relative text-center z-10">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 animate-slide-up">About Us</h1>
           <div className="h-1 w-24 bg-blue-400 mx-auto mb-6"></div>
-          <BreadcrumbNav
-             items={[
-               { name: 'Home', path: '/' },
-               { name: 'About Us', path: '/about' }
-             ]}
-           />
           {/* Schema markup for About page */}
           <script type="application/ld+json">
             {JSON.stringify({
@@ -60,17 +53,6 @@ function AboutUs() {
             })}
           </script>
           <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8 animate-slide-up opacity-0 animation-delay-200">Learn about Nestoria Group's journey, vision, and commitment to excellence in Dholera SIR</p>
-          <nav aria-label="breadcrumb" className="animate-slide-up opacity-0 animation-delay-300">
-            <ol className="flex justify-center items-center space-x-2 text-white">
-              <li className="breadcrumb-item"><Link className="text-white hover:text-blue-200 transition-colors" to="/">Home</Link></li>
-              <li className="breadcrumb-item flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mx-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </li>
-              <li className="breadcrumb-item text-blue-200 active" aria-current="page">About Us</li>
-            </ol>
-          </nav>
         </div>
       </ParallaxSection>
 

@@ -136,16 +136,7 @@ const Blog = () => {
         <div className="container mx-auto px-4 relative text-center z-10">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 animate-slide-up">Our Blog</h1>
           <div className="h-1 w-24 bg-blue-400 mx-auto mb-6"></div>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8 animate-slide-up opacity-0 animation-delay-200">Stay updated with the latest news, insights, and trends in real estate and Dholera SIR</p>
-          <nav aria-label="breadcrumb" className="animate-slide-up opacity-0 animation-delay-300">
-            <ol className="flex justify-center items-center space-x-2 text-white">
-              <li className="breadcrumb-item"><Link className="text-white hover:text-blue-200 transition-colors" to="/">Home</Link></li>
-              <li className="breadcrumb-item flex items-center">
-                 <span className="mx-2">/</span>
-              </li>
-              <li className="breadcrumb-item text-blue-200 active" aria-current="page">Blog</li>
-            </ol>
-          </nav>
+          <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8 animate-slide-up opacity-0 animation-delay-200">Explore our latest articles, news, and insights about Dholera SIR and real estate</p>
         </div>
       </ParallaxSection>
       

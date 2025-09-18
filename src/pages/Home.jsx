@@ -9,7 +9,7 @@ import aboutimage from "../assets/img/about.png";
 
 function Home() {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden bg-[#673a37]">
       {/* Floating Video Button */}
       <FloatingVideoButton />
 
@@ -19,7 +19,7 @@ function Home() {
         height="100vh"
         overlayColor="#673a377e"
         speed={0.4}
-        className="py-16 md:py-16 flex items-center justify-center text-center"
+        className="py-32 md:py-32 flex items-center justify-center text-center"
       >
         <div className="relative z-10 px-4 w-full mt-20 md:mt-40 lg:mt-60">
           <div className="max-w-4xl mx-auto">
@@ -177,8 +177,8 @@ function Home() {
               {[
                 {
                   icon: "building",
-                  title: "Residential Plots",
-                  desc: "Premium residential plots in strategic locations with excellent appreciation potential.",
+                  title: "Residential Properties",
+                  desc: "Premium residential properties in strategic locations with excellent appreciation potential.",
                 },
                 {
                   icon: "store",
@@ -187,8 +187,8 @@ function Home() {
                 },
                 {
                   icon: "industry",
-                  title: "Industrial Plots",
-                  desc: "Strategic industrial plots in Dholera SIR with excellent connectivity and infrastructure.",
+                  title: "Industrial Properties",
+                  desc: "Strategic industrial properties in Dholera SIR with excellent connectivity and infrastructure.",
                 },
               ].map((item, i) => (
                 <div
@@ -246,7 +246,7 @@ function Home() {
                 desc: "Located in the Delhi-Mumbai Industrial Corridor with excellent connectivity.",
               },
               {
-                icon: "cogs",
+                icon:"cogs",
                 title: "World-Class Infrastructure",
                 desc: "Smart transportation, renewable energy, water management, and digital connectivity.",
               },
@@ -266,9 +266,7 @@ function Home() {
                 className="bg-white rounded-lg shadow-xl p-6 sm:p-8 text-center transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl border-t-4 border-blue-600"
               >
                 <div className="bg-blue-100 rounded-full w-16 md:w-20 h-16 md:h-20 flex items-center justify-center mb-4 md:mb-6 mx-auto">
-                  <i
-                    className={`fa fa-${item.icon} fa-lg md:fa-2x text-blue-600`}
-                  ></i>
+                  <i className={`fa fa-${item.icon} fa-lg md:fa-2x text-blue-600`}></i>
                 </div>
                 <h5 className="text-lg md:text-xl font-semibold mb-2 md:mb-4">
                   {item.title}
@@ -289,7 +287,7 @@ function Home() {
             {[
               { number: "50000+", label: "Visitors" },
               { number: "5000+", label: "Happy Clients" },
-              { number: "40+", label: "Projects" },
+              { number: "50+", label: "Projects" },
               { number: "15+", label: "Years Experience" },
               { number: "50+", label: "Cities Covered" },
               { number: "9+", label: "Countries Covered" },
@@ -353,7 +351,7 @@ function Home() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-12 md:py-16 bg-gray-100">
+      {/* <section className="py-12 md:py-16 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-xl p-6 md:p-12">
             <div className="text-center mb-6 md:mb-8">
@@ -417,7 +415,7 @@ function Home() {
             </form>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Parallax Scroll Showcase */}
       <ParallaxScroll />

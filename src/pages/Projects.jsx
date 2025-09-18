@@ -17,7 +17,7 @@ function Projects() {
       title: 'Nature Nest',
       location: ' Village Adhelai 0Km DSIR',
       area: '42 Acre',
-      status: 'Completed',
+      // status: 'Completed',
       image: NetureNest,
       description: 'Premium residential plots in a prime location with excellent connectivity and amenities.'
     },
@@ -27,7 +27,7 @@ function Projects() {
       title: 'Sunshine Residency-III',
       location: 'Dholera SIR, ',
       area: '1500-10000 sq.yard',
-      status: 'Completed',
+      // status: 'Completed',
       image: sunshine3,
       description: 'Modern residential plots in a prime location with excellent connectivity and amenities.'
     },
@@ -37,7 +37,7 @@ function Projects() {
       title: 'Tech Manufacturing Zone',
       location: 'Dholera SIR, Sector 9',
       area: '5000-20000 sq.yard',
-      status: 'Ongoing',
+      // status: 'Ongoing',
       image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070',
       description: 'Industrial plots ideal for manufacturing units with excellent infrastructure and connectivity.'
     },
@@ -47,7 +47,7 @@ function Projects() {
       title: 'Sunrise Apartments',
       location: 'Dholera SIR, Sector 5',
       area: '800-1200 sq.yard',
-      status: 'Upcoming',
+      // status: 'Upcoming',
       image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1974',
       description: 'Luxury apartments with modern amenities and beautiful surroundings in the heart of Dholera SIR.'
     },
@@ -57,7 +57,7 @@ function Projects() {
       title: 'Dholera Retail Plaza',
       location: 'Dholera SIR, Sector 2',
       area: '500-2000 sq.yard',
-      status: 'Completed',
+      // status: 'Completed',
       image: 'https://images.unsplash.com/photo-1555636222-cae831e670b3?q=80&w=1770',
       description: 'Retail spaces in high-footfall areas, perfect for businesses looking to tap into the growing market.'
     },
@@ -67,7 +67,7 @@ function Projects() {
       title: 'Logistics Park',
       location: 'Dholera SIR, Sector 8',
       area: '10000-50000 sq.yard',
-      status: 'Ongoing',
+      // status: 'Ongoing',
       image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070',
       description: 'Strategically located logistics park with excellent connectivity to major transportation routes.'
     }
@@ -103,13 +103,6 @@ function Projects() {
               <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
                 Explore our diverse portfolio of residential, commercial, and industrial projects in Dholera SIR
               </p>
-              <nav className="flex justify-center">
-                <ol className="flex space-x-2 text-gray-300">
-                  <li><Link to="/" className="text-white hover:text-blue-400 transition duration-300">Home</Link></li>
-                  <li><span className="mx-2">/</span></li>
-                  <li className="breadcrumb-item text-blue-200 active">Projects</li>
-                </ol>
-              </nav>
             
           </div>
         </div>

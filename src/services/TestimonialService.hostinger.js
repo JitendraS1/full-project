@@ -1,22 +1,21 @@
 /**
- * Service for handling contact form submissions on Hostinger hosting
+ * Service for handling Testimonial form submissions on Hostinger hosting
  */
 
 // Use the PHP script URL for Hostinger
 const API_URL = 'https://nestoriagroup.com/send-email.php';
 
-export const ContactService = {
+export const TestimonialService = {
   /**
-   * Send contact form data to the server
-   * @param {Object} formData - The contact form data
+   * Send Testimonial form data to the server
+   * @param {Object} formData - The Testimonial form data
    * @param {string} formData.name - The name of the sender
    * @param {string} formData.email - The email of the sender
-   * @param {string} formData.phone - The phone number of the sender
-   * @param {string} formData.subject - The subject of the message
-   * @param {string} formData.message - The message content
+   * @param {string} formData.rating - The rating given
+   * @param {string} formData.testimonial - The testimonial content
    * @returns {Promise<Object>} - The response from the server
    */
-  sendContactForm: async (formData) => {
+  sendTestimonial: async (formData) => {
     try {
       const response = await fetch(API_URL, {
         method: 'POST',
@@ -25,19 +24,19 @@ export const ContactService = {
         },
         body: JSON.stringify({
           ...formData,
-          formType: 'contact'
+          formType: 'testimonial'
         }),
       });
 
       const data = await response.json();
       
       if (!response.ok) {
-        throw new Error(data.message || 'Failed to send message');
+        throw new Error(data.message || 'Failed to send testimonial');
       }
       
       return data;
     } catch (error) {
-      console.error('Error sending contact form:', error);
+      console.error('Error sending testimonial:', error);
       throw error;
     }
   },

@@ -23,24 +23,6 @@ function Services() {
               Our Services
             </h1>
             <div className="h-1 w-24 bg-blue-500 mx-auto mb-8 animate-slide-up"></div>
-            <nav aria-label="breadcrumb" className="animate-slide-in-down">
-              <ol className="flex justify-center space-x-2 mb-0">
-                <li>
-                  <Link
-                    className="text-white hover:text-blue-300 transition duration-300"
-                    to="/"
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <span className="text-white mx-2">/</span>
-                </li>
-                <li className="text-blue-300" aria-current="page">
-                  Services
-                </li>
-              </ol>
-            </nav>
           </div>
         </div>
       </ParallaxSection>

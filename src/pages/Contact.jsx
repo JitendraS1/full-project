@@ -4,8 +4,8 @@ import { Helmet } from "react-helmet-async";
 import ContactService from "../services/ContactService";
 import ParallaxSection from "../components/ParallaxSection";
 import ParallaxScroll from "../components/ParallaxScroll";
-import BreadcrumbNav from "../components/BreadcrumbNav";
 import { getLocalBusinessSchema } from "../utils/SchemaMarkup";
+import contactbannerimg from "/src/assets/img/contact.png";
 
 const Contact = () => {
   // Scroll to top on component mount
@@ -133,7 +133,7 @@ const Contact = () => {
       
       {/* Page Header */}
       <ParallaxSection
-        backgroundImage="/src/assets/img/contact.png"
+        backgroundImage={contactbannerimg}
         height="auto"
         overlayColor="#673a377e"
         speed={0.4}
@@ -148,13 +148,6 @@ const Contact = () => {
             <p className="text-lg md:text-xl text-white mb-8 animate-slide-up opacity-0 animation-delay-300 max-w-2xl mx-auto">
               We're here to answer any questions you may have about our services
             </p>
-            <BreadcrumbNav
-              items={[
-                { name: 'Home', path: '/' },
-                { name: 'Contact', path: '/contact' }
-              ]}
-              className="animate-slide-in-down"
-            />
           </div>
         </div>
       </ParallaxSection>
@@ -523,7 +516,7 @@ animate-fade-in animation-delay-4"
 
       {/* FAQ Section */}
       <ParallaxSection
-        backgroundImage="/src/assets/img/contact.png"
+        backgroundImage={contactbannerimg}
         height="auto"
         overlayColor="#673a377e"
         speed={0.2}

@@ -1,5 +1,5 @@
 /**
- * Service for handling land deal inquiry form submissions
+ * Service for handling testimonial form submissions
  */
 
 // Use relative URL in production for Vercel deployment
@@ -8,23 +8,17 @@ const API_URL = process.env.NODE_ENV === 'production' ? '/api' : 'http://localho
 // External mail API URL as fallback
 const MAIL_API_URL = 'https://nestoriagroupcom-mailapi.vercel.app/';
 
-export const LandDealService = {
+export const TestimonialService = {
   /**
-   * Send land deal inquiry form data to the server
-   * @param {Object} formData - The land deal inquiry form data
-   * @param {string} formData.name - The name of the sender
-   * @param {string} formData.email - The email of the sender
-   * @param {string} formData.phone - The phone number of the sender
-   * @param {string} formData.propertyType - The type of property interested in
-   * @param {string} formData.budget - The budget range
-   * @param {string} formData.message - The specific requirements
-   * @returns {Promise<Object>} - The response from the server
+   * Send testimonial form data to the server
+   * @param {Object} formData - The form data to send
+   * @returns {Promise} - The response from the server
    */
-  sendLandDealInquiry: async (formData) => {
+  sendTestimonial: async (formData) => {
     try {
       // First try the local API
       try {
-        const response = await fetch(`${API_URL}/land-deal`, {
+        const response = await fetch(`${API_URL}/testimonial`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -35,7 +29,7 @@ export const LandDealService = {
         const data = await response.json();
         
         if (!response.ok) {
-          throw new Error(data.message || 'Failed to send inquiry');
+          throw new Error(data.message || 'Failed to send testimonial');
         }
         
         return data;
@@ -50,23 +44,21 @@ export const LandDealService = {
           },
           body: JSON.stringify({
             ...formData,
-            formType: 'land-deal'
+            formType: 'testimonial'
           }),
         });
 
         const fallbackData = await fallbackResponse.json();
         
         if (!fallbackResponse.ok) {
-          throw new Error(fallbackData.message || 'Failed to send inquiry');
+          throw new Error(fallbackData.message || 'Failed to send testimonial');
         }
         
         return fallbackData;
       }
     } catch (error) {
-      console.error('Error sending land deal inquiry:', error);
+      console.error('Error sending testimonial:', error);
       throw error;
     }
   },
 };
-
-export default LandDealService;

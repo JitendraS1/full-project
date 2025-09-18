@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { getReviewSchema } from '../utils/SchemaMarkup';
+import { TestimonialService } from '../services/TestimonialService';
 import testomonial1 from '/src/assets/img/testomonials/D-P-Kaushik.webp'
 import testomonial2 from '/src/assets/img/testomonials/Khargeswar-Brahma.webp'
 import testomonial3 from '/src/assets/img/testomonials/Miss.-Arti-Nagpal.webp'
@@ -268,8 +269,8 @@ function Testimonial() {
           <div className="relative pb-[56.25%]">
             <iframe
               className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ" // placeholder - replace with actual YouTube video ID
-              title="Gulshan Kumar Testimonial"
+              src="https://www.youtube.com/embed/6GHYBLDWZHo?si=BZQnkgi14DlhNjOL" // placeholder - replace with actual YouTube video ID
+              title="Woner's Testimonial"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -280,8 +281,7 @@ function Testimonial() {
               Commercial Investment Success Story
             </h5>
             <p className="text-gray-700">
-              Gulshan shares his journey of investing in a commercial property in
-              Dholera SIR and the returns he's seeing.
+              Mohan Singh Tomar, CEO of the company, shares his insights on leadership and business growth in the real estate sector.
             </p>
           </div>
         </div>
@@ -293,7 +293,7 @@ function Testimonial() {
           <div className="relative pb-[56.25%]">
             <iframe
               className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/jNQXAC9IVRw" // placeholder - replace with actual YouTube video ID
+              src="https://www.youtube.com/embed/_ecESivkJoI?si=HFN0f62qa_fDPEKO" // placeholder - replace with actual YouTube video ID
               title="Nitin Singh Tomar Testimonial"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -422,7 +422,7 @@ function Testimonial() {
           <div className="flex justify-center">
             <div className="w-full max-w-3xl">
               <div className="bg-white rounded-lg shadow-md p-6">
-                <form onSubmit={(e) => {
+                <form onSubmit={async (e) => {
                   e.preventDefault();
                   const formData = {
                     name: e.target.elements.name.value,
@@ -432,24 +432,20 @@ function Testimonial() {
                     message: `Testimonial from ${e.target.elements.name.value}\n\nProperty Type: ${e.target.elements['property-type'].value}\n\nTestimonial: ${e.target.elements.testimonial.value}`
                   };
                   
-                  // Use relative URL in production for Vercel deployment
-                  fetch((process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:5000/api') + "/send-email", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(formData)
-                  })
-                  .then(res => res.json())
-                  .then(data => {
-                    if (data.success) {
+                  try {
+                    // Use TestimonialService to send the form data
+                    const result = await TestimonialService.sendTestimonial(formData);
+                    
+                    if (result.success) {
                       alert("Thank you for your testimonial! We appreciate your feedback.");
                       e.target.reset();
                     } else {
-                      alert(data.message || "Failed to submit testimonial. Please try again later.");
+                      alert(result.message || "Failed to submit testimonial. Please try again later.");
                     }
-                  })
-                  .catch(() => {
+                  } catch (error) {
+                    console.error('Error submitting testimonial:', error);
                     alert("Failed to submit testimonial. Please try again later.");
-                  });
+                  }
                 }}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="col-span-1">

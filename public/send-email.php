@@ -31,9 +31,20 @@ $subject = $postData['subject'] ?? 'Contact Form Submission';
 $message = $postData['message'] ?? '';
 $propertyType = $postData['propertyType'] ?? null;
 $budget = $postData['budget'] ?? null;
+$formType = $postData['formType'] ?? null;
+$rating = $postData['rating'] ?? null;
+$testimonial = $postData['testimonial'] ?? null;
 
-// Determine if this is a contact form or land deal inquiry
-$isLandDealInquiry = $propertyType !== null;
+// Determine form type
+if ($formType) {
+    $formTypeValue = $formType;
+} else if ($propertyType !== null) {
+    $formTypeValue = 'land-deal';
+} else if ($rating !== null || $testimonial !== null) {
+    $formTypeValue = 'testimonial';
+} else {
+    $formTypeValue = 'contact';
+}
 
 // Set email recipient
 $to = 'info@nestoriagroup.com';
@@ -48,25 +59,53 @@ if ($bcc) {
     $headers .= "Bcc: {$bcc}\r\n";
 }
 
-// Create email content
-if ($isLandDealInquiry) {
-    $emailSubject = 'Land Deal Inquiry';
-    $emailContent = "<h3>New Land Deal Inquiry</h3>
-        <p><strong>Name:</strong> {$name}</p>
-        <p><strong>Email:</strong> {$email}</p>
-        <p><strong>Phone:</strong> {$phone}</p>
-        <p><strong>Property Type:</strong> {$propertyType}</p>
-        <p><strong>Budget Range:</strong> {$budget}</p>
-        <p><strong>Requirements:</strong> {$message}</p>";
-} else {
-    $emailSubject = "Contact Form: {$subject}";
-    $emailContent = "<h3>New Contact Form Submission</h3>
-        <p><strong>Name:</strong> {$name}</p>
-        <p><strong>Email:</strong> {$email}</p>
-        <p><strong>Phone:</strong> {$phone}</p>
-        <p><strong>Subject:</strong> {$subject}</p>
-        <p><strong>Message:</strong> {$message}</p>";
+// Set email subject and content based on form type
+$emailSubject = 'Website Form Submission';
+$emailContent = '';
+
+switch ($formTypeValue) {
+    case 'land-deal':
+        $emailSubject = 'Land Deal Inquiry';
+        $emailContent = "<h3>New Land Deal Inquiry</h3>
+            <p><strong>Name:</strong> {$name}</p>
+            <p><strong>Email:</strong> {$email}</p>
+            <p><strong>Phone:</strong> {$phone}</p>
+            <p><strong>Property Type:</strong> {$propertyType}</p>
+            <p><strong>Budget Range:</strong> " . ($budget ?: 'Not specified') . "</p>
+            <p><strong>Requirements:</strong> {$message}</p>";
+        break;
+        
+    case 'about-dholera':
+        $emailSubject = "Dholera Information Request: " . ($subject ?: 'Website Inquiry');
+        $emailContent = "<h3>New Dholera Information Request</h3>
+            <p><strong>Name:</strong> {$name}</p>
+            <p><strong>Email:</strong> {$email}</p>
+            <p><strong>Phone:</strong> {$phone}</p>
+            <p><strong>Subject:</strong> {$subject}</p>
+            <p><strong>Message:</strong> {$message}</p>";
+        break;
+        
+    case 'testimonial':
+        $emailSubject = 'New Testimonial Submission';
+        $emailContent = "<h3>New Testimonial Submission</h3>
+            <p><strong>Name:</strong> {$name}</p>
+            <p><strong>Email:</strong> {$email}</p>
+            <p><strong>Rating:</strong> " . ($rating ?: 'Not specified') . "</p>
+            <p><strong>Testimonial:</strong> " . ($testimonial ?: $message) . "</p>";
+        break;
+        
+    default:
+        $emailSubject = "Contact Form: " . ($subject ?: 'Website Inquiry');
+        $emailContent = "<h3>New Contact Form Submission</h3>
+            <p><strong>Name:</strong> {$name}</p>
+            <p><strong>Email:</strong> {$email}</p>
+            <p><strong>Phone:</strong> {$phone}</p>
+            <p><strong>Subject:</strong> {$subject}</p>
+            <p><strong>Message:</strong> {$message}</p>";
+        break;
 }
+
+// Email content is already set based on form type
 
 // Send email
 $mailSent = mail($to, $emailSubject, $emailContent, $headers);

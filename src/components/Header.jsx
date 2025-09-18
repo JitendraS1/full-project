@@ -9,7 +9,7 @@ function Header() {
           <div className="flex text-white mb-2 md:mb-0 text-sm">
             <div className="mr-6">
               <i className="fas fa-phone mr-2 text-white"></i>
-              <a href="tel:+919274411705" className="text-white hover:text-blue-400 transition-colors duration-300">+91 98765 43210</a>
+              <a href="tel:+919274411705" className="text-white hover:text-blue-400 transition-colors duration-300">+919274411705</a>
             </div>
             <div>
               <i className="fas fa-envelope mr-2 text-white"></i>

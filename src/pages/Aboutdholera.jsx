@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import TabsComponent from '../components/TabsComponent';
 import ParallaxSection from '../components/ParallaxSection';
 import ParallaxScroll from '../components/ParallaxScroll';
+import { AboutdholeraService } from '../services/AboutdholeraService';
 import aboutdholeraimg from '/src/assets/img/aboutdholera.png'
 import futuredholera from '/src/assets/img/futuredholera.png'
+import dholeraconnectivity from '/src/assets/img/dholeraconnectivity.png'
 
 function Aboutdholera() {
   // Form state
@@ -73,16 +75,17 @@ function Aboutdholera() {
       setIsSubmitting(true);
       
       try {
-        // Simulate API call with timeout
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        // Prepare form data for API
+        const apiFormData = {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.mobile,
+          subject: `Dholera SIR Property Inquiry - ${formData.propertyType === '1' ? 'Residential Plot' : formData.propertyType === '2' ? 'Commercial Property' : 'Industrial Plot'}`,
+          message: formData.message
+        };
         
-        // In a real application, you would send the form data to your backend here
-        // const response = await fetch('/api/submit-form', {
-        //   method: 'POST',
-        //   headers: { 'Content-Type': 'application/json' },
-        //   body: JSON.stringify(formData)
-        // });
-        // const data = await response.json();
+        // Send form data to API using service
+        await AboutdholeraService.sendAboutdholeraRequest(apiFormData);
         
         // Show success message
         setFormSubmitted(true);
@@ -117,17 +120,6 @@ function Aboutdholera() {
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 animate-slide-up text-shadow-lg">About Dholera SIR</h1>
           <div className="h-1 w-24 bg-blue-400 mx-auto mb-6"></div>
           <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8 animate-slide-up opacity-0 animation-delay-200 text-shadow-lg">India's First Planned Smart Industrial City</p>
-          <nav aria-label="breadcrumb" className="animate-slide-up opacity-0 animation-delay-300">
-            <ol className="flex justify-center items-center space-x-2 text-white">
-              <li className="breadcrumb-item"><Link className="text-white hover:text-blue-200 transition-colors text-shadow-lg" to="/">Home</Link></li>
-              <li className="breadcrumb-item flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mx-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </li>
-              <li className="breadcrumb-item text-blue-200 active text-shadow-lg" aria-current="page">About Dholera SIR</li>
-            </ol>
-          </nav>
         </div>
       </ParallaxSection>
      
@@ -277,7 +269,7 @@ function Aboutdholera() {
               <div className="relative overflow-hidden rounded-lg shadow-lg">
                 <img 
                   className="w-full h-auto object-cover  rounded-sm" 
-                  src="/src/assets/img/dholeraconnectivity.png" 
+                  src= {dholeraconnectivity}
                   alt="Strategic Location of Dholera SIR" 
                 />
               </div>
@@ -356,7 +348,7 @@ function Aboutdholera() {
 
       {/* Call to Action Section */}
       <ParallaxSection
-        backgroundImage="/src/assets/img/aboutdholera.png" //https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1844&q=80
+        backgroundImage= {aboutdholeraimg} //https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1844&q=80
         height="auto"
         overlayColor="#673a377e"
         speed={0.3}
@@ -365,11 +357,11 @@ function Aboutdholera() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <div className="w-full lg:w-7/12 text-white">
-              <ParallaxScroll speed={-0.15}>
+             
                 <h1 className="text-3xl lg:text-4xl font-bold mb-4 text-white">Ready to Invest in Dholera SIR?</h1>
                 <p className="mb-4">Contact our expert team today to explore premium investment opportunities in Dholera SIR. We'll guide you through every step of your investment journey.</p>
                 <Link to="/contact" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-5 rounded-full transition duration-300" aria-label="Contact Us Now">Contact Us Now</Link>
-              </ParallaxScroll>
+             
             </div>
             <div className="w-full lg:w-5/12">
               <div className="bg-white rounded-lg shadow-lg p-6 lg:p-8">
