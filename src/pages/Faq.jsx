@@ -248,33 +248,30 @@ const Faq = () => {
             <div className="h-1 w-24 bg-blue-500 mx-auto mb-6"></div>
             <p className="text-lg mb-8 text-gray-600">Subscribe to our newsletter for the latest updates on Dholera SIR development and investment opportunities.</p>
             
-            <form className="flex flex-col sm:flex-row gap-4 justify-center" onSubmit={(e) => {
+            <form className="flex flex-col sm:flex-row gap-4 justify-center" onSubmit={async (e) => {
               e.preventDefault();
               const email = e.target.elements.email.value;
-              // Use relative URL in production for Vercel deployment
-              fetch((process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:5000/api') + "/send-email", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
+              
+              try {
+                const { ContactService } = await import('../services/ContactService');
+                const result = await ContactService.sendContactForm({
                   name: "Newsletter Subscriber",
                   email,
                   phone: "",
                   subject: "Newsletter Subscription",
                   message: `Please subscribe ${email} to the newsletter.`
-                })
-              })
-              .then(res => res.json())
-              .then(data => {
-                if (data.success) {
+                });
+                
+                if (result.success) {
                   alert("Thank you for subscribing!");
                   e.target.reset();
                 } else {
-                  alert(data.message || "Failed to subscribe.");
+                  alert(result.message || "Failed to subscribe.");
                 }
-              })
-              .catch(() => {
+              } catch (error) {
+                console.error('Error subscribing to newsletter:', error);
                 alert("Failed to subscribe. Please try again later.");
-              });
+              }
             }}>
               <input 
                 type="email"

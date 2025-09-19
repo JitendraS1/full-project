@@ -23,7 +23,7 @@ export const ContactService = {
     try {
       // First try the local API
       try {
-        const response = await fetch(`${API_URL}/contact`, {
+        const response = await fetch(`${API_URL}/send-email`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -47,10 +47,7 @@ export const ContactService = {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({
-            ...formData,
-            formType: 'contact'
-          }),
+          body: JSON.stringify(formData),
         });
 
         const fallbackData = await fallbackResponse.json();

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import TabsComponent from '../components/TabsComponent';
 import ParallaxSection from '../components/ParallaxSection';
 import ParallaxScroll from '../components/ParallaxScroll';
-import { AboutdholeraService } from '../services/AboutdholeraService';
 import aboutdholeraimg from '/src/assets/img/aboutdholera.png'
 import futuredholera from '/src/assets/img/futuredholera.png'
 import dholeraconnectivity from '/src/assets/img/dholeraconnectivity.png'
@@ -75,29 +74,25 @@ function Aboutdholera() {
       setIsSubmitting(true);
       
       try {
-        // Prepare form data for API
-        const apiFormData = {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.mobile,
-          subject: `Dholera SIR Property Inquiry - ${formData.propertyType === '1' ? 'Residential Plot' : formData.propertyType === '2' ? 'Commercial Property' : 'Industrial Plot'}`,
-          message: formData.message
-        };
+        // Import the service dynamically to avoid circular dependencies
+        const { AboutdholeraService } = await import('../services/AboutdholeraService');
         
-        // Send form data to API using service
-        await AboutdholeraService.sendAboutdholeraRequest(apiFormData);
+        const result = await AboutdholeraService.sendAboutdholeraRequest(formData);
         
-        // Show success message
-        setFormSubmitted(true);
-        
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          mobile: '',
-          propertyType: '1',
-          message: ''
-        });
+        if (result.success) {
+          setFormSubmitted(true);
+          
+          // Reset form
+          setFormData({
+            name: '',
+            email: '',
+            mobile: '',
+            propertyType: '1',
+            message: ''
+          });
+        } else {
+          alert(result.message || 'There was an error submitting your request. Please try again.');
+        }
       } catch (error) {
         console.error('Error submitting form:', error);
         alert('There was an error submitting your request. Please try again.');
