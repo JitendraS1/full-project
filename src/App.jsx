@@ -56,7 +56,7 @@ function App() {
       <HelmetProvider>
         <Router>
           {loading && <Loader onLoadingComplete={handleLoadingComplete} />}
-          <div className={`relative ${loading ? 'hidden' : ''}`}>
+          <div className={`relative bg-[#673a37] ${loading ? 'hidden' : ''}`}>
             {/* Global SEO with Organization Schema */}
             <Seo 
               title="Nestoria Group - Most Trusted Real Estate Developer in Dholera SIR"

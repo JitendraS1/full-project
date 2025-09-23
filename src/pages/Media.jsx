@@ -108,72 +108,106 @@ function Media() {
     switch(item.type) {
       case 'video':
         return (
-          <div className="h-full bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
-            <div className="aspect-w-16 aspect-h-9">
+          <div className="h-full bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+            <div className="relative">
               <iframe 
                 src={item.link} 
                 title={item.title} 
                 allowFullScreen
-                className="w-full h-full rounded-t-lg"
+                className="w-full rounded-t-2xl"
                 style={{ height: '250px', objectFit: 'cover' }}
               ></iframe>
+              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center">
+                  <i className="fas fa-play text-blue-600 text-2xl ml-1"></i>
+                </div>
+              </div>
             </div>
-            <div className="p-5">
-              <h5 className="text-xl font-semibold mb-2">{item.title}</h5>
-              <p className="text-gray-500 mb-2">
-                <small>
-                  <i className="fas fa-calendar-alt mr-2"></i>{item.date} | 
-                  <i className="fas fa-video ml-2 mr-2"></i>{item.source}
-                </small>
+            <div className="p-6">
+              <div className="flex items-center mb-3">
+              <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-3">
+                  <i className="fas fa-video text-white text-sm"></i>
+                </div>
+                <span className="text-sm font-semibold text-red-600">Video</span>
+              </div>
+              <h5 className="text-xl font-bold mb-3 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">{item.title}</h5>
+              <p className="text-gray-500 mb-4 text-sm">
+                <i className="fas fa-calendar-alt mr-2"></i>{item.date} | 
+                <i className="fas fa-video ml-2 mr-2"></i>{item.source}
               </p>
-              <p className="text-gray-700">{item.description}</p>
+              <p className="text-gray-700 leading-relaxed">{item.description}</p>
             </div>
           </div>
         );
       case 'photo':
         return (
-          <div className="h-full bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
-            <img 
-              src={item.image} 
-              className="w-full rounded-t-lg" 
-              alt={item.title} 
-              style={{ height: '200px', objectFit: 'cover' }}
-            />
-            <div className="p-5">
-              <h5 className="text-xl font-semibold mb-2">{item.title}</h5>
-              <p className="text-gray-500 mb-2">
-                <small>
-                  <i className="fas fa-calendar-alt mr-2"></i>{item.date} | 
-                  <i className="fas fa-camera ml-2 mr-2"></i>{item.source}
-                </small>
+          <div className="h-full bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+            <div className="relative">
+              <img 
+                src={item.image} 
+                className="w-full rounded-t-2xl group-hover:scale-110 transition-transform duration-500" 
+                alt={item.title} 
+                style={{ height: '200px', objectFit: 'cover' }}
+              />
+              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center">
+                  <i className="fas fa-expand text-blue-600 text-2xl"></i>
+                </div>
+              </div>
+            </div>
+            <div className="p-6">
+              <div className="flex items-center mb-3">
+                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                  <i className="fas fa-camera text-white text-sm"></i>
+                </div>
+                <span className="text-sm font-semibold text-green-600">Photo Gallery</span>
+              </div>
+              <h5 className="text-xl font-bold mb-3 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">{item.title}</h5>
+              <p className="text-gray-500 mb-4 text-sm">
+                <i className="fas fa-calendar-alt mr-2"></i>{item.date} | 
+                <i className="fas fa-camera ml-2 mr-2"></i>{item.source}
               </p>
-              <p className="text-gray-700 mb-4">{item.description}</p>
-              <a href={item.link} className="inline-block border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-4 py-2 rounded transition duration-300">View Full Gallery</a>
+              <p className="text-gray-700 mb-6 leading-relaxed">{item.description}</p>
+              <a href={item.link} className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                <i className="fas fa-images mr-2"></i>View Full Gallery
+              </a>
             </div>
           </div>
         );
       default: // news and press
         return (
-          <div className="h-full bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
-            <img 
-              src={item.image} 
-              className="w-full rounded-t-lg" 
-              alt={item.title} 
-              style={{ height: '200px', objectFit: 'cover' }}
-            />
-            <div className="p-5">
-              <div className="inline-block px-2 py-1 text-xs font-semibold rounded-full bg-blue-600 text-white mb-2">
-                {item.type === 'news' ? 'News Article' : 'Press Release'}
+          <div className="h-full bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+            <div className="relative">
+              <img 
+                src={item.image} 
+                className="w-full rounded-t-2xl group-hover:scale-110 transition-transform duration-500" 
+                alt={item.title} 
+                style={{ height: '200px', objectFit: 'cover' }}
+              />
+              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center">
+                  <i className="fas fa-external-link-alt text-blue-600 text-2xl"></i>
+                </div>
               </div>
-              <h5 className="text-xl font-semibold mb-2">{item.title}</h5>
-              <p className="text-gray-500 mb-2">
-                <small>
-                  <i className="fas fa-calendar-alt mr-2"></i>{item.date} | 
-                  <i className="fas fa-newspaper ml-2 mr-2"></i>{item.source}
-                </small>
+            </div>
+            <div className="p-6">
+              <div className="flex items-center mb-3">
+                <div className={`w-8 h-8 ${item.type === 'news' ? 'bg-blue-500' : 'bg-purple-500'} rounded-full flex items-center justify-center mr-3`}>
+                  <i className={`fas ${item.type === 'news' ? 'fa-newspaper' : 'fa-bullhorn'} text-white text-sm`}></i>
+                </div>
+                <span className={`text-sm font-semibold ${item.type === 'news' ? 'text-blue-600' : 'text-purple-600'}`}>
+                  {item.type === 'news' ? 'News Article' : 'Press Release'}
+                </span>
+              </div>
+              <h5 className="text-xl font-bold mb-3 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">{item.title}</h5>
+              <p className="text-gray-500 mb-4 text-sm">
+                <i className="fas fa-calendar-alt mr-2"></i>{item.date} | 
+                <i className="fas fa-newspaper ml-2 mr-2"></i>{item.source}
               </p>
-              <p className="text-gray-700 mb-4">{item.description}</p>
-              <a href={item.link} className="inline-block border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-4 py-2 rounded transition duration-300">Read More</a>
+              <p className="text-gray-700 mb-6 leading-relaxed">{item.description}</p>
+              <a href={item.link} className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                <i className="fas fa-arrow-right mr-2"></i>Read More
+              </a>
             </div>
           </div>
         );
@@ -183,126 +217,159 @@ function Media() {
   return (
     <div className="media-page">
       {/* Page Header */}
-      <div className="bg-blue-600 text-white py-12">
-        <div className="container mx-auto px-4">
+      <div className="relative bg-blue-700 text-white py-16 md:py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="flex items-center">
             <div className="w-full lg:w-2/3">
-              <h1 className="text-4xl font-bold mb-4">Media Center</h1>
-              <p className="text-xl mb-0">Stay updated with the latest news, press releases, videos, and photos from Nestoria Group and Dholera SIR</p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                Media <span className="text-blue-600">Center</span>
+              </h1>
+              <div className="w-24 h-1 bg-blue-300 mb-6"></div>
+              <p className="text-lg md:text-xl lg:text-2xl mb-8 text-blue-100 leading-relaxed">
+                Stay updated with the latest news, press releases, videos, and photos from Nestoria Group and Dholera SIR
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                  <i className="fas fa-play mr-2"></i>Watch Videos
+                </button>
+                <button className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/30 hover:border-white/50 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+                  <i className="fas fa-download mr-2"></i>Download Press Kit
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Media Content */}
-      <div className="container mx-auto px-4 py-12">
-        {/* Filter Buttons */}
-        <div className="mb-10">
-          <div className="w-full">
-            <div className="text-center">
-              <button 
-                className={`${activeFilter === 'all' ? 'bg-blue-600 text-white' : 'bg-white text-blue-600 border border-blue-600'} px-4 py-2 rounded mr-2 mb-2 transition duration-300`}
-                onClick={() => setActiveFilter('all')}
-              >
-                All Media
-              </button>
-              <button 
-                className={`${activeFilter === 'news' ? 'bg-blue-600 text-white' : 'bg-white text-blue-600 border border-blue-600'} px-4 py-2 rounded mr-2 mb-2 transition duration-300`}
-                onClick={() => setActiveFilter('news')}
-              >
-                News Articles
-              </button>
-              <button 
-                className={`${activeFilter === 'press' ? 'bg-blue-600 text-white' : 'bg-white text-blue-600 border border-blue-600'} px-4 py-2 rounded mr-2 mb-2 transition duration-300`}
-                onClick={() => setActiveFilter('press')}
-              >
-                Press Releases
-              </button>
-              <button 
-                className={`${activeFilter === 'video' ? 'bg-blue-600 text-white' : 'bg-white text-blue-600 border border-blue-600'} px-4 py-2 rounded mr-2 mb-2 transition duration-300`}
-                onClick={() => setActiveFilter('video')}
-              >
-                Videos
-              </button>
-              <button 
-                className={`${activeFilter === 'photo' ? 'bg-blue-600 text-white' : 'bg-white text-blue-600 border border-blue-600'} px-4 py-2 rounded mb-2 transition duration-300`}
-                onClick={() => setActiveFilter('photo')}
-              >
-                Photo Gallery
-              </button>
+      <div className="bg-gray-50 py-16">
+        <div className="container mx-auto px-4">
+          {/* Filter Buttons */}
+          <div className="mb-12">
+            <div className="w-full">
+              <div className="text-center">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8">Browse Media</h2>
+                <div className="flex flex-wrap justify-center gap-3">
+                  <button 
+                    className={`${activeFilter === 'all' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-blue-600 border-2 border-blue-600 hover:bg-blue-50'} px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg`}
+                    onClick={() => setActiveFilter('all')}
+                  >
+                    <i className="fas fa-th mr-2"></i>All Media
+                  </button>
+                  <button 
+                    className={`${activeFilter === 'news' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-blue-600 border-2 border-blue-600 hover:bg-blue-50'} px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg`}
+                    onClick={() => setActiveFilter('news')}
+                  >
+                    <i className="fas fa-newspaper mr-2"></i>News Articles
+                  </button>
+                  <button 
+                    className={`${activeFilter === 'press' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-blue-600 border-2 border-blue-600 hover:bg-blue-50'} px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg`}
+                    onClick={() => setActiveFilter('press')}
+                  >
+                    <i className="fas fa-bullhorn mr-2"></i>Press Releases
+                  </button>
+                  <button 
+                    className={`${activeFilter === 'video' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-blue-600 border-2 border-blue-600 hover:bg-blue-50'} px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg`}
+                    onClick={() => setActiveFilter('video')}
+                  >
+                    <i className="fas fa-video mr-2"></i>Videos
+                  </button>
+                  <button 
+                    className={`${activeFilter === 'photo' ? 'bg-blue-600 text-white shadow-lg' : 'bg-white text-blue-600 border-2 border-blue-600 hover:bg-blue-50'} px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg`}
+                    onClick={() => setActiveFilter('photo')}
+                  >
+                    <i className="fas fa-camera mr-2"></i>Photo Gallery
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Media Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredItems.length > 0 ? (
-            filteredItems.map(item => (
-              <div key={item.id}>
-                {renderMediaItem(item)}
+          {/* Media Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredItems.length > 0 ? (
+              filteredItems.map(item => (
+                <div key={item.id} className="transform hover:scale-105 transition-all duration-300">
+                  {renderMediaItem(item)}
+                </div>
+              ))
+            ) : (
+              <div className="col-span-full text-center py-16">
+                <div className="bg-white rounded-2xl shadow-lg p-12 max-w-md mx-auto">
+                  <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i className="fas fa-search text-3xl text-blue-600"></i>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-4">No media items found</h3>
+                  <p className="text-gray-600 mb-6">We couldn't find any media items matching your criteria.</p>
+                  <button 
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                    onClick={() => setActiveFilter('all')}
+                  >
+                    <i className="fas fa-refresh mr-2"></i>View All Media
+                  </button>
+                </div>
               </div>
-            ))
-          ) : (
-            <div className="col-span-full text-center py-12">
-              <div>
-                <i className="fas fa-search text-4xl text-gray-400 mb-4"></i>
-                <h3 className="text-2xl font-semibold mb-2">No media items found</h3>
-                <p className="text-gray-500 mb-4">We couldn't find any media items matching your criteria.</p>
-                <button 
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded transition duration-300"
-                  onClick={() => setActiveFilter('all')}
-                >
-                  View All Media
-                </button>
-              </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
 
       {/* Media Contact Section */}
-      <section className="bg-gray-100 py-12">
-        <div className="container mx-auto px-4">
+      <section className="relative bg-blue-900 py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="flex justify-center">
-            <div className="w-full lg:w-2/3 text-center mb-8">
-              <h2 className="text-3xl font-bold mb-4">Media Inquiries</h2>
-              <p className="text-xl text-gray-600">For press inquiries, interview requests, or additional information about Nestoria Group and Dholera SIR, please contact our media relations team.</p>
+            <div className="w-full lg:w-2/3 text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+                Media <span className="text-blue-600">Inquiries</span>
+              </h2>
+              <div className="w-24 h-1 bg-blue-300 mx-auto mb-8"></div>
+              <p className="text-xl text-blue-100 leading-relaxed">
+                For press inquiries, interview requests, or additional information about Nestoria Group and Dholera SIR, please contact our media relations team.
+              </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="mb-6 lg:mb-0">
-              <div className="bg-white h-full rounded-lg shadow-md text-center p-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="mb-8 lg:mb-0">
+              <div className="bg-white/10 backdrop-blur-sm h-full rounded-2xl shadow-xl text-center p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2">
                 <div>
-                  <div className="mb-4">
-                    <i className="fas fa-envelope text-4xl text-blue-600"></i>
+                  <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i className="fas fa-envelope text-2xl text-white"></i>
                   </div>
-                  <h4 className="text-xl font-semibold mb-2">Email Us</h4>
-                  <p className="text-gray-600 mb-4">Send your media inquiries directly to our press team.</p>
-                  <a href="mailto:media@nestoriagroup.com" className="inline-block border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-4 py-2 rounded transition duration-300">media@nestoriagroup.com</a>
+                  <h4 className="text-2xl font-bold mb-4 text-white">Email Us</h4>
+                  <p className="text-blue-100 mb-6 leading-relaxed">Send your media inquiries directly to our press team.</p>
+                  <a href="mailto:media@nestoriagroup.com" className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                    <i className="fas fa-paper-plane mr-2"></i>media@nestoriagroup.com
+                  </a>
                 </div>
               </div>
             </div>
-            <div className="mb-6 lg:mb-0">
-              <div className="bg-white h-full rounded-lg shadow-md text-center p-6">
+            <div className="mb-8 lg:mb-0">
+              <div className="bg-white/10 backdrop-blur-sm h-full rounded-2xl shadow-xl text-center p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2">
                 <div>
-                  <div className="mb-4">
-                    <i className="fas fa-phone-alt text-4xl text-blue-600"></i>
+                  <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i className="fas fa-phone-alt text-2xl text-white"></i>
                   </div>
-                  <h4 className="text-xl font-semibold mb-2">Call Us</h4>
-                  <p className="text-gray-600 mb-4">Speak directly with our media relations team.</p>
-                  <a href="tel:+919876543210" className="inline-block border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-4 py-2 rounded transition duration-300">+91 98765 43210</a>
+                  <h4 className="text-2xl font-bold mb-4 text-white">Call Us</h4>
+                  <p className="text-blue-100 mb-6 leading-relaxed">Speak directly with our media relations team.</p>
+                  <a href="tel:+919876543210" className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                    <i className="fas fa-phone mr-2"></i>+91 98765 43210
+                  </a>
                 </div>
               </div>
             </div>
             <div>
-              <div className="bg-white h-full rounded-lg shadow-md text-center p-6">
+              <div className="bg-white/10 backdrop-blur-sm h-full rounded-2xl shadow-xl text-center p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-2">
                 <div>
-                  <div className="mb-4">
-                    <i className="fas fa-download text-4xl text-blue-600"></i>
+                  <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i className="fas fa-download text-2xl text-white"></i>
                   </div>
-                  <h4 className="text-xl font-semibold mb-2">Press Kit</h4>
-                  <p className="text-gray-600 mb-4">Download our press kit with company information, logos, and high-resolution images.</p>
-                  <a href="#" className="inline-block border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-4 py-2 rounded transition duration-300">Download Press Kit</a>
+                  <h4 className="text-2xl font-bold mb-4 text-white">Press Kit</h4>
+                  <p className="text-blue-100 mb-6 leading-relaxed">Download our press kit with company information, logos, and high-resolution images.</p>
+                  <a href="#" className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                    <i className="fas fa-download mr-2"></i>Download Press Kit
+                  </a>
                 </div>
               </div>
             </div>

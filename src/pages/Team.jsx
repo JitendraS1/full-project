@@ -85,7 +85,7 @@ function Team() {
         },
         {
           id: 2,
-           name: "Kuldeep Soni",
+           name: "Devandra Sikarwar",
           position: "Sales ",
           image: devendrajiiImg
         },
@@ -193,56 +193,64 @@ function Team() {
   return (
     <div className="team-page" >
       {/* Page Header */}
-      <div className="bg-blue-800 text-white py-12" style={{backgroundImage: `url(${teamBg})`, backgroundSize: 'cover', backgroundRepeat: `no-repeat` }}>
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center">
-            <div className="w-full lg:w-2/3" >
-              <h1 className="text-4xl lg:text-5xl font-bold mb-4">Our Team</h1>
-              <p className="text-xl">Meet the dedicated professionals behind Nestoria Group's success</p>
+      <div className="bg-gradient-to-br from-blue-800 via-blue-900 to-blue-800 text-white py-16 md:py-24 relative overflow-hidden" style={{backgroundImage: `url(${teamBg})`, backgroundSize: 'cover', backgroundRepeat: `no-repeat` }}>
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-8">
+            <div className="w-full lg:w-2/3 text-center lg:text-left">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">Our <span className="text-blue-300">Team</span></h1>
+              <p className="text-lg md:text-xl text-gray-200 leading-relaxed">Meet the dedicated professionals behind Nestoria Group's success and growth in Dholera SIR</p>
             </div>
-            <div className="w-full lg:w-1/3 mt-6 lg:mt-0 lg:text-right">
-              <a href="#join-us" className="inline-block bg-white text-blue-600 font-semibold px-6 py-3 rounded hover:bg-gray-100 transition duration-300">Join Our Team</a>
+            <div className="w-full lg:w-1/3 flex justify-center lg:justify-end">
+              <a href="#join-us" className="group bg-white text-blue-600 font-bold px-8 py-4 rounded-lg hover:bg-blue-50 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 shadow-xl">
+                <span className="flex items-center">
+                  <i className="fas fa-users mr-2"></i>
+                  Join Our Team
+                </span>
+              </a>
             </div>
           </div>
         </div>
       </div>
 
       {/* Leadership Team Section */}
-      <section className="py-12">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-white to-gray-50">
         <div className="container mx-auto px-4">
-          <div className="mb-12">
-            <div className="text-center">
-              <h2 className="text-3xl font-bold mb-4">Leadership Team</h2>
-              <p className="text-xl text-gray-600">The visionaries guiding Nestoria Group towards excellence</p>
+          <div className="mb-16">
+            <div className="text-center max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">Leadership <span className="text-blue-600">Team</span></h2>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-8"></div>
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">The visionaries guiding Nestoria Group towards excellence and innovation in Dholera SIR</p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
             {leadershipTeam.map(leader => (
-              <div key={leader.id} >
-                <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300 h-full align-middle ">
-                  <div className="relative">
+              <div key={leader.id} className="group">
+                <div className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 h-full transform hover:-translate-y-4 overflow-hidden">
+                  <div className="relative overflow-hidden">
                     <img 
                       src={leader.image} 
-                      className="w-full h-[380px] object-cover  rounded-t-lg" 
+                      className="w-full h-80 md:h-96 object-cover group-hover:scale-110 transition-transform duration-700" 
                       alt={leader.name} 
                     />
-                    <div className="absolute bottom-0 left-0 right-0 flex justify-center p-2">
-                      <a href={leader.socialLinks.linkedin} className="bg-blue-600 text-white p-2 rounded-full mx-1 hover:bg-blue-700 transition duration-300">
-                        <i className="fab fa-linkedin-in"></i>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-3 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                      <a href={leader.socialLinks.linkedin} className="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition-all duration-300 transform hover:scale-110 shadow-lg">
+                        <i className="fab fa-linkedin-in text-lg"></i>
                       </a>
-                      <a href={leader.socialLinks.twitter} className="bg-blue-600 text-white p-2 rounded-full mx-1 hover:bg-blue-700 transition duration-300">
-                        <i className="fab fa-twitter"></i>
+                      <a href={leader.socialLinks.twitter} className="bg-blue-500 text-white p-3 rounded-full hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+                        <i className="fab fa-twitter text-lg"></i>
                       </a>
-                      <a href={`mailto:${leader.socialLinks.email}`} className="bg-blue-600 text-white p-2 rounded-full mx-1 hover:bg-blue-700 transition duration-300">
-                        <i className="fas fa-envelope"></i>
+                      <a href={`mailto:${leader.socialLinks.email}`} className="bg-gray-600 text-white p-3 rounded-full hover:bg-gray-700 transition-all duration-300 transform hover:scale-110 shadow-lg">
+                        <i className="fas fa-envelope text-lg"></i>
                       </a>
                     </div>
                   </div>
-                  <div className="p-5 text-center">
-                    <h5 className="text-xl font-semibold mb-1">{leader.name}</h5>
-                    <p className="text-blue-600 mb-3">{leader.position}</p>
-                    <p className="text-gray-700">{leader.bio}</p>
+                  <div className="p-6 md:p-8 text-center">
+                    <h5 className="text-xl md:text-2xl font-bold mb-2 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">{leader.name}</h5>
+                    <p className="text-blue-600 font-semibold mb-4 text-lg">{leader.position}</p>
+                    <p className="text-gray-600 leading-relaxed text-sm md:text-base">{leader.bio}</p>
                   </div>
                 </div>
               </div>
@@ -252,44 +260,45 @@ function Team() {
       </section>
 
       {/* Department Teams Section */}
-      <section className="py-12 bg-gray-100">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-gray-100 to-white">
         <div className="container mx-auto px-4">
-          <div className="mb-12">
-            <div className="text-center">
-              <h2 className="text-3xl font-bold mb-4">Our Departments</h2>
-              <p className="text-xl text-gray-600">Specialized teams working together to deliver excellence</p>
+          <div className="mb-16">
+            <div className="text-center max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">Our <span className="text-blue-600">Departments</span></h2>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-8"></div>
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">Specialized teams working together to deliver excellence and innovation in every project</p>
             </div>
           </div>
 
           {departmentTeams.map(department => (
-            <div className="mb-20" key={department.id}>
-              <div className="mb-6">
+            <div className="mb-20 md:mb-24" key={department.id}>
+              <div className="mb-8">
                 <div className="w-full">
-                  <h3 className="text-xl font-semibold border-l-4 border-blue-600 pl-3">{department.name}</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold border-l-4 border-blue-600 pl-4 text-gray-800">{department.name}</h3>
                 </div>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {department.members.map(member => (
-                  <div key={member.id}>
-                    <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                      <div className="flex">
-                        <div className="w-1/3">
+                  <div key={member.id} className="group">
+                    <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
+                      <div className="flex flex-col sm:flex-row">
+                        <div className="w-full sm:w-1/3">
                           <img 
                             src={member.image} 
-                            className="w-full h-full object-cover rounded-l-lg" 
+                            className="w-full h-48 sm:h-full object-cover group-hover:scale-110 transition-transform duration-700" 
                             alt={member.name} 
                           />
                         </div>
-                        <div className="w-2/3">
-                          <div className="p-4">
-                            <h5 className="text-base font-semibold mb-1">{member.name}</h5>
-                            <p className="text-blue-600 text-sm mb-2">{member.position}</p>
-                            <div className="text-sm">
-                              <a href="#" className="text-gray-500 mr-2">
-                                <i className="fab fa-linkedin-in"></i>
+                        <div className="w-full sm:w-2/3">
+                          <div className="p-6">
+                            <h5 className="text-lg md:text-xl font-bold mb-2 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">{member.name}</h5>
+                            <p className="text-blue-600 font-semibold mb-4 text-base">{member.position}</p>
+                            <div className="flex space-x-3">
+                              <a href="#" className="text-gray-500 hover:text-blue-600 transition-colors duration-300 transform hover:scale-110">
+                                <i className="fab fa-linkedin-in text-lg"></i>
                               </a>
-                              <a href="#" className="text-gray-500">
-                                <i className="fas fa-envelope"></i>
+                              <a href="#" className="text-gray-500 hover:text-blue-600 transition-colors duration-300 transform hover:scale-110">
+                                <i className="fas fa-envelope text-lg"></i>
                               </a>
                             </div>
                           </div>
@@ -305,73 +314,68 @@ function Team() {
       </section>
 
       {/* Company Culture Section */}
-      <section className="py-12">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-white to-gray-50">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center">
-            <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
-              <h2 className="text-3xl font-bold mb-4">Our Company Culture</h2>
-              <p className="mb-8">At Nestoria Group, we foster a culture of innovation, integrity, and excellence. We believe in creating an environment where our team members can thrive professionally and personally.</p>
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+            <div className="w-full lg:w-1/2">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">Our <span className="text-blue-600">Company Culture</span></h2>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-600 to-blue-400 mb-8"></div>
+              <p className="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">At Nestoria Group, we foster a culture of innovation, integrity, and excellence. We believe in creating an environment where our team members can thrive professionally and personally.</p>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <div>
-                  <div className="flex">
-                    <div className="flex-shrink-0">
-                      <i className="fas fa-users text-2xl text-blue-600"></i>
-                    </div>
-                    <div className="ml-4">
-                      <h5 className="font-semibold mb-1">Collaborative Environment</h5>
-                      <p>We work together across departments to achieve common goals.</p>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex">
-                    <div className="flex-shrink-0">
-                      <i className="fas fa-lightbulb text-2xl text-blue-600"></i>
-                    </div>
-                    <div className="ml-4">
-                      <h5 className="font-semibold mb-1">Innovation</h5>
-                      <p>We encourage creative thinking and new approaches to challenges.</p>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex">
-                    <div className="flex-shrink-0">
-                      <i className="fas fa-award text-2xl text-blue-600"></i>
-                    </div>
-                    <div className="ml-4">
-                      <h5 className="font-semibold mb-1">Excellence</h5>
-                      <p>We strive for the highest standards in all our endeavors.</p>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex">
-                    <div className="flex-shrink-0">
-                      <i className="fas fa-handshake text-2xl text-blue-600"></i>
-                    </div>
-                    <div className="ml-4">
-                      <h5 className="font-semibold mb-1">Integrity</h5>
-                      <p>We conduct business with honesty, transparency, and ethical practices.</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                {[
+                  {
+                    icon: "fas fa-users",
+                    title: "Collaborative Environment",
+                    desc: "We work together across departments to achieve common goals.",
+                    color: "from-blue-500 to-blue-600"
+                  },
+                  {
+                    icon: "fas fa-lightbulb", 
+                    title: "Innovation",
+                    desc: "We encourage creative thinking and new approaches to challenges.",
+                    color: "from-green-500 to-green-600"
+                  },
+                  {
+                    icon: "fas fa-award",
+                    title: "Excellence", 
+                    desc: "We strive for the highest standards in all our endeavors.",
+                    color: "from-purple-500 to-purple-600"
+                  },
+                  {
+                    icon: "fas fa-handshake",
+                    title: "Integrity",
+                    desc: "We conduct business with honesty, transparency, and ethical practices.",
+                    color: "from-emerald-500 to-emerald-600"
+                  }
+                ].map((item, index) => (
+                  <div key={index} className="group bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-l-4 border-blue-500">
+                    <div className="flex items-start">
+                      <div className={`bg-gradient-to-br ${item.color} rounded-xl w-12 h-12 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                        <i className={`${item.icon} text-white text-lg`}></i>
+                      </div>
+                      <div>
+                        <h5 className="text-lg font-bold mb-2 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">{item.title}</h5>
+                        <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                ))}
               </div>
             </div>
             <div className="w-full lg:w-1/2">
               <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070" alt="Team Collaboration" className="w-full rounded shadow" />
+                <div className="group">
+                  <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070" alt="Team Collaboration" className="w-full h-32 md:h-40 object-cover rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105" />
                 </div>
-                <div>
-                  <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070" alt="Team Meeting" className="w-full rounded shadow" />
+                <div className="group">
+                  <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070" alt="Team Meeting" className="w-full h-32 md:h-40 object-cover rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105" />
                 </div>
-                <div>
-                  <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=2070" alt="Office Space" className="w-full rounded shadow" />
+                <div className="group">
+                  <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=2070" alt="Office Space" className="w-full h-32 md:h-40 object-cover rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105" />
                 </div>
-                <div>
-                  <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070" alt="Team Building" className="w-full rounded shadow" />
+                <div className="group">
+                  <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070" alt="Team Building" className="w-full h-32 md:h-40 object-cover rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105" />
                 </div>
               </div>
             </div>
@@ -380,92 +384,122 @@ function Team() {
       </section>
 
       {/* Join Our Team Section */}
-      <section id="join-us" className="py-12 bg-blue-600 text-white">
-        <div className="container mx-auto px-4">
+      <section id="join-us" className="py-16 md:py-24 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="flex justify-center">
             <div className="w-full lg:w-2/3 text-center">
-              <h2 className="text-3xl font-bold mb-4">Join Our Team</h2>
-              <p className="text-xl mb-8">We're always looking for talented individuals to join our growing team. Check out our current openings or send us your resume for future opportunities.</p>
-              <a href="#current-openings" className="inline-block bg-white text-blue-600 font-semibold px-6 py-3 rounded mr-3 mb-3 hover:bg-gray-100 transition duration-300">View Current Openings</a>
-              <a href="mailto:careers@nestoriagroup.com" className="inline-block border border-white text-white font-semibold px-6 py-3 rounded mb-3 hover:bg-white hover:text-blue-600 transition duration-300">Send Your Resume</a>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">Join Our <span className="text-blue-300">Team</span></h2>
+              <div className="h-1 w-32 bg-gradient-to-r from-white to-blue-300 mx-auto mb-8"></div>
+              <p className="text-lg md:text-xl mb-10 leading-relaxed">We're always looking for talented individuals to join our growing team. Check out our current openings or send us your resume for future opportunities.</p>
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
+                <a href="#current-openings" className="group bg-white text-blue-600 font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 shadow-xl hover:shadow-2xl">
+                  <span className="flex items-center justify-center">
+                    <i className="fas fa-briefcase mr-2"></i>
+                    View Current Openings
+                  </span>
+                </a>
+                <a href="mailto:careers@nestoriagroup.com" className="group bg-transparent hover:bg-white/10 text-white font-bold px-8 py-4 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 backdrop-blur-sm">
+                  <span className="flex items-center justify-center">
+                    <i className="fas fa-envelope mr-2"></i>
+                    Send Your Resume
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Current Openings Section */}
-      <section id="current-openings" className="py-12">
+      <section id="current-openings" className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4">
-          <div className="mb-12">
-            <div className="text-center">
-              <h2 className="text-3xl font-bold mb-4">Current Openings</h2>
-              <p className="text-xl text-gray-600">Explore career opportunities at Nestoria Group</p>
+          <div className="mb-16">
+            <div className="text-center max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">Current <span className="text-blue-600">Openings</span></h2>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-8"></div>
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">Explore career opportunities at Nestoria Group and join our growing team</p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300 h-full">
-                <div className="p-6">
-                  <span className="inline-block bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full mb-3">Full-time</span>
-                  <h5 className="text-xl font-semibold mb-2">Senior Project Manager</h5>
-                  <p className="text-gray-500 mb-4"><i className="fas fa-map-marker-alt mr-2"></i>Dholera SIR, Gujarat</p>
-                  <p className="text-gray-700 mb-6">We are looking for an experienced Project Manager to oversee our residential development projects in Dholera SIR. The ideal candidate will have at least 8 years of experience in real estate project management.</p>
-                  <div className="flex justify-between items-center">
-                    <button className="px-4 py-2 border border-blue-600 text-blue-600 rounded hover:bg-blue-600 hover:text-white transition duration-300">View Details</button>
-                    <span className="text-gray-500 text-sm">Posted 2 weeks ago</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            {[
+              {
+                type: "Full-time",
+                title: "Senior Project Manager",
+                location: "Dholera SIR, Gujarat",
+                description: "We are looking for an experienced Project Manager to oversee our residential development projects in Dholera SIR. The ideal candidate will have at least 8 years of experience in real estate project management.",
+                posted: "Posted 2 weeks ago",
+                color: "from-blue-500 to-blue-600"
+              },
+              {
+                type: "Full-time",
+                title: "Marketing Specialist",
+                location: "Ahmedabad, Gujarat",
+                description: "Join our marketing team to develop and implement marketing strategies for our real estate projects. The ideal candidate will have experience in digital marketing and content creation for the real estate sector.",
+                posted: "Posted 1 week ago",
+                color: "from-green-500 to-green-600"
+              },
+              {
+                type: "Part-time",
+                title: "Legal Advisor",
+                location: "Dholera SIR, Gujarat",
+                description: "We are seeking a Legal Advisor with expertise in real estate law to provide guidance on property transactions, contracts, and regulatory compliance for our projects in Dholera SIR.",
+                posted: "Posted 3 days ago",
+                color: "from-purple-500 to-purple-600"
+              },
+              {
+                type: "Full-time",
+                title: "Sales Executive",
+                location: "Dholera SIR, Gujarat",
+                description: "We are looking for enthusiastic Sales Executives to join our team. The ideal candidate will have experience in real estate sales and excellent communication skills to engage with potential clients.",
+                posted: "Posted 5 days ago",
+                color: "from-emerald-500 to-emerald-600"
+              }
+            ].map((job, index) => (
+              <div key={index} className="group">
+                <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 h-full overflow-hidden border-t-4 border-blue-500">
+                  <div className="p-6 md:p-8">
+                    <div className="flex items-center justify-between mb-4">
+                      <span className={`bg-gradient-to-r ${job.color} text-white text-sm font-semibold px-4 py-2 rounded-full`}>{job.type}</span>
+                      <span className="text-gray-500 text-sm">{job.posted}</span>
+                    </div>
+                    <h5 className="text-xl md:text-2xl font-bold mb-3 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">{job.title}</h5>
+                    <p className="text-gray-500 mb-4 flex items-center">
+                      <i className="fas fa-map-marker-alt mr-2"></i>
+                      {job.location}
+                    </p>
+                    <p className="text-gray-700 mb-6 leading-relaxed text-sm md:text-base">{job.description}</p>
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <button className="group/btn flex-1 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 shadow-lg hover:shadow-xl">
+                        <span className="flex items-center justify-center">
+                          <i className="fas fa-eye mr-2"></i>
+                          View Details
+                        </span>
+                      </button>
+                      <a href={`mailto:careers@nestoriagroup.com?subject=Application for ${job.title}`} className="group/btn flex-1 bg-transparent hover:bg-blue-50 text-blue-600 border-2 border-blue-600 hover:border-blue-700 px-6 py-3 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 text-center">
+                        <span className="flex items-center justify-center">
+                          <i className="fas fa-paper-plane mr-2"></i>
+                          Apply Now
+                        </span>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div>
-              <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300 h-full">
-                <div className="p-6">
-                  <span className="inline-block bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full mb-3">Full-time</span>
-                  <h5 className="text-xl font-semibold mb-2">Marketing Specialist</h5>
-                  <p className="text-gray-500 mb-4"><i className="fas fa-map-marker-alt mr-2"></i>Ahmedabad, Gujarat</p>
-                  <p className="text-gray-700 mb-6">Join our marketing team to develop and implement marketing strategies for our real estate projects. The ideal candidate will have experience in digital marketing and content creation for the real estate sector.</p>
-                  <div className="flex justify-between items-center">
-                    <button className="px-4 py-2 border border-blue-600 text-blue-600 rounded hover:bg-blue-600 hover:text-white transition duration-300">View Details</button>
-                    <span className="text-gray-500 text-sm">Posted 1 week ago</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300 h-full">
-                <div className="p-6">
-                  <span className="inline-block bg-blue-400 text-white text-xs font-semibold px-2 py-1 rounded-full mb-3">Part-time</span>
-                  <h5 className="text-xl font-semibold mb-2">Legal Advisor</h5>
-                  <p className="text-gray-500 mb-4"><i className="fas fa-map-marker-alt mr-2"></i>Dholera SIR, Gujarat</p>
-                  <p className="text-gray-700 mb-6">We are seeking a Legal Advisor with expertise in real estate law to provide guidance on property transactions, contracts, and regulatory compliance for our projects in Dholera SIR.</p>
-                  <div className="flex justify-between items-center">
-                    <button className="px-4 py-2 border border-blue-600 text-blue-600 rounded hover:bg-blue-600 hover:text-white transition duration-300">View Details</button>
-                    <span className="text-gray-500 text-sm">Posted 3 days ago</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300 h-full">
-                <div className="p-6">
-                  <span className="inline-block bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full mb-3">Full-time</span>
-                  <h5 className="text-xl font-semibold mb-2">Sales Executive</h5>
-                  <p className="text-gray-500 mb-4"><i className="fas fa-map-marker-alt mr-2"></i>Dholera SIR, Gujarat</p>
-                  <p className="text-gray-700 mb-6">We are looking for enthusiastic Sales Executives to join our team. The ideal candidate will have experience in real estate sales and excellent communication skills to engage with potential clients.</p>
-                  <div className="flex justify-between items-center">
-                    <button className="px-4 py-2 border border-blue-600 text-blue-600 rounded hover:bg-blue-600 hover:text-white transition duration-300">View Details</button>
-                    <span className="text-gray-500 text-sm">Posted 5 days ago</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
 
           <div className="mt-16">
-            <div className="text-center">
-              <p className="mb-4">Don't see a position that matches your skills?</p>
-              <a href="mailto:careers@nestoriagroup.com" className="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded hover:bg-blue-700 transition duration-300">Send Us Your Resume</a>
+            <div className="text-center bg-gradient-to-r from-blue-50 to-gray-50 rounded-2xl p-8 md:p-12">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800">Don't see a position that matches your skills?</h3>
+              <p className="text-lg text-gray-600 mb-6">We're always looking for talented individuals to join our team. Send us your resume and we'll keep you in mind for future opportunities.</p>
+              <a href="mailto:careers@nestoriagroup.com" className="group inline-flex items-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold px-8 py-4 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105">
+                <span className="flex items-center justify-center">
+                  <i className="fas fa-envelope mr-2"></i>
+                  Send Us Your Resume
+                </span>
+              </a>
             </div>
           </div>
         </div>

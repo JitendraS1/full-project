@@ -1,6 +1,6 @@
 # Nestoria Group Website
 
-A modern, responsive website for Nestoria Group, a real estate company specializing in properties in Dholera SIR (Special Investment Region). Built with React, Vite, Tailwind CSS, and Express.js.
+A modern, responsive website for Nestoria Group, a real estate company specializing in properties in Dholera SIR (Special Investment Region). Built with React, Vite, Tailwind CSS.
 
 ## Features
 
@@ -15,8 +15,8 @@ A modern, responsive website for Nestoria Group, a real estate company specializ
 ## Tech Stack
 
 - **Frontend**: React, Vite, Tailwind CSS
-- **Backend**: Express.js, Node.js
-- **Email**: Nodemailer
+- **Backend**: PHP mail endpoint (Hostinger-compatible)
+- **Email**: PHP mail() endpoint
 - **Styling**: Tailwind CSS, Font Awesome
 - **Animations**: CSS animations, Tailwind transitions
 - **Deployment**: Vercel
@@ -160,29 +160,16 @@ npm run build
 
 ## Contact Form Setup
 
-The contact form uses Nodemailer to send emails. To enable this functionality:
+Forms now post directly to a lightweight PHP endpoint on Hostinger.
 
-1. Configure your email provider settings in the `.env` file
-2. For Gmail users:
-   - Enable 2-Step Verification in your Google account
-   - Generate an App Password (Google Account > Security > App passwords)
-   - Use this App Password in the `.env` file
-
-3. Uncomment the email sending code in `src/pages/Contact.jsx`:
-   ```javascript
-   // Change from
-   // await ContactService.sendContactForm(formData);
-   
-   // To
-   await ContactService.sendContactForm(formData);
-   ```
+- PHP file: `public/send-email.php`
+- Frontend services call `/send-email.php` with JSON body including `name`, `email`, `phone`, `subject`, `message`, and `formType`.
+- No SMTP or server configuration is required on Hostinger for basic mail() delivery.
 
 ## Project Structure
 
 ```
 ├── public/              # Static files
-├── server/              # Backend server code
-│   └── server.js        # Express server setup
 ├── src/                 # Frontend source code
 │   ├── assets/          # Images, fonts, etc.
 │   ├── components/      # Reusable components

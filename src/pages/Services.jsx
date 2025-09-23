@@ -8,37 +8,48 @@ import commercialimg from "/src/assets/img/COMMERCIAL-project.png"
 import industrialimg from "/src/assets/img/Industrial-project.png"
 function Services() {
   return (
-    <>
+    <div className="overflow-hidden bg-[#673a37]">
       {/* Page Header */}
       <ParallaxSection
         backgroundImage={servicebanner}
-        height="40vh"
+        height="100vh"
         overlayColor="#673a377e"
         speed={0.5}
-        className="py-32 flex items-center justify-center text-center"
+        className="flex items-center justify-center text-center"
       >
         <div className="container mx-auto px-4 relative text-center z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-slide-up font-condor">
-              Our Services
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+              Our <span className="text-blue-600">Services</span>
             </h1>
-            <div className="h-1 w-24 bg-blue-500 mx-auto mb-8 animate-slide-up"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-300 to-cyan-300 mx-auto mb-8"></div>
+            <p className="text-lg md:text-xl lg:text-2xl text-blue-100 mb-10 leading-relaxed">
+              Comprehensive real estate solutions for residential, commercial, and industrial investments in Dholera SIR
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                <i className="fas fa-search mr-2"></i>Explore Services
+              </button>
+              <button className="bg-transparent backdrop-blur-sm hover:bg-white/10 text-white border-2 border-white hover:border-blue-300 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+                <i className="fas fa-phone mr-2"></i>Get Consultation
+              </button>
+            </div>
           </div>
         </div>
       </ParallaxSection>
 
       {/* Services Overview */}
-      <section className="py-5 bg-white">
+      <section className="bg-gradient-to-br from-gray-50 to-blue-50 py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h6 className="text-blue-600 font-semibold text-lg mb-2 uppercase tracking-wider animate-fade-in font-condor">
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <h6 className="text-blue-600 font-semibold text-lg mb-4 uppercase tracking-wider">
               What We Offer
             </h6>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-slide-up font-condor">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Our <span className="text-blue-600">Services</span>
             </h2>
-            <div className="h-1 w-24 bg-blue-600 mx-auto mb-6 animate-slide-up"></div>
-            <p className="text-gray-600 text-lg animate-fade-in">
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-cyan-600 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-600 leading-relaxed">
               At Nestoria Group, we offer comprehensive real estate services
               focused on Dholera SIR. Our expertise spans across residential,
               commercial, and industrial sectors, providing end-to-end solutions
@@ -49,15 +60,15 @@ function Services() {
             speed={0.05}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            <div className="transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
-              <div className="bg-white rounded-lg shadow-xl p-8 border-t-4 border-blue-600 h-full">
-                <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
-                  <i className="fa fa-home fa-2x text-blue-600"></i>
+            <div className="transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group">
+              <div className="bg-white rounded-2xl shadow-lg p-8 h-full border border-gray-100 hover:border-blue-200 transition-all duration-300">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                  <i className="fa fa-home fa-2x text-white"></i>
                 </div>
-                <h4 className="text-xl font-semibold text-center mb-4">
+                <h4 className="text-2xl font-bold text-center mb-4 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
                   Residential Plots
                 </h4>
-                <p className="text-gray-600 mb-6 text-center">
+                <p className="text-gray-600 mb-6 text-center leading-relaxed">
                   Premium residential plots in strategic locations within
                   Dholera SIR, perfect for building your dream home or for
                   investment purposes.
@@ -65,22 +76,22 @@ function Services() {
                 <div className="text-center">
                   <Link
                     to="/contact"
-                    className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-md transition duration-300"
+                    className="inline-block bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
                   >
                     Learn More <i className="fa fa-arrow-right ml-2"></i>
                   </Link>
                 </div>
               </div>
             </div>
-            <div className="transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
-              <div className="bg-white rounded-lg shadow-xl p-8 border-t-4 border-blue-600 h-full">
-                <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
-                  <i className="fa fa-building fa-2x text-blue-600"></i>
+            <div className="transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group">
+              <div className="bg-white rounded-2xl shadow-lg p-8 h-full border border-gray-100 hover:border-blue-200 transition-all duration-300">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                  <i className="fa fa-building fa-2x text-white"></i>
                 </div>
-                <h4 className="text-xl font-semibold text-center mb-4">
+                <h4 className="text-2xl font-bold text-center mb-4 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
                   Commercial Properties
                 </h4>
-                <p className="text-gray-600 mb-6 text-center">
+                <p className="text-gray-600 mb-6 text-center leading-relaxed">
                   Strategic commercial plots and properties in high-growth areas
                   of Dholera SIR, ideal for businesses looking to establish a
                   presence in this emerging hub.
@@ -88,22 +99,22 @@ function Services() {
                 <div className="text-center">
                   <Link
                     to="/contact"
-                    className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-md transition duration-300"
+                    className="inline-block bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
                   >
                     Learn More <i className="fa fa-arrow-right ml-2"></i>
                   </Link>
                 </div>
               </div>
             </div>
-            <div className="transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
-              <div className="bg-white rounded-lg shadow-xl p-8 border-t-4 border-blue-600 h-full">
-                <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
-                  <i className="fa fa-industry fa-2x text-blue-600"></i>
+            <div className="transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group">
+              <div className="bg-white rounded-2xl shadow-lg p-8 h-full border border-gray-100 hover:border-blue-200 transition-all duration-300">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                  <i className="fa fa-industry fa-2x text-white"></i>
                 </div>
-                <h4 className="text-xl font-semibold text-center mb-4">
+                <h4 className="text-2xl font-bold text-center mb-4 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
                   Industrial Plots
                 </h4>
-                <p className="text-gray-600 mb-6 text-center">
+                <p className="text-gray-600 mb-6 text-center leading-relaxed">
                   Large industrial plots in designated industrial zones of
                   Dholera SIR, suitable for manufacturing, warehousing, and
                   other industrial operations.
@@ -111,22 +122,22 @@ function Services() {
                 <div className="text-center">
                   <Link
                     to="/contact"
-                    className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-md transition duration-300"
+                    className="inline-block bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
                   >
                     Learn More <i className="fa fa-arrow-right ml-2"></i>
                   </Link>
                 </div>
               </div>
             </div>
-            <div className="transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
-              <div className="bg-white rounded-lg shadow-xl p-8 border-t-4 border-blue-600 h-full">
-                <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
-                  <i className="fa fa-search fa-2x text-blue-600"></i>
+            <div className="transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group">
+              <div className="bg-white rounded-2xl shadow-lg p-8 h-full border border-gray-100 hover:border-blue-200 transition-all duration-300">
+                <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                  <i className="fa fa-search fa-2x text-white"></i>
                 </div>
-                <h4 className="text-xl font-semibold text-center mb-4">
+                <h4 className="text-2xl font-bold text-center mb-4 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
                   Property Consultation
                 </h4>
-                <p className="text-gray-600 mb-6 text-center">
+                <p className="text-gray-600 mb-6 text-center leading-relaxed">
                   Expert consultation services to help you identify the right
                   property based on your requirements, budget, and investment
                   goals.
@@ -134,51 +145,51 @@ function Services() {
                 <div className="text-center">
                   <Link
                     to="/contact"
-                    className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-md transition duration-300"
+                    className="inline-block bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
                   >
                     Learn More <i className="fa fa-arrow-right ml-2"></i>
                   </Link>
                 </div>
               </div>
             </div>
-            <div className="transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
-              <div className="bg-white rounded-lg shadow-xl p-8 border-t-4 border-blue-600 h-full">
-                <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
-                  <i className="fa fa-file-contract fa-2x text-blue-600"></i>
+            <div className="transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group">
+              <div className="bg-white rounded-2xl shadow-lg p-8 h-full border border-gray-100 hover:border-blue-200 transition-all duration-300">
+                <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                  <i className="fa fa-file-contract fa-2x text-white"></i>
                 </div>
-                <h4 className="text-xl font-semibold text-center mb-4">
+                <h4 className="text-2xl font-bold text-center mb-4 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
                   Legal Assistance
                 </h4>
-                <p className="text-gray-600 mb-6 text-center">
+                <p className="text-gray-600 mb-6 text-center leading-relaxed">
                   Comprehensive legal assistance for property documentation,
                   registration, and compliance with local regulations and laws.
                 </p>
                 <div className="text-center">
                   <Link
                     to="/contact"
-                    className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-md transition duration-300"
+                    className="inline-block bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
                   >
                     Learn More <i className="fa fa-arrow-right ml-2"></i>
                   </Link>
                 </div>
               </div>
             </div>
-            <div className="transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl">
-              <div className="bg-white rounded-lg shadow-xl p-8 border-t-4 border-blue-600 h-full">
-                <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mb-6 mx-auto">
-                  <i className="fa fa-chart-line fa-2x text-blue-600"></i>
+            <div className="transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group">
+              <div className="bg-white rounded-2xl shadow-lg p-8 h-full border border-gray-100 hover:border-blue-200 transition-all duration-300">
+                <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300">
+                  <i className="fa fa-chart-line fa-2x text-white"></i>
                 </div>
-                <h4 className="text-xl font-semibold text-center mb-4">
+                <h4 className="text-2xl font-bold text-center mb-4 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
                   Investment Advisory
                 </h4>
-                <p className="text-gray-600 mb-6 text-center">
+                <p className="text-gray-600 mb-6 text-center leading-relaxed">
                   Strategic investment advisory services to help you maximize
                   returns on your real estate investments in Dholera SIR.
                 </p>
                 <div className="text-center">
                   <Link
                     to="/contact"
-                    className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-md transition duration-300"
+                    className="inline-block bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
                   >
                     Learn More <i className="fa fa-arrow-right ml-2"></i>
                   </Link>
@@ -261,7 +272,7 @@ function Services() {
               </p>
               <Link
                 to="/contact"
-                className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-md shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
+                className="inline-block bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-md shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
               >
                 Enquire Now
               </Link>
@@ -380,7 +391,7 @@ function Services() {
               </p>
               <Link
                 to="/contact"
-                className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-md shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
+                className="inline-block bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-md shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
               >
                 Enquire Now
               </Link>
@@ -498,17 +509,19 @@ function Services() {
       {/* Call to Action Section */}
       <ParallaxSection
         backgroundImage={servicebanner}
-        height="500px"
+        height="auto"
         overlayColor="#673a377e"
         speed={0.5}
+        className="py-20"
       >
-        <div className="container mx-auto px-4 h-full flex items-center justify-center">
+        <div className="container mx-auto px-4 flex items-center justify-center">
           <div className="text-center max-w-4xl">
             <ParallaxScroll direction="up" speed={0.3}>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Ready to Invest in Dholera SIR?
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                Ready to Invest in <span className="text-blue-600">Dholera SIR?</span>
               </h2>
-              <p className="text-xl text-gray-200 mb-8">
+              <div className="w-24 h-1 bg-blue-300 mx-auto mb-8"></div>
+              <p className="text-xl md:text-2xl text-blue-100 mb-10 leading-relaxed">
                 Our team of experts is ready to guide you through the investment
                 process and help you find the perfect property in Dholera SIR.
                 Contact us today to schedule a consultation.
@@ -516,22 +529,22 @@ function Services() {
               <div className="flex flex-col sm:flex-row justify-center gap-6">
                 <Link
                   to="/contact"
-                  className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-md shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
+                  className="inline-block bg-blue-700 hover:bg-blue-800 text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                 >
-                  Contact Us
+                  <i className="fas fa-phone mr-2"></i>Contact Us
                 </Link>
                 <Link
                   to="/about"
-                  className="inline-block bg-transparent hover:bg-white/10 text-white border-2 border-white font-bold py-4 px-10 rounded-md shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
+                  className="inline-block bg-transparent backdrop-blur-sm hover:bg-white/10 text-white border-2 border-white hover:border-blue-300 font-bold py-4 px-10 rounded-lg transition-all duration-300 transform hover:-translate-y-1"
                 >
-                  Learn More
+                  <i className="fas fa-info-circle mr-2"></i>Learn More
                 </Link>
               </div>
             </ParallaxScroll>
           </div>
         </div>
       </ParallaxSection>
-    </>
+    </div>
   );
 }
 

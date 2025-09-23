@@ -19,38 +19,45 @@ function Home() {
         height="100vh"
         overlayColor="#673a377e"
         speed={0.4}
-        className="py-32 md:py-32 flex items-center justify-center text-center"
+        className="py-16 sm:py-20 md:py-32 flex items-center justify-center text-center"
       >
-        <div className="relative z-10 px-4 w-full mt-20 md:mt-40 lg:mt-60">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor">
-              Think Dholera Think Nestoria.
+        <div className="relative z-10 px-4 w-full">
+          <div className="max-w-6xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight">
+              Think Dholera Think <span className="text-blue-300">Nestoria</span>.
             </h1>
-            <div className="h-1 w-24 bg-blue-500 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
-            <p className="text-base sm:text-lg md:text-xl text-white mb-6 md:mb-8 animate-slide-up opacity-0 animation-delay-300 max-w-2xl mx-auto">
+            <div className="h-1 w-32 bg-blue-600 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 md:mb-10 animate-slide-up opacity-0 animation-delay-300 max-w-3xl mx-auto leading-relaxed">
               Discover exclusive properties and investment opportunities in
-              India's first smart city.
+              India's first smart city with world-class infrastructure and unlimited growth potential.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4 animate-slide-up opacity-0 animation-delay-500 w-full">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 animate-slide-up opacity-0 animation-delay-500">
               <Link
                 to="/land-deals"
-                className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm md:text-base py-3 px-6 md:px-8 rounded-md shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1 w-full sm:w-auto text-center"
+                className="group bg-blue-700 hover:bg-blue-800 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center relative overflow-hidden"
               >
-                Explore Properties
+                <span className="relative z-10 flex items-center justify-center">
+                  <i className="fas fa-search mr-2"></i>
+                  Explore Properties
+                </span>
+                <div className="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Link>
               <Link
                 to="/contact"
-                className="bg-transparent hover:bg-blue-700 text-white font-bold text-sm md:text-base py-3 px-6 md:px-8 border-2 border-white hover:border-transparent rounded-md transition duration-300 transform hover:-translate-y-1 w-full sm:w-auto text-center"
+                className="group bg-transparent hover:bg-white/10 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center backdrop-blur-sm"
               >
-                Contact Us
+                <span className="flex items-center justify-center">
+                  <i className="fas fa-phone mr-2"></i>
+                  Contact Us
+                </span>
               </Link>
             </div>
           </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0 flex justify-center pb-6 md:pb-8 animate-bounce">
-          <a href="#about" className="text-white">
+          <a href="#about" className="text-white hover:text-blue-300 transition-colors duration-300">
             <svg
-              className="w-6 h-6 md:w-8 md:h-8"
+              className="w-8 h-8 md:w-10 md:h-10"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -68,66 +75,76 @@ function Home() {
       </ParallaxSection>
 
       {/* About Section */}
-      <section id="about" className="py-12 md:py-20 bg-gray-50">
+      <section id="about" className="py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap items-center -mx-4">
-            <div className="w-full lg:w-1/2 px-4 mb-12 lg:mb-0">
-              <div className="relative overflow-hidden rounded-lg shadow-2xl group">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+            <div className="w-full lg:w-1/2">
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl group">
                 <img
-                  className="w-full h-64 sm:h-80 md:h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-80 sm:h-96 md:h-[500px] object-cover transform group-hover:scale-110 transition-transform duration-700"
                   src={aboutimage}
                   alt="Nestoria Group - Premier Real Estate Developer in Dholera SIR Gujarat"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-blue-900 bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <span className="text-white text-xl md:text-3xl font-bold px-4 md:px-6 py-2 md:py-3 border-2 border-white rounded-md">
+                <div className="absolute inset-0 bg-blue-900/60 flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <span className="text-white text-xl md:text-3xl font-bold px-6 py-4 border-2 border-white rounded-lg mb-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                     Discover Nestoria
                   </span>
                 </div>
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2">
+                  <span className="text-blue-600 font-semibold text-sm">Since 2010</span>
+                </div>
               </div>
             </div>
-            <div className="w-full lg:w-1/2 px-4">
-              <div className="lg:pl-10">
-                <h6 className="text-blue-600 font-semibold text-base md:text-lg mb-2 uppercase tracking-wider">
+            <div className="w-full lg:w-1/2">
+              <div className="lg:pl-6">
+                <h6 className="text-blue-600 font-semibold text-lg mb-3 uppercase tracking-wider">
                   About Us
                 </h6>
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
                   About <span className="text-blue-600">Nestoria Group</span>
                 </h2>
-                <div className="h-1 w-24 bg-blue-600 mb-6"></div>
-                <p className="text-gray-600 mb-6 text-base md:text-lg">
+                <div className="h-1 w-32 bg-blue-600 mb-8"></div>
+                <p className="text-gray-700 mb-8 text-lg leading-relaxed">
                   Established in 2010, Nestoria Group has emerged as a leading
                   real estate developer in Dholera SIR. We are committed to
-                  excellence, transparency, and client satisfaction.
+                  excellence, transparency, and client satisfaction with over 5000+ happy customers.
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-10">
                   {[
                     {
                       title: "Premium Land Parcels",
                       desc: "High-value properties",
+                      icon: "fas fa-gem"
                     },
                     {
                       title: "Strategic Locations",
                       desc: "Prime investment areas",
+                      icon: "fas fa-map-marker-alt"
                     },
                     {
                       title: "Legal Documentation",
                       desc: "Transparent process",
+                      icon: "fas fa-file-contract"
                     },
-                    { title: "Investment Advisory", desc: "Expert guidance" },
+                    { 
+                      title: "Investment Advisory", 
+                      desc: "Expert guidance",
+                      icon: "fas fa-chart-line"
+                    },
                   ].map((item, i) => (
                     <div
                       key={i}
-                      className="flex items-center p-4 bg-white rounded-lg shadow-md transform transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+                      className="group flex items-start p-5 bg-white rounded-xl shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border-l-4 border-blue-500"
                     >
-                      <div className="flex-shrink-0 mr-4 bg-blue-100 p-3 rounded-full">
-                        <i className="fa fa-check text-blue-600"></i>
+                      <div className="flex-shrink-0 mr-4 bg-blue-100 p-3 rounded-full group-hover:scale-110 transition-transform duration-300">
+                        <i className={`${item.icon} text-blue-600 text-lg`}></i>
                       </div>
                       <div>
-                        <h6 className="text-base md:text-lg font-semibold">
+                        <h6 className="text-lg font-bold text-gray-800 mb-1">
                           {item.title}
                         </h6>
-                        <p className="text-gray-500 text-xs md:text-sm">
+                        <p className="text-gray-600 text-sm">
                           {item.desc}
                         </p>
                       </div>
@@ -136,10 +153,11 @@ function Home() {
                 </div>
                 <Link
                   to="/about"
-                  className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 md:px-8 rounded-md shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1"
+                className="group inline-flex items-center bg-blue-700 hover:bg-blue-800 text-white font-bold py-4 px-8 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
                   aria-label="Discover More About Nestoria"
                 >
-                  Discover More
+                  <span>Discover More</span>
+                  <i className="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
                 </Link>
               </div>
             </div>
@@ -150,69 +168,74 @@ function Home() {
       {/* Services Section */}
       <section
         id="services"
-        className="bg-gradient-to-r from-blue-900 to-blue-800 text-white"
+        className="bg-blue-900 text-white relative overflow-hidden"
       >
+        <div className="absolute inset-0 bg-black/20"></div>
         <ParallaxSection
           backgroundImage={dholeraBanner}
           height="auto"
           overlayColor="#673a377e"
           speed={0.4}
-          className="py-12 md:py-24 lg:py-32 mb-4 md:mb-8 flex items-center justify-center text-center"
+          className="py-16 md:py-24 lg:py-32 flex items-center justify-center text-center relative z-10"
         >
           <div className="container mx-auto px-4">
-            <div className="text-center max-w-2xl mx-auto mb-8 md:mb-16">
-              <h6 className="text-blue-300 font-semibold text-base md:text-lg mb-2 uppercase tracking-wider">
+            <div className="text-center max-w-4xl mx-auto mb-12 md:mb-20">
+              <h6 className="text-blue-300 font-semibold text-lg md:text-xl mb-4 uppercase tracking-wider">
                 What We Offer
               </h6>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
                 Our <span className="text-blue-300">Services</span>
               </h2>
-              <div className="h-1 w-24 bg-blue-300 mx-auto mb-4 md:mb-6"></div>
-              <p className="text-gray-200 text-base md:text-lg">
+              <div className="h-1 w-32 bg-blue-500 mx-auto mb-8"></div>
+              <p className="text-gray-200 text-lg md:text-xl leading-relaxed">
                 We offer comprehensive real estate services tailored to meet
-                your investment needs in Dholera SIR.
+                your investment needs in Dholera SIR with world-class infrastructure and unlimited growth potential.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {[
                 {
-                  icon: "building",
+                  icon: "fas fa-home",
                   title: "Residential Properties",
-                  desc: "Premium residential properties in strategic locations with excellent appreciation potential.",
+                  desc: "Premium residential properties in strategic locations with excellent appreciation potential and modern amenities.",
+                  color: "blue"
                 },
                 {
-                  icon: "store",
+                  icon: "fas fa-building",
                   title: "Commercial Properties",
-                  desc: "High-potential commercial properties in Dholera's developing business districts.",
+                  desc: "High-potential commercial properties in Dholera's developing business districts with excellent ROI.",
+                  color: "green"
                 },
                 {
-                  icon: "industry",
+                  icon: "fas fa-industry",
                   title: "Industrial Properties",
-                  desc: "Strategic industrial properties in Dholera SIR with excellent connectivity and infrastructure.",
+                  desc: "Strategic industrial properties in Dholera SIR with excellent connectivity and infrastructure support.",
+                  color: "purple"
                 },
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="bg-blue-800 bg-opacity-50 rounded-lg shadow-xl p-6 sm:p-8 border border-blue-700 transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                  className="group bg-white/10 backdrop-blur-sm rounded-2xl shadow-2xl p-8 border border-white/20 transform transition-all duration-500 hover:-translate-y-4 hover:shadow-3xl hover:bg-white/20"
                 >
-                  <div className="bg-blue-700 rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center mb-4 md:mb-6 mx-auto">
+                  <div className={`bg-blue-600 rounded-2xl w-20 h-20 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                     <i
-                      className={`fa fa-${item.icon} fa-lg md:fa-2x text-white`}
+                      className={`${item.icon} text-2xl text-white`}
                     ></i>
                   </div>
-                  <h4 className="text-lg md:text-xl font-semibold text-center mb-3 md:mb-4">
+                  <h4 className="text-xl md:text-2xl font-bold text-center mb-4 group-hover:text-blue-300 transition-colors duration-300">
                     {item.title}
                   </h4>
-                  <p className="text-gray-200 mb-4 md:mb-6 text-center text-sm md:text-base">
+                  <p className="text-gray-200 mb-6 text-center leading-relaxed">
                     {item.desc}
                   </p>
                   <div className="text-center">
                     <Link
                       to="/services"
-                      className="inline-block text-blue-300 hover:text-white font-medium border border-blue-300 hover:border-white rounded-full py-2 px-6 transition duration-300 text-sm md:text-base"
+                      className="group/btn inline-flex items-center text-blue-300 hover:text-white font-semibold border-2 border-blue-300 hover:border-white rounded-full py-3 px-8 transition-all duration-300 hover:bg-white/10 backdrop-blur-sm"
                       aria-label={`Learn More About ${item.title}`}
                     >
-                      Learn More
+                      <span>Learn More</span>
+                      <i className="fas fa-arrow-right ml-2 group-hover/btn:translate-x-1 transition-transform duration-300"></i>
                     </Link>
                   </div>
                 </div>
@@ -223,55 +246,59 @@ function Home() {
       </section>
 
       {/* Why Dholera SIR Section */}
-      <section className="py-12 md:py-20 bg-gray-50">
+      <section className="py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-2xl mx-auto mb-8 md:mb-16">
-            <h6 className="text-blue-600 font-semibold text-base md:text-lg mb-2 uppercase tracking-wider">
+          <div className="text-center max-w-4xl mx-auto mb-12 md:mb-20">
+            <h6 className="text-blue-600 font-semibold text-lg md:text-xl mb-4 uppercase tracking-wider">
               Investment Opportunity
             </h6>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
               Why <span className="text-blue-600">Dholera SIR</span>
             </h2>
-            <div className="h-1 w-24 bg-blue-600 mx-auto mb-4 md:mb-6"></div>
-            <p className="text-gray-600 text-base md:text-lg">
+              <div className="h-1 w-32 bg-blue-600 mx-auto mb-8"></div>
+            <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
               Dholera Special Investment Region (SIR) is India's first planned
-              smart city and a global manufacturing hub.
+              smart city and a global manufacturing hub with unlimited growth potential.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {[
               {
-                icon: "map-marker-alt",
+                icon: "fas fa-map-marker-alt",
                 title: "Strategic Location",
-                desc: "Located in the Delhi-Mumbai Industrial Corridor with excellent connectivity.",
+                desc: "Located in the Delhi-Mumbai Industrial Corridor with excellent connectivity to major cities and ports.",
+                color: "blue"
               },
               {
-                icon:"cogs",
+                icon: "fas fa-cogs",
                 title: "World-Class Infrastructure",
                 desc: "Smart transportation, renewable energy, water management, and digital connectivity.",
+                color: "green"
               },
               {
-                icon: "chart-line",
+                icon: "fas fa-chart-line",
                 title: "Investment Potential",
                 desc: "Significant appreciation potential with government backing and planned development.",
+                color: "purple"
               },
               {
-                icon: "leaf",
+                icon: "fas fa-leaf",
                 title: "Sustainable Development",
                 desc: "Eco-friendly planning with green spaces, renewable energy, and sustainable practices.",
+                color: "emerald"
               },
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-white rounded-lg shadow-xl p-6 sm:p-8 text-center transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl border-t-4 border-blue-600"
+                className="group bg-white rounded-2xl shadow-xl p-8 text-center transform transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl border-t-4 border-blue-600 hover:border-blue-500"
               >
-                <div className="bg-blue-100 rounded-full w-16 md:w-20 h-16 md:h-20 flex items-center justify-center mb-4 md:mb-6 mx-auto">
-                  <i className={`fa fa-${item.icon} fa-lg md:fa-2x text-blue-600`}></i>
+                <div className={`bg-blue-600 rounded-2xl w-20 h-20 flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                  <i className={`${item.icon} text-2xl text-white`}></i>
                 </div>
-                <h5 className="text-lg md:text-xl font-semibold mb-2 md:mb-4">
+                <h5 className="text-xl md:text-2xl font-bold mb-4 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
                   {item.title}
                 </h5>
-                <p className="text-gray-600 text-sm md:text-base">
+                <p className="text-gray-600 leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -281,23 +308,31 @@ function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-10 md:py-16 bg-gray-900 text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+      <section className="py-16 md:py-24 bg-gray-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/30"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Achievements</h2>
+            <div className="h-1 w-24 bg-blue-400 mx-auto mb-6"></div>
+            <p className="text-gray-300 text-lg">Numbers that speak for our success and growth</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8">
             {[
-              { number: "50000+", label: "Visitors" },
-              { number: "5000+", label: "Happy Clients" },
-              { number: "50+", label: "Projects" },
-              { number: "15+", label: "Years Experience" },
-              { number: "50+", label: "Cities Covered" },
-              { number: "9+", label: "Countries Covered" },
+              { number: "50000+", label: "Visitors", icon: "fas fa-users" },
+              { number: "5000+", label: "Happy Clients", icon: "fas fa-heart" },
+              { number: "50+", label: "Projects", icon: "fas fa-building" },
+              { number: "15+", label: "Years Experience", icon: "fas fa-calendar" },
+              { number: "50+", label: "Cities Covered", icon: "fas fa-map" },
+              { number: "9+", label: "Countries Covered", icon: "fas fa-globe" },
             ].map((stat, i) => (
-              <div key={i} className="text-center p-3">
-                <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">
-                  {stat.number}
-                  <span className="text-blue-300"></span>
+              <div key={i} className="group text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
+                <div className="mb-4">
+                  <i className={`${stat.icon} text-3xl text-blue-400 group-hover:text-blue-300 transition-colors duration-300`}></i>
                 </div>
-                <p className="text-base md:text-xl">{stat.label}</p>
+                <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 text-blue-200">
+                  {stat.number}
+                </div>
+                <p className="text-gray-300 font-medium">{stat.label}</p>
               </div>
             ))}
           </div>
@@ -310,43 +345,61 @@ function Home() {
         height="auto"
         overlayColor="#673a377e"
         speed={0.3}
-        className="py-12 md:py-20"
+        className="py-20 md:py-32"
       >
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-6 text-white">
-            Ready to Invest in Your Future?
-          </h2>
-          <div className="h-1 w-24 bg-white mx-auto mb-4 md:mb-8"></div>
-          <p className="text-base md:text-lg lg:text-xl mb-6 md:mb-8 max-w-2xl mx-auto text-white">
-            Our experts are ready to guide you through the best investment
-            opportunities in Dholera SIR.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-block bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-6 md:px-10 rounded-md shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1 text-sm md:text-base"
-          >
-            Contact Our Experts
-          </Link>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
+              Ready to Invest in Your <span className="text-blue-300">Future</span>?
+            </h2>
+            <div className="h-1 w-32 bg-white mx-auto mb-8"></div>
+            <p className="text-lg md:text-xl lg:text-2xl mb-10 max-w-3xl mx-auto text-white/90 leading-relaxed">
+              Our experts are ready to guide you through the best investment
+              opportunities in Dholera SIR with personalized solutions and expert advice.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
+              <Link
+                to="/contact"
+                className="group bg-blue-700 hover:bg-blue-800 text-white font-bold py-4 px-8 md:px-12 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 text-lg"
+              >
+                <span className="flex items-center justify-center">
+                  <i className="fas fa-phone mr-2"></i>
+                  Contact Our Experts
+                </span>
+              </Link>
+              <Link
+                to="/land-deals"
+                className="group bg-transparent hover:bg-white/10 text-white font-bold py-4 px-8 md:px-12 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 text-lg backdrop-blur-sm"
+              >
+                <span className="flex items-center justify-center">
+                  <i className="fas fa-search mr-2"></i>
+                  View Properties
+                </span>
+              </Link>
+            </div>
+          </div>
         </div>
       </ParallaxSection>
 
       {/* Testimonials Section */}
-      <section className="py-12 md:py-20 bg-white">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
-            <h6 className="text-blue-600 font-semibold text-base md:text-lg mb-2 uppercase tracking-wider">
+          <div className="text-center max-w-4xl mx-auto mb-12 md:mb-20">
+            <h6 className="text-blue-600 font-semibold text-lg md:text-xl mb-4 uppercase tracking-wider">
               Testimonials
             </h6>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
               What Our <span className="text-blue-600">Clients Say</span>
             </h2>
-            <div className="h-1 w-24 bg-blue-600 mx-auto mb-6"></div>
-            <p className="text-gray-600 text-base md:text-lg">
+            <div className="h-1 w-32 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-8"></div>
+            <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
               Hear from our satisfied clients who have invested in Dholera SIR
-              through Nestoria Group.
+              through Nestoria Group and achieved their investment goals.
             </p>
           </div>
-          <Carousel />
+          <div className="relative">
+            <Carousel />
+          </div>
         </div>
       </section>
 

@@ -134,176 +134,204 @@ const Contact = () => {
       {/* Page Header */}
       <ParallaxSection
         backgroundImage={contactbannerimg}
-        height="auto"
+        height="100vh"
         overlayColor="#673a377e"
         speed={0.4}
-        className="py-16 flex items-center justify-center text-center"
+        className="py-16 sm:py-20 md:py-32 flex items-center justify-center text-center"
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-slide-up font-condor">
-              Contact Us
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight">
+              Contact <span className="text-blue-300">Us</span>
             </h1>
-            <div className="h-1 w-24 bg-blue-600 mx-auto mb-6"></div>
-            <p className="text-lg md:text-xl text-white mb-8 animate-slide-up opacity-0 animation-delay-300 max-w-2xl mx-auto">
-              We're here to answer any questions you may have about our services
+            <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 md:mb-10 animate-slide-up opacity-0 animation-delay-300 max-w-3xl mx-auto leading-relaxed">
+              We're here to answer any questions you may have about our services and help you with your real estate investment journey
             </p>
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 animate-slide-up opacity-0 animation-delay-500">
+              <a
+                href="#contact-form"
+                className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center relative overflow-hidden"
+              >
+                <span className="relative z-10 flex items-center justify-center">
+                  <i className="fas fa-envelope mr-2"></i>
+                  Send Message
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </a>
+              <a
+                href="tel:+919274411705"
+                className="group bg-transparent hover:bg-white/10 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center backdrop-blur-sm"
+              >
+                <span className="flex items-center justify-center">
+                  <i className="fas fa-phone mr-2"></i>
+                  Call Now
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       </ParallaxSection>
 
       {/* Contact Information Section */}
-      <section className="py-16 bg-gray-50 relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
         <ParallaxScroll speed={0.05} className="z-10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105 animate-fade-in animation-delay-1">
+            <div className="text-center max-w-4xl mx-auto mb-12 md:mb-16">
+              <h6 className="text-blue-600 font-semibold text-lg md:text-xl mb-4 uppercase tracking-wider">
+                Get In Touch
+              </h6>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                Contact <span className="text-blue-600">Information</span>
+              </h2>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-8"></div>
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">Reach out to us through any of these channels for immediate assistance</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+              <div className="group bg-white p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in animation-delay-1 border-t-4 border-blue-500">
                 <div className="text-center">
-                  <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 text-blue-600 animate-scale-in">
+                  <div className="mb-6 inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 text-white animate-scale-in group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <i className="fas fa-map-marker-alt text-2xl"></i>
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-gray-800">
+                  <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
                     Our Office
                   </h3>
-                  <p className="text-gray-600 mb-1">
+                  <p className="text-gray-600 mb-2 text-sm md:text-base">
                     3rd Floor, Sarthik Annex, Satellite Road,
                   </p>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 text-sm md:text-base">
                     Iscon Cross Road, Ahmedabad - 380015, Gujarat, India
                   </p>
                 </div>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105 animate-fade-in animation-delay-2">
+              <div className="group bg-white p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in animation-delay-2 border-t-4 border-green-500">
                 <div className="text-center">
-                  <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 text-blue-600 animate-scale-in animation-delay-300">
+                  <div className="mb-6 inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-green-500 to-green-600 text-white animate-scale-in animation-delay-300 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <i className="fas fa-phone-alt text-2xl"></i>
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-gray-800">
+                  <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-800 group-hover:text-green-600 transition-colors duration-300">
                     Phone & Email
                   </h3>
-                  <p className="text-gray-600 mb-2">
+                  <p className="text-gray-600 mb-3 text-sm md:text-base">
                     <a
-                      href="tel:+919876543210"
-                      className="hover:text-blue-600 transition-colors"
+                      href="tel:+919274411705"
+                      className="hover:text-green-600 transition-colors font-semibold text-lg"
                     >
                       +919274411705
                     </a>
                   </p>
-                  <p className="text-gray-600 mb-0">
+                  <p className="text-gray-600 text-sm md:text-base">
                     <a
                       href="mailto:info@nestoriagroup.com"
-                      className="hover:text-blue-600 transition-colors"
+                      className="hover:text-green-600 transition-colors"
                     >
                       info@nestoriagroup.com
                     </a>
                   </p>
                 </div>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105 animate-fade-in animation-delay-3">
+              <div className="group bg-white p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in animation-delay-3 border-t-4 border-purple-500">
                 <div className="text-center">
-                  <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 text-blue-600 animate-scale-in animation-delay-500">
+                  <div className="mb-6 inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 text-white animate-scale-in animation-delay-500 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <i className="fas fa-clock text-2xl"></i>
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-gray-800">
+                  <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-800 group-hover:text-purple-600 transition-colors duration-300">
                     Office Hours
                   </h3>
-                  <p className="text-gray-600 mb-1">
+                  <p className="text-gray-600 mb-2 text-sm md:text-base">
                     Monday - Saturday : 9:00 AM - 6:00 PM
                   </p>
-                  <p className="text-gray-600 mb-0">
+                  <p className="text-gray-600 text-sm md:text-base">
                     Saturday: 10:00 AM - 4:00 PM
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-              <div className="bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105 animate-fade-in-left">
-                <h3 className="text-xl font-semibold mb-3 text-gray-800">
-                  Customer Support
-                </h3>
-                <p className="text-gray-600 mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-12 md:mt-16">
+              <div className="group bg-white p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-left border-l-4 border-blue-500">
+                <div className="flex items-center mb-6">
+                  <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl w-12 h-12 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <i className="fas fa-headset text-white text-xl"></i>
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
+                    Customer Support
+                  </h3>
+                </div>
+                <div className="h-1 w-16 bg-gradient-to-r from-blue-500 to-blue-400 mb-6"></div>
+                <p className="text-gray-600 mb-6 text-sm md:text-base leading-relaxed">
                   Our dedicated customer support team is available to assist you
                   with any inquiries or concerns you may have about our
                   properties or services.
                 </p>
-                <p className="text-gray-600 mb-2">
-                  <strong>Support Email:</strong>{" "}
-                  <a
-                    href="mailto:support@nestoriagroup.com"
-                    className="text-blue-600 hover:text-blue-500 transition-colors"
-                  >
-                    support@nestoriagroup.com
-                  </a>
-                </p>
-                <p className="text-gray-600">
-                  <strong>Support Phone:</strong>{" "}
-                  <a
-                    href="tel:+919274411705"
-                    className="text-blue-600 hover:text-blue-500 transition-colors"
-                  >
-                    +919274411705
-                  </a>
-                </p>
+                <div className="space-y-3">
+                  <p className="text-gray-600 text-sm md:text-base">
+                    <strong className="text-gray-800">Support Email:</strong>{" "}
+                    <a
+                      href="mailto:support@nestoriagroup.com"
+                      className="text-blue-600 hover:text-blue-500 transition-colors font-semibold"
+                    >
+                      support@nestoriagroup.com
+                    </a>
+                  </p>
+                  <p className="text-gray-600 text-sm md:text-base">
+                    <strong className="text-gray-800">Support Phone:</strong>{" "}
+                    <a
+                      href="tel:+919274411705"
+                      className="text-blue-600 hover:text-blue-500 transition-colors font-semibold"
+                    >
+                      +919274411705
+                    </a>
+                  </p>
+                </div>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105 animate-fade-in-right">
-                <h3 className="text-xl font-semibold mb-3 text-gray-800">
-                  Connect With Us
-                </h3>
-                <p className="text-gray-600 mb-4">
+              <div className="group bg-white p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in-right border-l-4 border-purple-500">
+                <div className="flex items-center mb-6">
+                  <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl w-12 h-12 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <i className="fas fa-share-alt text-white text-xl"></i>
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-800 group-hover:text-purple-600 transition-colors duration-300">
+                    Connect With Us
+                  </h3>
+                </div>
+                <div className="h-1 w-16 bg-gradient-to-r from-purple-500 to-purple-400 mb-6"></div>
+                <p className="text-gray-600 mb-6 text-sm md:text-base leading-relaxed">
                   Follow us on social media to stay updated with the latest
                   news, property listings, and developments in Dholera SIR.
                 </p>
-                <div className="flex space-x-4">
+                <div className="flex flex-wrap gap-4">
                   <a
                     href="http://www.youtube.com/@nestoriagroup"
-                    className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center 
-text-red-600 inline-block transition-all duration-500 transform 
-hover:scale-125 hover:bg-[#FF0000] hover:text-white 
-animate-fade-in animation-delay-2"
-
+                    className="group/social w-12 h-12 rounded-2xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center text-white transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <i className="fab fa-youtube"></i>
+                    <i className="fab fa-youtube text-lg group-hover/social:scale-110 transition-transform duration-300"></i>
                   </a>
                   <a
                     href="https://www.instagram.com/nestoria.group"
-                    className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center 
-text-blue-600 transition-all duration-300 transform hover:scale-110 
-hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-pink-500 hover:to-purple-600 
-hover:text-white animate-fade-in animation-delay-2"
-
+                    className="group/social w-12 h-12 rounded-2xl bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center text-white transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <i className="fab fa-instagram"></i>
+                    <i className="fab fa-instagram text-lg group-hover/social:scale-110 transition-transform duration-300"></i>
                   </a>
-
                   <a
                     href="https://www.facebook.com/nestoriagroup"
-                    className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center 
-text-[#1877F2] transition-colors transform duration-300 
-hover:bg-[#1877F2] hover:text-white hover:scale-110 
-animate-fade-in animation-delay-1"
-
+                    className="group/social w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center text-white transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <i className="fab fa-facebook-f"></i>
+                    <i className="fab fa-facebook-f text-lg group-hover/social:scale-110 transition-transform duration-300"></i>
                   </a>
-
                   <a
                     href="https://www.linkedin.com/company/nestoriagroup"
-                    className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center 
-text-[#0A66C2] transition-colors transform duration-300 
-hover:bg-[#0A66C2] hover:text-white hover:scale-110 
-animate-fade-in animation-delay-4"
-
+                    className="group/social w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-700 to-blue-800 flex items-center justify-center text-white transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <i className="fab fa-linkedin-in"></i>
+                    <i className="fab fa-linkedin-in text-lg group-hover/social:scale-110 transition-transform duration-300"></i>
                   </a>
                 </div>
               </div>
@@ -313,16 +341,19 @@ animate-fade-in animation-delay-4"
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-16 bg-white relative overflow-hidden">
+      <section id="contact-form" className="py-16 md:py-24 bg-gradient-to-br from-white to-gray-50 relative overflow-hidden">
         <ParallaxScroll speed={0.03} className="z-10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mx-auto">
-              <div className="text-center mb-10 animate-fade-in">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  Send Us a Message
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12 md:mb-16 animate-fade-in">
+                <h6 className="text-blue-600 font-semibold text-lg md:text-xl mb-4 uppercase tracking-wider">
+                  Get In Touch
+                </h6>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                  Send Us a <span className="text-blue-600">Message</span>
                 </h2>
-                <div className="h-1 w-24 bg-blue-600 mx-auto mb-6 animate-scale-in"></div>
-                <p className="text-gray-600">
+                <div className="h-1 w-32 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-8 animate-scale-in"></div>
+                <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-2xl mx-auto">
                   We'd love to hear from you. Fill out the form below and we'll
                   get back to you as soon as possible.
                 </p>
@@ -353,98 +384,103 @@ animate-fade-in animation-delay-4"
                 </div>
               ) : null}
 
-              <div className="bg-white p-8 rounded-lg shadow-md animate-fade-in animation-delay-1">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 animate-fade-in animation-delay-1 border-t-4 border-blue-500">
+                <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                     <div className="animate-fade-in animation-delay-2">
                       <label
                         htmlFor="name"
-                        className="block text-gray-800 font-medium mb-2"
+                        className="block text-gray-800 font-semibold mb-3 text-sm md:text-base"
                       >
                         Your Name *
                       </label>
                       <input
                         type="text"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-all duration-300"
+                        className="w-full px-4 py-3 md:py-4 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-sm md:text-base"
                         id="name"
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
                         required
+                        placeholder="Enter your full name"
                       />
                     </div>
                     <div className="animate-fade-in animation-delay-3">
                       <label
                         htmlFor="email"
-                        className="block text-gray-800 font-medium mb-2"
+                        className="block text-gray-800 font-semibold mb-3 text-sm md:text-base"
                       >
                         Email Address *
                       </label>
                       <input
                         type="email"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-all duration-300"
+                        className="w-full px-4 py-3 md:py-4 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-sm md:text-base"
                         id="email"
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
                         required
+                        placeholder="Enter your email address"
                       />
                     </div>
                     <div className="animate-fade-in animation-delay-4">
                       <label
                         htmlFor="phone"
-                        className="block text-gray-800 font-medium mb-2"
+                        className="block text-gray-800 font-semibold mb-3 text-sm md:text-base"
                       >
                         Phone Number
                       </label>
                       <input
                         type="tel"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-all duration-300"
+                        className="w-full px-4 py-3 md:py-4 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-sm md:text-base"
                         id="phone"
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
+                        placeholder="Enter your phone number"
                       />
                     </div>
                     <div className="animate-fade-in animation-delay-5">
                       <label
                         htmlFor="subject"
-                        className="block text-gray-800 font-medium mb-2"
+                        className="block text-gray-800 font-semibold mb-3 text-sm md:text-base"
                       >
                         Subject *
                       </label>
                       <input
                         type="text"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-all duration-300"
+                        className="w-full px-4 py-3 md:py-4 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-sm md:text-base"
                         id="subject"
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
                         required
+                        placeholder="Enter the subject"
                       />
                     </div>
                   </div>
                   <div className="animate-fade-in animation-delay-6">
                     <label
                       htmlFor="message"
-                      className="block text-gray-800 font-medium mb-2"
+                      className="block text-gray-800 font-semibold mb-3 text-sm md:text-base"
                     >
                       Your Message *
                     </label>
                     <textarea
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-all duration-300"
+                      className="w-full px-4 py-3 md:py-4 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-sm md:text-base"
                       id="message"
                       name="message"
-                      rows="5"
+                      rows="6"
                       value={formData.message}
                       onChange={handleChange}
                       required
+                      placeholder="Enter your message here..."
                     ></textarea>
                   </div>
-                  <div className="text-center mt-8 animate-fade-in animation-delay-7">
+                  <div className="text-center mt-8 md:mt-10 animate-fade-in animation-delay-7">
                     <button
                       type="submit"
-                      className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-md transition-colors flex items-center justify-center mx-auto transform hover:scale-105 duration-300 animate-scale-in"
+                      className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-8 md:px-12 rounded-lg transition-all duration-300 flex items-center justify-center mx-auto transform hover:-translate-y-1 hover:scale-105 shadow-xl hover:shadow-2xl text-base md:text-lg"
                       disabled={loading}
                     >
                       {loading ? (
@@ -473,8 +509,8 @@ animate-fade-in animation-delay-4"
                         </>
                       ) : (
                         <>
-                          <i className="fas fa-paper-plane mr-2"></i>Send
-                          Message
+                          <i className="fas fa-paper-plane mr-2"></i>
+                          Send Message
                         </>
                       )}
                     </button>
@@ -487,17 +523,22 @@ animate-fade-in animation-delay-4"
       </section>
 
       {/* Map Section */}
-      <section className="py-16 bg-gray-50 relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-gray-100 to-white relative overflow-hidden">
         <ParallaxScroll speed={0.04} className="z-10">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-10 animate-fade-in">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Find Us</h2>
-              <div className="h-1 w-24 bg-blue-600 mx-auto mb-6 animate-scale-in"></div>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Visit our office in Ahmedabad
+            <div className="text-center mb-12 md:mb-16 animate-fade-in">
+              <h6 className="text-blue-600 font-semibold text-lg md:text-xl mb-4 uppercase tracking-wider">
+                Our Location
+              </h6>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                Find <span className="text-blue-600">Us</span>
+              </h2>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-8 animate-scale-in"></div>
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-2xl mx-auto">
+                Visit our office in Ahmedabad for personalized assistance and property consultations
               </p>
             </div>
-            <div className="rounded-lg overflow-hidden shadow-lg border border-gray-200 animate-fade-in animation-delay-1">
+            <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white animate-fade-in animation-delay-1 group hover:shadow-3xl transition-all duration-500">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.0394654146404!2d72.52113907596398!3d23.02730447917881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84faa946ad7b%3A0x8c4f4b53e3e1e4eb!2sSarthik%20Annex%2C%20Satellite%2C%20Ahmedabad%2C%20Gujarat%20380015!5e0!3m2!1sen!2sin!4v1698000000000!5m2!1sen!2sin"
                 width="100%"
@@ -507,7 +548,7 @@ animate-fade-in animation-delay-4"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Nestoria Group Office Location"
-                className="w-full h-full"
+                className="w-full h-full group-hover:scale-105 transition-transform duration-700"
               ></iframe>
             </div>
           </div>
@@ -520,31 +561,34 @@ animate-fade-in animation-delay-4"
         height="auto"
         overlayColor="#673a377e"
         speed={0.2}
-        className="py-16"
+        className="py-16 md:py-24"
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-3xl md:text-4xl text-white font-bold mb-4">
-              Frequently Asked Questions
+          <div className="text-center mb-12 md:mb-16 animate-fade-in">
+            <h6 className="text-blue-300 font-semibold text-lg md:text-xl mb-4 uppercase tracking-wider">
+              Help Center
+            </h6>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold mb-6 leading-tight">
+              Frequently Asked <span className="text-blue-300">Questions</span>
             </h2>
-            <div className="h-1 w-24 bg-blue-600 mx-auto mb-6 animate-scale-in"></div>
-            <p className="text-white max-w-2xl mx-auto">
+            <div className="h-1 w-32 bg-gradient-to-r from-white to-blue-300 mx-auto mb-8 animate-scale-in"></div>
+            <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
               Find answers to common questions about our properties and services
             </p>
           </div>
 
-          <div className="max-w-3xl mx-auto">
-            <div className="space-y-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-4 md:space-y-6">
               {faqs.map((faq, index) => (
                 <div
-                  className="bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden animate-fade-in animation-delay-dynamic"
+                  className="group bg-white/95 backdrop-blur-sm border border-white/20 rounded-2xl shadow-xl hover:shadow-2xl overflow-hidden animate-fade-in animation-delay-dynamic transform hover:-translate-y-1 transition-all duration-500"
                   style={{ "--index": index }}
                   key={index}
                 >
                   <details className="group">
-                    <summary className="flex justify-between items-center font-medium cursor-pointer list-none p-4 text-gray-800">
-                      <span>{faq.question}</span>
-                      <span className="transition group-open:rotate-180 text-blue-600">
+                    <summary className="flex justify-between items-center font-semibold cursor-pointer list-none p-6 md:p-8 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
+                      <span className="text-sm md:text-base pr-4">{faq.question}</span>
+                      <span className="transition group-open:rotate-180 text-blue-600 flex-shrink-0">
                         <svg
                           fill="none"
                           height="24"
@@ -552,7 +596,7 @@ animate-fade-in animation-delay-4"
                           stroke="currentColor"
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          strokeWidth="1.5"
+                          strokeWidth="2"
                           viewBox="0 0 24 24"
                           width="24"
                         >
@@ -560,22 +604,28 @@ animate-fade-in animation-delay-4"
                         </svg>
                       </span>
                     </summary>
-                    <div className="text-gray-600 p-4 border-t border-gray-200">
-                      <p>{faq.answer}</p>
+                    <div className="text-gray-600 p-6 md:p-8 border-t border-gray-200 bg-gradient-to-br from-gray-50 to-white">
+                      <p className="text-sm md:text-base leading-relaxed">{faq.answer}</p>
                     </div>
                   </details>
                 </div>
               ))}
             </div>
 
-            <div className="text-center mt-10 animate-fade-in animation-delay-5">
-              <p className="text-white mb-4">Still have questions?</p>
-              <a
-                href="mailto:info@nestoriagroup.com"
-                className="inline-block bg-transparent border-2 border-white text-white hover:bg-blue-900 hover:text-white font-medium py-2 px-6 rounded-full transition duration-300 transform hover:scale-105 animate-fade-in animation-delay-300"
-              >
-                Email Us
-              </a>
+            <div className="text-center mt-12 md:mt-16 animate-fade-in animation-delay-5">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/20">
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Still have questions?</h3>
+                <p className="text-white/90 mb-6 text-lg">Our team is here to help you with any additional questions</p>
+                <a
+                  href="mailto:info@nestoriagroup.com"
+                  className="group inline-flex items-center bg-gradient-to-r from-white to-blue-100 text-blue-600 hover:from-blue-50 hover:to-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 shadow-xl hover:shadow-2xl"
+                >
+                  <span className="flex items-center">
+                    <i className="fas fa-envelope mr-2"></i>
+                    Email Us
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

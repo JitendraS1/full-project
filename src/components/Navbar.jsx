@@ -136,7 +136,6 @@ function Navbar() {
                 className={`${isMobile ? 'relative' : 'absolute'} ${isAboutDropdownOpen ? 'block' : 'hidden'} ${isMobile ? 'pl-4' : 'bg-gray-50 shadow-lg rounded-md'} py-2 w-48 z-50`}
               >
                 <li><Link to="/about" onClick={() => isMobile && setIsOpen(false)} className="block px-4 py-2 text-sm text-gray-800 hover:bg-blue-600 hover:text-white transition duration-300">About Us</Link></li>
-                <li><Link to="/projects" onClick={() => isMobile && setIsOpen(false)} className="block px-4 py-2 text-sm text-gray-800 hover:bg-blue-600 hover:text-white transition duration-300">Our Projects</Link></li>
                 <li><Link to="/team" onClick={() => isMobile && setIsOpen(false)} className="block px-4 py-2 text-sm text-gray-800 hover:bg-blue-600 hover:text-white transition duration-300">Team Members</Link></li>
                 <li><Link to="/achievements" onClick={() => isMobile && setIsOpen(false)} className="block px-4 py-2 text-sm text-gray-800 hover:bg-blue-600 hover:text-white transition duration-300">Achievements</Link></li>
                 <li><Link to="/media" onClick={() => isMobile && setIsOpen(false)} className="block px-4 py-2 text-sm text-gray-800 hover:bg-blue-600 hover:text-white transition duration-300">Media Gallery</Link></li>
@@ -151,6 +150,13 @@ function Navbar() {
               onClick={() => isMobile && setIsOpen(false)}
             >
               Dholera SIR
+            </Link>
+            <Link 
+              to="/projects" 
+              className="text-gray-800 hover:text-blue-600 transition-colors duration-300 font-medium px-3 py-2 rounded-md text-sm"
+              onClick={() => isMobile && setIsOpen(false)}
+            >
+              Projects
             </Link>
             <Link 
               to="/land-deals" 

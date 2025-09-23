@@ -215,8 +215,7 @@ function Footer() {
               <form className="flex" onSubmit={(e) => {
                 e.preventDefault();
                 const email = e.target.elements.email.value;
-                // Use relative URL in production for Vercel deployment
-                fetch((process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:5000/api') + "/send-email", {
+                fetch('/send-email.php', {
                   method: "POST",
                   headers: { "Content-Type": "application/json" },
                   body: JSON.stringify({
@@ -224,7 +223,8 @@ function Footer() {
                     email,
                     phone: "",
                     subject: "Newsletter Subscription",
-                    message: `Please subscribe ${email} to the newsletter.`
+                    message: `Please subscribe ${email} to the newsletter.`,
+                    formType: 'contact'
                   })
                 })
                 .then(res => res.json())

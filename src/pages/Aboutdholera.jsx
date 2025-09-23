@@ -106,56 +106,108 @@ function Aboutdholera() {
       {/* Header Start */}
        <ParallaxSection
         backgroundImage={aboutdholeraimg}
-        height="auto"
+        height="100vh"
         overlayColor="#673a377e"
         speed={0.4}
-        className="py-20 mb-8 overflow-hidden"
+        className="py-16 sm:py-20 md:py-32 flex items-center justify-center text-center"
       >
-        <div className="container mx-auto px-4 relative text-center z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 animate-slide-up text-shadow-lg">About Dholera SIR</h1>
-          <div className="h-1 w-24 bg-blue-400 mx-auto mb-6"></div>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8 animate-slide-up opacity-0 animation-delay-200 text-shadow-lg">India's First Planned Smart Industrial City</p>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight">
+              About <span className="text-blue-300">Dholera SIR</span>
+            </h1>
+            <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 md:mb-10 animate-slide-up opacity-0 animation-delay-300 max-w-3xl mx-auto leading-relaxed">
+              India's First Planned Smart Industrial City with unlimited growth potential
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 animate-slide-up opacity-0 animation-delay-500">
+              <Link
+                to="/land-deals"
+                className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center relative overflow-hidden"
+              >
+                <span className="relative z-10 flex items-center justify-center">
+                  <i className="fas fa-search mr-2"></i>
+                  Explore Opportunities
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </Link>
+              <Link
+                to="/contact"
+                className="group bg-transparent hover:bg-white/10 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center backdrop-blur-sm"
+              >
+                <span className="flex items-center justify-center">
+                  <i className="fas fa-phone mr-2"></i>
+                  Contact Us
+                </span>
+              </Link>
+            </div>
+          </div>
         </div>
       </ParallaxSection>
      
       {/* Header End */}
 
       {/* Introduction Section */}
-      <section className="py-12">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-8">
-            <div className="w-full lg:w-1/2 wow fadeInUp" data-wow-delay="0.1s">
-              <h6 className="text-blue-600 uppercase font-semibold mb-2">India's First Smart City</h6>
-              <h1 className="text-3xl lg:text-4xl font-bold mb-4">Dholera Special Investment Region (SIR)</h1>
-              <p className="text-gray-600 mb-6">Dholera SIR is a greenfield industrial planned city near Dholera in Gujarat's Ahmedabad district, around 100 kilometers to the south-west. Spread over more than 920 sq. km, it is a new industrial city being jointly developed by the Government of India and Gujarat.</p>
-              <p className="text-gray-600 mb-6">Dholera is strategically located, well connected with trade gateways and falls in the influence zone of proposed Delhi – Mumbai Industrial Corridor project (DMIC), a joint initiative by the Government of India and Japan.</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                <div className="flex items-center">
-                  <i className="fa fa-check bg-blue-600 text-white rounded-full p-2 mr-3" aria-hidden="true"></i>
-                  <h6 className="font-medium">Strategic Location</h6>
-                </div>
-                <div className="flex items-center">
-                  <i className="fa fa-check bg-blue-600 text-white rounded-full p-2 mr-3" aria-hidden="true"></i>
-                  <h6 className="font-medium">World-Class Infrastructure</h6>
-                </div>
-                <div className="flex items-center">
-                  <i className="fa fa-check bg-blue-600 text-white rounded-full p-2 mr-3" aria-hidden="true"></i>
-                  <h6 className="font-medium">Government Backed</h6>
-                </div>
-                <div className="flex items-center">
-                  <i className="fa fa-check bg-blue-600 text-white rounded-full p-2 mr-3" aria-hidden="true"></i>
-                  <h6 className="font-medium">Investment Potential</h6>
-                </div>
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+            <div className="w-full lg:w-1/2">
+              <h6 className="text-blue-600 font-semibold text-lg mb-3 uppercase tracking-wider">
+                India's First Smart City
+              </h6>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                Dholera Special Investment <span className="text-blue-600">Region (SIR)</span>
+              </h2>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-600 to-blue-400 mb-8"></div>
+              <p className="text-gray-700 mb-6 text-lg leading-relaxed">
+                Dholera SIR is a greenfield industrial planned city near Dholera in Gujarat's Ahmedabad district, around 100 kilometers to the south-west. Spread over more than 920 sq. km, it is a new industrial city being jointly developed by the Government of India and Gujarat.
+              </p>
+              <p className="text-gray-700 mb-8 text-lg leading-relaxed">
+                Dholera is strategically located, well connected with trade gateways and falls in the influence zone of proposed Delhi – Mumbai Industrial Corridor project (DMIC), a joint initiative by the Government of India and Japan.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-10">
+                {[
+                  "Strategic Location",
+                  "World-Class Infrastructure",
+                  "Government Backed",
+                  "Investment Potential"
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className="group flex items-start p-4 bg-white rounded-xl shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border-l-4 border-blue-500"
+                  >
+                    <div className="flex-shrink-0 mr-3 bg-gradient-to-br from-blue-100 to-blue-200 p-2 rounded-full group-hover:scale-110 transition-transform duration-300">
+                      <i className="fa fa-check text-blue-600 text-sm"></i>
+                    </div>
+                    <span className="text-gray-700 font-medium group-hover:text-blue-600 transition-colors duration-300">{item}</span>
+                  </div>
+                ))}
               </div>
-              <Link to="/land-deals" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full transition duration-300" aria-label="Explore Land Deals">Explore Opportunities</Link>
+              <Link 
+                to="/land-deals" 
+                className="group inline-flex items-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-8 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
+                aria-label="Explore Land Deals"
+              >
+                <span>Explore Opportunities</span>
+                <i className="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+              </Link>
             </div>
-            <div className="w-full lg:w-1/2 wow fadeInUp" data-wow-delay="0.5s">
-              <div className="relative overflow-hidden rounded-lg shadow-lg">
+            <div className="w-full lg:w-1/2">
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl group">
                 <img 
-                  className="w-full h-auto object-cover" 
+                  className="w-full h-80 sm:h-96 md:h-[500px] object-cover transform group-hover:scale-110 transition-transform duration-700" 
                   src={futuredholera} 
                   alt="Overview of Dholera SIR" 
+                  loading="lazy"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <span className="text-white text-xl md:text-3xl font-bold px-6 py-4 border-2 border-white rounded-lg mb-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    Discover Dholera
+                  </span>
+                </div>
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2">
+                  <span className="text-blue-600 font-semibold text-sm">Smart City</span>
+                </div>
               </div>
             </div>
           </div>
@@ -163,11 +215,17 @@ function Aboutdholera() {
       </section>
 
       {/* Dholera SIR Tabs Section */}
-      <section id='tab-section' className="py-12 bg-gray-100">
+      <section id='tab-section' className="py-16 md:py-24 bg-gradient-to-br from-white to-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mx-auto mb-10" style={{ maxWidth: '800px' }}>
-            <h1 className="text-3xl font-bold mb-3">Explore <span className="text-blue-600">Dholera SIR</span></h1>
-            <p className="text-gray-600">Discover the vision, infrastructure, connectivity, and investment opportunities in India's first planned smart city.</p>
+          <div className="text-center max-w-4xl mx-auto mb-12 md:mb-16">
+            <h6 className="text-blue-600 font-semibold text-lg md:text-xl mb-4 uppercase tracking-wider">
+              Discover More
+            </h6>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+              Explore <span className="text-blue-600">Dholera SIR</span>
+            </h2>
+            <div className="h-1 w-32 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-8"></div>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">Discover the vision, infrastructure, connectivity, and investment opportunities in India's first planned smart city</p>
           </div>
           
           {/* Tabs Component */}
@@ -179,203 +237,255 @@ function Aboutdholera() {
       </section>
       
       {/* Key Features Section */}
-      <section className="py-12 bg-white">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mx-auto mb-10" style={{ maxWidth: '600px' }}>
-            <h1 className="text-3xl font-bold mb-3">Key Features of <span className="text-blue-600">Dholera SIR</span></h1>
-            <p className="text-gray-600">Dholera SIR is being developed with world-class infrastructure and facilities to create a sustainable and smart urban environment.</p>
+          <div className="text-center max-w-4xl mx-auto mb-12 md:mb-20">
+            <h6 className="text-blue-600 font-semibold text-lg md:text-xl mb-4 uppercase tracking-wider">
+              Infrastructure
+            </h6>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+              Key Features of <span className="text-blue-600">Dholera SIR</span>
+            </h2>
+            <div className="h-1 w-32 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-8"></div>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">Dholera SIR is being developed with world-class infrastructure and facilities to create a sustainable and smart urban environment</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="wow fadeInUp" data-wow-delay="0.1s">
-              <div className="bg-white rounded-lg shadow-md h-full p-6 transition duration-300 hover:shadow-xl">
-                <div className="flex items-center mb-4">
-                  <div className="flex items-center justify-center w-12 h-12 bg-blue-600 text-white rounded-full -ml-6">
-                    <i className="fa fa-road text-xl" aria-hidden="true"></i>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {[
+              {
+                icon: "fa fa-road",
+                title: "Smart Transportation",
+                desc: "Integrated transportation network with metro rail, high-speed rail, expressways, and international airport connectivity.",
+                color: "from-blue-500 to-blue-600"
+              },
+              {
+                icon: "fa fa-solar-panel",
+                title: "Renewable Energy",
+                desc: "Focus on renewable energy sources including solar parks and wind farms to ensure sustainable power supply.",
+                color: "from-green-500 to-green-600"
+              },
+              {
+                icon: "fa fa-tint",
+                title: "Water Management",
+                desc: "Advanced water management systems including water treatment plants, recycling facilities, and flood control measures.",
+                color: "from-cyan-500 to-cyan-600"
+              },
+              {
+                icon: "fa fa-wifi",
+                title: "Digital Connectivity",
+                desc: "High-speed internet connectivity and smart city infrastructure for seamless digital integration.",
+                color: "from-purple-500 to-purple-600"
+              },
+              {
+                icon: "fa fa-industry",
+                title: "Industrial Zones",
+                desc: "Dedicated industrial zones for various sectors including manufacturing, IT, electronics, and more.",
+                color: "from-orange-500 to-orange-600"
+              },
+              {
+                icon: "fa fa-leaf",
+                title: "Green Spaces",
+                desc: "Abundant green spaces, parks, and recreational areas for a balanced urban environment.",
+                color: "from-emerald-500 to-emerald-600"
+              }
+            ].map((feature, index) => (
+              <div key={index} className="group">
+                <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 h-full transform hover:-translate-y-4 border-t-4 border-blue-500 hover:border-blue-400">
+                  <div className="p-6 md:p-8">
+                    <div className="flex items-center mb-6">
+                      <div className={`bg-gradient-to-br ${feature.color} rounded-2xl w-16 h-16 flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                        <i className={`${feature.icon} text-2xl text-white`}></i>
+                      </div>
+                      <h4 className="text-xl md:text-2xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">{feature.title}</h4>
+                    </div>
+                    <p className="text-gray-600 leading-relaxed text-sm md:text-base">{feature.desc}</p>
                   </div>
-                  <h4 className="text-xl font-semibold ml-3">Smart Transportation</h4>
                 </div>
-                <p className="text-gray-600 mb-4">Integrated transportation network with metro rail, high-speed rail, expressways, and international airport connectivity.</p>
               </div>
-            </div>
-            <div className="wow fadeInUp" data-wow-delay="0.3s">
-              <div className="bg-white rounded-lg shadow-md h-full p-6 transition duration-300 hover:shadow-xl">
-                <div className="flex items-center mb-4">
-                  <div className="flex items-center justify-center w-12 h-12 bg-blue-600 text-white rounded-full -ml-6">
-                    <i className="fa fa-solar-panel text-xl" aria-hidden="true"></i>
-                  </div>
-                  <h4 className="text-xl font-semibold ml-3">Renewable Energy</h4>
-                </div>
-                <p className="text-gray-600 mb-4">Focus on renewable energy sources including solar parks and wind farms to ensure sustainable power supply.</p>
-              </div>
-            </div>
-            <div className="wow fadeInUp" data-wow-delay="0.5s">
-              <div className="bg-white rounded-lg shadow-md h-full p-6 transition duration-300 hover:shadow-xl">
-                <div className="flex items-center mb-4">
-                  <div className="flex items-center justify-center w-12 h-12 bg-blue-600 text-white rounded-full -ml-6">
-                    <i className="fa fa-tint text-xl" aria-hidden="true"></i>
-                  </div>
-                  <h4 className="text-xl font-semibold ml-3">Water Management</h4>
-                </div>
-                <p className="text-gray-600 mb-4">Advanced water management systems including water treatment plants, recycling facilities, and flood control measures.</p>
-              </div>
-            </div>
-            <div className="wow fadeInUp" data-wow-delay="0.1s">
-              <div className="bg-white rounded-lg shadow-md h-full p-6 transition duration-300 hover:shadow-xl">
-                <div className="flex items-center mb-4">
-                  <div className="flex items-center justify-center w-12 h-12 bg-blue-600 text-white rounded-full -ml-6">
-                    <i className="fa fa-wifi text-xl" aria-hidden="true"></i>
-                  </div>
-                  <h4 className="text-xl font-semibold ml-3">Digital Connectivity</h4>
-                </div>
-                <p className="text-gray-600 mb-4">High-speed internet connectivity and smart city infrastructure for seamless digital integration.</p>
-              </div>
-            </div>
-            <div className="wow fadeInUp" data-wow-delay="0.3s">
-              <div className="bg-white rounded-lg shadow-md h-full p-6 transition duration-300 hover:shadow-xl">
-                <div className="flex items-center mb-4">
-                  <div className="flex items-center justify-center w-12 h-12 bg-blue-600 text-white rounded-full -ml-6">
-                    <i className="fa fa-industry text-xl" aria-hidden="true"></i>
-                  </div>
-                  <h4 className="text-xl font-semibold ml-3">Industrial Zones</h4>
-                </div>
-                <p className="text-gray-600 mb-4">Dedicated industrial zones for various sectors including manufacturing, IT, electronics, and more.</p>
-              </div>
-            </div>
-            <div className="wow fadeInUp" data-wow-delay="0.5s">
-              <div className="bg-white rounded-lg shadow-md h-full p-6 transition duration-300 hover:shadow-xl">
-                <div className="flex items-center mb-4">
-                  <div className="flex items-center justify-center w-12 h-12 bg-blue-600 text-white rounded-full -ml-6">
-                    <i className="fa fa-leaf text-xl" aria-hidden="true"></i>
-                  </div>
-                  <h4 className="text-xl font-semibold ml-3">Green Spaces</h4>
-                </div>
-                <p className="text-gray-600 mb-4">Abundant green spaces, parks, and recreational areas for a balanced urban environment.</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Strategic Location Section */}
-      <section className="py-12">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-white to-gray-50">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-8">
-            <div className="w-full lg:w-1/2 wow fadeInUp" data-wow-delay="0.1s">
-              <div className="relative overflow-hidden rounded-lg shadow-lg">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+            <div className="w-full lg:w-1/2">
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl group">
                 <img 
-                  className="w-full h-auto object-cover  rounded-sm" 
-                  src= {dholeraconnectivity}
+                  className="w-full h-80 sm:h-96 md:h-[500px] object-cover transform group-hover:scale-110 transition-transform duration-700" 
+                  src={dholeraconnectivity}
                   alt="Strategic Location of Dholera SIR" 
+                  loading="lazy"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <span className="text-white text-xl md:text-3xl font-bold px-6 py-4 border-2 border-white rounded-lg mb-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    Explore Location
+                  </span>
+                </div>
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2">
+                  <span className="text-blue-600 font-semibold text-sm">DMIC Zone</span>
+                </div>
               </div>
             </div>
-            <div className="w-full lg:w-1/2 wow fadeInUp" data-wow-delay="0.5s">
-              <h6 className="text-blue-600 uppercase font-semibold mb-2">Strategic Location</h6>
-              <h1 className="text-3xl lg:text-4xl font-bold mb-4">Perfectly Positioned for Growth</h1>
-              <p className="text-gray-600 mb-4">Dholera SIR is strategically located in the Delhi-Mumbai Industrial Corridor (DMIC), one of the world's largest infrastructure projects. This prime location offers excellent connectivity and access to major markets.</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                <div>
-                  <div className="flex items-center mb-3">
-                    <i className="fa fa-check text-blue-600 mr-2" aria-hidden="true"></i>
-                    <h6 className="font-medium">100 km from Ahmedabad</h6>
+            <div className="w-full lg:w-1/2">
+              <h6 className="text-blue-600 font-semibold text-lg mb-3 uppercase tracking-wider">
+                Strategic Location
+              </h6>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                Perfectly Positioned for <span className="text-blue-600">Growth</span>
+              </h2>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-600 to-blue-400 mb-8"></div>
+              <p className="text-gray-700 mb-6 text-lg leading-relaxed">
+                Dholera SIR is strategically located in the Delhi-Mumbai Industrial Corridor (DMIC), one of the world's largest infrastructure projects. This prime location offers excellent connectivity and access to major markets.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-8">
+                {[
+                  "100 km from Ahmedabad",
+                  "30 km from Bhavnagar",
+                  "Dedicated Freight Corridor",
+                  "Planned International Airport"
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className="group flex items-start p-4 bg-white rounded-xl shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border-l-4 border-blue-500"
+                  >
+                    <div className="flex-shrink-0 mr-3 bg-gradient-to-br from-blue-100 to-blue-200 p-2 rounded-full group-hover:scale-110 transition-transform duration-300">
+                      <i className="fa fa-check text-blue-600 text-sm"></i>
+                    </div>
+                    <span className="text-gray-700 font-medium group-hover:text-blue-600 transition-colors duration-300">{item}</span>
                   </div>
-                  <div className="flex items-center mb-3">
-                    <i className="fa fa-check text-blue-600 mr-2" aria-hidden="true"></i>
-                    <h6 className="font-medium">30 km from Bhavnagar</h6>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex items-center mb-3">
-                    <i className="fa fa-check text-blue-600 mr-2" aria-hidden="true"></i>
-                    <h6 className="font-medium">Dedicated Freight Corridor</h6>
-                  </div>
-                  <div className="flex items-center mb-3">
-                    <i className="fa fa-check text-blue-600 mr-2" aria-hidden="true"></i>
-                    <h6 className="font-medium">Planned International Airport</h6>
-                  </div>
-                </div>
+                ))}
               </div>
-              <p className="text-gray-600 mb-4">The strategic location of Dholera SIR makes it an ideal destination for businesses looking to establish a presence in India's rapidly growing economy. With excellent connectivity to major cities and ports, Dholera SIR offers unparalleled access to domestic and international markets.</p>
+              <p className="text-gray-700 text-lg leading-relaxed">
+                The strategic location of Dholera SIR makes it an ideal destination for businesses looking to establish a presence in India's rapidly growing economy. With excellent connectivity to major cities and ports, Dholera SIR offers unparalleled access to domestic and international markets.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Investment Potential Section */}
-      <div className="py-12 bg-gray-100">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-gray-100 to-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mx-auto mb-10" style={{ maxWidth: '600px' }}>
-            <h1 className="text-3xl font-bold mb-3">Investment <span className="text-blue-600">Potential</span></h1>
-            <p className="text-gray-600">Dholera SIR offers significant investment opportunities across various sectors, backed by government support and world-class infrastructure.</p>
+          <div className="text-center max-w-4xl mx-auto mb-12 md:mb-20">
+            <h6 className="text-blue-600 font-semibold text-lg md:text-xl mb-4 uppercase tracking-wider">
+              Investment Opportunity
+            </h6>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+              Investment <span className="text-blue-600">Potential</span>
+            </h2>
+            <div className="h-1 w-32 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-8"></div>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">Dholera SIR offers significant investment opportunities across various sectors, backed by government support and world-class infrastructure</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="wow fadeInUp" data-wow-delay="0.1s">
-              <div className="bg-white text-center rounded-lg shadow-md h-full p-6 transition duration-300 hover:shadow-xl">
-                <i className="fa fa-chart-line text-4xl text-blue-600 mb-4" aria-hidden="true"></i>
-                <h5 className="text-xl font-semibold mb-3">High ROI</h5>
-                <p className="text-gray-600">Significant appreciation potential with government backing and planned development.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {[
+              {
+                icon: "fa fa-chart-line",
+                title: "High ROI",
+                desc: "Significant appreciation potential with government backing and planned development.",
+                color: "from-green-500 to-green-600"
+              },
+              {
+                icon: "fa fa-building",
+                title: "Multiple Sectors",
+                desc: "Investment opportunities in residential, commercial, and industrial sectors.",
+                color: "from-blue-500 to-blue-600"
+              },
+              {
+                icon: "fa fa-handshake",
+                title: "Government Support",
+                desc: "Strong government backing with special incentives for investors.",
+                color: "from-purple-500 to-purple-600"
+              },
+              {
+                icon: "fa fa-globe",
+                title: "Global Hub",
+                desc: "Positioned to become a global manufacturing and trading hub.",
+                color: "from-orange-500 to-orange-600"
+              }
+            ].map((item, index) => (
+              <div key={index} className="group">
+                <div className="bg-white text-center rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 h-full transform hover:-translate-y-4 border-t-4 border-blue-500 hover:border-blue-400">
+                  <div className="p-6 md:p-8">
+                    <div className="mb-6">
+                      <div className={`inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br ${item.color} text-white mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                        <i className={`${item.icon} text-2xl md:text-3xl`}></i>
+                      </div>
+                      <h5 className="text-xl md:text-2xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">{item.title}</h5>
+                    </div>
+                    <p className="text-gray-600 leading-relaxed text-sm md:text-base">{item.desc}</p>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="wow fadeInUp" data-wow-delay="0.3s">
-              <div className="bg-white text-center rounded-lg shadow-md h-full p-6 transition duration-300 hover:shadow-xl">
-                <i className="fa fa-building text-4xl text-blue-600 mb-4" aria-hidden="true"></i>
-                <h5 className="text-xl font-semibold mb-3">Multiple Sectors</h5>
-                <p className="text-gray-600">Investment opportunities in residential, commercial, and industrial sectors.</p>
-              </div>
-            </div>
-            <div className="wow fadeInUp" data-wow-delay="0.5s">
-              <div className="bg-white text-center rounded-lg shadow-md h-full p-6 transition duration-300 hover:shadow-xl">
-                <i className="fa fa-handshake text-4xl text-blue-600 mb-4" aria-hidden="true"></i>
-                <h5 className="text-xl font-semibold mb-3">Government Support</h5>
-                <p className="text-gray-600">Strong government backing with special incentives for investors.</p>
-              </div>
-            </div>
-            <div className="wow fadeInUp" data-wow-delay="0.7s">
-              <div className="bg-white text-center rounded-lg shadow-md h-full p-6 transition duration-300 hover:shadow-xl">
-                <i className="fa fa-globe text-4xl text-blue-600 mb-4" aria-hidden="true"></i>
-                <h5 className="text-xl font-semibold mb-3">Global Hub</h5>
-                <p className="text-gray-600">Positioned to become a global manufacturing and trading hub.</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Call to Action Section */}
       <ParallaxSection
-        backgroundImage= {aboutdholeraimg} //https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1844&q=80
+        backgroundImage={aboutdholeraimg}
         height="auto"
         overlayColor="#673a377e"
         speed={0.3}
-        className="py-12"
+        className="py-16 md:py-24"
       >
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-8">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
             <div className="w-full lg:w-7/12 text-white">
-             
-                <h1 className="text-3xl lg:text-4xl font-bold mb-4 text-white">Ready to Invest in Dholera SIR?</h1>
-                <p className="mb-4">Contact our expert team today to explore premium investment opportunities in Dholera SIR. We'll guide you through every step of your investment journey.</p>
-                <Link to="/contact" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-5 rounded-full transition duration-300" aria-label="Contact Us Now">Contact Us Now</Link>
-             
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                Ready to Invest in <span className="text-blue-300">Dholera SIR</span>?
+              </h2>
+              <div className="h-1 w-32 bg-gradient-to-r from-white to-blue-300 mb-8"></div>
+              <p className="text-lg md:text-xl mb-10 text-white/90 leading-relaxed">
+                Contact our expert team today to explore premium investment opportunities in Dholera SIR. We'll guide you through every step of your investment journey with personalized solutions and expert advice.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                <Link 
+                  to="/contact" 
+                  className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-8 md:px-12 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 text-lg"
+                  aria-label="Contact Us Now"
+                >
+                  <span className="flex items-center justify-center">
+                    <i className="fas fa-phone mr-2"></i>
+                    Contact Us Now
+                  </span>
+                </Link>
+                <Link 
+                  to="/land-deals" 
+                  className="group bg-transparent hover:bg-white/10 text-white font-bold py-4 px-8 md:px-12 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 text-lg backdrop-blur-sm"
+                >
+                  <span className="flex items-center justify-center">
+                    <i className="fas fa-search mr-2"></i>
+                    View Properties
+                  </span>
+                </Link>
+              </div>
             </div>
             <div className="w-full lg:w-5/12">
-              <div className="bg-white rounded-lg shadow-lg p-6 lg:p-8">
-                <h5 className="text-xl font-semibold mb-4 text-blue-600">Request Information</h5>
+              <div className="bg-white rounded-2xl shadow-2xl p-6 lg:p-8 hover:shadow-3xl transition-all duration-300">
+                <div className="flex items-center mb-6">
+                  <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl w-12 h-12 flex items-center justify-center mr-4">
+                    <i className="fas fa-envelope text-white text-xl"></i>
+                  </div>
+                  <h5 className="text-2xl font-bold text-blue-600">Request Information</h5>
+                </div>
                 {formSubmitted ? (
                   <div className="text-center py-8">
-                    <div className="text-green-500 text-5xl mb-4">
+                    <div className="text-green-500 text-6xl mb-4">
                       <i className="fa fa-check-circle" aria-hidden="true"></i>
                     </div>
-                    <h3 className="text-xl font-semibold mb-2">Thank You!</h3>
-                    <p className="text-gray-600">Your request has been submitted successfully. Our team will contact you shortly.</p>
+                    <h3 className="text-2xl font-bold mb-2 text-gray-800">Thank You!</h3>
+                    <p className="text-gray-600 text-lg">Your request has been submitted successfully. Our team will contact you shortly.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit}>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                       <div className="relative">
                         <input 
                           type="text" 
-                          className={`w-full px-4 py-3 border ${errors.name ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent`} 
+                          className={`w-full px-4 py-3 border ${errors.name ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300`} 
                           id="name" 
                           name="name"
                           value={formData.name}
@@ -387,7 +497,7 @@ function Aboutdholera() {
                       <div className="relative">
                         <input 
                           type="email" 
-                          className={`w-full px-4 py-3 border ${errors.email ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent`} 
+                          className={`w-full px-4 py-3 border ${errors.email ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300`} 
                           id="email" 
                           name="email"
                           value={formData.email}
@@ -399,7 +509,7 @@ function Aboutdholera() {
                       <div className="relative">
                         <input 
                           type="text" 
-                          className={`w-full px-4 py-3 border ${errors.mobile ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent`} 
+                          className={`w-full px-4 py-3 border ${errors.mobile ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300`} 
                           id="mobile" 
                           name="mobile"
                           value={formData.mobile}
@@ -410,7 +520,7 @@ function Aboutdholera() {
                       </div>
                       <div className="relative">
                         <select 
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white transition-all duration-300" 
                           id="propertyType"
                           name="propertyType"
                           value={formData.propertyType}
@@ -423,7 +533,7 @@ function Aboutdholera() {
                       </div>
                       <div className="sm:col-span-2">
                         <textarea 
-                          className={`w-full px-4 py-3 border ${errors.message ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent`} 
+                          className={`w-full px-4 py-3 border ${errors.message ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300`} 
                           placeholder="Your Message" 
                           id="message" 
                           name="message"
@@ -435,17 +545,20 @@ function Aboutdholera() {
                       </div>
                       <div className="sm:col-span-2 text-center">
                         <button 
-                          className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-5 rounded-lg transition duration-300" 
+                          className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-8 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 w-full sm:w-auto" 
                           type="submit"
                           disabled={isSubmitting}
                         >
                           {isSubmitting ? (
-                            <>
+                            <span className="flex items-center justify-center">
                               <i className="fa fa-spinner fa-spin mr-2" aria-hidden="true"></i>
                               Submitting...
-                            </>
+                            </span>
                           ) : (
-                            'Submit Request'
+                            <span className="flex items-center justify-center">
+                              <i className="fas fa-paper-plane mr-2"></i>
+                              Submit Request
+                            </span>
                           )}
                         </button>
                       </div>

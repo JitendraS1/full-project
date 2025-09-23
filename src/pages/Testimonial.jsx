@@ -31,6 +31,9 @@ function Testimonial() {
     window.scrollTo(0, 0);
   }, []);
 
+  // Track which video is playing (by an id)
+  const [playingVideoId, setPlayingVideoId] = useState(null);
+
   // Testimonial data
   const testimonials = [
     {
@@ -154,7 +157,7 @@ function Testimonial() {
   });
 
   return (
-    <div className="testimonial-page">
+    <div className="testimonial-page overflow-hidden bg-[#673a37]">
       {/* SEO Helmet */}
       <Helmet>
         <title>Client Testimonials - Nestoria Group | Real Estate Developer in Dholera SIR</title>
@@ -171,34 +174,47 @@ function Testimonial() {
       </Helmet>
       
       {/* Page Header */}
-      <div className="bg-blue-600 text-white py-12">
-        <div className="container mx-auto px-4">
+      <div className="relative bg-blue-800 text-white py-16 md:py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col lg:flex-row items-center">
-            <div className="w-full lg:w-2/3 mb-6 lg:mb-0">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">Client Testimonials</h1>
-              <p className="text-xl">Hear what our satisfied clients have to say about their experience with Nestoria Group</p>
+            <div className="w-full lg:w-2/3 mb-8 lg:mb-0">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                Client <span className="text-blue-600">Testimonials</span>
+              </h1>
+              <div className="w-24 h-1 bg-blue-300 mb-6"></div>
+              <p className="text-lg md:text-xl lg:text-2xl text-blue-100 leading-relaxed">
+                Hear what our satisfied clients have to say about their experience with Nestoria Group
+              </p>
             </div>
             <div className="w-full lg:w-1/3 hidden lg:flex justify-end">
-              <i className="fas fa-quote-right text-5xl text-white opacity-25"></i>
+              <div className="w-32 h-32 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
+                <i className="fas fa-quote-right text-5xl text-white"></i>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Testimonial Filter Section */}
-      <section className="py-6 bg-gray-100">
+      <section className="bg-gray-50 py-12">
         <div className="container mx-auto px-4">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Browse Testimonials</h2>
+            <p className="text-xl text-gray-600">Filter by property type to find relevant testimonials</p>
+          </div>
           <div className="flex justify-center">
             <div className="w-full">
-              <div className="flex flex-wrap justify-center gap-2">
+              <div className="flex flex-wrap justify-center gap-3">
                 {categories.map(category => (
                   <button
                     key={category.id}
-                    className={`px-4 py-2 rounded-full transition-colors duration-300 ${activeCategory === category.id 
-                      ? 'bg-blue-600 text-white' 
-                      : 'bg-white text-blue-600 border border-blue-600 hover:bg-blue-50'}`}
+                    className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg ${activeCategory === category.id 
+                      ? 'bg-blue-700 text-white shadow-lg' 
+                      : 'bg-white text-blue-700 border-2 border-blue-700 hover:bg-blue-50'}`}
                     onClick={() => setActiveCategory(category.id)}
                   >
+                    <i className={`fas ${category.id === 'all' ? 'fa-th' : category.id === 'residential' ? 'fa-home' : category.id === 'commercial' ? 'fa-building' : category.id === 'industrial' ? 'fa-industry' : 'fa-chart-line'} mr-2`}></i>
                     {category.name}
                   </button>
                 ))}
@@ -209,32 +225,41 @@ function Testimonial() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-12">
+      <section className="bg-white py-16">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap -mx-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {filteredTestimonials.map(testimonial => (
-              <div className="w-full md:w-1/2 p-4" key={testimonial.id}>
-                <div className="h-full rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 bg-white">
-                  <div className="p-6">
-                    <div className="flex mb-4">
-                      <img 
-                        src={testimonial.image} 
-                        alt={testimonial.name} 
-                        className="w-16 h-16 object-cover rounded-full mr-3"
-                      />
-                      <div>
-                        <h5 className="font-semibold text-lg mb-1">{testimonial.name}</h5>
-                        <p className="text-gray-600 mb-1 text-sm">{testimonial.position}, {testimonial.location}</p>
-                        <div className="mb-1">
+              <div className="transform hover:scale-105 transition-all duration-300" key={testimonial.id}>
+                <div className="h-full rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white border border-gray-100 group">
+                  <div className="p-8">
+                    <div className="flex items-start mb-6">
+                      <div className="relative">
+                        <img 
+                          src={testimonial.image} 
+                          alt={testimonial.name} 
+                          className="w-20 h-20 object-cover rounded-full mr-4 border-4 border-blue-100 group-hover:border-blue-300 transition-colors duration-300"
+                        />
+                        <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
+                          <i className="fas fa-quote-left text-white text-xs"></i>
+                        </div>
+                      </div>
+                      <div className="flex-1">
+                        <h5 className="font-bold text-xl mb-2 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">{testimonial.name}</h5>
+                        <p className="text-gray-600 mb-3 text-sm leading-relaxed">{testimonial.position}</p>
+                        <div className="mb-2">
                           {renderStars(testimonial.rating)}
                         </div>
                         <span className="text-gray-500 text-xs">{testimonial.date}</span>
                       </div>
                     </div>
-                    <div className="testimonial-content">
-                      <i className="fas fa-quote-left text-blue-800 mr-2 opacity-50"></i>
-                      <p className="mb-0">{testimonial.testimonial}</p>
-                      <i className="fas fa-quote-right text-blue-800 ml-2 opacity-50"></i>
+                    <div className="testimonial-content relative">
+                      <div className="absolute -top-2 -left-2 text-blue-200 text-4xl opacity-30">
+                        <i className="fas fa-quote-left"></i>
+                      </div>
+                      <p className="text-gray-700 leading-relaxed pl-6 italic">{testimonial.testimonial}</p>
+                      <div className="absolute -bottom-2 -right-2 text-blue-200 text-4xl opacity-30">
+                        <i className="fas fa-quote-right"></i>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -243,131 +268,235 @@ function Testimonial() {
           </div>
 
           {filteredTestimonials.length === 0 && (
-            <div className="text-center py-12">
-              <i className="fas fa-search text-4xl text-gray-500 mb-4"></i>
-              <h3 className="text-2xl font-bold mb-2">No testimonials found</h3>
-              <p className="text-gray-600">We don't have any testimonials in this category yet. Please check back later or select another category.</p>
+            <div className="text-center py-16">
+              <div className="bg-white rounded-2xl shadow-lg p-12 max-w-md mx-auto">
+                  <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <i className="fas fa-search text-3xl text-blue-600"></i>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-4">No testimonials found</h3>
+                <p className="text-gray-600 mb-6">We don't have any testimonials in this category yet. Please check back later or select another category.</p>
+                <button 
+                  className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                  onClick={() => setActiveCategory('all')}
+                >
+                  <i className="fas fa-refresh mr-2"></i>View All Testimonials
+                </button>
+              </div>
             </div>
           )}
         </div>
       </section>
 
       {/* Video Testimonials Section */}
-     <section className="py-12 bg-gray-100">
-  <div className="container mx-auto px-4">
-    <div className="mb-10">
-      <div className="text-center">
-        <h2 className="text-3xl font-bold mb-4">Video Testimonials</h2>
-        <p className="text-xl text-gray-600">Watch our clients share their experience</p>
-      </div>
-    </div>
-
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {/* Video 1 */}
-      <div className="w-full">
-        <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <div className="relative pb-[56.25%]">
-            <iframe
-              className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/6GHYBLDWZHo?si=BZQnkgi14DlhNjOL" // placeholder - replace with actual YouTube video ID
-              title="Woner's Testimonial"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+      <section className="bg-gray-50 py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+              Video <span className="text-blue-600">Testimonials</span>
+            </h2>
+            <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Watch our clients share their experience and success stories with Nestoria Group</p>
           </div>
-          <div className="p-4">
-            <h5 className="text-xl font-semibold mb-2">
-              Commercial Investment Success Story
-            </h5>
-            <p className="text-gray-700">
-              Mohan Singh Tomar, CEO of the company, shares his insights on leadership and business growth in the real estate sector.
-            </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Video 1 */}
+            <div className="transform hover:scale-105 transition-all duration-300">
+              <div className="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300">
+                <div className="relative pb-[56.25%]">
+                  {playingVideoId === 'vid1' ? (
+                    <iframe
+                      className="absolute inset-0 w-full h-full rounded-t-2xl"
+                      src="https://www.youtube.com/embed/6GHYBLDWZHo?autoplay=1&rel=0"
+                      title="Owner's Testimonial"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  ) : (
+                    <button
+                      type="button"
+                      aria-label="Play video testimonial"
+                      onClick={() => setPlayingVideoId('vid1')}
+                      className="absolute inset-0 w-full h-full rounded-t-2xl"
+                      style={{ backgroundImage: 'url(https://img.youtube.com/vi/6GHYBLDWZHo/hqdefault.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+                    >
+                      <span className="sr-only">Play</span>
+                    </button>
+                  )}
+                  {playingVideoId !== 'vid1' && (
+                    <div className="absolute inset-0 bg-black/20 opacity-100 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                      <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center">
+                        <i className="fas fa-play text-blue-600 text-2xl ml-1"></i>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mr-3">
+                      <i className="fas fa-video text-white text-sm"></i>
+                    </div>
+                    <span className="text-sm font-semibold text-blue-700">Video Testimonial</span>
+                  </div>
+                  <h5 className="text-2xl font-bold mb-3 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
+                     CEO of the company
+                    </h5>
+                  <p className="text-gray-700 leading-relaxed">
+                    Mohan Singh Tomar, CEO of the company, shares his insights on leadership and business growth in the real estate sector.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Video 2 */}
+            <div className="transform hover:scale-105 transition-all duration-300">
+              <div className="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300">
+                <div className="relative pb-[56.25%]">
+                  {playingVideoId === 'vid2' ? (
+                    <iframe
+                      className="absolute inset-0 w-full h-full rounded-t-2xl"
+                      src="https://www.youtube.com/embed/_ecESivkJoI?autoplay=1&rel=0"
+                      title="Nitin Singh Tomar Testimonial"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  ) : (
+                    <button
+                      type="button"
+                      aria-label="Play video testimonial"
+                      onClick={() => setPlayingVideoId('vid2')}
+                      className="absolute inset-0 w-full h-full rounded-t-2xl"
+                      style={{ backgroundImage: 'url(https://img.youtube.com/vi/_ecESivkJoI/hqdefault.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+                    >
+                      <span className="sr-only">Play</span>
+                    </button>
+                  )}
+                  {playingVideoId !== 'vid2' && (
+                    <div className="absolute inset-0 bg-black/20 opacity-100 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                      <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center">
+                        <i className="fas fa-play text-blue-600 text-2xl ml-1"></i>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                      <i className="fas fa-video text-white text-sm"></i>
+                    </div>
+                    <span className="text-sm font-semibold text-green-600">Video Testimonial</span>
+                  </div>
+                  <h5 className="text-2xl font-bold mb-3 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
+                    Owner's Testimonial
+                  </h5>
+                  <p className="text-gray-700 leading-relaxed">
+                    Nitin Singh Tomar, Director of Nestoria Group, envisions transforming real estate with personalized guidance, expert insights, and unwavering client success.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      {/* Video 2 */}
-      <div className="w-full">
-        <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <div className="relative pb-[56.25%]">
-            <iframe
-              className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/_ecESivkJoI?si=HFN0f62qa_fDPEKO" // placeholder - replace with actual YouTube video ID
-              title="Nitin Singh Tomar Testimonial"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-          <div className="p-4">
-            <h5 className="text-xl font-semibold mb-2">
-              Owner's Testimonial
-            </h5>
-            <p className="text-gray-700">
-              Nitin Singh Tomar, Director of Nestoria Group, envisions transforming real estate with personalized guidance, expert insights, and unwavering client success.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
 
       {/* Success Stories Section */}
-      <section className="py-12 bg-gray-50">
+      <section className="bg-white py-16">
         <div className="container mx-auto px-4">
-          <div className="mb-10">
-            <div className="text-center">
-              <h2 className="text-3xl font-bold mb-4">Success Stories</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">Detailed case studies of our client success</p>
-            </div>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+              Success <span className="text-blue-600">Stories</span>
+            </h2>
+            <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Detailed case studies of our client success and investment achievements</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div>
-              <div className="h-full rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 bg-white">
-                <img 
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070" 
-                  className="w-full h-48 object-cover" 
-                  alt="Commercial Development"
-                />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="transform hover:scale-105 transition-all duration-300">
+              <div className="h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white group">
+                <div className="relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070" 
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" 
+                    alt="Commercial Development"
+                  />
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center">
+                      <i className="fas fa-external-link-alt text-blue-600 text-2xl"></i>
+                    </div>
+                  </div>
+                </div>
                 <div className="p-6">
-                  <span className="inline-block bg-blue-600 text-white text-xs font-semibold px-2.5 py-1 rounded mb-2">Commercial</span>
-                  <h5 className="text-xl font-semibold mb-2">From Empty Plot to Thriving Business Hub</h5>
-                  <p className="text-gray-600 mb-4">How Mehta Enterprises transformed their Dholera SIR commercial plot into a profitable business center within 2 years.</p>
-                  <a href="#" className="inline-block px-4 py-2 border border-blue-600 text-blue-600 rounded hover:bg-blue-50 transition-colors duration-300">Read Case Study</a>
+                  <div className="flex items-center mb-4">
+                    <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mr-3">
+                      <i className="fas fa-building text-white text-sm"></i>
+                    </div>
+                    <span className="text-sm font-semibold text-blue-600">Commercial</span>
+                  </div>
+                  <h5 className="text-2xl font-bold mb-3 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">From Empty Plot to Thriving Business Hub</h5>
+                  <p className="text-gray-600 mb-6 leading-relaxed">How Mehta Enterprises transformed their Dholera SIR commercial plot into a profitable business center within 2 years.</p>
+                  <a href="#" className="inline-block bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                    <i className="fas fa-arrow-right mr-2"></i>Read Case Study
+                  </a>
                 </div>
               </div>
             </div>
-            <div>
-              <div className="h-full rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 bg-white">
-                <img 
-                  src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973" 
-                  className="w-full h-48 object-cover" 
-                  alt="Residential Community"
-                />
+            <div className="transform hover:scale-105 transition-all duration-300">
+              <div className="h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white group">
+                <div className="relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1973" 
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" 
+                    alt="Residential Community"
+                  />
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center">
+                      <i className="fas fa-external-link-alt text-blue-600 text-2xl"></i>
+                    </div>
+                  </div>
+                </div>
                 <div className="p-6">
-                  <span className="inline-block bg-green-600 text-white text-xs font-semibold px-2.5 py-1 rounded mb-2">Residential</span>
-                  <h5 className="text-xl font-semibold mb-2">Building a Dream Community</h5>
-                  <p className="text-gray-600 mb-4">The journey of 50 families who collectively invested in adjacent plots to create a gated community with shared amenities.</p>
-                  <a href="#" className="inline-block px-4 py-2 border border-blue-600 text-blue-600 rounded hover:bg-blue-50 transition-colors duration-300">Read Case Study</a>
+                  <div className="flex items-center mb-4">
+                    <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mr-3">
+                      <i className="fas fa-home text-white text-sm"></i>
+                    </div>
+                    <span className="text-sm font-semibold text-green-600">Residential</span>
+                  </div>
+                  <h5 className="text-2xl font-bold mb-3 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">Building a Dream Community</h5>
+                  <p className="text-gray-600 mb-6 leading-relaxed">The journey of 50 families who collectively invested in adjacent plots to create a gated community with shared amenities.</p>
+                  <a href="#" className="inline-block bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                    <i className="fas fa-arrow-right mr-2"></i>Read Case Study
+                  </a>
                 </div>
               </div>
             </div>
-            <div>
-              <div className="h-full rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 bg-white">
-                <img 
-                  src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070" 
-                  className="w-full h-48 object-cover" 
-                  alt="Industrial Development"
-                />
+            <div className="transform hover:scale-105 transition-all duration-300">
+              <div className="h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white group">
+                <div className="relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070" 
+                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" 
+                    alt="Industrial Development"
+                  />
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center">
+                      <i className="fas fa-external-link-alt text-blue-600 text-2xl"></i>
+                    </div>
+                  </div>
+                </div>
                 <div className="p-6">
-                  <span className="inline-block bg-yellow-500 text-gray-900 text-xs font-semibold px-2.5 py-1 rounded mb-2">Industrial</span>
-                  <h5 className="text-xl font-semibold mb-2">Manufacturing Excellence in Dholera</h5>
-                  <p className="text-gray-600 mb-4">How Gujarat Precision Tools established their state-of-the-art manufacturing facility and benefited from Dholera's strategic location.</p>
-                  <a href="#" className="inline-block px-4 py-2 border border-blue-600 text-blue-600 rounded hover:bg-blue-50 transition-colors duration-300">Read Case Study</a>
+                  <div className="flex items-center mb-4">
+                    <div className="w-8 h-8 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mr-3">
+                      <i className="fas fa-industry text-white text-sm"></i>
+                    </div>
+                    <span className="text-sm font-semibold text-yellow-600">Industrial</span>
+                  </div>
+                  <h5 className="text-2xl font-bold mb-3 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">Manufacturing Excellence in Dholera</h5>
+                  <p className="text-gray-600 mb-6 leading-relaxed">How Gujarat Precision Tools established their state-of-the-art manufacturing facility and benefited from Dholera's strategic location.</p>
+                  <a href="#" className="inline-block bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                    <i className="fas fa-arrow-right mr-2"></i>Read Case Study
+                  </a>
                 </div>
               </div>
             </div>
@@ -376,52 +505,72 @@ function Testimonial() {
       </section>
 
       {/* Share Your Story Section */}
-      <section className="py-12 bg-gray-100">
+      <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center">
             <div className="w-full lg:w-1/2 mb-8 lg:mb-0 lg:pr-8">
-              <h2 className="text-3xl font-bold mb-4">Share Your Nestoria Story</h2>
-              <p className="mb-6 text-gray-700">We'd love to hear about your experience with Nestoria Group. Your feedback helps us improve and inspires others who are considering investing in Dholera SIR.</p>
-              <ul className="mb-6">
-                <li className="mb-3 flex items-start">
-                  <i className="fas fa-check-circle text-green-600 mr-2 mt-1"></i>
-                  <span>Your testimonial may be featured on our website</span>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
+                Share Your <span className="text-blue-600">Nestoria Story</span>
+              </h2>
+              <div className="w-24 h-1 bg-blue-600 mb-8"></div>
+              <p className="mb-8 text-xl text-gray-700 leading-relaxed">We'd love to hear about your experience with Nestoria Group. Your feedback helps us improve and inspires others who are considering investing in Dholera SIR.</p>
+              <ul className="mb-8 space-y-4">
+                <li className="flex items-start">
+                  <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                    <i className="fas fa-check text-white text-sm"></i>
+                  </div>
+                  <span className="text-lg text-gray-700">Your testimonial may be featured on our website</span>
                 </li>
-                <li className="mb-3 flex items-start">
-                  <i className="fas fa-check-circle text-green-600 mr-2 mt-1"></i>
-                  <span>Opportunity to participate in our video testimonial program</span>
+                <li className="flex items-start">
+                  <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                    <i className="fas fa-check text-white text-sm"></i>
+                  </div>
+                  <span className="text-lg text-gray-700">Opportunity to participate in our video testimonial program</span>
                 </li>
-                <li className="mb-3 flex items-start">
-                  <i className="fas fa-check-circle text-green-600 mr-2 mt-1"></i>
-                  <span>Help others make informed investment decisions</span>
+                <li className="flex items-start">
+                  <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                    <i className="fas fa-check text-white text-sm"></i>
+                  </div>
+                  <span className="text-lg text-gray-700">Help others make informed investment decisions</span>
                 </li>
               </ul>
-              <a href="#testimonial-form" className="px-6 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-300 inline-block">Share Your Story</a>
+              <a href="#testimonial-form" className="inline-block bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                <i className="fas fa-pen mr-2"></i>Share Your Story
+              </a>
             </div>
             <div className="w-full lg:w-1/2">
-              <img 
-                src="https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=2070" 
-                alt="Share Your Story" 
-                className="w-full h-auto rounded-lg shadow-md"
-              />
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl group">
+                <img 
+                  src="https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=2070" 
+                  alt="Share Your Story" 
+                  className="w-full h-auto group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8">
+                  <div className="text-center text-white">
+                    <i className="fas fa-quote-left text-4xl mb-4"></i>
+                    <p className="text-xl font-semibold">Your Success is Our Story</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Testimonial Form Section */}
-      <section id="testimonial-form" className="py-12">
+      <section id="testimonial-form" className="bg-white py-16">
         <div className="container mx-auto px-4">
-          <div className="mb-10">
-            <div className="text-center">
-              <h2 className="text-3xl font-bold mb-4">Submit Your Testimonial</h2>
-              <p className="text-xl text-gray-600">We appreciate your feedback</p>
-            </div>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
+              Submit Your <span className="text-blue-600">Testimonial</span>
+            </h2>
+            <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">We appreciate your feedback and would love to hear about your experience with Nestoria Group</p>
           </div>
 
           <div className="flex justify-center">
-            <div className="w-full max-w-3xl">
-              <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="w-full max-w-4xl">
+              <div className="bg-gray-50 rounded-2xl shadow-2xl p-8 md:p-12 border border-gray-100">
                 <form onSubmit={async (e) => {
                   e.preventDefault();
                   const formData = {
@@ -447,22 +596,22 @@ function Testimonial() {
                     alert("Failed to submit testimonial. Please try again later.");
                   }
                 }}>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="col-span-1">
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                        <input type="text" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" id="name" placeholder="Your name" required />
+                        <label htmlFor="name" className="block text-lg font-semibold text-gray-800 mb-3">Full Name</label>
+                        <input type="text" className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300" id="name" placeholder="Your name" required />
                       </div>
                       <div className="col-span-1">
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                        <input type="email" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" id="email" placeholder="Your email" required />
+                        <label htmlFor="email" className="block text-lg font-semibold text-gray-800 mb-3">Email Address</label>
+                        <input type="email" className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300" id="email" placeholder="Your email" required />
                       </div>
                       <div className="col-span-1">
-                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                        <input type="tel" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" id="phone" placeholder="Your phone number" />
+                        <label htmlFor="phone" className="block text-lg font-semibold text-gray-800 mb-3">Phone Number</label>
+                        <input type="tel" className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300" id="phone" placeholder="Your phone number" />
                       </div>
                       <div className="col-span-1">
-                        <label htmlFor="property-type" className="block text-sm font-medium text-gray-700 mb-1">Property Type</label>
-                        <select className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" id="property-type" required defaultValue="">
+                        <label htmlFor="property-type" className="block text-lg font-semibold text-gray-800 mb-3">Property Type</label>
+                        <select className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300" id="property-type" required defaultValue="">
                           <option value="" disabled>Select property type</option>
                           <option value="residential">Residential Plot</option>
                           <option value="commercial">Commercial Property</option>
@@ -471,27 +620,29 @@ function Testimonial() {
                         </select>
                       </div>
                       <div className="col-span-2">
-                        <label htmlFor="testimonial" className="block text-sm font-medium text-gray-700 mb-1">Your Testimonial</label>
-                        <textarea className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" id="testimonial" rows="5" placeholder="Share your experience with Nestoria Group" required></textarea>
+                        <label htmlFor="testimonial" className="block text-lg font-semibold text-gray-800 mb-3">Your Testimonial</label>
+                        <textarea className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300" id="testimonial" rows="5" placeholder="Share your experience with Nestoria Group" required></textarea>
                       </div>
                       <div className="col-span-2">
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Rate Your Experience</label>
-                        <div className="mb-3">
+                        <label className="block text-lg font-semibold text-gray-800 mb-3">Rate Your Experience</label>
+                        <div className="mb-6">
                           {[1, 2, 3, 4, 5].map(star => (
-                            <i key={star} className="far fa-star text-lg mr-2 cursor-pointer hover:text-yellow-400 transition-colors"></i>
+                            <i key={star} className="far fa-star text-2xl mr-3 cursor-pointer hover:text-yellow-400 transition-colors duration-300"></i>
                           ))}
                         </div>
                       </div>
                       <div className="col-span-2">
                         <div className="flex items-start">
-                          <input className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 mt-1 mr-2" type="checkbox" id="permission" required />
-                          <label className="text-sm text-gray-700" htmlFor="permission">
+                          <input className="h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500 mt-1 mr-3" type="checkbox" id="permission" required />
+                          <label className="text-lg text-gray-700 leading-relaxed" htmlFor="permission">
                             I give permission to Nestoria Group to use my testimonial on their website and marketing materials
                           </label>
                         </div>
                       </div>
-                      <div className="col-span-2 mt-4">
-                        <button type="submit" className="px-6 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-300">Submit Testimonial</button>
+                      <div className="col-span-2 mt-8">
+                        <button type="submit" className="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                          <i className="fas fa-paper-plane mr-2"></i>Submit Testimonial
+                        </button>
                       </div>
                     </div>
                   </form>

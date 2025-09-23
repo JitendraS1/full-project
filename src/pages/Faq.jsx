@@ -141,35 +141,79 @@ const Faq = () => {
       
       {/* Page Header */}
       <ParallaxSection
-        backgroundImage= {faqbanner}
-        height="auto"
+        backgroundImage={faqbanner}
+        height="100vh"
         overlayColor="#673a377e"
         speed={0.4}
-        className="py-20 mb-8 overflow-hidden"
+        className="py-16 sm:py-20 md:py-32 flex items-center justify-center text-center"
       >
-        <div className="container mx-auto px-4 relative text-center z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 animate-slide-up">Frequently Asked Questions</h1>
-          <div className="h-1 w-24 bg-blue-400 mx-auto mb-6"></div>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8 animate-slide-up opacity-0 animation-delay-200">Find answers to common questions about Nestoria Group and Dholera SIR</p>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-6xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight">
+              Frequently Asked <span className="text-blue-300">Questions</span>
+            </h1>
+            <div className="h-1 w-32 bg-blue-500 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 md:mb-10 animate-slide-up opacity-0 animation-delay-300 max-w-3xl mx-auto leading-relaxed">
+              Find answers to common questions about Nestoria Group and Dholera SIR
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 animate-slide-up opacity-0 animation-delay-500">
+              <a
+                href="#faq-content"
+                className="group bg-blue-700 hover:bg-blue-800 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center relative overflow-hidden"
+              >
+                <span className="relative z-10 flex items-center justify-center">
+                  <i className="fas fa-question-circle mr-2"></i>
+                  Browse FAQs
+                </span>
+                <div className="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </a>
+              <a
+                href="mailto:info@nestoriagroup.com"
+                className="group bg-transparent hover:bg-white/10 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center backdrop-blur-sm"
+              >
+                <span className="flex items-center justify-center">
+                  <i className="fas fa-envelope mr-2"></i>
+                  Ask Question
+                </span>
+              </a>
+            </div>
+          </div>
         </div>
       </ParallaxSection>
       
 
       {/* FAQ Content */}
-      <section className="py-20 bg-gray-50">
+      <section id="faq-content" className="py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-8">
+          <div className="text-center max-w-4xl mx-auto mb-12 md:mb-16">
+            <h6 className="text-blue-600 font-semibold text-lg md:text-xl mb-4 uppercase tracking-wider">
+              Help Center
+            </h6>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+              Frequently Asked <span className="text-blue-600">Questions</span>
+            </h2>
+            <div className="h-1 w-32 bg-blue-600 mx-auto mb-8"></div>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">Find answers to common questions about our properties and services</p>
+          </div>
+          
+          <div className="flex flex-col lg:flex-row gap-6 md:gap-8">
             <div className="w-full lg:w-1/4 mb-6 lg:mb-0">
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 hover:shadow-xl">
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-5 text-gray-800 border-b border-gray-100 pb-3">Categories</h3>
-                  <div className="flex flex-col space-y-2 mt-4">
+              <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 transition-all duration-500 hover:shadow-2xl transform hover:-translate-y-1">
+                <div className="p-6 md:p-8">
+                  <div className="flex items-center mb-6">
+                    <div className="bg-blue-600 rounded-xl w-12 h-12 flex items-center justify-center mr-4">
+                      <i className="fas fa-list text-white text-xl"></i>
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-800">Categories</h3>
+                  </div>
+                  <div className="h-1 w-16 bg-blue-500 mb-6"></div>
+                  <div className="flex flex-col space-y-3">
                     {categories.map(category => (
                       <button
                         key={category.id}
-                        className={`px-4 py-3 rounded-md text-left transition-all duration-300 ${activeCategory === category.id 
-                          ? 'bg-blue-600 text-white shadow-md' 
-                          : 'bg-white text-gray-700 hover:bg-gray-100'}`}
+                        className={`px-4 py-3 md:py-4 rounded-lg text-left transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 font-medium text-sm md:text-base ${activeCategory === category.id 
+                          ? 'bg-blue-600 text-white shadow-lg' 
+                          : 'bg-white text-gray-700 hover:bg-blue-50 hover:text-blue-600 border border-gray-200 hover:border-blue-300'}`}
                         onClick={() => setActiveCategory(category.id)}
                       >
                         {category.name}
@@ -181,27 +225,32 @@ const Faq = () => {
             </div>
 
             <div className="w-full lg:w-3/4">
-              <div className="bg-white rounded-lg shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl">
-                <div className="p-8">
-                  <h2 className="text-3xl font-bold mb-4 text-gray-800">{categories.find(cat => cat.id === activeCategory).name}</h2>
+              <div className="bg-white rounded-2xl shadow-xl border border-gray-100 transition-all duration-500 hover:shadow-2xl transform hover:-translate-y-1">
+                <div className="p-6 md:p-8 lg:p-10">
+                  <div className="flex items-center mb-6">
+                    <div className="bg-blue-600 rounded-xl w-12 h-12 flex items-center justify-center mr-4">
+                      <i className="fas fa-question-circle text-white text-xl"></i>
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-bold text-gray-800">{categories.find(cat => cat.id === activeCategory).name}</h2>
+                  </div>
                   <div className="h-1 w-24 bg-blue-500 mb-8"></div>
                   
-                  <div className="space-y-5">
+                  <div className="space-y-4 md:space-y-6">
                     {faqs[activeCategory].map((faq, index) => (
-                      <div className="border border-gray-200 rounded-lg overflow-hidden hover:border-blue-500 transition-all duration-300 shadow-sm hover:shadow-md" key={index}>
+                      <div className="group border border-gray-200 rounded-2xl overflow-hidden hover:border-blue-500 transition-all duration-500 shadow-lg hover:shadow-xl transform hover:-translate-y-1" key={index}>
                         <details className="group">
                           <summary 
-                            className="flex justify-between items-center p-5 cursor-pointer bg-white hover:bg-blue-50 transition-all duration-300"
+                            className="flex justify-between items-center p-5 md:p-6 cursor-pointer bg-white hover:bg-blue-50 transition-all duration-300"
                           >
-                            <span className="font-semibold text-gray-800 text-lg">{faq.question}</span>
-                            <span className="transition-transform duration-300 group-open:rotate-180 text-blue-600">
+                            <span className="font-semibold text-gray-800 text-sm md:text-base pr-4 group-hover:text-blue-600 transition-colors duration-300">{faq.question}</span>
+                            <span className="transition-transform duration-300 group-open:rotate-180 text-blue-600 flex-shrink-0">
                               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                               </svg>
                             </span>
                           </summary>
-                          <div className="px-5 py-4 bg-white text-gray-600 border-t border-gray-100">
-                            <p className="leading-relaxed">{faq.answer}</p>
+                          <div className="px-5 md:px-6 py-4 md:py-5 bg-white text-gray-600 border-t border-gray-100">
+                            <p className="leading-relaxed text-sm md:text-base">{faq.answer}</p>
                           </div>
                         </details>
                       </div>
@@ -215,40 +264,68 @@ const Faq = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+      <section className="py-16 md:py-24 bg-blue-700 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
         <ParallaxSection
-        backgroundImage={faqbanner}
-        height="auto"
-        overlayColor="#673a377e"
-        speed={0.4}
-        className="py-32 mb-8 overflow-hidden"
-      >
-        <div className="container mx-auto px-4"></div>
-        
-          <div className="flex justify-center">
-            <div className="w-full lg:w-2/3 text-center">
-              <h2 className="text-3xl font-bold mb-4">Didn't Find Your Answer?</h2>
-              <div className="h-1 w-24 bg-blue-500 mx-auto mb-6"></div>
-              <p className="text-xl mb-8 max-w-2xl mx-auto">Our team is here to help you with any questions you may have about our properties or services in Dholera SIR.</p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4 items-center">
-                <Link to="/contact" className="bg-white text-blue-700 hover:bg-gray-100 font-bold py-4 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto">Contact Us</Link>
-                <a href="mailto:info@nestoriagroup.com" className="border-2 border-white hover:bg-blue-800 font-bold py-4 px-8 rounded-lg transition-all duration-300 w-full sm:w-auto mt-4 sm:mt-0">Email Us</a>
+          backgroundImage={faqbanner}
+          height="auto"
+          overlayColor="#673a377e"
+          speed={0.4}
+          className="py-16 md:py-24 relative z-10"
+        >
+          <div className="container mx-auto px-4">
+            <div className="flex justify-center">
+              <div className="w-full lg:w-2/3 text-center">
+                <h6 className="text-blue-300 font-semibold text-lg md:text-xl mb-4 uppercase tracking-wider">
+                  Need More Help?
+                </h6>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                  Didn't Find Your <span className="text-blue-300">Answer</span>?
+                </h2>
+                <div className="h-1 w-32 bg-white mx-auto mb-8"></div>
+                <p className="text-lg md:text-xl mb-10 text-white/90 leading-relaxed max-w-2xl mx-auto">
+                  Our team is here to help you with any questions you may have about our properties or services in Dholera SIR.
+                </p>
+                <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+                  <Link 
+                    to="/contact" 
+                    className="group bg-white text-blue-600 hover:bg-blue-50 font-bold py-4 px-8 md:px-12 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 shadow-xl hover:shadow-2xl text-lg"
+                  >
+                    <span className="flex items-center justify-center">
+                      <i className="fas fa-phone mr-2"></i>
+                      Contact Us
+                    </span>
+                  </Link>
+                  <a 
+                    href="mailto:info@nestoriagroup.com" 
+                    className="group bg-transparent hover:bg-white/10 text-white font-bold py-4 px-8 md:px-12 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 text-lg backdrop-blur-sm"
+                  >
+                    <span className="flex items-center justify-center">
+                      <i className="fas fa-envelope mr-2"></i>
+                      Email Us
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
-          
-        </div>
+          </div>
         </ParallaxSection>
       </section>
       
       {/* Newsletter Section */}
-      <section className="py-16 bg-gray-100">
-        <div className="container mx-auto px-4">
+      <section className="py-16 md:py-24 bg-blue-700 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4 text-gray-800">Stay Updated</h2>
-            <div className="h-1 w-24 bg-blue-500 mx-auto mb-6"></div>
-            <p className="text-lg mb-8 text-gray-600">Subscribe to our newsletter for the latest updates on Dholera SIR development and investment opportunities.</p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+              Stay <span className="text-blue-300">Updated</span>
+            </h2>
+            <div className="h-1 w-32 bg-white mx-auto mb-8"></div>
+            <p className="text-lg md:text-xl mb-10 text-white/90 leading-relaxed max-w-2xl mx-auto">
+              Subscribe to our newsletter for the latest updates on Dholera SIR development and investment opportunities.
+            </p>
             
-            <form className="flex flex-col sm:flex-row gap-4 justify-center" onSubmit={async (e) => {
+            <form className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto" onSubmit={async (e) => {
               e.preventDefault();
               const email = e.target.elements.email.value;
               
@@ -277,17 +354,20 @@ const Faq = () => {
                 type="email"
                 name="email" 
                 placeholder="Your email address" 
-                className="px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent w-full sm:w-96"
+                className="flex-1 px-6 py-4 border-2 border-white/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-transparent bg-white/10 backdrop-blur-sm text-white placeholder-white/70 text-lg"
                 required
               />
               <button 
                 type="submit" 
-                className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg w-full sm:w-auto"
+                className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-lg transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105"
               >
-                Subscribe
+                <span className="flex items-center justify-center">
+                  <i className="fas fa-paper-plane mr-2"></i>
+                  Subscribe
+                </span>
               </button>
             </form>
-            <p className="text-sm mt-4 text-gray-500">We respect your privacy. Unsubscribe at any time.</p>
+            <p className="text-sm mt-6 text-white/70">We respect your privacy. Unsubscribe at any time.</p>
           </div>
         </div>
       </section>

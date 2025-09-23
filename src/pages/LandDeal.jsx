@@ -136,205 +136,278 @@ function LandDeal() {
     <div className="land-deals-page">
     
       {/* Page Header */}
-      <header className="relative py-16 overflow-hidden">
+      <header className="relative py-16 sm:py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center bg-blue-700"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-600 to-blue-900 opacity-80"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 opacity-90"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="w-full md:w-2/3">
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 animate-slide-up">Land Deals in Dholera SIR</h1>
-              <p className="text-xl text-white mb-6 animate-slide-up opacity-0 animation-delay-200">Explore premium land opportunities in India's first planned smart city with excellent appreciation potential</p>
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+            <div className="w-full lg:w-2/3 text-center lg:text-left">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight">
+                Land Deals in <span className="text-blue-300">Dholera SIR</span>
+              </h1>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto lg:mx-0 mb-6 md:mb-8 animate-slide-up"></div>
+              <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 md:mb-10 animate-slide-up opacity-0 animation-delay-300 leading-relaxed">
+                Explore premium land opportunities in India's first planned smart city with excellent appreciation potential
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4 sm:gap-6 animate-slide-up opacity-0 animation-delay-500">
+                <a 
+                  href="#contact-section" 
+                  className="group bg-gradient-to-r from-white to-blue-100 text-blue-600 hover:from-blue-50 hover:to-white font-bold text-base md:text-lg py-4 px-8 md:px-10 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center relative overflow-hidden"
+                >
+                  <span className="relative z-10 flex items-center justify-center">
+                    <i className="fas fa-envelope mr-2"></i>
+                    Contact Us
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </a>
+                <a 
+                  href="#land-deals" 
+                  className="group bg-transparent hover:bg-white/10 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center backdrop-blur-sm"
+                >
+                  <span className="flex items-center justify-center">
+                    <i className="fas fa-search mr-2"></i>
+                    View Properties
+                  </span>
+                </a>
+              </div>
             </div>
-            <div className="w-full md:w-1/3 flex justify-center md:justify-end mt-6 md:mt-0 animate-slide-up opacity-0 animation-delay-300">
-              <a href="#contact-section" className="bg-white text-blue-700 hover:bg-blue-50 px-6 py-3 rounded-lg font-semibold transition-colors duration-300 shadow-lg">Contact Us</a>
+            <div className="w-full lg:w-1/3 flex justify-center lg:justify-end">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-white/20">
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-white">Investment Highlights</h3>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-white/90">Smart City Status</span>
+                    <span className="text-2xl font-bold text-blue-300">✓</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-white/90">DMIC Zone</span>
+                    <span className="text-2xl font-bold text-blue-300">✓</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-white/90">Government Backed</span>
+                    <span className="text-2xl font-bold text-blue-300">✓</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-white/90">High ROI Potential</span>
+                    <span className="text-2xl font-bold text-blue-300">✓</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </header>
 
       {/* Filter Section */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="mb-10">
-          <div className="flex flex-wrap justify-center gap-3">
-            <button 
-              className={`px-5 py-2 rounded-lg font-medium transition-colors duration-300 ${activeFilter === 'all' ? 'bg-blue-600 text-white shadow-md' : 'bg-white text-blue-600 border border-blue-600 hover:bg-blue-50'}`}
-              onClick={() => setActiveFilter('all')}
-            >
-              All Properties
-            </button>
-            <button 
-              className={`px-5 py-2 rounded-lg font-medium transition-colors duration-300 ${activeFilter === 'residential' ? 'bg-blue-600 text-white shadow-md' : 'bg-white text-blue-600 border border-blue-600 hover:bg-blue-50'}`}
-              onClick={() => setActiveFilter('residential')}
-            >
-              Residential
-            </button>
-            <button 
-              className={`px-5 py-2 rounded-lg font-medium transition-colors duration-300 ${activeFilter === 'commercial' ? 'bg-blue-600 text-white shadow-md' : 'bg-white text-blue-600 border border-blue-600 hover:bg-blue-50'}`}
-              onClick={() => setActiveFilter('commercial')}
-            >
-              Commercial
-            </button>
-            <button 
-              className={`px-5 py-2 rounded-lg font-medium transition-colors duration-300 ${activeFilter === 'industrial' ? 'bg-blue-600 text-white shadow-md' : 'bg-white text-blue-600 border border-blue-600 hover:bg-blue-50'}`}
-              onClick={() => setActiveFilter('industrial')}
-            >
-              Industrial
-            </button>
+      <section id="land-deals" className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-4xl mx-auto mb-12 md:mb-16">
+            <h6 className="text-blue-600 font-semibold text-lg md:text-xl mb-4 uppercase tracking-wider">
+              Property Portfolio
+            </h6>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+              Available <span className="text-blue-600">Land Deals</span>
+            </h2>
+            <div className="h-1 w-32 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-8"></div>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">Discover premium land opportunities across different zones in Dholera SIR</p>
           </div>
-        </div>
+          
+          <div className="mb-12">
+            <div className="flex flex-wrap justify-center gap-3 md:gap-4">
+              <button 
+                className={`px-6 py-3 md:px-8 md:py-4 rounded-full transition-all duration-300 font-medium text-sm md:text-base transform hover:-translate-y-1 hover:scale-105 ${activeFilter === 'all' ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-xl hover:shadow-2xl' : 'bg-white text-blue-600 border-2 border-blue-600 hover:bg-blue-50 hover:shadow-lg'}`}
+                onClick={() => setActiveFilter('all')}
+              >
+                All Properties
+              </button>
+              <button 
+                className={`px-6 py-3 md:px-8 md:py-4 rounded-full transition-all duration-300 font-medium text-sm md:text-base transform hover:-translate-y-1 hover:scale-105 ${activeFilter === 'residential' ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-xl hover:shadow-2xl' : 'bg-white text-blue-600 border-2 border-blue-600 hover:bg-blue-50 hover:shadow-lg'}`}
+                onClick={() => setActiveFilter('residential')}
+              >
+                Residential
+              </button>
+              <button 
+                className={`px-6 py-3 md:px-8 md:py-4 rounded-full transition-all duration-300 font-medium text-sm md:text-base transform hover:-translate-y-1 hover:scale-105 ${activeFilter === 'commercial' ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-xl hover:shadow-2xl' : 'bg-white text-blue-600 border-2 border-blue-600 hover:bg-blue-50 hover:shadow-lg'}`}
+                onClick={() => setActiveFilter('commercial')}
+              >
+                Commercial
+              </button>
+              <button 
+                className={`px-6 py-3 md:px-8 md:py-4 rounded-full transition-all duration-300 font-medium text-sm md:text-base transform hover:-translate-y-1 hover:scale-105 ${activeFilter === 'industrial' ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-xl hover:shadow-2xl' : 'bg-white text-blue-600 border-2 border-blue-600 hover:bg-blue-50 hover:shadow-lg'}`}
+                onClick={() => setActiveFilter('industrial')}
+              >
+                Industrial
+              </button>
+            </div>
+          </div>
 
-        {/* Land Deals Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredDeals.length > 0 ? (
-            filteredDeals.map(deal => (
-              <div key={deal.id} className="animate-fade-in">
-                <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
-                  <div className="relative">
-                    <img 
-                      src={deal.image} 
-                      className="w-full h-48 object-cover" 
-                      alt={deal.title} 
-                    />
-                    <span className="absolute top-3 right-3 bg-blue-600 text-white text-sm font-medium px-3 py-1 rounded-full">
-                      {deal.type.charAt(0).toUpperCase() + deal.type.slice(1)}
-                    </span>
-                  </div>
-                  <div className="p-5 flex-grow">
-                    <h3 className="text-xl font-bold mb-2">{deal.title}</h3>
-                    <p className="text-gray-500 mb-2 flex items-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                      {deal.location}
-                    </p>
-                    <div className="flex justify-between mb-4">
-                      <span className="flex items-center text-gray-600">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" />
-                        </svg>
-                        {deal.area}
+          {/* Land Deals Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {filteredDeals.length > 0 ? (
+              filteredDeals.map(deal => (
+                <div key={deal.id} className="group animate-fade-in">
+                  <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-full flex flex-col transform hover:-translate-y-2">
+                    <div className="relative overflow-hidden">
+                      <img 
+                        src={deal.image} 
+                        className="w-full h-48 md:h-56 object-cover group-hover:scale-110 transition-transform duration-700" 
+                        alt={deal.title} 
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <span className="text-white text-lg font-bold px-6 py-3 border-2 border-white rounded-lg mb-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                          View Details
+                        </span>
+                      </div>
+                      <span className="absolute top-4 right-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white text-sm font-semibold px-4 py-2 rounded-full shadow-lg">
+                        {deal.type.charAt(0).toUpperCase() + deal.type.slice(1)}
                       </span>
-                      <span className="text-blue-600 font-bold">{deal.price}</span>
                     </div>
-                    <p className="text-gray-600 mb-4">{deal.description}</p>
-                    <div className="mb-4">
-                      <h4 className="font-semibold mb-2">Features:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {deal.features.map((feature, index) => (
-                          <span key={index} className="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-1.5 rounded flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 mr-1 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                            </svg>
-                            {feature}
-                          </span>
-                        ))}
+                    <div className="p-6 md:p-8 flex-grow">
+                      <h3 className="text-xl md:text-2xl font-bold mb-3 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">{deal.title}</h3>
+                      <p className="text-gray-500 mb-3 flex items-center text-sm md:text-base">
+                        <i className="fas fa-map-marker-alt mr-2 text-blue-600"></i>
+                        {deal.location}
+                      </p>
+                      <div className="flex justify-between items-center mb-4">
+                        <span className="flex items-center text-gray-600 text-sm md:text-base">
+                          <i className="fas fa-expand-arrows-alt mr-2 text-blue-600"></i>
+                          {deal.area}
+                        </span>
+                        <span className="text-blue-600 font-bold text-lg">{deal.price}</span>
+                      </div>
+                      <p className="text-gray-600 mb-4 text-sm md:text-base leading-relaxed">{deal.description}</p>
+                      <div className="mb-6">
+                        <h4 className="font-semibold mb-3 text-gray-800">Key Features:</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {deal.features.map((feature, index) => (
+                            <span key={index} className="bg-gradient-to-r from-blue-50 to-blue-100 text-blue-800 text-xs font-medium px-3 py-2 rounded-full flex items-center border border-blue-200">
+                              <i className="fas fa-check text-green-600 mr-2 text-xs"></i>
+                              {feature}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="px-5 pb-5">
-                    <a href="#contact-section" className="block w-full text-center bg-white border border-blue-600 text-blue-600 hover:bg-blue-50 font-medium rounded-lg py-2.5 transition-colors duration-300">
-                      Request Details
-                    </a>
+                    <div className="px-6 md:px-8 pb-6 md:pb-8">
+                      <a href="#contact-section" className="group/btn block w-full text-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold rounded-lg py-3 md:py-4 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 shadow-lg hover:shadow-xl">
+                        <span className="flex items-center justify-center">
+                          <i className="fas fa-envelope mr-2"></i>
+                          Request Details
+                        </span>
+                      </a>
+                    </div>
                   </div>
                 </div>
+              ))
+            ) : (
+              <div className="col-span-full text-center py-16 md:py-20">
+                <div className="max-w-md mx-auto">
+                  <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800">No properties found</h3>
+                  <p className="text-gray-600 mb-8 text-lg">We couldn't find any properties matching your criteria.</p>
+                  <button 
+                    className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold rounded-lg px-8 py-4 transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 shadow-xl hover:shadow-2xl"
+                    onClick={() => setActiveFilter('all')}
+                  >
+                    <span className="flex items-center">
+                      <i className="fas fa-arrow-left mr-2"></i>
+                      View All Properties
+                    </span>
+                  </button>
+                </div>
               </div>
-            ))
-          ) : (
-            <div className="col-span-full text-center py-16">
-              <div className="max-w-md mx-auto">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mx-auto text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-                <h3 className="text-2xl font-bold mb-2">No properties found</h3>
-                <p className="text-gray-500 mb-6">We couldn't find any properties matching your criteria.</p>
-                <button 
-                  className="bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg px-5 py-2.5 transition-colors duration-300"
-                  onClick={() => setActiveFilter('all')}
-                >
-                  View All Properties
-                </button>
-              </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Contact Section */}
-      <section id="contact-section" className="bg-gray-50 py-16">
+      <section id="contact-section" className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold mb-4">Interested in Our Land Deals?</h2>
-              <p className="text-xl text-gray-600">Fill out the form below and our property experts will get in touch with you to provide more details.</p>
+            <div className="text-center mb-12 md:mb-16">
+              <h6 className="text-blue-600 font-semibold text-lg md:text-xl mb-4 uppercase tracking-wider">
+                Get In Touch
+              </h6>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                Interested in Our <span className="text-blue-600">Land Deals</span>?
+              </h2>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-8"></div>
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-2xl mx-auto">
+                Fill out the form below and our property experts will get in touch with you to provide more details.
+              </p>
             </div>
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="p-6 md:p-8">
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden border-t-4 border-blue-500 hover:shadow-2xl transition-all duration-300">
+              <div className="p-6 md:p-8 lg:p-10">
                 {submitted ? (
-                  <div className="text-center py-8">
-                    <div className="text-green-600 mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="text-center py-12">
+                    <div className="bg-gradient-to-br from-green-100 to-green-200 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-6">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-bold mb-2">Thank You!</h3>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800">Thank You!</h3>
                     <p className="text-lg text-gray-600">Your inquiry has been submitted successfully. Our property experts will contact you shortly.</p>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit}>
+                  <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
                     {error && (
-                      <div className="mb-6 p-4 bg-red-50 border-l-4 border-red-500 text-red-700">
-                        <p>{error}</p>
+                      <div className="mb-6 p-4 bg-red-50 border-l-4 border-red-500 text-red-700 rounded-lg">
+                        <p className="font-medium">{error}</p>
                       </div>
                     )}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                       <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                        <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-3">Full Name *</label>
                         <input 
                           type="text" 
                           id="name" 
                           name="name"
                           value={formData.name}
                           onChange={handleChange}
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200" 
-                          placeholder="Your Name" 
+                          className="w-full px-4 py-3 md:py-4 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 text-sm md:text-base" 
+                          placeholder="Enter your full name" 
                           required 
                         />
                       </div>
                       <div>
-                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                        <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-3">Phone Number *</label>
                         <input 
                           type="tel" 
                           id="phone" 
                           name="phone"
                           value={formData.phone}
                           onChange={handleChange}
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200" 
-                          placeholder="Your Phone" 
+                          className="w-full px-4 py-3 md:py-4 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 text-sm md:text-base" 
+                          placeholder="Enter your phone number" 
                           required 
                         />
                       </div>
                       <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-3">Email Address *</label>
                         <input 
                           type="email" 
                           id="email" 
                           name="email"
                           value={formData.email}
                           onChange={handleChange}
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200" 
-                          placeholder="Your Email" 
+                          className="w-full px-4 py-3 md:py-4 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 text-sm md:text-base" 
+                          placeholder="Enter your email address" 
                           required 
                         />
                       </div>
                       <div>
-                        <label htmlFor="propertyType" className="block text-sm font-medium text-gray-700 mb-1">Property Type</label>
+                        <label htmlFor="propertyType" className="block text-sm font-semibold text-gray-700 mb-3">Property Type *</label>
                         <select 
                           id="propertyType" 
                           name="propertyType"
                           value={formData.propertyType}
                           onChange={handleChange}
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200" 
+                          className="w-full px-4 py-3 md:py-4 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 text-sm md:text-base" 
                           required 
                         >
                           <option value="" disabled>Select Property Type</option>
@@ -344,13 +417,13 @@ function LandDeal() {
                         </select>
                       </div>
                       <div className="md:col-span-2">
-                        <label htmlFor="budget" className="block text-sm font-medium text-gray-700 mb-1">Budget Range</label>
+                        <label htmlFor="budget" className="block text-sm font-semibold text-gray-700 mb-3">Budget Range *</label>
                         <select 
                           id="budget" 
                           name="budget"
                           value={formData.budget}
                           onChange={handleChange}
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200" 
+                          className="w-full px-4 py-3 md:py-4 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 text-sm md:text-base" 
                           required 
                         >
                           <option value="" disabled>Select Budget Range</option>
@@ -361,21 +434,21 @@ function LandDeal() {
                         </select>
                       </div>
                       <div className="md:col-span-2">
-                        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Your Requirements</label>
+                        <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-3">Your Requirements</label>
                         <textarea 
                           id="message" 
                           name="message"
                           value={formData.message}
                           onChange={handleChange}
-                          rows="4" 
-                          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors duration-200" 
+                          rows="5" 
+                          className="w-full px-4 py-3 md:py-4 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 text-sm md:text-base" 
                           placeholder="Tell us about your specific requirements"
                         ></textarea>
                       </div>
-                      <div className="md:col-span-2 mt-4">
+                      <div className="md:col-span-2 mt-6 md:mt-8">
                         <button 
                           type="submit" 
-                          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg flex items-center justify-center"
+                          className="group w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 shadow-xl hover:shadow-2xl flex items-center justify-center text-base md:text-lg"
                           disabled={loading}
                         >
                           {loading ? (
@@ -387,7 +460,10 @@ function LandDeal() {
                               Processing...
                             </>
                           ) : (
-                            'Submit Inquiry'
+                            <>
+                              <i className="fas fa-paper-plane mr-2"></i>
+                              Submit Inquiry
+                            </>
                           )}
                         </button>
                       </div>
@@ -401,45 +477,59 @@ function LandDeal() {
       </section>
 
       {/* Why Invest Section */}
-      <section id="why-invest" className="py-16 bg-white">
+      <section id="why-invest" className="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Why Invest in Dholera SIR Land?</h2>
-            <p className="text-xl text-gray-600">Secure your future with strategic land investments in India's first planned smart city</p>
+          <div className="text-center max-w-4xl mx-auto mb-12 md:mb-16">
+            <h6 className="text-blue-600 font-semibold text-lg md:text-xl mb-4 uppercase tracking-wider">
+              Investment Benefits
+            </h6>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+              Why Invest in <span className="text-blue-600">Dholera SIR Land</span>?
+            </h2>
+            <div className="h-1 w-32 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-8"></div>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+              Secure your future with strategic land investments in India's first planned smart city
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="bg-white rounded-lg shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
-              <div className="p-6 text-center">
-                <div className="mb-4 flex justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                  </svg>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+            <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-t-4 border-blue-500">
+              <div className="p-6 md:p-8 text-center">
+                <div className="mb-6 flex justify-center">
+                  <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">High ROI Potential</h3>
-                <p className="text-gray-600">With government-backed infrastructure development, land values in Dholera SIR are projected to appreciate significantly over the coming years.</p>
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">High ROI Potential</h3>
+                <p className="text-gray-600 leading-relaxed text-sm md:text-base">With government-backed infrastructure development, land values in Dholera SIR are projected to appreciate significantly over the coming years.</p>
               </div>
             </div>
-            <div className="bg-white rounded-lg shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
-              <div className="p-6 text-center">
-                <div className="mb-4 flex justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
+            <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-t-4 border-green-500">
+              <div className="p-6 md:p-8 text-center">
+                <div className="mb-6 flex justify-center">
+                  <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-2xl w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Strategic Location</h3>
-                <p className="text-gray-600">Located in the Delhi-Mumbai Industrial Corridor with excellent connectivity to major cities, ports, and transportation hubs.</p>
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-800 group-hover:text-green-600 transition-colors duration-300">Strategic Location</h3>
+                <p className="text-gray-600 leading-relaxed text-sm md:text-base">Located in the Delhi-Mumbai Industrial Corridor with excellent connectivity to major cities, ports, and transportation hubs.</p>
               </div>
             </div>
-            <div className="bg-white rounded-lg shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
-              <div className="p-6 text-center">
-                <div className="mb-4 flex justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
+            <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-t-4 border-purple-500">
+              <div className="p-6 md:p-8 text-center">
+                <div className="mb-6 flex justify-center">
+                  <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl w-16 h-16 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Secure Investment</h3>
-                <p className="text-gray-600">Government-approved project with clear titles, proper documentation, and transparent processes ensuring your investment is secure.</p>
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-800 group-hover:text-purple-600 transition-colors duration-300">Secure Investment</h3>
+                <p className="text-gray-600 leading-relaxed text-sm md:text-base">Government-approved project with clear titles, proper documentation, and transparent processes ensuring your investment is secure.</p>
               </div>
             </div>
           </div>
