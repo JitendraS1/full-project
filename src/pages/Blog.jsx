@@ -28,7 +28,7 @@ const Blog = () => {
       date: "June 15, 2023",
       author: "Rajesh Sharma",
       category: "dholera",
-      image: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      image: "/src/assets/img/futuredholera.png",
       readTime: "5 min read"
     },
     {
@@ -38,7 +38,7 @@ const Blog = () => {
       date: "May 28, 2023",
       author: "Priya Patel",
       category: "investment",
-      image: "https://images.unsplash.com/photo-1460472178825-e5240623afd5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      image: "/src/assets/img/growth.png",
       readTime: "7 min read"
     },
     {
@@ -48,7 +48,7 @@ const Blog = () => {
       date: "April 10, 2023",
       author: "Amit Shah",
       category: "market-trends",
-      image: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      image: "/src/assets/img/connectivity.png",
       readTime: "6 min read"
     },
     {
@@ -58,7 +58,7 @@ const Blog = () => {
       date: "March 22, 2023",
       author: "Neha Gupta",
       category: "real-estate",
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      image: "/src/assets/img/Residential-project.png",
       readTime: "8 min read"
     },
     {
@@ -68,7 +68,7 @@ const Blog = () => {
       date: "February 15, 2023",
       author: "Vikram Singh",
       category: "dholera",
-      image: "https://images.unsplash.com/photo-1518005068251-37900150dfca?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      image: "/src/assets/img/smart-city.gif",
       readTime: "5 min read"
     },
     {
@@ -78,7 +78,7 @@ const Blog = () => {
       date: "January 30, 2023",
       author: "Sanjay Mehta",
       category: "real-estate",
-      image: "https://images.unsplash.com/photo-1556742031-c6961e8560b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      image: "/src/assets/img/COMMERCIAL-project.png",
       readTime: "7 min read"
     },
     {
@@ -88,7 +88,7 @@ const Blog = () => {
       date: "January 12, 2023",
       author: "Ananya Desai",
       category: "market-trends",
-      image: "https://images.unsplash.com/photo-1542879379-a0c18549e8a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      image: "/src/assets/img/Industrial-project.png",
       readTime: "6 min read"
     },
     {
@@ -98,7 +98,7 @@ const Blog = () => {
       date: "December 5, 2022",
       author: "Rahul Verma",
       category: "investment",
-      image: "https://images.unsplash.com/photo-1553697388-94e804e2f0f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      image: "/src/assets/img/Industrial.png",
       readTime: "5 min read"
     },
     {
@@ -108,7 +108,7 @@ const Blog = () => {
       date: "November 18, 2022",
       author: "Deepak Kumar",
       category: "dholera",
-      image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60",
+      image: "/src/assets/img/masterplan.png",
       readTime: "8 min read"
     }
   ];
@@ -131,9 +131,10 @@ const Blog = () => {
         height="100vh"
         overlayColor="#673a377e"
         speed={0.4}
-        className="py-16 sm:py-20 md:py-32 flex items-center justify-center text-center"
+        className="flex items-center justify-center text-center"
+        backgroundSize="cover"
       >
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative z-10 w-full h-full flex items-center justify-center">
           <div className="max-w-6xl mx-auto">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight">
               Our <span className="text-blue-300">Blog</span>

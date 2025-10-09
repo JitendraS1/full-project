@@ -23,45 +23,22 @@ function AboutUs() {
         height="100vh"
         overlayColor="#673a377e"
         speed={0.4}
-        className="py-16 sm:py-20 md:py-32 flex items-center justify-center text-center"
+        className="flex items-center justify-center text-center"
+        backgroundSize="cover"
       >
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative z-10 w-full h-full flex items-center justify-center">
           <div className="max-w-6xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight">
               About <span className="text-blue-300">Us</span>
             </h1>
-            <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
-            {/* Schema markup for About page */}
-            <script type="application/ld+json">
-              {JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "Organization",
-                "name": "Nestoria Group",
-                "url": "https://nestoriagroup.com",
-                "logo": "https://nestoriagroup.com/logo.png",
-                "description": "Nestoria Group is one of the fastest-growing real estate companies with prime focus on Dholera Special Investment Region.",
-                "foundingDate": "2010",
-                "founders": [
-                  {
-                    "@type": "Person",
-                    "name": "Shivkumar Singh Tomar"
-                  }
-                ],
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": "Dholera",
-                  "addressRegion": "Gujarat",
-                  "addressCountry": "India"
-                }
-              })}
-            </script>
-            <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 md:mb-10 animate-slide-up opacity-0 animation-delay-300 max-w-3xl mx-auto leading-relaxed">
+            <div className="h-1 w-24 sm:w-32 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
+            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 md:mb-10 animate-slide-up opacity-0 animation-delay-300 max-w-3xl mx-auto leading-relaxed">
               Learn about Nestoria Group's journey, vision, and commitment to excellence in Dholera SIR
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 animate-slide-up opacity-0 animation-delay-500">
               <Link
                 to="/contact"
-                className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center relative overflow-hidden"
+                className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-base md:text-lg py-3 px-6 md:py-4 md:px-8 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center relative overflow-hidden"
               >
                 <span className="relative z-10 flex items-center justify-center">
                   <i className="fas fa-phone mr-2"></i>
@@ -71,7 +48,7 @@ function AboutUs() {
               </Link>
               <Link
                 to="/land-deals"
-                className="group bg-transparent hover:bg-white/10 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center backdrop-blur-sm"
+                className="group bg-transparent hover:bg-white/10 text-white font-bold text-base md:text-lg py-3 px-6 md:py-4 md:px-8 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center backdrop-blur-sm"
               >
                 <span className="flex items-center justify-center">
                   <i className="fas fa-search mr-2"></i>
@@ -84,48 +61,49 @@ function AboutUs() {
       </ParallaxSection>
 
       {/* About Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
             <div className="w-full lg:w-1/2">
               <div className="relative overflow-hidden rounded-2xl shadow-2xl group">
                 <img 
-                  className="w-full h-80 sm:h-96 md:h-[500px] object-cover transform group-hover:scale-110 transition-transform duration-700" 
-                  src="https://raw.githubusercontent.com/JitendraS1/nestoriagroup/refs/heads/main/img/back.jpg" 
+                  className="w-full h-64 sm:h-80 md:h-[400px] object-cover transform group-hover:scale-110 transition-transform duration-700" 
+                  src={aboutbanner} 
                   alt="About Nestoria Group" 
                   loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <span className="text-white text-xl md:text-3xl font-bold px-6 py-4 border-2 border-white rounded-lg mb-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  <span className="text-white text-lg sm:text-xl md:text-2xl font-bold px-4 sm:px-6 py-3 border-2 border-white rounded-lg mb-6 sm:mb-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                     Discover Nestoria
                   </span>
                 </div>
-                <div className="absolute top-4 left-4 bg-gradient-to-br from-blue-600 to-blue-700 p-6 w-32 h-32 sm:w-40 sm:h-40 flex flex-col justify-center items-center shadow-2xl rounded-2xl">
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">15+</h1>
-                  <h2 className="text-sm sm:text-lg md:text-xl font-semibold text-white">Years</h2>
-                  <h5 className="text-xs sm:text-sm md:text-base text-white">Experience</h5>
+                <div className="absolute top-3 sm:top-4 left-3 sm:left-4 bg-gradient-to-br from-blue-600 to-blue-700 p-4 sm:p-5 w-24 h-24 sm:w-32 sm:h-32 flex flex-col justify-center items-center shadow-2xl rounded-2xl">
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">15+</h1>
+                  <h2 className="text-xs sm:text-sm md:text-base font-semibold text-white">Years</h2>
+                  <h5 className="text-[10px] sm:text-xs md:text-sm text-white">Experience</h5>
                 </div>
               </div>
             </div>
             <div className="w-full lg:w-1/2">
-              <div className="lg:pl-6">
-                <h6 className="text-blue-600 font-semibold text-lg mb-3 uppercase tracking-wider">
+              <div className="lg:pl-0 sm:pl-6">
+                <h6 className="text-blue-600 font-semibold text-base sm:text-lg mb-2 sm:mb-3 uppercase tracking-wider">
                   About Us
                 </h6>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
                   We Are Your Trusted <span className="text-blue-600">Partner</span> In Dholera SIR
                 </h2>
-                <div className="h-1 w-32 bg-gradient-to-r from-blue-600 to-blue-400 mb-8"></div>
-                <p className="text-gray-700 mb-6 text-lg leading-relaxed">
+                <div className="h-1 w-24 sm:w-32 bg-gradient-to-r from-blue-600 to-blue-400 mb-6 sm:mb-8"></div>
+                <p className="text-gray-700 mb-4 sm:mb-6 text-base sm:text-lg leading-relaxed">
                   Nestoria Buildcon Pvt. Ltd. is one of the fastest-growing real estate companies with the prime focus on Dholera Special Investment Region. We have been emblem of trust, transparency, and customer-oriented solutions for 13 years.
                 </p>
-                <p className="text-gray-700 mb-6 text-lg leading-relaxed">
+                <p className="text-gray-700 mb-4 sm:mb-6 text-base sm:text-lg leading-relaxed">
                   In 2010, we started our journey from Gwalior, Madhya Pradesh. Our passion to help others in choosing the perfect property based on their requirement and our hard work led us to the path of success.
                 </p>
-                <p className="text-gray-700 mb-8 text-lg leading-relaxed">
+                <p className="text-gray-700 mb-6 sm:mb-8 text-base sm:text-lg leading-relaxed">
                   We continued our journey in Real Estate with a vision of opportunistic investment which led us to Dholera SIR. In 2018, we started our engagement in Dholera SIR. A roadmap to one of the best smart cities in the world with state-of-the-art facilities and international connectivity caught our eyes and compelled us to showcase this potential to the people and help them go with the future.
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-10">
                   {[
                     "Premium Land Parcels",
                     "Strategic Locations",
@@ -136,29 +114,29 @@ function AboutUs() {
                   ].map((item, i) => (
                     <div
                       key={i}
-                      className="group flex items-start p-4 bg-white rounded-xl shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border-l-4 border-blue-500"
+                      className="group flex items-start p-3 sm:p-4 bg-white rounded-xl shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border-l-4 border-blue-500"
                     >
-                      <div className="flex-shrink-0 mr-3 bg-gradient-to-br from-blue-100 to-blue-200 p-2 rounded-full group-hover:scale-110 transition-transform duration-300">
-                        <i className="fa fa-check text-blue-600 text-sm"></i>
+                      <div className="flex-shrink-0 mr-2.5 sm:mr-3 bg-gradient-to-br from-blue-100 to-blue-200 p-1.5 sm:p-2 rounded-full group-hover:scale-110 transition-transform duration-300">
+                        <i className="fa fa-check text-blue-600 text-xs sm:text-sm"></i>
                       </div>
-                      <span className="text-gray-700 font-medium group-hover:text-blue-600 transition-colors duration-300">{item}</span>
+                      <span className="text-gray-700 font-medium text-sm sm:text-base group-hover:text-blue-600 transition-colors duration-300">{item}</span>
                     </div>
                   ))}
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div className="flex items-center mb-2">
-                      <h1 className="text-4xl md:text-5xl font-bold text-blue-600">5000</h1>
-                      <span className="text-blue-500 text-2xl md:text-3xl font-bold">+</span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-5 sm:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div className="flex items-center mb-1.5 sm:mb-2">
+                      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-600">5000</h1>
+                      <span className="text-blue-500 text-xl sm:text-2xl md:text-3xl font-bold">+</span>
                     </div>
-                    <h6 className="text-gray-600 font-semibold text-lg">Happy Clients</h6>
+                    <h6 className="text-gray-600 font-semibold text-base sm:text-lg">Happy Clients</h6>
                   </div>
-                  <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <div className="flex items-center mb-2">
-                      <h1 className="text-4xl md:text-5xl font-bold text-green-600">50</h1>
-                      <span className="text-green-500 text-2xl md:text-3xl font-bold">+</span>
+                  <div className="bg-gradient-to-br from-green-50 to-green-100 p-5 sm:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div className="flex items-center mb-1.5 sm:mb-2">
+                      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-600">50</h1>
+                      <span className="text-green-500 text-xl sm:text-2xl md:text-3xl font-bold">+</span>
                     </div>
-                    <h6 className="text-gray-600 font-semibold text-lg">Projects Completed</h6>
+                    <h6 className="text-gray-600 font-semibold text-base sm:text-lg">Projects Completed</h6>
                   </div>
                 </div>
               </div>
@@ -390,7 +368,7 @@ function AboutUs() {
               <div className="relative overflow-hidden rounded-2xl shadow-2xl border-4 border-white/20 group">
                 <img 
                   className="w-full h-64 md:h-80 object-cover transform transition-transform duration-500 group-hover:scale-110" 
-                  src="https://nestoriagroup.com/wp-content/uploads/2022/11/dholera-dp-map.png" 
+                  src="/src/assets/img/icon/dholera-dp-map.webp" 
                   alt="Dholera SIR" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">

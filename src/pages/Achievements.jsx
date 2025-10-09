@@ -6,8 +6,7 @@ const callouts = [
   {
     name: "Desk and Office",
     description: "Work from home accessories",
-    imageSrc:
-      "https://cdn.prod.website-files.com/67f0dc08b0257791feaaf491/67f0dc08b0257791feaaf5fe_qms.jpg",
+    imageSrc: "/src/assets/img/about.png",
     imageAlt:
       "Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug.",
     href: "#",
@@ -15,8 +14,7 @@ const callouts = [
   {
     name: "Self-Improvement",
     description: "Journals and note-taking",
-    imageSrc:
-      "https://cdn.prod.website-files.com/67f0dc08b0257791feaaf491/67f0dc08b0257791feaaf5ff_env%20mgmt%20system.jpg",
+    imageSrc: "/src/assets/img/growth.png",
     imageAlt:
       "Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.",
     href: "#",
@@ -24,8 +22,7 @@ const callouts = [
   {
     name: "Travel",
     description: "Daily commute essentials",
-    imageSrc:
-      "https://cdn.prod.website-files.com/67f0dc08b0257791feaaf491/67f0dc08b0257791feaaf600_occupat.jpg",
+    imageSrc: "/src/assets/img/connectivity.png",
     imageAlt: "Collection of four insulated travel bottles on wooden shelf.",
     href: "#",
   },
@@ -55,8 +52,7 @@ function Achievements() {
       year: "2024",
       description:
         "Recognized for excellence in developing sustainable and innovative real estate projects in Dholera SIR.",
-      image:
-        "https://cdn.prod.website-files.com/67f0dc08b0257791feaaf491/68064027657d9b338a82ba5c_Mask%20group12.png",
+      image: "/src/assets/img/Residential-project.png",
     },
     {
       id: 2,
@@ -65,8 +61,7 @@ function Achievements() {
       year: "2022",
       description:
         "Awarded for the master planning and execution of Nestoria Green Valley residential township in Dholera SIR.",
-      image:
-        "https://cdn.prod.website-files.com/67f0dc08b0257791feaaf491/68064027657d9b338a82ba59_Mask%20group-4.png",
+      image: "/src/assets/img/COMMERCIAL-project.png",
     },
     {
       id: 3,
@@ -75,8 +70,7 @@ function Achievements() {
       year: "2022",
       description:
         "Recognized for incorporating sustainable practices and eco-friendly technologies in our residential and commercial projects.",
-      image:
-        "https://cdn.prod.website-files.com/67f0dc08b0257791feaaf491/68064027657d9b338a82ba58_Mask%20group.png",
+      image: "/src/assets/img/Industrial-project.png",
     },
     {
       id: 4,
@@ -85,8 +79,7 @@ function Achievements() {
       year: "2021",
       description:
         "Nestoria Business Hub recognized for its innovative design, amenities, and contribution to the commercial development of Dholera SIR.",
-      image:
-        "https://cdn.prod.website-files.com/67f0dc08b0257791feaaf491/68064027657d9b338a82ba5b_Mask%20group-1.png",
+      image: "/src/assets/img/growth.png",
     },
   ];
 
@@ -201,7 +194,7 @@ function Achievements() {
       
       {/* Page Header */}
       <div
-        className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white py-16 md:py-24 relative overflow-hidden"
+        className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white py-16 sm:py-20 md:py-32 relative overflow-hidden"
         style={{
           backgroundImage: `url(${achievementBg})`,
           backgroundSize: "cover",
@@ -210,59 +203,34 @@ function Achievements() {
       >
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-            <div className="lg:w-2/3">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 md:mb-6 leading-tight">
-                Our <span className="text-blue-300">Achievements</span>
-              </h1>
-              <div className="h-1 w-32 bg-gradient-to-r from-white to-blue-300 mb-6 md:mb-8"></div>
-              <p className="text-lg sm:text-xl md:text-2xl mb-8 md:mb-10 text-white/90 leading-relaxed">
-                Celebrating excellence and milestones in our journey of creating
-                exceptional real estate developments
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-                <a
-                  href="#press-coverage"
-                  className="group bg-white text-blue-600 font-bold py-4 px-8 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 text-lg"
-                >
-                  <span className="flex items-center justify-center">
-                    <i className="fas fa-newspaper mr-2"></i>
-                    Press Coverage
-                  </span>
-                </a>
-                <a
-                  href="#awards"
-                  className="group bg-transparent hover:bg-white/10 text-white font-bold py-4 px-8 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 text-lg backdrop-blur-sm"
-                >
-                  <span className="flex items-center justify-center">
-                    <i className="fas fa-trophy mr-2"></i>
-                    View Awards
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div className="lg:w-1/3 lg:text-right">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-white/20">
-                <h3 className="text-xl md:text-2xl font-bold mb-4 text-white">Key Stats</h3>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-white/90">Years of Excellence</span>
-                    <span className="text-2xl font-bold text-blue-300">15+</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-white/90">Happy Customers</span>
-                    <span className="text-2xl font-bold text-blue-300">5000+</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-white/90">Awards Won</span>
-                    <span className="text-2xl font-bold text-blue-300">10+</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-white/90">Projects Completed</span>
-                    <span className="text-2xl font-bold text-blue-300">50+</span>
-                  </div>
-                </div>
-              </div>
+          <div className="max-w-6xl mx-auto text-center">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight">
+              Our <span className="text-blue-300">Achievements</span>
+            </h1>
+            <div className="h-1 w-24 sm:w-32 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
+            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 md:mb-10 animate-slide-up opacity-0 animation-delay-300 max-w-3xl mx-auto leading-relaxed">
+              Celebrating excellence and milestones in our journey of creating exceptional real estate developments
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 animate-slide-up opacity-0 animation-delay-500">
+              <a
+                href="#press-coverage"
+                className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-base md:text-lg py-3 px-6 md:py-4 md:px-8 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center relative overflow-hidden"
+              >
+                <span className="relative z-10 flex items-center justify-center">
+                  <i className="fas fa-newspaper mr-2"></i>
+                  Press Coverage
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </a>
+              <a
+                href="#awards"
+                className="group bg-transparent hover:bg-white/10 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center backdrop-blur-sm"
+              >
+                <span className="flex items-center justify-center">
+                  <i className="fas fa-trophy mr-2"></i>
+                  View Awards
+                </span>
+              </a>
             </div>
           </div>
         </div>

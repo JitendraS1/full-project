@@ -4,8 +4,10 @@ import ParallaxSection from '../components/ParallaxSection';
 import ParallaxScroll from '../components/ParallaxScroll';
 import projectbanner from '/src/assets/img/projects-Banner.png';
 import NetureNest from '/src/assets/img/NatureNest.png';
-import sunshine3 from '/src/assets/img/SunshineResidency.png';
 import image1 from '/src/assets/img/new-image.jpg';
+import industrialImg from '/src/assets/img/Industrial-project.png';
+import residentialImg from '/src/assets/img/Residential-project.png';
+import commercialImg from '/src/assets/img/COMMERCIAL-project.png';
 function Projects() {
   // State for active project filter
   const [activeFilter, setActiveFilter] = useState('all');
@@ -19,7 +21,7 @@ function Projects() {
       location: ' Village Adhelai 0Km DSIR',
       area: '42 Acre',
       // status: 'Completed',
-      image: NetureNest,
+      image: image1,
       description: 'Premium residential plots in a prime location with excellent connectivity and amenities.'
     },
     {
@@ -39,7 +41,7 @@ function Projects() {
       location: 'Dholera SIR, Sector 9',
       area: '5000-20000 sq.yard',
       // status: 'Ongoing',
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070',
+      image: industrialImg,
       description: 'Industrial plots ideal for manufacturing units with excellent infrastructure and connectivity.'
     },
     {
@@ -49,7 +51,7 @@ function Projects() {
       location: 'Dholera SIR, Sector 5',
       area: '800-1200 sq.yard',
       // status: 'Upcoming',
-      image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1974',
+      image: residentialImg,
       description: 'Luxury apartments with modern amenities and beautiful surroundings in the heart of Dholera SIR.'
     },
     {
@@ -59,7 +61,7 @@ function Projects() {
       location: 'Dholera SIR, Sector 2',
       area: '500-2000 sq.yard',
       // status: 'Completed',
-      image: 'https://images.unsplash.com/photo-1555636222-cae831e670b3?q=80&w=1770',
+      image: commercialImg,
       description: 'Retail spaces in high-footfall areas, perfect for businesses looking to tap into the growing market.'
     },
     {
@@ -69,7 +71,37 @@ function Projects() {
       location: 'Dholera SIR, Sector 8',
       area: '10000-50000 sq.yard',
       // status: 'Ongoing',
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070',
+      image: industrialImg,
+      description: 'Strategically located logistics park with excellent connectivity to major transportation routes.'
+    },
+    {
+      id: 7,
+      type: 'industrial',
+      title: 'Logistics Park',
+      location: 'Dholera SIR, Sector 8',
+      area: '10000-50000 sq.yard',
+      // status: 'Ongoing',
+      image: industrialImg,
+      description: 'Strategically located logistics park with excellent connectivity to major transportation routes.'
+    },
+    {
+      id: 8,
+      type: 'industrial',
+      title: 'Logistics Park',
+      location: 'Dholera SIR, Sector 8',
+      area: '10000-50000 sq.yard',
+      // status: 'Ongoing',
+      image: industrialImg,
+      description: 'Strategically located logistics park with excellent connectivity to major transportation routes.'
+    },
+    {
+      id: 9,
+      type: 'industrial',
+      title: 'Logistics Park',
+      location: 'Dholera SIR, Sector 8',
+      area: '10000-50000 sq.yard',
+      // status: 'Ongoing',
+      image: industrialImg,
       description: 'Strategically located logistics park with excellent connectivity to major transportation routes.'
     }
   ];
@@ -94,23 +126,31 @@ function Projects() {
         height="100vh"
         overlayColor="#673a377e"
         speed={0.4}
-        className="flex py-32 items-center justify-center text-center"
+        className="flex items-center justify-center text-center"
+        backgroundSize="cover"
       >
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Our <span className="text-blue-200">Projects</span>
+        <div className="container mx-auto px-4 relative z-10 w-full h-full flex items-center justify-center">
+          <div className="max-w-6xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight">
+              Our <span className="text-blue-300">Projects</span>
             </h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-300 to-cyan-300 mx-auto mb-8"></div>
-            <p className="text-lg md:text-xl lg:text-2xl text-blue-100 mb-10 max-w-4xl mx-auto leading-relaxed">
+            <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 md:mb-10 animate-slide-up opacity-0 animation-delay-300 max-w-3xl mx-auto leading-relaxed">
               Explore our diverse portfolio of residential, commercial, and industrial projects in Dholera SIR
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                <i className="fas fa-search mr-2"></i>Browse Projects
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 animate-slide-up opacity-0 animation-delay-500">
+              <button className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center relative overflow-hidden">
+                <span className="relative z-10 flex items-center justify-center">
+                  <i className="fas fa-search mr-2"></i>
+                  Browse Projects
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
-              <button className="bg-transparent backdrop-blur-sm hover:bg-white/10 text-white border-2 border-white hover:border-blue-300 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
-                <i className="fas fa-phone mr-2"></i>Get Consultation
+              <button className="group bg-transparent hover:bg-white/10 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center backdrop-blur-sm">
+                <span className="flex items-center justify-center">
+                  <i className="fas fa-phone mr-2"></i>
+                  Get Consultation
+                </span>
               </button>
             </div>
           </div>

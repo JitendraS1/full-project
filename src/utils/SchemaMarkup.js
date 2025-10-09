@@ -15,7 +15,7 @@ export const getOrganizationSchema = () => {
     "@type": "Organization",
     "name": "Nestoria Group",
     "url": "https://nestoriagroup.com",
-    "logo": "https://nestoriagroup.com/logonew.png",
+    "logo": "/logonew.png",
     "sameAs": [
       "https://www.facebook.com/nestoriagroup",
       "https://www.instagram.com/nestoria.group",
@@ -49,7 +49,7 @@ export const getLocalBusinessSchema = () => {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     "name": "Nestoria Group",
-    "image": "https://nestoriagroup.com/logonew.png",
+    "image": "/logonew.png",
     "@id": "https://nestoriagroup.com",
     "url": "https://nestoriagroup.com",
     "telephone": "+91-9274411705",
@@ -169,7 +169,7 @@ export const getReviewSchema = (review) => {
     "itemReviewed": {
       "@type": "RealEstateAgent",
       "name": "Nestoria Group",
-      "image": "https://nestoriagroup.com/logonew.png",
+      "image": "/logonew.png",
       "url": "https://nestoriagroup.com"
     },
     "reviewRating": {
@@ -209,7 +209,7 @@ export const getArticleSchema = (article) => {
       "name": "Nestoria Group",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://nestoriagroup.com/logonew.png"
+        "url": "/logonew.png"
       }
     },
     "description": article.description,

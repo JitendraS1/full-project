@@ -67,6 +67,23 @@ function Navbar() {
     setIsAboutDropdownOpen(!isAboutDropdownOpen);
   };
 
+  // Close all menus
+  const closeAllMenus = () => {
+    setIsOpen(false);
+    setIsAboutDropdownOpen(false);
+  };
+
+  // Handle keyboard navigation for dropdown
+  const handleDropdownKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleAboutDropdown();
+    }
+    if (e.key === 'Escape') {
+      setIsAboutDropdownOpen(false);
+    }
+  };
+
   return (
     <nav className={`relative bg-white py-3 ${isScrolled ? 'shadow-md sticky top-0 z-50 bg-gray-50' : ''}`}>
       <div ref={navRef} className="container mx-auto px-4 flex justify-between items-center">

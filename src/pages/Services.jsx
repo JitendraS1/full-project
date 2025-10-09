@@ -14,24 +14,32 @@ function Services() {
         backgroundImage={servicebanner}
         height="100vh"
         overlayColor="#673a377e"
-        speed={0.5}
+        speed={0.4}
         className="flex items-center justify-center text-center"
+        backgroundSize="cover"
       >
-        <div className="container mx-auto px-4 relative text-center z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Our <span className="text-blue-600">Services</span>
+        <div className="container mx-auto px-4 relative z-10 w-full h-full flex items-center justify-center">
+          <div className="max-w-6xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight">
+              Our <span className="text-blue-300">Services</span>
             </h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-300 to-cyan-300 mx-auto mb-8"></div>
-            <p className="text-lg md:text-xl lg:text-2xl text-blue-100 mb-10 leading-relaxed">
+            <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
+            <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 md:mb-10 animate-slide-up opacity-0 animation-delay-300 max-w-3xl mx-auto leading-relaxed">
               Comprehensive real estate solutions for residential, commercial, and industrial investments in Dholera SIR
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                <i className="fas fa-search mr-2"></i>Explore Services
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 animate-slide-up opacity-0 animation-delay-500">
+              <button className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center relative overflow-hidden">
+                <span className="relative z-10 flex items-center justify-center">
+                  <i className="fas fa-search mr-2"></i>
+                  Explore Services
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
-              <button className="bg-transparent backdrop-blur-sm hover:bg-white/10 text-white border-2 border-white hover:border-blue-300 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
-                <i className="fas fa-phone mr-2"></i>Get Consultation
+              <button className="group bg-transparent hover:bg-white/10 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center backdrop-blur-sm">
+                <span className="flex items-center justify-center">
+                  <i className="fas fa-phone mr-2"></i>
+                  Get Consultation
+                </span>
               </button>
             </div>
           </div>

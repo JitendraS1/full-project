@@ -109,9 +109,10 @@ function Aboutdholera() {
         height="100vh"
         overlayColor="#673a377e"
         speed={0.4}
-        className="py-16 sm:py-20 md:py-32 flex items-center justify-center text-center"
+        className="flex items-center justify-center text-center"
+        backgroundSize="cover"
       >
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative z-10 w-full h-full flex items-center justify-center">
           <div className="max-w-6xl mx-auto">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight">
               About <span className="text-blue-300">Dholera SIR</span>
@@ -483,44 +484,75 @@ function Aboutdholera() {
                   <form onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                       <div className="relative">
+                        <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
                         <input 
                           type="text" 
-                          className={`w-full px-4 py-3 border ${errors.name ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300`} 
+                          className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-sm md:text-base ${
+                            errors.name 
+                              ? "border-red-500 bg-red-50" 
+                              : "border-gray-300 focus:bg-blue-50"
+                          }`} 
                           id="name" 
                           name="name"
                           value={formData.name}
                           onChange={handleChange}
-                          placeholder="Your Name" 
+                          placeholder="Enter your full name" 
                         />
-                        {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
+                        {errors.name && (
+                          <p className="text-red-500 text-sm mt-2 flex items-center">
+                            <i className="fas fa-exclamation-circle mr-2"></i>
+                            {errors.name}
+                          </p>
+                        )}
                       </div>
                       <div className="relative">
-                        <input 
-                          type="email" 
-                          className={`w-full px-4 py-3 border ${errors.email ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300`} 
-                          id="email" 
-                          name="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          placeholder="Your Email" 
-                        />
-                        {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
-                      </div>
-                      <div className="relative">
+                        <label htmlFor="mobile" className="block text-sm font-semibold text-gray-700 mb-2">Mobile Number *</label>
                         <input 
                           type="text" 
-                          className={`w-full px-4 py-3 border ${errors.mobile ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300`} 
+                          className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-sm md:text-base ${
+                            errors.mobile 
+                              ? "border-red-500 bg-red-50" 
+                              : "border-gray-300 focus:bg-blue-50"
+                          }`} 
                           id="mobile" 
                           name="mobile"
                           value={formData.mobile}
                           onChange={handleChange}
-                          placeholder="Your Mobile" 
+                          placeholder="Enter your mobile number" 
                         />
-                        {errors.mobile && <p className="text-red-500 text-xs mt-1">{errors.mobile}</p>}
+                        {errors.mobile && (
+                          <p className="text-red-500 text-sm mt-2 flex items-center">
+                            <i className="fas fa-exclamation-circle mr-2"></i>
+                            {errors.mobile}
+                          </p>
+                        )}
                       </div>
                       <div className="relative">
+                        <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
+                        <input 
+                          type="email" 
+                          className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-sm md:text-base ${
+                            errors.email 
+                              ? "border-red-500 bg-red-50" 
+                              : "border-gray-300 focus:bg-blue-50"
+                          }`} 
+                          id="email" 
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder="Enter your email address" 
+                        />
+                        {errors.email && (
+                          <p className="text-red-500 text-sm mt-2 flex items-center">
+                            <i className="fas fa-exclamation-circle mr-2"></i>
+                            {errors.email}
+                          </p>
+                        )}
+                      </div>
+                      <div className="relative">
+                        <label htmlFor="propertyType" className="block text-sm font-semibold text-gray-700 mb-2">Property Type</label>
                         <select 
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white transition-all duration-300" 
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 appearance-none bg-white transition-all duration-300 text-sm md:text-base focus:bg-blue-50" 
                           id="propertyType"
                           name="propertyType"
                           value={formData.propertyType}
@@ -532,16 +564,26 @@ function Aboutdholera() {
                         </select>
                       </div>
                       <div className="sm:col-span-2">
+                        <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">Your Message *</label>
                         <textarea 
-                          className={`w-full px-4 py-3 border ${errors.message ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300`} 
-                          placeholder="Your Message" 
+                          className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-sm md:text-base ${
+                            errors.message 
+                              ? "border-red-500 bg-red-50" 
+                              : "border-gray-300 focus:bg-blue-50"
+                          }`} 
+                          placeholder="Tell us about your property requirements" 
                           id="message" 
                           name="message"
                           value={formData.message}
                           onChange={handleChange}
                           rows="4"
                         ></textarea>
-                        {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
+                        {errors.message && (
+                          <p className="text-red-500 text-sm mt-2 flex items-center">
+                            <i className="fas fa-exclamation-circle mr-2"></i>
+                            {errors.message}
+                          </p>
+                        )}
                       </div>
                       <div className="sm:col-span-2 text-center">
                         <button 

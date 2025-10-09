@@ -20,9 +20,43 @@ function LandDeal() {
     message: "",
   });
 
+  const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+  const validateForm = () => {
+    const newErrors = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = "Name must be at least 2 characters";
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+    
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    } else if (!/^[0-9+\-\s()]{10,15}$/.test(formData.phone)) {
+      newErrors.phone = "Please enter a valid phone number";
+    }
+    
+    if (!formData.propertyType) {
+      newErrors.propertyType = "Please select a property type";
+    }
+    
+    if (!formData.budget) {
+      newErrors.budget = "Please select a budget range";
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,10 +64,23 @@ function LandDeal() {
       ...prevState,
       [name]: value,
     }));
+    
+    // Clear error when user starts typing/selecting
+    if (errors[name]) {
+      setErrors(prevErrors => ({
+        ...prevErrors,
+        [name]: ""
+      }));
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+    
     setLoading(true);
     setError("");
     try {
@@ -48,6 +95,7 @@ function LandDeal() {
           budget: "",
           message: "",
         });
+        setErrors({});
       } else {
         setError(res.message || "Failed to send inquiry. Please try again later.");
       }
@@ -137,62 +185,37 @@ function LandDeal() {
     
       {/* Page Header */}
       <header className="relative py-16 sm:py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center bg-blue-700"></div>
+        <div className="absolute inset-0 bg-cover bg-center bg-blue-700" style={{backgroundImage: "url('/src/assets/img/land-deals-banner.jpg')"}}></div>
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 opacity-90"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
-            <div className="w-full lg:w-2/3 text-center lg:text-left">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight">
-                Land Deals in <span className="text-blue-300">Dholera SIR</span>
-              </h1>
-              <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto lg:mx-0 mb-6 md:mb-8 animate-slide-up"></div>
-              <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 md:mb-10 animate-slide-up opacity-0 animation-delay-300 leading-relaxed">
-                Explore premium land opportunities in India's first planned smart city with excellent appreciation potential
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4 sm:gap-6 animate-slide-up opacity-0 animation-delay-500">
-                <a 
-                  href="#contact-section" 
-                  className="group bg-gradient-to-r from-white to-blue-100 text-blue-600 hover:from-blue-50 hover:to-white font-bold text-base md:text-lg py-4 px-8 md:px-10 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center relative overflow-hidden"
-                >
-                  <span className="relative z-10 flex items-center justify-center">
-                    <i className="fas fa-envelope mr-2"></i>
-                    Contact Us
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </a>
-                <a 
-                  href="#land-deals" 
-                  className="group bg-transparent hover:bg-white/10 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center backdrop-blur-sm"
-                >
-                  <span className="flex items-center justify-center">
-                    <i className="fas fa-search mr-2"></i>
-                    View Properties
-                  </span>
-                </a>
-              </div>
-            </div>
-            <div className="w-full lg:w-1/3 flex justify-center lg:justify-end">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-white/20">
-                <h3 className="text-xl md:text-2xl font-bold mb-4 text-white">Investment Highlights</h3>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-white/90">Smart City Status</span>
-                    <span className="text-2xl font-bold text-blue-300">✓</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-white/90">DMIC Zone</span>
-                    <span className="text-2xl font-bold text-blue-300">✓</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-white/90">Government Backed</span>
-                    <span className="text-2xl font-bold text-blue-300">✓</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-white/90">High ROI Potential</span>
-                    <span className="text-2xl font-bold text-blue-300">✓</span>
-                  </div>
-                </div>
-              </div>
+          <div className="max-w-6xl mx-auto text-center">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight">
+              Premium Land Investment <span className="text-blue-300">Opportunities</span>
+            </h1>
+            <div className="h-1 w-24 sm:w-32 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
+            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 md:mb-10 animate-slide-up opacity-0 animation-delay-300 max-w-3xl mx-auto leading-relaxed">
+              Discover exclusive residential, commercial & industrial land parcels in India's first smart city with unlimited growth potential
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 animate-slide-up opacity-0 animation-delay-500">
+              <a 
+                href="#contact-section" 
+                className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-base md:text-lg py-3 px-6 md:py-4 md:px-8 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center relative overflow-hidden"
+              >
+                <span className="relative z-10 flex items-center justify-center">
+                  <i className="fas fa-envelope mr-2"></i>
+                  Inquire Now
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </a>
+              <a 
+                href="#land-deals" 
+                className="group bg-transparent hover:bg-white/10 text-white font-bold text-base md:text-lg py-3 px-6 md:py-4 md:px-8 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center backdrop-blur-sm"
+              >
+                <span className="flex items-center justify-center">
+                  <i className="fas fa-search mr-2"></i>
+                  View Land Deals
+                </span>
+              </a>
             </div>
           </div>
         </div>
@@ -369,10 +392,19 @@ function LandDeal() {
                           name="name"
                           value={formData.name}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 md:py-4 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 text-sm md:text-base" 
-                          placeholder="Enter your full name" 
-                          required 
+                          className={`w-full px-4 py-3 md:py-4 border-2 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 text-sm md:text-base ${
+                            errors.name 
+                              ? "border-red-500 bg-red-50" 
+                              : "border-gray-300 focus:bg-blue-50"
+                          }`}
+                          placeholder="Enter your full name"
                         />
+                        {errors.name && (
+                          <p className="text-red-500 text-sm mt-2 flex items-center">
+                            <i className="fas fa-exclamation-circle mr-2"></i>
+                            {errors.name}
+                          </p>
+                        )}
                       </div>
                       <div>
                         <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-3">Phone Number *</label>
@@ -382,10 +414,19 @@ function LandDeal() {
                           name="phone"
                           value={formData.phone}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 md:py-4 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 text-sm md:text-base" 
-                          placeholder="Enter your phone number" 
-                          required 
+                          className={`w-full px-4 py-3 md:py-4 border-2 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 text-sm md:text-base ${
+                            errors.phone 
+                              ? "border-red-500 bg-red-50" 
+                              : "border-gray-300 focus:bg-blue-50"
+                          }`}
+                          placeholder="Enter your phone number"
                         />
+                        {errors.phone && (
+                          <p className="text-red-500 text-sm mt-2 flex items-center">
+                            <i className="fas fa-exclamation-circle mr-2"></i>
+                            {errors.phone}
+                          </p>
+                        )}
                       </div>
                       <div>
                         <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-3">Email Address *</label>
@@ -395,10 +436,19 @@ function LandDeal() {
                           name="email"
                           value={formData.email}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 md:py-4 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 text-sm md:text-base" 
-                          placeholder="Enter your email address" 
-                          required 
+                          className={`w-full px-4 py-3 md:py-4 border-2 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 text-sm md:text-base ${
+                            errors.email 
+                              ? "border-red-500 bg-red-50" 
+                              : "border-gray-300 focus:bg-blue-50"
+                          }`}
+                          placeholder="Enter your email address"
                         />
+                        {errors.email && (
+                          <p className="text-red-500 text-sm mt-2 flex items-center">
+                            <i className="fas fa-exclamation-circle mr-2"></i>
+                            {errors.email}
+                          </p>
+                        )}
                       </div>
                       <div>
                         <label htmlFor="propertyType" className="block text-sm font-semibold text-gray-700 mb-3">Property Type *</label>
@@ -407,14 +457,23 @@ function LandDeal() {
                           name="propertyType"
                           value={formData.propertyType}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 md:py-4 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 text-sm md:text-base" 
-                          required 
+                          className={`w-full px-4 py-3 md:py-4 border-2 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 text-sm md:text-base ${
+                            errors.propertyType 
+                              ? "border-red-500 bg-red-50" 
+                              : "border-gray-300 focus:bg-blue-50"
+                          }`}
                         >
                           <option value="" disabled>Select Property Type</option>
                           <option value="residential">Residential land parcel</option>
                           <option value="commercial">Commercial land parcel</option>
                           <option value="industrial">Industrial land parcel</option>
                         </select>
+                        {errors.propertyType && (
+                          <p className="text-red-500 text-sm mt-2 flex items-center">
+                            <i className="fas fa-exclamation-circle mr-2"></i>
+                            {errors.propertyType}
+                          </p>
+                        )}
                       </div>
                       <div className="md:col-span-2">
                         <label htmlFor="budget" className="block text-sm font-semibold text-gray-700 mb-3">Budget Range *</label>
@@ -423,8 +482,11 @@ function LandDeal() {
                           name="budget"
                           value={formData.budget}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 md:py-4 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 text-sm md:text-base" 
-                          required 
+                          className={`w-full px-4 py-3 md:py-4 border-2 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 text-sm md:text-base ${
+                            errors.budget 
+                              ? "border-red-500 bg-red-50" 
+                              : "border-gray-300 focus:bg-blue-50"
+                          }`}
                         >
                           <option value="" disabled>Select Budget Range</option>
                           <option value="below-25">Below ₹25 Lakhs</option>
@@ -432,6 +494,12 @@ function LandDeal() {
                           <option value="50-1cr">₹50 Lakhs - ₹1 Crore</option>
                           <option value="above-1cr">Above ₹1 Crore</option>
                         </select>
+                        {errors.budget && (
+                          <p className="text-red-500 text-sm mt-2 flex items-center">
+                            <i className="fas fa-exclamation-circle mr-2"></i>
+                            {errors.budget}
+                          </p>
+                        )}
                       </div>
                       <div className="md:col-span-2">
                         <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-3">Your Requirements</label>
@@ -441,7 +509,7 @@ function LandDeal() {
                           value={formData.message}
                           onChange={handleChange}
                           rows="5" 
-                          className="w-full px-4 py-3 md:py-4 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 text-sm md:text-base" 
+                          className="w-full px-4 py-3 md:py-4 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-300 text-sm md:text-base focus:bg-blue-50"
                           placeholder="Tell us about your specific requirements"
                         ></textarea>
                       </div>

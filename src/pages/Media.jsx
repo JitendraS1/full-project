@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 function Media() {
   // State for active media filter
   const [activeFilter, setActiveFilter] = useState('all');
+  // State for dialog
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [dialogContent, setDialogContent] = useState({ type: '', url: '', title: '' });
   
   // Media data
   const mediaItems = [
@@ -12,7 +15,7 @@ function Media() {
       title: 'Nestoria Group Announces New Residential Project in Dholera SIR',
       date: 'June 15, 2023',
       source: 'Real Estate Chronicle',
-      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2073',
+      image: '/src/assets/img/Residential-project.png',
       link: '#',
       description: 'Nestoria Group has announced the launch of a new residential project in Dholera SIR, offering premium plots with world-class amenities.'
     },
@@ -22,7 +25,7 @@ function Media() {
       title: 'Dholera SIR Infrastructure Development Accelerates',
       date: 'August 22, 2023',
       source: 'Business Standard',
-      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070',
+      image: '/src/assets/img/connectivity.png',
       link: '#',
       description: 'The infrastructure development in Dholera SIR is progressing at a rapid pace, with major roads, utilities, and smart city features being implemented.'
     },
@@ -32,7 +35,7 @@ function Media() {
       title: 'Dholera SIR: The Future of Urban Development',
       date: 'September 5, 2023',
       source: 'Nestoria Group YouTube Channel',
-      image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070',
+      image: '/src/assets/img/futuredholera.png',
       link: 'https://www.youtube.com/embed/2pcf-1kqTKk?si=OF3R40EKWNEgWHO8',
       description: 'A comprehensive overview of Dholera SIR and its potential as India\'s first planned smart city.'
     },
@@ -42,7 +45,7 @@ function Media() {
       title: 'Aerial View of Dholera SIR Development',
       date: 'October 10, 2023',
       source: 'Nestoria Group Gallery',
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070',
+      image: '/src/assets/img/masterplan.png',
       link: '#',
       description: 'Stunning aerial photographs showcasing the ongoing development and infrastructure projects in Dholera SIR.'
     },
@@ -52,7 +55,7 @@ function Media() {
       title: 'Government Announces New Incentives for Dholera SIR Investors',
       date: 'November 18, 2023',
       source: 'Economic Times',
-      image: 'https://images.unsplash.com/photo-1444653614773-995cb1ef9efa?q=80&w=2076',
+      image: '/src/assets/img/growth.png',
       link: '#',
       description: 'The government has announced new tax incentives and subsidies for businesses and investors in Dholera SIR to boost economic growth.'
     },
@@ -62,7 +65,7 @@ function Media() {
       title: 'Nestoria Group Recognized for Excellence in Real Estate',
       date: 'December 5, 2023',
       source: 'Real Estate Awards 2023',
-      image: 'https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?q=80&w=2073',
+      image: '/src/assets/img/COMMERCIAL-project.png',
       link: '#',
       description: 'Nestoria Group has been awarded the "Excellence in Real Estate Development" award at the prestigious Real Estate Awards 2023.'
     },
@@ -72,7 +75,7 @@ function Media() {
       title: 'Client Testimonials: Investing in Dholera SIR',
       date: 'January 12, 2024',
       source: 'Nestoria Group YouTube Channel',
-      image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2074',
+      image: '/src/assets/img/who_we_are.png',
       link: 'https://www.youtube.com/embed/q_PJPHT7Sa8?si=JLkgqJzwBJq-GRKm',
       description: 'Hear from satisfied clients who have invested in Dholera SIR through Nestoria Group and their success stories.'
     },
@@ -82,7 +85,7 @@ function Media() {
       title: 'Dholera SIR Master Plan Visualization',
       date: 'February 20, 2024',
       source: 'Nestoria Group Gallery',
-      image: 'https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=2296',
+      image: '/src/assets/img/smart-city.gif',
       link: '#',
       description: 'Detailed visualizations and 3D renderings of the Dholera SIR master plan, showcasing the future development of the smart city.'
     },
@@ -92,7 +95,7 @@ function Media() {
       title: 'International Investors Show Interest in Dholera SIR',
       date: 'March 8, 2024',
       source: 'Financial Express',
-      image: 'https://images.unsplash.com/photo-1460472178825-e5240623afd5?q=80&w=2069',
+      image: '/src/assets/img/Industrial-project.png',
       link: '#',
       description: 'International investors and companies are showing significant interest in Dholera SIR, with several major investment deals in the pipeline.'
     }
@@ -102,6 +105,18 @@ function Media() {
   const filteredItems = activeFilter === 'all' 
     ? mediaItems 
     : mediaItems.filter(item => item.type === activeFilter);
+
+  // Function to open dialog
+  const openDialog = (type, url, title) => {
+    setDialogContent({ type, url, title });
+    setDialogOpen(true);
+  };
+
+  // Function to close dialog
+  const closeDialog = () => {
+    setDialogOpen(false);
+    setDialogContent({ type: '', url: '', title: '' });
+  };
 
   // Function to render media item based on type
   const renderMediaItem = (item) => {
@@ -117,7 +132,10 @@ function Media() {
                 className="w-full rounded-t-2xl"
                 style={{ height: '250px', objectFit: 'cover' }}
               ></iframe>
-              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div 
+                className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center cursor-pointer"
+                onClick={() => openDialog('video', item.link, item.title)}
+              >
                 <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center">
                   <i className="fas fa-play text-blue-600 text-2xl ml-1"></i>
                 </div>
@@ -125,7 +143,10 @@ function Media() {
             </div>
             <div className="p-6">
               <div className="flex items-center mb-3">
-              <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-3">
+                <div 
+                  className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-3 cursor-pointer"
+                  onClick={() => openDialog('video', item.link, item.title)}
+                >
                   <i className="fas fa-video text-white text-sm"></i>
                 </div>
                 <span className="text-sm font-semibold text-red-600">Video</span>
@@ -149,7 +170,10 @@ function Media() {
                 alt={item.title} 
                 style={{ height: '200px', objectFit: 'cover' }}
               />
-              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div 
+                className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center cursor-pointer"
+                onClick={() => openDialog('image', item.image, item.title)}
+              >
                 <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center">
                   <i className="fas fa-expand text-blue-600 text-2xl"></i>
                 </div>
@@ -157,7 +181,10 @@ function Media() {
             </div>
             <div className="p-6">
               <div className="flex items-center mb-3">
-                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                <div 
+                  className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3 cursor-pointer"
+                  onClick={() => openDialog('image', item.image, item.title)}
+                >
                   <i className="fas fa-camera text-white text-sm"></i>
                 </div>
                 <span className="text-sm font-semibold text-green-600">Photo Gallery</span>
@@ -168,9 +195,12 @@ function Media() {
                 <i className="fas fa-camera ml-2 mr-2"></i>{item.source}
               </p>
               <p className="text-gray-700 mb-6 leading-relaxed">{item.description}</p>
-              <a href={item.link} className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+              <button 
+                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                onClick={() => openDialog('image', item.image, item.title)}
+              >
                 <i className="fas fa-images mr-2"></i>View Full Gallery
-              </a>
+              </button>
             </div>
           </div>
         );
@@ -184,7 +214,10 @@ function Media() {
                 alt={item.title} 
                 style={{ height: '200px', objectFit: 'cover' }}
               />
-              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div 
+                className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center cursor-pointer"
+                onClick={() => openDialog('image', item.image, item.title)}
+              >
                 <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center">
                   <i className="fas fa-external-link-alt text-blue-600 text-2xl"></i>
                 </div>
@@ -192,7 +225,10 @@ function Media() {
             </div>
             <div className="p-6">
               <div className="flex items-center mb-3">
-                <div className={`w-8 h-8 ${item.type === 'news' ? 'bg-blue-500' : 'bg-purple-500'} rounded-full flex items-center justify-center mr-3`}>
+                <div 
+                  className={`w-8 h-8 ${item.type === 'news' ? 'bg-blue-500' : 'bg-purple-500'} rounded-full flex items-center justify-center mr-3 cursor-pointer`}
+                  onClick={() => openDialog('image', item.image, item.title)}
+                >
                   <i className={`fas ${item.type === 'news' ? 'fa-newspaper' : 'fa-bullhorn'} text-white text-sm`}></i>
                 </div>
                 <span className={`text-sm font-semibold ${item.type === 'news' ? 'text-blue-600' : 'text-purple-600'}`}>
@@ -216,27 +252,67 @@ function Media() {
 
   return (
     <div className="media-page">
+      {/* Dialog Box */}
+      {dialogOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-4xl w-full max-h-[90vh] overflow-auto bg-white rounded-2xl shadow-2xl">
+            <button 
+              onClick={closeDialog}
+              className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors duration-300 z-10"
+            >
+              <i className="fas fa-times text-gray-600 text-xl"></i>
+            </button>
+            <div className="p-6">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">{dialogContent.title}</h3>
+              {dialogContent.type === 'video' ? (
+                <div className="relative pb-[56.25%] h-0">
+                  <iframe
+                    src={dialogContent.url}
+                    className="absolute top-0 left-0 w-full h-full rounded-lg"
+                    title={dialogContent.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              ) : (
+                <img 
+                  src={dialogContent.url} 
+                  alt={dialogContent.title} 
+                  className="w-full rounded-lg"
+                />
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Page Header */}
-      <div className="relative bg-blue-700 text-white py-16 md:py-24 overflow-hidden">
+      <div className="relative bg-blue-700 text-white py-16 sm:py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="flex items-center">
-            <div className="w-full lg:w-2/3">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Media <span className="text-blue-600">Center</span>
-              </h1>
-              <div className="w-24 h-1 bg-blue-300 mb-6"></div>
-              <p className="text-lg md:text-xl lg:text-2xl mb-8 text-blue-100 leading-relaxed">
-                Stay updated with the latest news, press releases, videos, and photos from Nestoria Group and Dholera SIR
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                  <i className="fas fa-play mr-2"></i>Watch Videos
-                </button>
-                <button className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/30 hover:border-white/50 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
-                  <i className="fas fa-download mr-2"></i>Download Press Kit
-                </button>
-              </div>
+          <div className="max-w-6xl mx-auto text-center">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight">
+              Media <span className="text-blue-300">Center</span>
+            </h1>
+            <div className="h-1 w-24 sm:w-32 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
+            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 md:mb-10 animate-slide-up opacity-0 animation-delay-300 max-w-3xl mx-auto leading-relaxed">
+              Stay updated with the latest news, press releases, videos, and photos from Nestoria Group and Dholera SIR
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 animate-slide-up opacity-0 animation-delay-500">
+              <button className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-base md:text-lg py-3 px-6 md:py-4 md:px-8 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center relative overflow-hidden">
+                <span className="relative z-10 flex items-center justify-center">
+                  <i className="fas fa-play mr-2"></i>
+                  Watch Videos
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </button>
+              <button className="group bg-transparent hover:bg-white/10 text-white font-bold text-base md:text-lg py-3 px-6 md:py-4 md:px-8 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center backdrop-blur-sm">
+                <span className="flex items-center justify-center">
+                  <i className="fas fa-download mr-2"></i>
+                  Download Press Kit
+                </span>
+              </button>
             </div>
           </div>
         </div>

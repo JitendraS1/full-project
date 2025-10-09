@@ -60,9 +60,9 @@ const ParallaxSection = ({
         height: isMobile ? 'auto' : height, // Use auto height on mobile to contain the image
         minHeight: isMobile ? 'auto' : 'auto', // Remove 100vh minimum height for mobile
         backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'contain', // Use contain instead of cover to ensure the full image is visible
+        backgroundSize: isMobile ? 'contain' : backgroundSize, // Use contain on mobile to show full image, prop on desktop
         backgroundPosition: 'center center', // Ensure center positioning
-        backgroundAttachment: 'fixed', // Use fixed for parallax effect on both mobile and desktop
+        backgroundAttachment: isMobile ? 'scroll' : 'fixed', // Use scroll on mobile for full image display, fixed for parallax on desktop
         backgroundRepeat: 'no-repeat',
         overflow: "hidden",
       }}

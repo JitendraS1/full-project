@@ -145,27 +145,28 @@ const Faq = () => {
         height="100vh"
         overlayColor="#673a377e"
         speed={0.4}
-        className="py-16 sm:py-20 md:py-32 flex items-center justify-center text-center"
+        className="flex items-center justify-center text-center"
+        backgroundSize="cover"
       >
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative z-10 w-full h-full flex items-center justify-center">
           <div className="max-w-6xl mx-auto">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight">
               Frequently Asked <span className="text-blue-300">Questions</span>
             </h1>
-            <div className="h-1 w-32 bg-blue-500 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
+            <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
             <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 md:mb-10 animate-slide-up opacity-0 animation-delay-300 max-w-3xl mx-auto leading-relaxed">
               Find answers to common questions about Nestoria Group and Dholera SIR
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 animate-slide-up opacity-0 animation-delay-500">
               <a
                 href="#faq-content"
-                className="group bg-blue-700 hover:bg-blue-800 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center relative overflow-hidden"
+                className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center relative overflow-hidden"
               >
                 <span className="relative z-10 flex items-center justify-center">
                   <i className="fas fa-question-circle mr-2"></i>
                   Browse FAQs
                 </span>
-                <div className="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
               <a
                 href="mailto:info@nestoriagroup.com"
@@ -328,6 +329,12 @@ const Faq = () => {
             <form className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto" onSubmit={async (e) => {
               e.preventDefault();
               const email = e.target.elements.email.value;
+              
+              // Simple email validation
+              if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                alert("Please enter a valid email address.");
+                return;
+              }
               
               try {
                 const { ContactService } = await import('../services/ContactService');

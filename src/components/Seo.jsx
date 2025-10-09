@@ -19,7 +19,7 @@ function Seo({
   // Ensure image URL is absolute
   const fullImageUrl = imageUrl 
     ? (imageUrl.startsWith('http') ? imageUrl : `https://nestoriagroup.com${imageUrl}`) 
-    : 'https://nestoriagroup.com/logonew.png';
+    : '/logonew.png';
 
   return (
     <Helmet>

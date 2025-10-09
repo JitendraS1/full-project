@@ -54,3 +54,63 @@ coverage
 # Vercel
 .vercel
 .now
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE files
+.vs/
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Certificate files
+*.pem
+*.crt
+*.key
+
+# Log files
+*.log.*
+
+# Package files
+*.zip
+*.tar.gz
+
+# Runtime data
+.pid
+*.pid.lock
+
+# Debug files
+*.debug
+
+# Config files
+config.json
+
+# Database files
+*.db
+*.sqlite
+
+# ESLint
+.eslintcache
+
+# TypeScript
+*.tsbuildinfo
+
+# Output files
+*.exe
+*.out
+*.app
+
+# Node version
+.nvmrc
+
+# Testing
+.nyc_output
+
+# Documentation
+*.md~
+

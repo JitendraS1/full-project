@@ -19,22 +19,23 @@ function Home() {
         height="100vh"
         overlayColor="#673a377e"
         speed={0.4}
-        className="py-16 sm:py-20 md:py-32 flex items-center justify-center text-center"
+        className="flex items-center justify-center text-center"
+        backgroundSize="cover"
       >
-        <div className="relative z-10 px-4 w-full">
-          <div className="max-w-6xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight">
+        <div className="relative z-10 w-full h-full flex items-center justify-center">
+          <div className="max-w-6xl mx-auto px-4 py-16 sm:py-20 md:py-32">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight">
               Think Dholera Think <span className="text-blue-300">Nestoria</span>.
             </h1>
-            <div className="h-1 w-32 bg-blue-600 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
-            <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 md:mb-10 animate-slide-up opacity-0 animation-delay-300 max-w-3xl mx-auto leading-relaxed">
+            <div className="h-1 w-24 sm:w-32 bg-blue-600 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
+            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 md:mb-10 animate-slide-up opacity-0 animation-delay-300 max-w-3xl mx-auto leading-relaxed">
               Discover exclusive properties and investment opportunities in
               India's first smart city with world-class infrastructure and unlimited growth potential.
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 animate-slide-up opacity-0 animation-delay-500">
               <Link
                 to="/land-deals"
-                className="group bg-blue-700 hover:bg-blue-800 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center relative overflow-hidden"
+                className="group bg-blue-700 hover:bg-blue-800 text-white font-bold text-base md:text-lg py-3 px-6 md:py-4 md:px-8 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center relative overflow-hidden"
               >
                 <span className="relative z-10 flex items-center justify-center">
                   <i className="fas fa-search mr-2"></i>
@@ -44,7 +45,7 @@ function Home() {
               </Link>
               <Link
                 to="/contact"
-                className="group bg-transparent hover:bg-white/10 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center backdrop-blur-sm"
+                className="group bg-transparent hover:bg-white/10 text-white font-bold text-base md:text-lg py-3 px-6 md:py-4 md:px-8 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center backdrop-blur-sm"
               >
                 <span className="flex items-center justify-center">
                   <i className="fas fa-phone mr-2"></i>
@@ -57,7 +58,7 @@ function Home() {
         <div className="absolute bottom-0 left-0 right-0 flex justify-center pb-6 md:pb-8 animate-bounce">
           <a href="#about" className="text-white hover:text-blue-300 transition-colors duration-300">
             <svg
-              className="w-8 h-8 md:w-10 md:h-10"
+              className="w-6 h-6 md:w-8 md:h-8"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -75,42 +76,44 @@ function Home() {
       </ParallaxSection>
 
       {/* About Section */}
-      <section id="about" className="py-16 md:py-24 bg-gray-50">
+      <section id="about" className="py-12 sm:py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
             <div className="w-full lg:w-1/2">
               <div className="relative overflow-hidden rounded-2xl shadow-2xl group">
                 <img
-                  className="w-full h-80 sm:h-96 md:h-[500px] object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-64 sm:h-80 md:h-[400px] object-cover transform group-hover:scale-110 transition-transform duration-700"
                   src={aboutimage}
                   alt="Nestoria Group - Premier Real Estate Developer in Dholera SIR Gujarat"
                   loading="lazy"
+                  decoding="async"
+                  fetchPriority="high"
                 />
                 <div className="absolute inset-0 bg-blue-900/60 flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <span className="text-white text-xl md:text-3xl font-bold px-6 py-4 border-2 border-white rounded-lg mb-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  <span className="text-white text-lg sm:text-xl md:text-2xl font-bold px-4 sm:px-6 py-3 border-2 border-white rounded-lg mb-6 sm:mb-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                     Discover Nestoria
                   </span>
                 </div>
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2">
-                  <span className="text-blue-600 font-semibold text-sm">Since 2010</span>
+                <div className="absolute top-3 sm:top-4 left-3 sm:left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1.5 sm:px-4 sm:py-2">
+                  <span className="text-blue-600 font-semibold text-xs sm:text-sm">Since 2010</span>
                 </div>
               </div>
             </div>
             <div className="w-full lg:w-1/2">
-              <div className="lg:pl-6">
-                <h6 className="text-blue-600 font-semibold text-lg mb-3 uppercase tracking-wider">
+              <div className="lg:pl-0 sm:pl-6">
+                <h6 className="text-blue-600 font-semibold text-base sm:text-lg mb-2 sm:mb-3 uppercase tracking-wider">
                   About Us
                 </h6>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
                   About <span className="text-blue-600">Nestoria Group</span>
                 </h2>
-                <div className="h-1 w-32 bg-blue-600 mb-8"></div>
-                <p className="text-gray-700 mb-8 text-lg leading-relaxed">
+                <div className="h-1 w-24 sm:w-32 bg-blue-600 mb-6 sm:mb-8"></div>
+                <p className="text-gray-700 mb-6 sm:mb-8 text-base sm:text-lg leading-relaxed">
                   Established in 2010, Nestoria Group has emerged as a leading
                   real estate developer in Dholera SIR. We are committed to
                   excellence, transparency, and client satisfaction with over 5000+ happy customers.
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-10">
                   {[
                     {
                       title: "Premium Land Parcels",
@@ -135,16 +138,16 @@ function Home() {
                   ].map((item, i) => (
                     <div
                       key={i}
-                      className="group flex items-start p-5 bg-white rounded-xl shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border-l-4 border-blue-500"
+                      className="group flex items-start p-4 sm:p-5 bg-white rounded-xl shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border-l-4 border-blue-500"
                     >
-                      <div className="flex-shrink-0 mr-4 bg-blue-100 p-3 rounded-full group-hover:scale-110 transition-transform duration-300">
-                        <i className={`${item.icon} text-blue-600 text-lg`}></i>
+                      <div className="flex-shrink-0 mr-3 sm:mr-4 bg-blue-100 p-2.5 sm:p-3 rounded-full group-hover:scale-110 transition-transform duration-300">
+                        <i className={`${item.icon} text-blue-600 text-base sm:text-lg`}></i>
                       </div>
                       <div>
-                        <h6 className="text-lg font-bold text-gray-800 mb-1">
+                        <h6 className="text-base sm:text-lg font-bold text-gray-800 mb-1">
                           {item.title}
                         </h6>
-                        <p className="text-gray-600 text-sm">
+                        <p className="text-gray-600 text-xs sm:text-sm">
                           {item.desc}
                         </p>
                       </div>
@@ -153,7 +156,7 @@ function Home() {
                 </div>
                 <Link
                   to="/about"
-                className="group inline-flex items-center bg-blue-700 hover:bg-blue-800 text-white font-bold py-4 px-8 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
+                className="group inline-flex items-center bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 text-sm sm:text-base"
                   aria-label="Discover More About Nestoria"
                 >
                   <span>Discover More</span>
@@ -308,15 +311,15 @@ function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 md:py-24 bg-gray-900 text-white relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-24 bg-gray-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Achievements</h2>
-            <div className="h-1 w-24 bg-blue-400 mx-auto mb-6"></div>
-            <p className="text-gray-300 text-lg">Numbers that speak for our success and growth</p>
+          <div className="text-center mb-10 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Our Achievements</h2>
+            <div className="h-1 w-20 sm:w-24 bg-blue-400 mx-auto mb-5 sm:mb-6"></div>
+            <p className="text-gray-300 text-base sm:text-lg">Numbers that speak for our success and growth</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
             {[
               { number: "50000+", label: "Visitors", icon: "fas fa-users" },
               { number: "5000+", label: "Happy Clients", icon: "fas fa-heart" },
@@ -325,14 +328,14 @@ function Home() {
               { number: "50+", label: "Cities Covered", icon: "fas fa-map" },
               { number: "9+", label: "Countries Covered", icon: "fas fa-globe" },
             ].map((stat, i) => (
-              <div key={i} className="group text-center p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
-                <div className="mb-4">
-                  <i className={`${stat.icon} text-3xl text-blue-400 group-hover:text-blue-300 transition-colors duration-300`}></i>
+              <div key={i} className="group text-center p-4 sm:p-5 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300 hover:-translate-y-2 staggered-animation staggered-animation-{i+1}">
+                <div className="mb-3 sm:mb-4">
+                  <i className={`${stat.icon} text-2xl sm:text-3xl text-blue-400 group-hover:text-blue-300 transition-colors duration-300`}></i>
                 </div>
-                <div className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 text-blue-200">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1.5 sm:mb-2 text-blue-200">
                   {stat.number}
                 </div>
-                <p className="text-gray-300 font-medium">{stat.label}</p>
+                <p className="text-gray-300 font-medium text-xs sm:text-sm">{stat.label}</p>
               </div>
             ))}
           </div>

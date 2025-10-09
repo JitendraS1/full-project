@@ -51,7 +51,8 @@ if ($formType === '') {
 }
 
 // Configure recipient
-$to = 'info@nestoriagroup.com'; // Change if needed
+$to = getenv('TO_EMAIL') ?: 'info@nestoriagroup.com';
+$bcc = getenv('BCC_EMAIL');
 
 // Subject by form type
 switch ($formType) {
@@ -116,8 +117,12 @@ $html .= '<h3 style="color:#1e40af;">Message</h3>'
 // Prepare headers for HTML email
 $headers = "MIME-Version: 1.0\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8\r\n";
-$headers .= 'From: Nestoria Group Website <no-reply@' . $_SERVER['HTTP_HOST'] . ">\r\n";
+$headers .= 'From: Nestoria Group Website <' . (getenv('EMAIL_USER') ?: 'no-reply@' . $_SERVER['HTTP_HOST']) . ">\r\n";
 $headers .= 'Reply-To: ' . $email . "\r\n";
+
+if (!empty($bcc)) {
+  $headers .= 'BCC: ' . $bcc . "\r\n";
+}
 
 // Send email
 $sent = @mail($to, $subject, $html, $headers);
@@ -125,8 +130,24 @@ $sent = @mail($to, $subject, $html, $headers);
 if ($sent) {
   echo json_encode(['success' => true, 'message' => 'Email sent successfully']);
 } else {
-  http_response_code(500);
-  echo json_encode(['success' => false, 'message' => 'Failed to send email']);
+  // Try alternative method with additional headers
+  $headers_alt = "MIME-Version: 1.0\r\n";
+  $headers_alt .= "Content-type:text/html;charset=UTF-8\r\n";
+  $headers_alt .= 'From: ' . (getenv('EMAIL_USER') ?: 'no-reply@' . $_SERVER['HTTP_HOST']) . "\r\n";
+  $headers_alt .= 'Reply-To: ' . $email . "\r\n";
+  
+  if (!empty($bcc)) {
+    $headers_alt .= 'BCC: ' . $bcc . "\r\n";
+  }
+  
+  $sent_alt = @mail($to, $subject, $html, $headers_alt);
+  
+  if ($sent_alt) {
+    echo json_encode(['success' => true, 'message' => 'Email sent successfully']);
+  } else {
+    http_response_code(500);
+    echo json_encode(['success' => false, 'message' => 'Failed to send email']);
+  }
 }
 
 ?>

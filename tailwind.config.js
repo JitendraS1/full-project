@@ -7,7 +7,59 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Standard color palette
+        // Primary brand colors
+        'primary': {
+          '50': '#fdfcfb',
+          '100': '#f9f5f4',
+          '200': '#f0e9e8',
+          '300': '#e2d5d3',
+          '400': '#d1b9b6',
+          '500': '#b89a95',
+          '600': '#673a37',
+          '700': '#5a322f',
+          '800': '#4d2c2a',
+          '900': '#412422',
+        },
+        // Secondary brand colors
+        'secondary': {
+          '50': '#f0fdfa',
+          '100': '#ccfbf1',
+          '200': '#99f6e4',
+          '300': '#5eead4',
+          '400': '#2dd4bf',
+          '500': '#14b8a6',
+          '600': '#0d9488',
+          '700': '#0f766e',
+          '800': '#115e59',
+          '900': '#134e4a',
+        },
+        // Accent colors
+        'accent': {
+          '50': '#fffbeb',
+          '100': '#fef3c7',
+          '200': '#fde68a',
+          '300': '#fcd34d',
+          '400': '#fbbf24',
+          '500': '#f59e0b',
+          '600': '#d97706',
+          '700': '#b45309',
+          '800': '#92400e',
+          '900': '#78350f',
+        },
+        // Neutral colors
+        'neutral': {
+          '50': '#f8fafc',
+          '100': '#f1f5f9',
+          '200': '#e2e8f0',
+          '300': '#cbd5e1',
+          '400': '#94a3b8',
+          '500': '#64748b',
+          '600': '#475569',
+          '700': '#334155',
+          '800': '#1e293b',
+          '900': '#0f172a',
+        },
+        // Original colors for backward compatibility
         'blue': {
           '50': '#f9f6f6',
           '100': '#f0e9e9',
