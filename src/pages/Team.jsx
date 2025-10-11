@@ -331,15 +331,15 @@ function Team() {
                 {department.members.map((member) => (
                   <div key={member.id} className="group">
                     <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
-                      <div className="flex flex-col sm:flex-row">
-                        <div className="w-full sm:w-1/3">
+                      <div className="flex flex-col">
+                        <div className="w-full">
                           <img
                             src={member.image}
-                            className="w-full h-48 sm:h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            className="w-full h-96 object-cover group-hover:scale-110 transition-transform duration-700"
                             alt={member.name}
                           />
                         </div>
-                        <div className="w-full sm:w-2/3">
+                        <div className="w-full">
                           <div className="p-6">
                             <h5 className="text-lg md:text-xl font-bold mb-2 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
                               {member.name}

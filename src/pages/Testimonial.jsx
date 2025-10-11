@@ -723,7 +723,7 @@ function Testimonial() {
 
           <div className="flex justify-center">
             <div className="w-full max-w-4xl">
-              <div className="bg-gray-50 rounded-2xl shadow-2xl p-8 md:p-12 border border-gray-100">
+              <div className="bg-gray-50 rounded-2xl shadow-2xl p-4 sm:p-6 md:p-8 lg:p-12 border border-gray-100">
                 <form
                   onSubmit={async (e) => {
                     e.preventDefault();
@@ -764,60 +764,60 @@ Testimonial: ${e.target.elements.testimonial.value}`,
                     }
                   }}
                 >
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="col-span-1">
+                  <div className="space-y-5 sm:space-y-6">
+                    <div>
                       <label
                         htmlFor="name"
-                        className="block text-lg font-semibold text-gray-800 mb-3"
+                        className="block text-base sm:text-lg font-semibold text-gray-800 mb-2"
                       >
                         Full Name
                       </label>
                       <input
                         type="text"
-                        className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
+                        className="w-full px-4 py-3 sm:px-4 sm:py-4 bg-white border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-base"
                         id="name"
                         placeholder="Your name"
                         required
                       />
                     </div>
-                    <div className="col-span-1">
+                    <div>
                       <label
                         htmlFor="email"
-                        className="block text-lg font-semibold text-gray-800 mb-3"
+                        className="block text-base sm:text-lg font-semibold text-gray-800 mb-2"
                       >
                         Email Address
                       </label>
                       <input
                         type="email"
-                        className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
+                        className="w-full px-4 py-3 sm:px-4 sm:py-4 bg-white border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-base"
                         id="email"
                         placeholder="Your email"
                         required
                       />
                     </div>
-                    <div className="col-span-1">
+                    <div>
                       <label
                         htmlFor="phone"
-                        className="block text-lg font-semibold text-gray-800 mb-3"
+                        className="block text-base sm:text-lg font-semibold text-gray-800 mb-2"
                       >
                         Phone Number
                       </label>
                       <input
                         type="tel"
-                        className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
+                        className="w-full px-4 py-3 sm:px-4 sm:py-4 bg-white border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-base"
                         id="phone"
                         placeholder="Your phone number"
                       />
                     </div>
-                    <div className="col-span-1">
+                    <div>
                       <label
                         htmlFor="property-type"
-                        className="block text-lg font-semibold text-gray-800 mb-3"
+                        className="block text-base sm:text-lg font-semibold text-gray-800 mb-2"
                       >
                         Property Type
                       </label>
                       <select
-                        className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
+                        className="w-full px-4 py-3 sm:px-4 sm:py-4 bg-white border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-base"
                         id="property-type"
                         required
                         defaultValue=""
@@ -831,44 +831,44 @@ Testimonial: ${e.target.elements.testimonial.value}`,
                         <option value="investment">Investment Advisory</option>
                       </select>
                     </div>
-                    <div className="col-span-2">
+                    <div>
                       <label
                         htmlFor="testimonial"
-                        className="block text-lg font-semibold text-gray-800 mb-3"
+                        className="block text-base sm:text-lg font-semibold text-gray-800 mb-2"
                       >
                         Your Testimonial
                       </label>
                       <textarea
-                        className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
+                        className="w-full px-4 py-3 sm:px-4 sm:py-4 bg-white border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 text-base min-h-[120px] sm:min-h-[140px]"
                         id="testimonial"
                         rows="5"
                         placeholder="Share your experience with Nestoria Group"
                         required
                       ></textarea>
                     </div>
-                    <div className="col-span-2">
-                      <label className="block text-lg font-semibold text-gray-800 mb-3">
+                    <div>
+                      <label className="block text-base sm:text-lg font-semibold text-gray-800 mb-2">
                         Rate Your Experience
                       </label>
-                      <div className="mb-6">
+                      <div className="flex flex-wrap gap-2 sm:gap-3 mb-4">
                         {[1, 2, 3, 4, 5].map((star) => (
                           <i
                             key={star}
-                            className="far fa-star text-2xl mr-3 cursor-pointer hover:text-yellow-400 transition-colors duration-300"
+                            className="far fa-star text-2xl sm:text-3xl cursor-pointer hover:text-yellow-400 transition-colors duration-300"
                           ></i>
                         ))}
                       </div>
                     </div>
-                    <div className="col-span-2">
+                    <div>
                       <div className="flex items-start">
                         <input
-                          className="h-5 w-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500 mt-1 mr-3"
+                          className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 border-gray-300 rounded focus:ring-blue-500 mt-1 mr-3"
                           type="checkbox"
                           id="permission"
                           required
                         />
                         <label
-                          className="text-lg text-gray-700 leading-relaxed"
+                          className="text-base sm:text-lg text-gray-700 leading-relaxed"
                           htmlFor="permission"
                         >
                           I give permission to Nestoria Group to use my
@@ -876,10 +876,10 @@ Testimonial: ${e.target.elements.testimonial.value}`,
                         </label>
                       </div>
                     </div>
-                    <div className="col-span-2 mt-8">
+                    <div className="mt-6">
                       <button
                         type="submit"
-                        className="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                        className="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-base sm:text-lg"
                       >
                         <i className="fas fa-paper-plane mr-2"></i>Submit
                         Testimonial

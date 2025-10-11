@@ -2,8 +2,7 @@
  * Service for handling contact form submissions
  */
 
-// PHP endpoint hosted on Hostinger
-const PHP_ENDPOINT = '/send-email.php';
+import MailService from './MailService';
 
 export const ContactService = {
   /**
@@ -18,20 +17,12 @@ export const ContactService = {
    */
   sendContactForm: async (formData) => {
     try {
-      const response = await fetch(PHP_ENDPOINT, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ ...formData, formType: 'contact' }),
-      });
-
-      const data = await response.json();
+      const emailData = {
+        ...formData,
+        formType: 'contact'
+      };
       
-      if (!response.ok) {
-        throw new Error(data.message || 'Failed to send message');
-      }
-      
+      const data = await MailService.sendEmail(emailData);
       return data;
     } catch (error) {
       console.error('Error sending contact form:', error);

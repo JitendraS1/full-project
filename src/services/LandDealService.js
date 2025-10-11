@@ -2,8 +2,7 @@
  * Service for handling land deal inquiry form submissions
  */
 
-// PHP endpoint hosted on Hostinger
-const PHP_ENDPOINT = '/send-email.php';
+import MailService from './MailService';
 
 export const LandDealService = {
   /**
@@ -19,20 +18,12 @@ export const LandDealService = {
    */
   sendLandDealInquiry: async (formData) => {
     try {
-      const response = await fetch(PHP_ENDPOINT, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ ...formData, formType: 'land-deal' }),
-      });
-
-      const data = await response.json();
+      const emailData = {
+        ...formData,
+        formType: 'land-deal'
+      };
       
-      if (!response.ok) {
-        throw new Error(data.message || 'Failed to send inquiry');
-      }
-      
+      const data = await MailService.sendEmail(emailData);
       return data;
     } catch (error) {
       console.error('Error sending land deal inquiry:', error);

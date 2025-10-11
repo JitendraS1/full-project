@@ -2,8 +2,7 @@
  * Service for handling Aboutdholera form submissions
  */
 
-// PHP endpoint hosted on Hostinger
-const PHP_ENDPOINT = '/send-email.php';
+import MailService from './MailService';
 
 export const AboutdholeraService = {
   /**
@@ -13,20 +12,12 @@ export const AboutdholeraService = {
    */
   sendAboutdholeraRequest: async (formData) => {
     try {
-      const response = await fetch(PHP_ENDPOINT, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ ...formData, formType: 'about-dholera' }),
-      });
-
-      const data = await response.json();
+      const emailData = {
+        ...formData,
+        formType: 'about-dholera'
+      };
       
-      if (!response.ok) {
-        throw new Error(data.message || 'Failed to send request');
-      }
-      
+      const data = await MailService.sendEmail(emailData);
       return data;
     } catch (error) {
       console.error('Error sending Aboutdholera request:', error);

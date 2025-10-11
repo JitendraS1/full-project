@@ -3,106 +3,131 @@ import { Link } from 'react-router-dom';
 import ParallaxSection from '../components/ParallaxSection';
 import ParallaxScroll from '../components/ParallaxScroll';
 import projectbanner from '/src/assets/img/projects-Banner.png';
-import NetureNest from '/src/assets/img/NatureNest.png';
-import image1 from '/src/assets/img/new-image.jpg';
 import industrialImg from '/src/assets/img/Industrial-project.png';
 import residentialImg from '/src/assets/img/Residential-project.png';
 import commercialImg from '/src/assets/img/COMMERCIAL-project.png';
+// Import additional project images
+import dholeraBhoomi from '/src/assets/img/project/Dholera-Bhoomi.jpg';
+import dholeraBhoomi2 from '/src/assets/img/project/Dhollera-Bhoomi2 .jpg';
+import dholeraBhoomi3 from '/src/assets/img/project/DHOLERA BHOOMI-III .jpg';
+import orchidLuxury from '/src/assets/img/project/ORCHID LUXURY-BROSER.jpg';
+import orchidRiverView from '/src/assets/img/project/ORCHID-RIVER-VIEW.jpg';
+import orchidVillaGreens from '/src/assets/img/project/ORCHID VILLA GREENS-BROSHER.jpg';
+import orchidVillaLuxuriya from '/src/assets/img/project/ORCHID VILLA LUXURIYA-BROSHER.jpg';
+import orchidVillaParadise from '/src/assets/img/project/ORCHID VILLA PARADISE 2 NEW 12-12-2023 POXI.jpg';
+import orchidVillaGold from '/src/assets/img/project/ORCHILD-VILLA-GOLD.jpg';
+import orchidNatureRegency from '/src/assets/img/project/Orchid Nature Regency_1 (1).jpg';
+import palmVillas from '/src/assets/img/project/Palm Villas.jpg';
+
 function Projects() {
   // State for active project filter
   const [activeFilter, setActiveFilter] = useState('all');
+  // State for image dialog
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [dialogImage, setDialogImage] = useState('');
+  const [dialogAlt, setDialogAlt] = useState('');
   
   // Project data
   const projects = [
+    
     {
       id: 1,
       type: 'residential',
-      title: 'Nature Nest',
-      location: ' Village Adhelai 0Km DSIR',
-      area: '42 Acre',
-      // status: 'Completed',
-      image: image1,
-      description: 'Premium residential plots in a prime location with excellent connectivity and amenities.'
+      title: 'Dholera Bhoomi',
+      location: 'Dholera SIR',
+      area: 'Various sizes',
+      image: dholeraBhoomi,
+      description: 'Premium residential project offering a variety of plot sizes in a well-planned community.'
     },
     {
       id: 2,
       type: 'residential',
-      title: 'Sunshine Residency-III',
-      location: 'Dholera SIR, ',
-      area: '1500-10000 sq.yard',
-      // status: 'Completed',
-      image: image1,
-      description: 'Modern residential plots in a prime location with excellent connectivity and amenities.'
+      title: 'Dholera Bhoomi Phase II',
+      location: 'Dholera SIR',
+      area: 'Various sizes',
+      image: dholeraBhoomi2,
+      description: 'Continuation of the successful Dholera Bhoomi project with enhanced amenities and facilities.'
     },
     {
       id: 3,
-      type: 'industrial',
-      title: 'Tech Manufacturing Zone',
-      location: 'Dholera SIR, Sector 9',
-      area: '5000-20000 sq.yard',
-      // status: 'Ongoing',
-      image: industrialImg,
-      description: 'Industrial plots ideal for manufacturing units with excellent infrastructure and connectivity.'
+      type: 'residential',
+      title: 'Dholera Bhoomi Phase III',
+      location: 'Dholera SIR',
+      area: 'Various sizes',
+      image: dholeraBhoomi3,
+      description: 'Latest phase of the Dholera Bhoomi project featuring modern infrastructure and sustainable living.'
     },
     {
       id: 4,
       type: 'residential',
-      title: 'Sunrise Apartments',
-      location: 'Dholera SIR, Sector 5',
-      area: '800-1200 sq.yard',
-      // status: 'Upcoming',
-      image: residentialImg,
-      description: 'Luxury apartments with modern amenities and beautiful surroundings in the heart of Dholera SIR.'
+      title: 'Orchid Luxury',
+      location: 'Dholera SIR',
+      area: '2000-5000 sq.ft.',
+      image: orchidLuxury,
+      description: 'Luxury villa project with premium amenities and contemporary architecture.'
     },
     {
       id: 5,
-      type: 'commercial',
-      title: 'Dholera Retail Plaza',
-      location: 'Dholera SIR, Sector 2',
-      area: '500-2000 sq.yard',
-      // status: 'Completed',
-      image: commercialImg,
-      description: 'Retail spaces in high-footfall areas, perfect for businesses looking to tap into the growing market.'
+      type: 'residential',
+      title: 'Orchid River View',
+      location: 'Dholera SIR',
+      area: '1500-4000 sq.ft.',
+      image: orchidRiverView,
+      description: 'Beautiful residential project with scenic river views and modern facilities.'
     },
     {
       id: 6,
-      type: 'industrial',
-      title: 'Logistics Park',
-      location: 'Dholera SIR, Sector 8',
-      area: '10000-50000 sq.yard',
-      // status: 'Ongoing',
-      image: industrialImg,
-      description: 'Strategically located logistics park with excellent connectivity to major transportation routes.'
+      type: 'residential',
+      title: 'Orchid Villa Greens',
+      location: 'Dholera SIR',
+      area: '2500-6000 sq.ft.',
+      image: orchidVillaGreens,
+      description: 'Eco-friendly villa project with lush green surroundings and sustainable design.'
     },
     {
       id: 7,
-      type: 'industrial',
-      title: 'Logistics Park',
-      location: 'Dholera SIR, Sector 8',
-      area: '10000-50000 sq.yard',
-      // status: 'Ongoing',
-      image: industrialImg,
-      description: 'Strategically located logistics park with excellent connectivity to major transportation routes.'
+      type: 'residential',
+      title: 'Orchid Villa Luxuriya',
+      location: 'Dholera SIR',
+      area: '3000-7000 sq.ft.',
+      image: orchidVillaLuxuriya,
+      description: 'Ultra-luxury villa project with world-class amenities and premium finishes.'
     },
     {
       id: 8,
-      type: 'industrial',
-      title: 'Logistics Park',
-      location: 'Dholera SIR, Sector 8',
-      area: '10000-50000 sq.yard',
-      // status: 'Ongoing',
-      image: industrialImg,
-      description: 'Strategically located logistics park with excellent connectivity to major transportation routes.'
+      type: 'residential',
+      title: 'Orchid Villa Paradise',
+      location: 'Dholera SIR',
+      area: '2000-5000 sq.ft.',
+      image: orchidVillaParadise,
+      description: 'Paradisiacal living experience with modern amenities and beautiful landscaping.'
     },
     {
       id: 9,
-      type: 'industrial',
-      title: 'Logistics Park',
-      location: 'Dholera SIR, Sector 8',
-      area: '10000-50000 sq.yard',
-      // status: 'Ongoing',
-      image: industrialImg,
-      description: 'Strategically located logistics park with excellent connectivity to major transportation routes.'
+      type: 'residential',
+      title: 'Orchid Villa Gold',
+      location: 'Dholera SIR',
+      area: '1800-4500 sq.ft.',
+      image: orchidVillaGold,
+      description: 'Premium villa project with golden-standard amenities and elegant design.'
+    },
+    {
+      id: 10,
+      type: 'residential',
+      title: 'Orchid Nature Regency',
+      location: 'Dholera SIR',
+      area: '1500-4000 sq.ft.',
+      image: orchidNatureRegency,
+      description: 'Harmonious blend of nature and luxury living in a serene environment.'
+    },
+    {
+      id: 11,
+      type: 'residential',
+      title: 'Palm Villas',
+      location: 'Dholera SIR',
+      area: '2000-5000 sq.ft.',
+      image: palmVillas,
+      description: 'Tropical-inspired villa project with palm tree landscaping and resort-style amenities.'
     }
   ];
 
@@ -117,6 +142,33 @@ function Projects() {
     'Ongoing': 'bg-blue-600',
     'Upcoming': 'bg-yellow-600'
   };
+
+  // Open dialog with image
+  const openDialog = (image, alt) => {
+    setDialogImage(image);
+    setDialogAlt(alt);
+    setIsDialogOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  // Close dialog
+  const closeDialog = () => {
+    setIsDialogOpen(false);
+    document.body.style.overflow = 'auto';
+  };
+
+  // Close dialog when pressing Escape key
+  React.useEffect(() => {
+    const handleEsc = (event) => {
+      if (event.key === 'Escape' && isDialogOpen) {
+        closeDialog();
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+    };
+  }, [isDialogOpen]);
 
   return (
     <div className="projects-page overflow-hidden bg-[#673a37]">
@@ -202,8 +254,9 @@ function Projects() {
                   <div className="relative">
                     <img 
                       src={project.image} 
-                      className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" 
+                      className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500 cursor-pointer" 
                       alt={project.title} 
+                      onClick={() => openDialog(project.image, project.title)}
                     />
                     <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center">
@@ -271,7 +324,7 @@ function Projects() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
             Looking for a <span className="text-blue-200">Custom Project?</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-300 to-cyan-300 mx-auto mb-8"></div>
+          <div class="h-1 w-32 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
           <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-blue-100 leading-relaxed">
             Contact our team to discuss your specific requirements and explore customized property solutions in Dholera SIR.
           </p>
@@ -289,14 +342,14 @@ function Projects() {
       {/* Newsletter Section */}
       <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 py-20 overflow-hidden">
         <div className="absolute inset-0 bg-black/30"></div>
-        <ParallaxScroll speed={0.03} className="z-10">
+       
           <div className="container mx-auto px-4 relative">
             <div className="max-w-4xl mx-auto bg-white/10 backdrop-blur-sm rounded-2xl shadow-2xl p-8 md:p-12 border border-white/20">
               <div className="text-center mb-10">
                 <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
                   Subscribe to Our <span className="text-blue-200">Newsletter</span>
                 </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-blue-300 to-cyan-300 mx-auto mb-8"></div>
+                <div class="h-1 w-32 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
                 <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
                   Stay updated with our latest projects, property listings, and investment opportunities in Dholera SIR.
                 </p>
@@ -338,15 +391,39 @@ function Projects() {
                 />
                 <button 
                   type="submit" 
-                  className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                  className="inline-block bg-blue-700 hover:bg-blue-800 text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                 >
                   <i className="fas fa-paper-plane mr-2"></i>Subscribe
                 </button>
               </form>
             </div>
           </div>
-        </ParallaxScroll>
+       
       </section>
+
+      {/* Image Dialog */}
+      {isDialogOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4"
+          onClick={closeDialog}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image dialog"
+        >
+          <div className="relative max-w-6xl max-h-full" onClick={(e) => e.stopPropagation()}>
+            <button
+              className="absolute top-4 right-4 text-white bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 transition-all duration-300 z-10"
+              onClick={closeDialog}
+              aria-label="Close dialog"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+            <img src={dialogImage} alt={dialogAlt} className="max-h-screen max-w-full object-contain" id="dialog-image" />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
