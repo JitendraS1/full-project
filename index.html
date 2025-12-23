@@ -6,23 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Nestoria Group - Most Trusted and Award Winning Real Estate Developer in Dholera SIR. Premium residential, commercial & industrial land parcels in India's first greenfield smart city." />
     <meta name="keywords" content="Nestoria Group, Dholera SIR, Real Estate, Smart City, Investment, Land Deals, Property" />
-    <!-- Using local Condor font instead of Google Fonts -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <meta name="author" content="Nestoria Group" />
+    <meta name="theme-color" content="#673a37" />
+    <meta name="robots" content="index, follow" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="address=no" />
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+    <!-- Optimize font loading - only load Condor font since it's used in the project -->
+    <link rel="preload" href="./fonts/fonnts.com-Condor_Regular.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="./fonts/fonnts.com-Condor_Bold.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="./fonts/fonnts.com-Condor_Italic.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="./fonts/fonnts.com-Condor_Light.otf" as="font" type="font/otf" crossorigin>
+    
+    <!-- Preload critical CSS files -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- Accessibility and SEO meta tags -->
+    <meta property="og:title" content="Nestoria Group - Most Trusted Real Estate Developer in Dholera SIR" />
+    <meta property="og:description" content="Nestoria Group - Most Trusted and Award Winning Real Estate Developer in Dholera SIR. Premium residential, commercial & industrial land parcels in India's first greenfield smart city." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nestoriagroup.com" />
+    <meta property="og:image" content="./src/assets/img/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Nestoria Group - Most Trusted Real Estate Developer in Dholera SIR" />
+    <meta name="twitter:description" content="Nestoria Group - Most Trusted and Award Winning Real Estate Developer in Dholera SIR. Premium residential, commercial & industrial land parcels in India's first greenfield smart city." />
+    
+    <title>Nestoria Group - Most Trusted Real Estate Developer in Dholera SIR</title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3YP6RMRR24"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3YP6RMRR24');
+      gtag('config', 'GT-K48FW6C');
+    </script>
+    
     <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     </noscript>
-    <title>Nestoria Group - Most Trusted Real Estate Developer in Dholera SIR</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root" class="min-h-screen flex flex-col"></div>
     <script type="module" src="./src/main.jsx"></script>
   </body>
 </html>

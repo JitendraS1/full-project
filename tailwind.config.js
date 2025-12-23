@@ -129,8 +129,36 @@ export default {
         '.text-shadow-lg': {
           textShadow: '0 4px 8px rgba(0, 0, 0, 0.5)',
         },
-      }
-      addUtilities(newUtilities)
+        '.contain-strict': {
+          contain: 'strict',
+        },
+        '.contain-content': {
+          contain: 'content',
+        },
+        '.contain-size': {
+          contain: 'size',
+        },
+        '.contain-layout': {
+          contain: 'layout',
+        },
+        '.contain-style': {
+          contain: 'style',
+        },
+        '.contain-paint': {
+          contain: 'paint',
+        },
+      };
+      addUtilities(newUtilities);
     },
+  ],
+  safelist: [
+    // Safelist common classes that might be generated dynamically
+    /bg-(primary|secondary|accent)-(50|100|200|300|400|500|600|700|800|900)/,
+    /text-(primary|secondary|accent)-(50|100|200|300|400|500|600|700|800|900)/,
+    /border-(primary|secondary|accent)-(50|100|200|300|400|500|600|700|800|900)/,
+    /hover:bg-(primary|secondary|accent)-(50|100|200|300|400|500|600|700|800|900)/,
+    /animate-(fade-in|slide-up|scale-in|fade-in-left|fade-in-right)/,
+    /btn-(primary|secondary|accent|outline)/,
+    /gradient-(primary|secondary|accent)-(light|dark)?/,
   ],
 }

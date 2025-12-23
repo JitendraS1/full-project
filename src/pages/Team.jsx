@@ -1,20 +1,20 @@
 import React, { useState } from "react";
-import kuldeepSoniImg from "../assets/img/team/sales/Kuldeepsoni.jpg";
-import ankitjiiImg from "../assets/img/team/sales/ankitji.jpg";
-import arvindjiiImg from "../assets/img/team/sales/arvindji.jpg";
-import devendrajiiImg from "../assets/img/team/sales/devendraji.jpg";
-import ramendrajiiImg from "../assets/img/team/sales/ramendraji.jpg";
-import jagdishjiiImg from "../assets/img/team/sales/jagdishji.jpg";
-import garimajiiImg from "../assets/img/team/management/garimaji0.jpg";
-import bhavnajiImg from "../assets/img/team/management/bhavnaji.jpg";
-import nitinjiImg from "../assets/img/team/management/nitinji.png";
-import mohanjiImg from "../assets/img/team/management/mohanji.png";
-import shivjiImg from "../assets/img/team/management/shivji.png";
+import kuldeepSoniImg from "../assets/img/team/sales/Kuldeepsoni.webp";
+import ankitjiiImg from "../assets/img/team/sales/ankitji.webp";
+import arvindjiiImg from "../assets/img/team/sales/arvindji.webp";
+import devendrajiiImg from "../assets/img/team/sales/devendraji.webp";
+import ramendrajiiImg from "../assets/img/team/sales/ramendraji.webp";
+import jagdishjiiImg from "../assets/img/team/sales/jagdishji.webp";
+import garimajiiImg from "../assets/img/team/management/garimaji0.webp";
+import bhavnajiImg from "../assets/img/team/management/bhavnaji.webp";
+import nitinjiImg from "../assets/img/team/management/nitinji.webp";
+import mohanjiImg from "../assets/img/team/management/mohanji.webp";
+import shivjiImg from "../assets/img/team/management/shivji.webp";
 import teamBg from "../assets/img/icon/counter-bg-2.webp";
-import teamHandImg from "../assets/img/team/Team-Hand.jpg";
-import teamDiscusImg from "../assets/img/team/team-discus.jpg";
-import teamCircleImg from "../assets/img/team/team-circle.jpg";
-import workingHardImg from "../assets/img/team/Working-hard.jpg";
+import teamHandImg from "../assets/img/team/Team-Hand.webp";
+import teamDiscusImg from "../assets/img/team/team-discus.webp";
+import teamCircleImg from "../assets/img/team/team-circle.webp";
+import workingHardImg from "../assets/img/team/Working-hard.webp";
 
 function Team() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);

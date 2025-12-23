@@ -5,9 +5,9 @@ import commercialProperty from '../assets/img/commercial-property.svg';
 import industrialPlot from '../assets/img/industrial-plot.svg';
 import LandDealService from '../services/LandDealService';
 import teamBg from '/src/assets/img/icon/counter-bg-2.webp';
-import Industrialimg from '/src/assets/img/Industrial-project.png';
-import COMMERCIALimg from '/src/assets/img/COMMERCIAL-landdeal.png';
-import Residentialimg from '/src/assets/img/Residential-land.png';
+import Industrialimg from '/src/assets/img/Industrial-project.webp';
+import COMMERCIALimg from '/src/assets/img/COMMERCIAL-landdeal.webp';
+import Residentialimg from '/src/assets/img/Residential-land.webp';
 
 function LandDeal() {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -185,7 +185,7 @@ function LandDeal() {
     
       {/* Page Header */}
       <header className="relative py-16 sm:py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center bg-blue-700" style={{backgroundImage: "url('/src/assets/img/land-deals-banner.jpg')"}}></div>
+        <div className="absolute inset-0 bg-cover bg-center bg-blue-700" style={{backgroundImage: "url('/src/assets/img/land-deals-banner.webp')"}}></div>
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 opacity-90"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto text-center">

@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ParallaxSection from "../components/ParallaxSection";
 import ParallaxScroll from "../components/ParallaxScroll";
-import servicebanner from "/src/assets/img/services.png"
-import residentialimg from "/src/assets/img/Residential-project.png"
-import commercialimg from "/src/assets/img/COMMERCIAL-project.png"
-import industrialimg from "/src/assets/img/Industrial-project.png"
+import servicebanner from "/src/assets/img/services.webp"
+import residentialimg from "/src/assets/img/Residential-project.webp"
+import commercialimg from "/src/assets/img/COMMERCIAL-project.webp"
+import industrialimg from "/src/assets/img/Industrial-project.webp"
 function Services() {
   return (
     <div className="overflow-hidden bg-[#673a37]">

@@ -6,7 +6,7 @@ const callouts = [
   {
     name: "Desk and Office",
     description: "Work from home accessories",
-    imageSrc: "/src/assets/img/about.png",
+    imageSrc: "/src/assets/img/about.webp",
     imageAlt:
       "Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug.",
     href: "#",
@@ -14,7 +14,7 @@ const callouts = [
   {
     name: "Self-Improvement",
     description: "Journals and note-taking",
-    imageSrc: "/src/assets/img/growth.png",
+    imageSrc: "/src/assets/img/growth.webp",
     imageAlt:
       "Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.",
     href: "#",
@@ -22,7 +22,7 @@ const callouts = [
   {
     name: "Travel",
     description: "Daily commute essentials",
-    imageSrc: "/src/assets/img/connectivity.png",
+    imageSrc: "/src/assets/img/connectivity.webp",
     imageAlt: "Collection of four insulated travel bottles on wooden shelf.",
     href: "#",
   },
@@ -52,7 +52,7 @@ function Achievements() {
       year: "2024",
       description:
         "Recognized for excellence in developing sustainable and innovative real estate projects in Dholera SIR.",
-      image: "/src/assets/img/Residential-project.png",
+      image: "/src/assets/img/Residential-project.webp",
     },
     {
       id: 2,
@@ -61,7 +61,7 @@ function Achievements() {
       year: "2022",
       description:
         "Awarded for the master planning and execution of Nestoria Green Valley residential township in Dholera SIR.",
-      image: "/src/assets/img/COMMERCIAL-project.png",
+      image: "/src/assets/img/COMMERCIAL-project.webp",
     },
     {
       id: 3,
@@ -70,7 +70,7 @@ function Achievements() {
       year: "2022",
       description:
         "Recognized for incorporating sustainable practices and eco-friendly technologies in our residential and commercial projects.",
-      image: "/src/assets/img/Industrial-project.png",
+      image: "/src/assets/img/Industrial-project.webp",
     },
     {
       id: 4,
@@ -79,7 +79,7 @@ function Achievements() {
       year: "2021",
       description:
         "Nestoria Business Hub recognized for its innovative design, amenities, and contribution to the commercial development of Dholera SIR.",
-      image: "/src/assets/img/growth.png",
+      image: "/src/assets/img/growth.webp",
     },
   ];
 

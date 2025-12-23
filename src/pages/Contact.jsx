@@ -5,7 +5,7 @@ import ContactService from "../services/ContactService";
 import ParallaxSection from "../components/ParallaxSection";
 import ParallaxScroll from "../components/ParallaxScroll";
 import { getLocalBusinessSchema } from "../utils/SchemaMarkup";
-import contactbannerimg from "/src/assets/img/contact.png";
+import contactbannerimg from "/src/assets/img/contact.webp";
 
 const Contact = () => {
   // Scroll to top on component mount

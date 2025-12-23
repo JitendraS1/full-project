@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import TabsComponent from '../components/TabsComponent';
 import ParallaxSection from '../components/ParallaxSection';
 import ParallaxScroll from '../components/ParallaxScroll';
-import aboutdholeraimg from '/src/assets/img/aboutdholera.png'
-import futuredholera from '/src/assets/img/futuredholera.png'
-import dholeraconnectivity from '/src/assets/img/dholeraconnectivity.png'
+import aboutdholeraimg from '/src/assets/img/aboutdholera.webp'
+import futuredholera from '/src/assets/img/futuredholera.webp'
+import dholeraconnectivity from '/src/assets/img/dholeraconnectivity.webp'
 
 function Aboutdholera() {
   // Form state

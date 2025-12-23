@@ -1,31 +1,52 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
 import Footer from './components/footer';
-import FloatingVideoButton from './components/FloatingVideoButton';
-import Home from './pages/Home';
-import About from './pages/AboutUs';
-import AboutDholera from './pages/Aboutdholera';
-import TeamNestoria from './pages/Team';
-import Blog from './pages/Blog';
-import FAQ from './pages/Faq';
-import Contact from './pages/Contact';
-import Media from './pages/Media';
-import Achievements from './pages/Achievements';
-import LandDeals from './pages/LandDeal';
-import Projects from './pages/Projects';
-import Services from './pages/Services';
-import Testimonial from './pages/Testimonial';
-import NotFound from './pages/NotFound';
+
+// Lazy load page components for code splitting
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/AboutUs'));
+const AboutDholera = lazy(() => import('./pages/Aboutdholera'));
+const TeamNestoria = lazy(() => import('./pages/Team'));
+const Blog = lazy(() => import('./pages/Blog'));
+const FAQ = lazy(() => import('./pages/Faq'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Media = lazy(() => import('./pages/Media'));
+const Achievements = lazy(() => import('./pages/Achievements'));
+const LandDeals = lazy(() => import('./pages/LandDeal'));
+const Projects = lazy(() => import('./pages/Projects'));
+const Services = lazy(() => import('./pages/Services'));
+const Testimonial = lazy(() => import('./pages/Testimonial'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+
 import Seo from './components/Seo'; // Import Seo component
 import { ThemeProvider } from './contexts/ThemeContext';
 import ParallaxBackground from './components/ParallaxBackground';
 import Loader from './components/Loader';
 import { getOrganizationSchema } from './utils/SchemaMarkup'; // Import schema markup utility
 
+// Google Analytics tracking function
+function PageTrackingComponent() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (window.gtag) {
+      window.gtag('config', 'G-3YP6RMRR24', {
+        page_path: location.pathname + location.search,
+        page_title: document.title,
+      });
+      window.gtag('config', 'GT-K48FW6C', {
+        page_path: location.pathname + location.search,
+        page_title: document.title,
+      });
+    }
+  }, [location]);
+  
+  return null; // This component doesn't render anything
+}
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -55,46 +76,55 @@ function App() {
     <ThemeProvider>
       <HelmetProvider>
         <Router>
-          {loading && <Loader onLoadingComplete={handleLoadingComplete} />}
           <div className={`relative bg-[#673a37] ${loading ? 'hidden' : ''}`} role="main">
-            {/* Global SEO with Organization Schema */}
-            <Seo 
-              title="Nestoria Group - Most Trusted Real Estate Developer in Dholera SIR"
-              description="Nestoria Group is the most trusted and award-winning real estate developer in Dholera SIR, offering premium residential, commercial & industrial land parcels in India's first greenfield smart city."
-              keywords="Nestoria Group, Dholera SIR, Real Estate, Smart City, Investment, Land Deals, Property"
-              schemaMarkup={organizationSchema}
-              canonicalUrl="https://nestoriagroup.com"
-            />
-            
-            {/* Global parallax background */}
-            <ParallaxBackground 
-              images={parallaxBackgrounds}
-              speeds={parallaxSpeeds}
-              opacities={parallaxOpacities}
-              className="pointer-events-none"
-            />
-            <Header />
-            <Navbar />
-            <FloatingVideoButton />
-            <main className="relative z-10">
-          <Routes>
-            <Route path="/" element={<><Seo title="Nestoria Group - Home" description="Your trusted partner for real estate investments in Dholera SIR." keywords="real estate, Dholera SIR, investment" /><Home /></>} />
-            <Route path="/about" element={<><Seo title="About Nestoria Group" description="Learn more about Nestoria Group and our mission." keywords="Nestoria Group, real estate developer, Dholera SIR" /><About /></>} />
-            <Route path="/aboutDholera" element={<><Seo title="About Dholera SIR" description="Discover Dholera Special Investment Region (SIR), India's first smart city." keywords="Dholera SIR, smart city, investment region" /><AboutDholera /></>} />
-            <Route path="/contact" element={<><Seo title="Contact Nestoria Group" description="Contact us for expert advice on real estate investments in Dholera SIR." keywords="contact, Nestoria Group, real estate investment" /><Contact /></>} />
-            <Route path="/team" element={<><Seo title="Our Team - Nestoria Group" description="Meet the team of experts at Nestoria Group." keywords="team, Nestoria Group, real estate experts" /><TeamNestoria /></>} />
-            <Route path="/blog" element={<><Seo title="Blog - Nestoria Group" description="Read our latest articles on real estate and Dholera SIR." keywords="blog, real estate, Dholera SIR, articles" /><Blog /></>} />
-            <Route path="/faq" element={<><Seo title="FAQ - Nestoria Group" description="Frequently asked questions about investing in Dholera SIR." keywords="FAQ, real estate investment, Dholera SIR" /><FAQ /></>} />
-            <Route path="/land-deals" element={<><Seo title="Land Deals - Nestoria Group" description="Explore premium land investment opportunities in Dholera SIR." keywords="land deals, real estate, Dholera SIR, investment" /><LandDeals /></>} />
-            <Route path="/media" element={<><Seo title="Media - Nestoria Group" description="See our latest media coverage and press releases." keywords="media, Nestoria Group, press releases" /><Media /></>} />
-            <Route path="/projects" element={<><Seo title="Projects - Nestoria Group" description="View our featured real estate projects in Dholera SIR." keywords="projects, real estate, Dholera SIR" /><Projects /></>} />
-            <Route path="/services" element={<><Seo title="Services - Nestoria Group" description="Learn about our real estate services in Dholera SIR." keywords="services, real estate, Dholera SIR" /><Services /></>} />
-            <Route path="/achievements" element={<><Seo title="Achievements - Nestoria Group" description="Our achievements and milestones in real estate development." keywords="achievements, Nestoria Group, real estate" /><Achievements /></>} />
-            <Route path="/testimonial" element={<><Seo title="Testimonials - Nestoria Group" description="Hear from our satisfied clients about their investment experience." keywords="testimonials, Nestoria Group, real estate investment" /><Testimonial /></>} />
-            <Route path="*" element={<><Seo title="404 - Page Not Found" description="The page you are looking for does not exist." keywords="404, page not found" /><NotFound /></>} />
-          </Routes>
-            </main>
-            <Footer className="relative z-10" />
+            {/* Google Analytics Page Tracking Component */}
+            <PageTrackingComponent />
+            {loading && <Loader onLoadingComplete={handleLoadingComplete} />}
+            <div className={`relative bg-[#673a37] ${loading ? 'hidden' : ''}`} role="main">
+              {/* Global SEO with Organization Schema */}
+              <Seo 
+                title="Nestoria Group - Most Trusted Real Estate Developer in Dholera SIR"
+                description="Nestoria Group is the most trusted and award-winning real estate developer in Dholera SIR, offering premium residential, commercial & industrial land parcels in India's first greenfield smart city."
+                keywords="Nestoria Group, Dholera SIR, Real Estate, Smart City, Investment, Land Deals, Property"
+                schemaMarkup={organizationSchema}
+                canonicalUrl="https://nestoriagroup.com"
+              />
+              
+              {/* Global parallax background */}
+              <ParallaxBackground 
+                images={parallaxBackgrounds}
+                speeds={parallaxSpeeds}
+                opacities={parallaxOpacities}
+                className="pointer-events-none"
+                aria-hidden="true"
+              />
+              <Header />
+              <Navbar />
+              <main className="relative z-10" id="main-content">
+            <Routes>
+              <Route path="/" element={<Suspense fallback={<div className="flex justify-center items-center h-64" role="status" aria-label="Loading home page"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div></div>}><><Seo title="Nestoria Group - Home" description="Your trusted partner for real estate investments in Dholera SIR." keywords="real estate, Dholera SIR, investment" /><Home /></></Suspense>} />
+              <Route path="/about" element={<Suspense fallback={<div className="flex justify-center items-center h-64" role="status" aria-label="Loading about page"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div></div>}><><Seo title="About Nestoria Group" description="Learn more about Nestoria Group and our mission." keywords="Nestoria Group, real estate developer, Dholera SIR" /><About /></></Suspense>} />
+              <Route path="/aboutDholera" element={<Suspense fallback={<div className="flex justify-center items-center h-64" role="status" aria-label="Loading about Dholera page"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div></div>}><><Seo title="About Dholera SIR" description="Discover Dholera Special Investment Region (SIR), India's first smart city." keywords="Dholera SIR, smart city, investment region" /><AboutDholera /></></Suspense>} />
+              <Route path="/contact" element={<Suspense fallback={<div className="flex justify-center items-center h-64" role="status" aria-label="Loading contact page"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div></div>}><><Seo title="Contact Nestoria Group" description="Contact us for expert advice on real estate investments in Dholera SIR." keywords="contact, Nestoria Group, real estate investment" /><Contact /></></Suspense>} />
+              <Route path="/team" element={<Suspense fallback={<div className="flex justify-center items-center h-64" role="status" aria-label="Loading team page"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div></div>}><><Seo title="Our Team - Nestoria Group" description="Meet the team of experts at Nestoria Group." keywords="team, Nestoria Group, real estate experts" /><TeamNestoria /></></Suspense>} />
+              <Route path="/blog" element={<Suspense fallback={<div className="flex justify-center items-center h-64" role="status" aria-label="Loading blog page"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div></div>}><><Seo title="Blog - Nestoria Group" description="Read our latest articles on real estate and Dholera SIR." keywords="blog, real estate, Dholera SIR, articles" /><Blog /></></Suspense>} />
+              <Route path="/faq" element={<Suspense fallback={<div className="flex justify-center items-center h-64" role="status" aria-label="Loading FAQ page"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div></div>}><><Seo title="FAQ - Nestoria Group" description="Frequently asked questions about investing in Dholera SIR." keywords="FAQ, real estate investment, Dholera SIR" /><FAQ /></></Suspense>} />
+              <Route path="/land-deals" element={<Suspense fallback={<div className="flex justify-center items-center h-64" role="status" aria-label="Loading land deals page"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div></div>}><><Seo title="Land Deals - Nestoria Group" description="Explore premium land investment opportunities in Dholera SIR." keywords="land deals, real estate, Dholera SIR, investment" /><LandDeals /></></Suspense>} />
+              <Route path="/media" element={<Suspense fallback={<div className="flex justify-center items-center h-64" role="status" aria-label="Loading media page"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div></div>}><><Seo title="Media - Nestoria Group" description="See our latest media coverage and press releases." keywords="media, Nestoria Group, press releases" /><Media /></></Suspense>} />
+              <Route path="/projects" element={<Suspense fallback={<div className="flex justify-center items-center h-64" role="status" aria-label="Loading projects page"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div></div>}><><Seo title="Projects - Nestoria Group" description="View our featured real estate projects in Dholera SIR." keywords="projects, real estate, Dholera SIR" /><Projects /></></Suspense>} />
+              <Route path="/services" element={<Suspense fallback={<div className="flex justify-center items-center h-64" role="status" aria-label="Loading services page"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div></div>}><><Seo title="Services - Nestoria Group" description="Learn about our real estate services in Dholera SIR." keywords="services, real estate, Dholera SIR" /><Services /></></Suspense>} />
+              <Route path="/achievements" element={<Suspense fallback={<div className="flex justify-center items-center h-64" role="status" aria-label="Loading achievements page"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div></div>}><><Seo title="Achievements - Nestoria Group" description="Our achievements and milestones in real estate development." keywords="achievements, Nestoria Group, real estate" /><Achievements /></></Suspense>} />
+              <Route path="/testimonial" element={<Suspense fallback={<div className="flex justify-center items-center h-64" role="status" aria-label="Loading testimonials page"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div></div>}><><Seo title="Testimonials - Nestoria Group" description="Hear from our satisfied clients about their investment experience." keywords="testimonials, Nestoria Group, real estate investment" /><Testimonial /></></Suspense>} />
+              <Route path="*" element={<Suspense fallback={<div className="flex justify-center items-center h-64" role="status" aria-label="Loading page"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div></div>}><><Seo title="404 - Page Not Found" description="The page you are looking for does not exist." keywords="404, page not found" /><NotFound /></></Suspense>} />
+            </Routes>
+              </main>
+              <Footer className="relative z-10" />
+              
+              {/* Skip to main content link for accessibility */}
+              <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:text-black focus:p-2 focus:rounded focus:shadow-lg">
+                Skip to main content
+              </a>
+            </div>
           </div>
         </Router>
       </HelmetProvider>

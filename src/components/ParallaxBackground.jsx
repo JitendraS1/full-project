@@ -1,4 +1,18 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
+
+// Throttle function to limit scroll event frequency
+const throttle = (func, limit) => {
+  let inThrottle;
+  return function() {
+    const args = arguments;
+    const context = this;
+    if (!inThrottle) {
+      func.apply(context, args);
+      inThrottle = true;
+      setTimeout(() => inThrottle = false, limit);
+    }
+  };
+};
 
 const ParallaxBackground = ({ 
   children,
@@ -10,6 +24,7 @@ const ParallaxBackground = ({
   const backgroundsRef = useRef([]);
   const [windowHeight, setWindowHeight] = useState(0);
   const [windowWidth, setWindowWidth] = useState(0);
+  const rafId = useRef();
 
   useEffect(() => {
     const updateDimensions = () => {
@@ -23,33 +38,43 @@ const ParallaxBackground = ({
   }, []);
   
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const scrollPercent = scrollY / (document.body.scrollHeight - windowHeight);
+    const handleScroll = throttle(() => {
+      // Use requestAnimationFrame for smoother performance
+      if (rafId.current) {
+        cancelAnimationFrame(rafId.current);
+      }
       
-      backgroundsRef.current.forEach((bg, index) => {
-        if (!bg) return;
+      rafId.current = requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        const scrollPercent = scrollY / (document.body.scrollHeight - windowHeight);
         
-        // Vertical parallax effect
-        const yPos = -scrollY * (speeds[index] || 0.5);
-        
-        // Add subtle horizontal movement based on scroll position
-        const xPos = (scrollPercent * windowWidth * 0.05) * (index % 2 === 0 ? 1 : -1);
-        
-        // Apply scale effect for depth
-        const scale = 1 + (scrollPercent * 0.1) * (index % 2 === 0 ? 1 : -1);
-        
-        bg.style.transform = `translate3d(${xPos}px, ${yPos}px, 0) scale(${scale})`;
+        backgroundsRef.current.forEach((bg, index) => {
+          if (!bg) return;
+          
+          // Vertical parallax effect
+          const yPos = -scrollY * (speeds[index] || 0.5);
+          
+          // Add subtle horizontal movement based on scroll position
+          const xPos = (scrollPercent * windowWidth * 0.05) * (index % 2 === 0 ? 1 : -1);
+          
+          // Apply scale effect for depth
+          const scale = 1 + (scrollPercent * 0.1) * (index % 2 === 0 ? 1 : -1);
+          
+          bg.style.transform = `translate3d(${xPos}px, ${yPos}px, 0) scale(${scale})`;
+        });
       });
-    };
+    }, 16); // ~60fps
     
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     
     // Initial position
     handleScroll();
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      if (rafId.current) {
+        cancelAnimationFrame(rafId.current);
+      }
     };
   }, [speeds, windowHeight, windowWidth]);
   

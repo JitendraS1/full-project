@@ -1,5 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 
+// Throttle function to limit scroll event frequency
+const throttle = (func, limit) => {
+  let inThrottle;
+  return function() {
+    const args = arguments;
+    const context = this;
+    if (!inThrottle) {
+      func.apply(context, args);
+      inThrottle = true;
+      setTimeout(() => inThrottle = false, limit);
+    }
+  };
+};
+
 const ParallaxSection = ({
   backgroundImage,
   backgroundPosition = "center",
@@ -36,15 +50,15 @@ const ParallaxSection = ({
     if (!section) return;
 
     // Apply parallax effect on both mobile and desktop
-    const handleScroll = () => {
+    const handleScroll = throttle(() => {
       const scrollPosition = window.pageYOffset;
       const sectionTop =
         section.getBoundingClientRect().top + window.pageYOffset;
       const offset = (scrollPosition - sectionTop) * speed;
       section.style.backgroundPosition = `center ${offset}px`;
-    };
+    }, 16); // ~60fps
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
 
     return () => {

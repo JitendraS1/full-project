@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import ParallaxSection from '../components/ParallaxSection';
-import aboutbanner from '/src/assets/img/about.png'
-import shivsirimg from '/src/assets/img/team/management/shivji.png'
-import mohansirimg from '/src/assets/img/team/management/mohanji.png'
-import nitinsirimg from '/src/assets/img/team/management/nitinji.png'
+import aboutbanner from '/src/assets/img/about.webp'
+import shivsirimg from '/src/assets/img/team/management/shivji.webp'
+import mohansirimg from '/src/assets/img/team/management/mohanji.webp'
+import nitinsirimg from '/src/assets/img/team/management/nitinji.webp'
 function AboutUs() {
   useEffect(() => {
     window.scrollTo(0, 0);

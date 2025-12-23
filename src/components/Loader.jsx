@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import LoaderAnimation from './LoaderAnimation';
 
 const Loader = ({ onLoadingComplete }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Set a timeout to hide the loader after 5 seconds 
+    // Set a timeout to hide the loader after a short time 
     const timer = setTimeout(() => {
       setIsLoading(false);
       if (onLoadingComplete) {
         onLoadingComplete();
       }
-    }, 4000);
+    }, 1000); // Reduced from 4000ms to 1000ms for faster loading
 
     // Clean up the timer if the component unmounts
     return () => clearTimeout(timer);
@@ -23,9 +22,10 @@ const Loader = ({ onLoadingComplete }) => {
   }
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50 bg-black h-screen w-screen">
-      <div className="w-full h-full flex items-center justify-center">
-        <LoaderAnimation />
+    <div className="fixed inset-0 flex items-center justify-center z-50 bg-white h-screen w-screen">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 mx-auto mb-4"></div>
+        <p className="text-gray-600 font-medium">Loading...</p>
       </div>
     </div>
   );

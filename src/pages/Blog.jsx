@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import ParallaxSection from '../components/ParallaxSection';
-import blogbanner from '/src/assets/img/blog.png'
+import blogbanner from '/src/assets/img/blog.webp'
 
 const Blog = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -28,7 +28,7 @@ const Blog = () => {
       date: "June 15, 2023",
       author: "Rajesh Sharma",
       category: "dholera",
-      image: "/src/assets/img/futuredholera.png",
+      image: "/src/assets/img/futuredholera.webp",
       readTime: "5 min read"
     },
     {
@@ -38,7 +38,7 @@ const Blog = () => {
       date: "May 28, 2023",
       author: "Priya Patel",
       category: "investment",
-      image: "/src/assets/img/growth.png",
+      image: "/src/assets/img/growth.webp",
       readTime: "7 min read"
     },
     {
@@ -48,7 +48,7 @@ const Blog = () => {
       date: "April 10, 2023",
       author: "Amit Shah",
       category: "market-trends",
-      image: "/src/assets/img/connectivity.png",
+      image: "/src/assets/img/connectivity.webp",
       readTime: "6 min read"
     },
     {
@@ -58,7 +58,7 @@ const Blog = () => {
       date: "March 22, 2023",
       author: "Neha Gupta",
       category: "real-estate",
-      image: "/src/assets/img/Residential-project.png",
+      image: "/src/assets/img/Residential-project.webp",
       readTime: "8 min read"
     },
     {
@@ -78,7 +78,7 @@ const Blog = () => {
       date: "January 30, 2023",
       author: "Sanjay Mehta",
       category: "real-estate",
-      image: "/src/assets/img/COMMERCIAL-project.png",
+      image: "/src/assets/img/COMMERCIAL-project.webp",
       readTime: "7 min read"
     },
     {
@@ -88,7 +88,7 @@ const Blog = () => {
       date: "January 12, 2023",
       author: "Ananya Desai",
       category: "market-trends",
-      image: "/src/assets/img/Industrial-project.png",
+      image: "/src/assets/img/Industrial-project.webp",
       readTime: "6 min read"
     },
     {
@@ -98,7 +98,7 @@ const Blog = () => {
       date: "December 5, 2022",
       author: "Rahul Verma",
       category: "investment",
-      image: "/src/assets/img/Industrial.png",
+      image: "/src/assets/img/Industrial.webp",
       readTime: "5 min read"
     },
     {
@@ -108,7 +108,7 @@ const Blog = () => {
       date: "November 18, 2022",
       author: "Deepak Kumar",
       category: "dholera",
-      image: "/src/assets/img/masterplan.png",
+      image: "/src/assets/img/masterplan.webp",
       readTime: "8 min read"
     }
   ];

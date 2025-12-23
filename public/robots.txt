@@ -1,22 +1,25 @@
 User-agent: *
 Allow: /
 
-# Disallow admin or private areas if they exist
+# Disallow non-essential pages
 Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /tmp/
 Disallow: /private/
 
-# Allow all bots to scan all content
-User-agent: Googlebot
-Allow: /
+# Crawl-delay: 10
 
-User-agent: Bingbot
-Allow: /
+# Allow important pages
+Allow: /$
+Allow: /about$
+Allow: /aboutDholera$
+Allow: /services$
+Allow: /projects$
+Allow: /land-deals$
+Allow: /contact$
 
-User-agent: Slurp
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
+# Host directive
+Host: nestoriagroup.com
 
 # Sitemap location
 Sitemap: https://nestoriagroup.com/sitemap.xml

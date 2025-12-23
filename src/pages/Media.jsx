@@ -8,103 +8,85 @@ function Media() {
   const [dialogContent, setDialogContent] = useState({ type: '', url: '', title: '' });
   
   // Media data
-  const mediaItems = [
+  const mediaData = [
     {
       id: 1,
-      type: 'news',
-      title: 'Nestoria Group Announces New Residential Project in Dholera SIR',
-      date: 'June 15, 2023',
-      source: 'Real Estate Chronicle',
-      image: '/src/assets/img/Residential-project.png',
-      link: '#',
-      description: 'Nestoria Group has announced the launch of a new residential project in Dholera SIR, offering premium plots with world-class amenities.'
+      title: "Nestoria Group Featured in Economic Times",
+      excerpt: "Read about how Nestoria Group is revolutionizing real estate development in Dholera SIR.",
+      date: "June 15, 2023",
+      type: "News",
+      image: '/src/assets/img/Residential-project.webp',
+      link: "#"
     },
     {
       id: 2,
-      type: 'press',
-      title: 'Dholera SIR Infrastructure Development Accelerates',
-      date: 'August 22, 2023',
-      source: 'Business Standard',
-      image: '/src/assets/img/connectivity.png',
-      link: '#',
-      description: 'The infrastructure development in Dholera SIR is progressing at a rapid pace, with major roads, utilities, and smart city features being implemented.'
+      title: "Interview: CEO on Smart City Vision",
+      excerpt: "Our CEO shares insights on the future of Dholera SIR and sustainable development.",
+      date: "May 28, 2023",
+      type: "Interview",
+      image: '/src/assets/img/connectivity.webp',
+      link: "#"
     },
     {
       id: 3,
-      type: 'video',
-      title: 'Dholera SIR: The Future of Urban Development',
-      date: 'September 5, 2023',
-      source: 'Nestoria Group YouTube Channel',
-      image: '/src/assets/img/futuredholera.png',
-      link: 'https://www.youtube.com/embed/2pcf-1kqTKk?si=OF3R40EKWNEgWHO8',
-      description: 'A comprehensive overview of Dholera SIR and its potential as India\'s first planned smart city.'
+      title: "Dholera SIR Development Progress Report",
+      excerpt: "Latest updates on infrastructure development and project milestones.",
+      date: "April 10, 2023",
+      type: "Report",
+      image: '/src/assets/img/futuredholera.webp',
+      link: "#"
     },
     {
       id: 4,
-      type: 'photo',
-      title: 'Aerial View of Dholera SIR Development',
-      date: 'October 10, 2023',
-      source: 'Nestoria Group Gallery',
-      image: '/src/assets/img/masterplan.png',
-      link: '#',
-      description: 'Stunning aerial photographs showcasing the ongoing development and infrastructure projects in Dholera SIR.'
+      title: "Sustainability Initiatives in Dholera",
+      excerpt: "Exploring eco-friendly practices and green technologies in our projects.",
+      date: "March 22, 2023",
+      type: "Feature",
+      image: '/src/assets/img/masterplan.webp',
+      link: "#"
     },
     {
       id: 5,
-      type: 'news',
-      title: 'Government Announces New Incentives for Dholera SIR Investors',
-      date: 'November 18, 2023',
-      source: 'Economic Times',
-      image: '/src/assets/img/growth.png',
-      link: '#',
-      description: 'The government has announced new tax incentives and subsidies for businesses and investors in Dholera SIR to boost economic growth.'
+      title: "Investment Opportunities in Dholera SIR",
+      excerpt: "An overview of current and upcoming investment opportunities.",
+      date: "February 15, 2023",
+      type: "Analysis",
+      image: '/src/assets/img/growth.webp',
+      link: "#"
     },
     {
       id: 6,
-      type: 'press',
-      title: 'Nestoria Group Recognized for Excellence in Real Estate',
-      date: 'December 5, 2023',
-      source: 'Real Estate Awards 2023',
-      image: '/src/assets/img/COMMERCIAL-project.png',
-      link: '#',
-      description: 'Nestoria Group has been awarded the "Excellence in Real Estate Development" award at the prestigious Real Estate Awards 2023.'
+      title: "Commercial Development Update",
+      excerpt: "Latest developments in commercial real estate in Dholera SIR.",
+      date: "January 30, 2023",
+      type: "Update",
+      image: '/src/assets/img/COMMERCIAL-project.webp',
+      link: "#"
     },
     {
       id: 7,
-      type: 'video',
-      title: 'Client Testimonials: Investing in Dholera SIR',
-      date: 'January 12, 2024',
-      source: 'Nestoria Group YouTube Channel',
-      image: '/src/assets/img/who_we_are.png',
-      link: 'https://www.youtube.com/embed/q_PJPHT7Sa8?si=JLkgqJzwBJq-GRKm',
-      description: 'Hear from satisfied clients who have invested in Dholera SIR through Nestoria Group and their success stories.'
+      title: "Community Development Program",
+      excerpt: "Our commitment to community development and social impact.",
+      date: "January 12, 2023",
+      type: "Community",
+      image: '/src/assets/img/who_we_are.webp',
+      link: "#"
     },
     {
       id: 8,
-      type: 'photo',
-      title: 'Dholera SIR Master Plan Visualization',
-      date: 'February 20, 2024',
-      source: 'Nestoria Group Gallery',
-      image: '/src/assets/img/smart-city.gif',
-      link: '#',
-      description: 'Detailed visualizations and 3D renderings of the Dholera SIR master plan, showcasing the future development of the smart city.'
-    },
-    {
-      id: 9,
-      type: 'news',
-      title: 'International Investors Show Interest in Dholera SIR',
-      date: 'March 8, 2024',
-      source: 'Financial Express',
-      image: '/src/assets/img/Industrial-project.png',
-      link: '#',
-      description: 'International investors and companies are showing significant interest in Dholera SIR, with several major investment deals in the pipeline.'
+      title: "Industrial Zone Expansion",
+      excerpt: "Details about the expansion of industrial zones in Dholera SIR.",
+      date: "December 5, 2022",
+      type: "Development",
+      image: '/src/assets/img/Industrial-project.webp',
+      link: "#"
     }
   ];
 
   // Filter media items based on active filter
   const filteredItems = activeFilter === 'all' 
-    ? mediaItems 
-    : mediaItems.filter(item => item.type === activeFilter);
+    ? mediaData 
+    : mediaData.filter(item => item.type === activeFilter);
 
   // Function to open dialog
   const openDialog = (type, url, title) => {
@@ -169,6 +151,8 @@ function Media() {
                 className="w-full rounded-t-2xl group-hover:scale-110 transition-transform duration-500" 
                 alt={item.title} 
                 style={{ height: '200px', objectFit: 'cover' }}
+                loading="lazy"
+                decoding="async"
               />
               <div 
                 className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center cursor-pointer"
@@ -213,6 +197,8 @@ function Media() {
                 className="w-full rounded-t-2xl group-hover:scale-110 transition-transform duration-500" 
                 alt={item.title} 
                 style={{ height: '200px', objectFit: 'cover' }}
+                loading="lazy"
+                decoding="async"
               />
               <div 
                 className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center cursor-pointer"
@@ -280,6 +266,8 @@ function Media() {
                   src={dialogContent.url} 
                   alt={dialogContent.title} 
                   className="w-full rounded-lg"
+                  loading="lazy"
+                  decoding="async"
                 />
               )}
             </div>

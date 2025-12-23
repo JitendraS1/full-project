@@ -10,7 +10,7 @@ import testomonial5 from "/src/assets/img/testomonials/Mr-K-C-Anand.webp";
 import testomonial6 from "/src/assets/img/testomonials/Mr.-Dayananda-Reddy.webp";
 import testomonial7 from "/src/assets/img/testomonials/Shahnawaz-Choudhary.webp";
 import testomonial8 from "/src/assets/img/testomonials/Jasbir-Singh-Arora.webp";
-import teamDisImg from "/src/assets/img/team/team-dis.jpg";
+import teamDisImg from "/src/assets/img/team/team-dis.webp";
 // Video imports removed as files don't exist in the assets directory
 
 function Testimonial() {
@@ -305,6 +305,8 @@ function Testimonial() {
                           src={testimonial.image}
                           alt={testimonial.name}
                           className="w-20 h-20 object-cover rounded-full mr-4 border-4 border-blue-100 group-hover:border-blue-300 transition-colors duration-300"
+                          loading="lazy"
+                          decoding="async"
                         />
                         <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
                           <i className="fas fa-quote-left text-white text-xs"></i>
@@ -519,7 +521,7 @@ function Testimonial() {
               <div className="h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white group">
                 <div className="relative">
                   <img
-                    src="/src/assets/img/COMMERCIAL-project.png"
+                    src="/src/assets/img/COMMERCIAL-project.webp"
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                     alt="Commercial Development"
                   />
@@ -559,7 +561,7 @@ function Testimonial() {
               <div className="h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white group">
                 <div className="relative">
                   <img
-                    src="/src/assets/img/Residential-project.png"
+                    src="/src/assets/img/Residential-project.webp"
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                     alt="Residential Community"
                   />
@@ -599,7 +601,7 @@ function Testimonial() {
               <div className="h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white group">
                 <div className="relative">
                   <img
-                    src="/src/assets/img/Industrial-project.png"
+                    src="/src/assets/img/Industrial-project.webp"
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                     alt="Industrial Development"
                   />

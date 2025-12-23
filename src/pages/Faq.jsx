@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import ParallaxSection from '../components/ParallaxSection';
-import faqbanner from '/src/assets/img/FAQ.png'
+import faqbanner from '/src/assets/img/FAQ.webp'
 const Faq = () => {
   const [activeCategory, setActiveCategory] = useState('general');
   

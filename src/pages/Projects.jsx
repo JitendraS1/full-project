@@ -2,22 +2,22 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ParallaxSection from '../components/ParallaxSection';
 import ParallaxScroll from '../components/ParallaxScroll';
-import projectbanner from '/src/assets/img/projects-Banner.png';
-import industrialImg from '/src/assets/img/Industrial-project.png';
-import residentialImg from '/src/assets/img/Residential-project.png';
-import commercialImg from '/src/assets/img/COMMERCIAL-project.png';
+import projectbanner from '/src/assets/img/projects-Banner.webp';
+import industrialImg from '/src/assets/img/Industrial-project.webp';
+import residentialImg from '/src/assets/img/Residential-project.webp';
+import commercialImg from '/src/assets/img/COMMERCIAL-project.webp';
 // Import additional project images
-import dholeraBhoomi from '/src/assets/img/project/Dholera-Bhoomi.jpg';
-import dholeraBhoomi2 from '/src/assets/img/project/Dhollera-Bhoomi2 .jpg';
-import dholeraBhoomi3 from '/src/assets/img/project/DHOLERA BHOOMI-III .jpg';
-import orchidLuxury from '/src/assets/img/project/ORCHID LUXURY-BROSER.jpg';
-import orchidRiverView from '/src/assets/img/project/ORCHID-RIVER-VIEW.jpg';
-import orchidVillaGreens from '/src/assets/img/project/ORCHID VILLA GREENS-BROSHER.jpg';
-import orchidVillaLuxuriya from '/src/assets/img/project/ORCHID VILLA LUXURIYA-BROSHER.jpg';
-import orchidVillaParadise from '/src/assets/img/project/ORCHID VILLA PARADISE 2 NEW 12-12-2023 POXI.jpg';
-import orchidVillaGold from '/src/assets/img/project/ORCHILD-VILLA-GOLD.jpg';
-import orchidNatureRegency from '/src/assets/img/project/Orchid Nature Regency_1 (1).jpg';
-import palmVillas from '/src/assets/img/project/Palm Villas.jpg';
+import dholeraBhoomi from '/src/assets/img/project/Dholera-Bhoomi.webp';
+import dholeraBhoomi2 from '/src/assets/img/project/Dhollera-Bhoomi2 .webp';
+import dholeraBhoomi3 from '/src/assets/img/project/DHOLERA BHOOMI-III .webp';
+import orchidLuxury from '/src/assets/img/project/ORCHID LUXURY-BROSER.webp';
+import orchidRiverView from '/src/assets/img/project/ORCHID-RIVER-VIEW.webp';
+import orchidVillaGreens from '/src/assets/img/project/ORCHID VILLA GREENS-BROSHER.webp';
+import orchidVillaLuxuriya from '/src/assets/img/project/ORCHID VILLA LUXURIYA-BROSHER.webp';
+import orchidVillaParadise from '/src/assets/img/project/ORCHID VILLA PARADISE 2 NEW 12-12-2023 POXI.webp';
+import orchidVillaGold from '/src/assets/img/project/ORCHILD-VILLA-GOLD.webp';
+import orchidNatureRegency from '/src/assets/img/project/Orchid Nature Regency_1 (1).webp';
+import palmVillas from '/src/assets/img/project/Palm Villas.webp';
 
 function Projects() {
   // State for active project filter

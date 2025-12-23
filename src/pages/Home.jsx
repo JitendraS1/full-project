@@ -3,15 +3,13 @@ import { Link } from "react-router-dom";
 import Carousel from "../components/Carousel";
 import ParallaxSection from "../components/ParallaxSection";
 import ParallaxScroll from "../components/ParallaxScroll";
-import FloatingVideoButton from "../components/FloatingVideoButton";
+
 import dholeraBanner from "../assets/img/Home-banner.svg";
 import aboutimage from "../assets/img/about.png";
 
 function Home() {
   return (
     <div className="overflow-hidden bg-[#673a37]">
-      {/* Floating Video Button */}
-      <FloatingVideoButton />
 
       {/* Hero Section */}
       <ParallaxSection
