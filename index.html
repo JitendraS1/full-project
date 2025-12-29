@@ -18,38 +18,76 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     
-    <!-- Optimize font loading - only load Condor font since it's used in the project -->
-    <link rel="preload" href="./fonts/fonnts.com-Condor_Regular.otf" as="font" type="font/otf" crossorigin>
+    <!-- Optimize font loading with proper CSS font-display -->
     <link rel="preload" href="./fonts/fonnts.com-Condor_Bold.otf" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="./fonts/fonnts.com-Condor_Italic.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="./fonts/fonnts.com-Condor_Medium.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="./fonts/fonnts.com-Condor_Regular.otf" as="font" type="font/otf" crossorigin>
     <link rel="preload" href="./fonts/fonnts.com-Condor_Light.otf" as="font" type="font/otf" crossorigin>
+    <link href="./fonts/fonnts.com-Condor_Bold.otf" rel="font" as="font" type="font/otf" crossorigin>
+    <link href="./fonts/fonnts.com-Condor_Medium.otf" rel="font" as="font" type="font/otf" crossorigin>
+    <link href="./fonts/fonnts.com-Condor_Regular.otf" rel="font" as="font" type="font/otf" crossorigin>
+    <link href="./fonts/fonnts.com-Condor_Light.otf" rel="font" as="font" type="font/otf" crossorigin>
+    
+    <!-- Add performance and best practice meta tags -->
+    <meta name="referrer" content="no-referrer">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
     
     <!-- Preload critical CSS files -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
     <!-- Accessibility and SEO meta tags -->
-    <meta property="og:title" content="Nestoria Group - Most Trusted Real Estate Developer in Dholera SIR" />
+    <meta property="og:title" content="Real Estate Developer In Dholera SIR | Nestoria Group | Investment Plots" />
     <meta property="og:description" content="Nestoria Group - Most Trusted and Award Winning Real Estate Developer in Dholera SIR. Premium residential, commercial & industrial land parcels in India's first greenfield smart city." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://nestoriagroup.com" />
-    <meta property="og:image" content="./src/assets/img/og-image.jpg" />
+    <meta property="og:image" content="./src/assets/img/about.webp" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Nestoria Group - Most Trusted Real Estate Developer in Dholera SIR" />
+    <meta name="twitter:title" content="Real Estate Developer In Dholera SIR | Nestoria Group | Investment Plots" />
     <meta name="twitter:description" content="Nestoria Group - Most Trusted and Award Winning Real Estate Developer in Dholera SIR. Premium residential, commercial & industrial land parcels in India's first greenfield smart city." />
     
-    <title>Nestoria Group - Most Trusted Real Estate Developer in Dholera SIR</title>
+    <title>Real Estate Developer In Dholera SIR | Nestoria Group | Investment Plots</title>
     
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) - Optimized loading -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3YP6RMRR24"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      
+      // Initialize with privacy settings
       gtag('js', new Date());
-
-      gtag('config', 'G-3YP6RMRR24');
-      gtag('config', 'GT-K48FW6C');
+      gtag('config', 'G-3YP6RMRR24', {
+        // Disable cookies to avoid third-party cookie issues
+        cookie_flags: 'SameSite=None;Secure',
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
+        // Optimize for performance
+        send_page_view: false
+      });
+      gtag('config', 'GT-K48FW6C', {
+        // Disable cookies to avoid third-party cookie issues
+        cookie_flags: 'SameSite=None;Secure',
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
+        // Optimize for performance
+        send_page_view: false
+      });
     </script>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./src/assets/img/Home-banner.svg" as="image">
+    <link rel="preload" href="./src/assets/img/about.webp" as="image">
+    
+    <!-- Preconnect to critical third-party resources -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     
     <noscript>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />

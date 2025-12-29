@@ -305,8 +305,7 @@ function Testimonial() {
                           src={testimonial.image}
                           alt={testimonial.name}
                           className="w-20 h-20 object-cover rounded-full mr-4 border-4 border-blue-100 group-hover:border-blue-300 transition-colors duration-300"
-                          loading="lazy"
-                          decoding="async"
+
                         />
                         <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
                           <i className="fas fa-quote-left text-white text-xs"></i>

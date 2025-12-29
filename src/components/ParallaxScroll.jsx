@@ -1,18 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-// Throttle function to limit scroll event frequency
-const throttle = (func, limit) => {
-  let inThrottle;
-  return function() {
-    const args = arguments;
-    const context = this;
-    if (!inThrottle) {
-      func.apply(context, args);
-      inThrottle = true;
-      setTimeout(() => inThrottle = false, limit);
-    }
-  };
-};
+
 
 const ParallaxScroll = ({ 
   children, 
@@ -24,7 +12,7 @@ const ParallaxScroll = ({
   const elementRef = useRef(null);
   const initialOffsetRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
-  const rafId = useRef();
+
   
   // Check if device is mobile
   useEffect(() => {
@@ -62,44 +50,46 @@ const ParallaxScroll = ({
     // Handle window resize
     window.addEventListener('resize', calculateOffset);
     
-    const handleScroll = throttle(() => {
-      // Use requestAnimationFrame for smoother performance
-      if (rafId.current) {
-        cancelAnimationFrame(rafId.current);
+    // Optimize scroll handling for performance
+    let ticking = false;
+    
+    const updateParallax = () => {
+      if (!initialOffsetRef.current) return;
+      
+      const scrollPosition = window.pageYOffset;
+      const elementTop = initialOffsetRef.current.top;
+      
+      // Calculate how far the element is from the top of the viewport
+      const distanceFromViewportTop = elementTop - scrollPosition;
+      
+      // Calculate the parallax offset
+      const parallaxOffset = distanceFromViewportTop * speed;
+      
+      // Apply the transform based on direction
+      if (direction === 'vertical') {
+        element.style.transform = `translateY(${parallaxOffset}px)`;
+      } else if (direction === 'horizontal') {
+        element.style.transform = `translateX(${parallaxOffset}px)`;
       }
       
-      rafId.current = requestAnimationFrame(() => {
-        if (!initialOffsetRef.current) return;
-        
-        const scrollPosition = window.pageYOffset;
-        const elementTop = initialOffsetRef.current.top;
-        
-        // Calculate how far the element is from the top of the viewport
-        const distanceFromViewportTop = elementTop - scrollPosition;
-        
-        // Calculate the parallax offset
-        const parallaxOffset = distanceFromViewportTop * speed;
-        
-        // Apply the transform based on direction
-        if (direction === 'vertical') {
-          element.style.transform = `translateY(${parallaxOffset}px)`;
-        } else if (direction === 'horizontal') {
-          element.style.transform = `translateX(${parallaxOffset}px)`;
-        }
-      });
-    }, 16); // ~60fps
+      ticking = false;
+    };
+    
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    };
     
     window.addEventListener('scroll', handleScroll, { passive: true });
     
     // Initial position
-    handleScroll();
+    updateParallax();
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', calculateOffset);
-      if (rafId.current) {
-        cancelAnimationFrame(rafId.current);
-      }
     };
   }, [speed, direction, isMobile]);
   

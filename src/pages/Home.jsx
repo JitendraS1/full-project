@@ -4,8 +4,38 @@ import Carousel from "../components/Carousel";
 import ParallaxSection from "../components/ParallaxSection";
 import ParallaxScroll from "../components/ParallaxScroll";
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import './styles.css';
+
+// import required modules
+import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
+
 import dholeraBanner from "../assets/img/Home-banner.svg";
-import aboutimage from "../assets/img/about.png";
+import aboutimage from "../assets/img/about.webp";
+
+// Import project images for slider
+import dholeraBhoomi from "../assets/img/project/Dholera-Bhoomi.webp";
+import dholeraBhoomi2 from "../assets/img/project/Dhollera-Bhoomi2 .webp";
+import dholeraBhoomi3 from "../assets/img/project/DHOLERA BHOOMI-III .webp";
+import orchidLuxury from "../assets/img/project/ORCHID LUXURY-BROSER.webp";
+import orchidRiverView from "../assets/img/project/ORCHID-RIVER-VIEW.webp";
+import orchidVillaGreens from "../assets/img/project/ORCHID VILLA GREENS-BROSHER.webp";
+import orchidVillaLuxuriya from "../assets/img/project/ORCHID VILLA LUXURIYA-BROSHER.webp";
+import orchidVillaParadise from "../assets/img/project/ORCHID VILLA PARADISE 2 NEW 12-12-2023 POXI.webp";
+import orchidVillaGold from "../assets/img/project/ORCHILD-VILLA-GOLD.webp";
+import leadershipImage from "../assets/img/team/team-dis.webp"; // Leadership image
+
+// Import team images
+import teamBg from "../assets/img/team/team-circle.webp";
+import shivji from "../assets/img/team/management/shivji.webp";
+import mohanji from "../assets/img/team/management/mohanji.webp";
+import nitinji from "../assets/img/team/management/nitinji.webp";
 
 function Home() {
   return (
@@ -22,18 +52,18 @@ function Home() {
       >
         <div className="relative z-10 w-full h-full flex items-center justify-center">
           <div className="max-w-6xl mx-auto px-4 py-16 sm:py-20 md:py-32">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight">
-              Think Dholera Think <span className="text-blue-300">Nestoria</span>.
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight drop-shadow-lg ">
+              Leading Real Estate Developer in Dholera SIR
             </h1>
             <div className="h-1 w-24 sm:w-32 bg-blue-600 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
-            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 md:mb-10 animate-slide-up opacity-0 animation-delay-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 md:mb-10 animate-slide-up opacity-0 animation-delay-300 max-w-3xl mx-auto leading-relaxed ">
               Discover exclusive properties and investment opportunities in
               India's first smart city with world-class infrastructure and unlimited growth potential.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 animate-slide-up opacity-0 animation-delay-500">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-6 animate-slide-up opacity-0 animation-delay-500">
               <Link
                 to="/land-deals"
-                className="group bg-blue-700 hover:bg-blue-800 text-white font-bold text-base md:text-lg py-3 px-6 md:py-4 md:px-8 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center relative overflow-hidden"
+                className="group bg-blue-700 hover:bg-blue-800 text-white font-bold text-base md:text-lg py-4 px-6 md:py-4 md:px-8 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center relative overflow-hidden min-h-[44px]"
               >
                 <span className="relative z-10 flex items-center justify-center">
                   <i className="fas fa-search mr-2"></i>
@@ -43,7 +73,7 @@ function Home() {
               </Link>
               <Link
                 to="/contact"
-                className="group bg-transparent hover:bg-white/10 text-white font-bold text-base md:text-lg py-3 px-6 md:py-4 md:px-8 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center backdrop-blur-sm"
+                className="group bg-transparent hover:bg-white/10 text-white font-bold text-base md:text-lg py-4 px-6 md:py-4 md:px-8 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center backdrop-blur-sm min-h-[44px]"
               >
                 <span className="flex items-center justify-center">
                   <i className="fas fa-phone mr-2"></i>
@@ -83,9 +113,7 @@ function Home() {
                   className="w-full h-64 sm:h-80 md:h-[400px] object-cover transform group-hover:scale-110 transition-transform duration-700"
                   src={aboutimage}
                   alt="Nestoria Group - Premier Real Estate Developer in Dholera SIR Gujarat"
-                  loading="lazy"
-                  decoding="async"
-                  fetchPriority="high"
+
                 />
                 <div className="absolute inset-0 bg-blue-900/60 flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <span className="text-white text-lg sm:text-xl md:text-2xl font-bold px-4 sm:px-6 py-3 border-2 border-white rounded-lg mb-6 sm:mb-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -154,7 +182,7 @@ function Home() {
                 </div>
                 <Link
                   to="/about"
-                className="group inline-flex items-center bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 text-sm sm:text-base"
+                className="group inline-flex items-center bg-blue-700 hover:bg-blue-800 text-white font-bold py-4 px-6 sm:py-4 sm:px-8 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 text-sm sm:text-base min-h-[44px]"
                   aria-label="Discover More About Nestoria"
                 >
                   <span>Discover More</span>
@@ -165,6 +193,8 @@ function Home() {
           </div>
         </div>
       </section>
+
+      
 
       {/* Services Section */}
       <section
@@ -232,7 +262,7 @@ function Home() {
                   <div className="text-center">
                     <Link
                       to="/services"
-                      className="group/btn inline-flex items-center text-blue-300 hover:text-white font-semibold border-2 border-blue-300 hover:border-white rounded-full py-3 px-8 transition-all duration-300 hover:bg-white/10 backdrop-blur-sm"
+                      className="group/btn inline-flex items-center text-blue-300 hover:text-white font-semibold border-2 border-blue-300 hover:border-white rounded-full py-4 px-8 transition-all duration-300 hover:bg-white/10 backdrop-blur-sm min-h-[44px]"
                       aria-label={`Learn More About ${item.title}`}
                     >
                       <span>Learn More</span>
@@ -340,6 +370,76 @@ function Home() {
         </div>
       </section>
 
+      {/* Swiper Slider Section */}
+      <section className="py-16 md:py-24 bg-white w-screen">
+        <div className="w-full px-4">
+          {/* Gallery Title */}
+          <div className="text-center mb-12">
+            {/* <h6 className="text-blue-600 font-semibold text-base sm:text-lg mb-2 sm:mb-3 uppercase tracking-wider">
+              Our Projects
+            </h6> */}
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800">
+              Gallery
+            </h2>
+            <div className="h-1 w-24 sm:w-32 bg-blue-600 mx-auto mt-4"></div>
+          </div>
+
+          <div className="max-w-6xl mx-auto">
+            <Swiper
+              effect={'coverflow'}
+              grabCursor={true}
+              centeredSlides={true}
+              slidesPerView={'auto'}
+              coverflowEffect={{
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
+              loop={true}
+              modules={[EffectCoverflow, Pagination, Autoplay]}
+              className="mySwiper"
+            >
+              <SwiperSlide>
+                <img src={dholeraBhoomi} alt="Dholera Bhoomi Project" className="w-full h-full object-cover" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={dholeraBhoomi2} alt="Dholera Bhoomi 2 Project" className="w-full h-full object-cover" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={dholeraBhoomi3} alt="Dholera Bhoomi III Project" className="w-full h-full object-cover" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={orchidLuxury} alt="Orchid Luxury Project" className="w-full h-full object-cover" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={orchidRiverView} alt="Orchid River View Project" className="w-full h-full object-cover" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={orchidVillaGreens} alt="Orchid Villa Greens Project" className="w-full h-full object-cover" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={orchidVillaLuxuriya} alt="Orchid Villa Luxuriya Project" className="w-full h-full object-cover" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={orchidVillaParadise} alt="Orchid Villa Paradise Project" className="w-full h-full object-cover" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={orchidVillaGold} alt="Orchid Villa Gold Project" className="w-full h-full object-cover" />
+              </SwiperSlide>
+            </Swiper>
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action Section */}
       <ParallaxSection
         backgroundImage={dholeraBanner}
@@ -358,10 +458,10 @@ function Home() {
               Our experts are ready to guide you through the best investment
               opportunities in Dholera SIR with personalized solutions and expert advice.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-6">
               <Link
                 to="/contact"
-                className="group bg-blue-700 hover:bg-blue-800 text-white font-bold py-4 px-8 md:px-12 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 text-lg"
+                className="group bg-blue-700 hover:bg-blue-800 text-white font-bold py-4 px-8 md:px-12 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 text-lg min-h-[44px]"
               >
                 <span className="flex items-center justify-center">
                   <i className="fas fa-phone mr-2"></i>
@@ -370,7 +470,7 @@ function Home() {
               </Link>
               <Link
                 to="/land-deals"
-                className="group bg-transparent hover:bg-white/10 text-white font-bold py-4 px-8 md:px-12 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 text-lg backdrop-blur-sm"
+                className="group bg-transparent hover:bg-white/10 text-white font-bold py-4 px-8 md:px-12 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 text-lg backdrop-blur-sm min-h-[44px]"
               >
                 <span className="flex items-center justify-center">
                   <i className="fas fa-search mr-2"></i>
@@ -382,8 +482,103 @@ function Home() {
         </div>
       </ParallaxSection>
 
-      {/* Testimonials Section */}
+      {/* Executive Team Section */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto px-4">
+          {/* Section Header */}
+          <div className="text-center max-w-4xl mx-auto mb-12 md:mb-16">
+            {/* <h6 className="text-blue-600 font-semibold text-lg md:text-xl mb-4 uppercase tracking-wider">
+              Visinory Leadership
+            </h6> */}
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+               Visinory  <span className="text-blue-600"> Leadership</span>
+            </h2>
+            <div className="h-1 w-32 bg-blue-600 mx-auto mb-8"></div>
+            {/* <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
+              Meet the visionary leaders driving Nestoria Group's success in transforming Dholera SIR into India's premier smart city destination.
+            </p> */}
+          </div>
+
+          {/* Team Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Team Member 1 */}
+            <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+              <div className="relative overflow-hidden">
+                <img 
+                  src={shivji} 
+                  alt="ShivKumar Singh Tomar  Ji - Director" 
+                  className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+              <div className="p-6 text-center">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                 ShivKumar Singh Tomar
+                </h3>
+                <p className="text-blue-600 font-semibold mb-4 uppercase tracking-wide text-sm">
+                 Chairman
+                </p>
+                
+              </div>
+            </div>
+
+            {/* Team Member 2 */}
+            <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+              <div className="relative overflow-hidden">
+                <img 
+                  src={mohanji} 
+                  alt="Mohan singh Tomar CEO of the company" 
+                  className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+              <div className="p-6 text-center">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                  Mohan Singh Tomar </h3>
+                <p className="text-blue-600 font-semibold mb-4 uppercase tracking-wide text-sm">
+                  Chief Executive Officer (CEO)
+                </p>
+               
+              </div>
+            </div>
+
+            {/* Team Member 3 */}
+            <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2">
+              <div className="relative overflow-hidden">
+                <img 
+                  src={nitinji} 
+                  alt="Nitin Singh Tomar Managing Director Of the company" 
+                  className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+              <div className="p-6 text-center">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                  Nitin Singh Tomar
+                </h3>
+                <p className="text-blue-600 font-semibold mb-4 uppercase tracking-wide text-sm">
+                  Managing Director
+                </p>
+                
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="text-center mt-12">
+            <Link
+              to="/team"
+              className="inline-flex items-center bg-blue-700 hover:bg-blue-800 text-white font-bold py-4 px-8 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
+            >
+              <span>Meet Our Full Team</span>
+              <i className="fas fa-arrow-right ml-2"></i>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      {/* <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto mb-12 md:mb-20">
             <h6 className="text-blue-600 font-semibold text-lg md:text-xl mb-4 uppercase tracking-wider">
@@ -402,7 +597,9 @@ function Home() {
             <Carousel />
           </div>
         </div>
-      </section>
+      </section> */}
+
+      
 
       {/* Newsletter Section */}
       {/* <section className="py-12 md:py-16 bg-gray-100">

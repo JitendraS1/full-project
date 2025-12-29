@@ -6,6 +6,7 @@ import aboutbanner from '/src/assets/img/about.webp'
 import shivsirimg from '/src/assets/img/team/management/shivji.webp'
 import mohansirimg from '/src/assets/img/team/management/mohanji.webp'
 import nitinsirimg from '/src/assets/img/team/management/nitinji.webp'
+import dholeradpmap from '/src/assets/img/icon/dholera-dp-map.webp'
 function AboutUs() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -70,8 +71,7 @@ function AboutUs() {
                   className="w-full h-64 sm:h-80 md:h-[400px] object-cover transform group-hover:scale-110 transition-transform duration-700" 
                   src={aboutbanner} 
                   alt="About Nestoria Group" 
-                  loading="lazy"
-                  decoding="async"
+
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <span className="text-white text-lg sm:text-xl md:text-2xl font-bold px-4 sm:px-6 py-3 border-2 border-white rounded-lg mb-6 sm:mb-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -95,7 +95,7 @@ function AboutUs() {
                 </h2>
                 <div className="h-1 w-24 sm:w-32 bg-gradient-to-r from-blue-600 to-blue-400 mb-6 sm:mb-8"></div>
                 <p className="text-gray-700 mb-4 sm:mb-6 text-base sm:text-lg leading-relaxed">
-                  Nestoria Buildcon Pvt. Ltd. is one of the fastest-growing real estate companies with the prime focus on Dholera Special Investment Region. We have been emblem of trust, transparency, and customer-oriented solutions for 13 years.
+                  Nestoria Buildcon Pvt. Ltd. is one of the fastest-growing real estate companies with the prime focus on Dholera Special Investment Region. We have been emblem of trust, transparency, and customer-oriented solutions for 15 years.
                 </p>
                 <p className="text-gray-700 mb-4 sm:mb-6 text-base sm:text-lg leading-relaxed">
                   In 2010, we started our journey from Gwalior, Madhya Pradesh. Our passion to help others in choosing the perfect property based on their requirement and our hard work led us to the path of success.
@@ -368,7 +368,7 @@ function AboutUs() {
               <div className="relative overflow-hidden rounded-2xl shadow-2xl border-4 border-white/20 group">
                 <img 
                   className="w-full h-64 md:h-80 object-cover transform transition-transform duration-500 group-hover:scale-110" 
-                  src="/src/assets/img/icon/dholera-dp-map.webp" 
+                  src={dholeradpmap} 
                   alt="Dholera SIR" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">

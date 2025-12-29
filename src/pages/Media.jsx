@@ -151,8 +151,7 @@ function Media() {
                 className="w-full rounded-t-2xl group-hover:scale-110 transition-transform duration-500" 
                 alt={item.title} 
                 style={{ height: '200px', objectFit: 'cover' }}
-                loading="lazy"
-                decoding="async"
+
               />
               <div 
                 className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center cursor-pointer"
@@ -197,8 +196,7 @@ function Media() {
                 className="w-full rounded-t-2xl group-hover:scale-110 transition-transform duration-500" 
                 alt={item.title} 
                 style={{ height: '200px', objectFit: 'cover' }}
-                loading="lazy"
-                decoding="async"
+
               />
               <div 
                 className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center cursor-pointer"
@@ -266,8 +264,7 @@ function Media() {
                   src={dialogContent.url} 
                   alt={dialogContent.title} 
                   className="w-full rounded-lg"
-                  loading="lazy"
-                  decoding="async"
+
                 />
               )}
             </div>

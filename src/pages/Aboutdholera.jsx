@@ -199,7 +199,6 @@ function Aboutdholera() {
                   className="w-full h-80 sm:h-96 md:h-[500px] object-cover transform group-hover:scale-110 transition-transform duration-700" 
                   src={futuredholera} 
                   alt="Overview of Dholera SIR" 
-                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <span className="text-white text-xl md:text-3xl font-bold px-6 py-4 border-2 border-white rounded-lg mb-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -317,7 +316,6 @@ function Aboutdholera() {
                   className="w-full h-80 sm:h-96 md:h-[500px] object-cover transform group-hover:scale-110 transition-transform duration-700" 
                   src={dholeraconnectivity}
                   alt="Strategic Location of Dholera SIR" 
-                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent flex items-end justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <span className="text-white text-xl md:text-3xl font-bold px-6 py-4 border-2 border-white rounded-lg mb-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">

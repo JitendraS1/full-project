@@ -664,7 +664,7 @@ const Contact = () => {
                 height="300"
                 style={{ border: 0 }}
                 allowFullScreen=""
-                loading="lazy"
+
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Nestoria Group Office Location"
                 className="w-full h-full group-hover:scale-105 transition-transform duration-700"

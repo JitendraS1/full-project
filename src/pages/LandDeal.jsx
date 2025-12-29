@@ -221,6 +221,37 @@ function LandDeal() {
         </div>
       </header>
 
+      {/* Trust Section */}
+      <section className="py-12 md:py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div className="flex flex-col items-center">
+                <div className="mb-4 flex items-center justify-center w-16 h-16 rounded-full bg-white/20">
+                  <i className="fas fa-gavel text-2xl"></i>
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold mb-2">100% Legal Verification</h3>
+                <p className="text-blue-100">Every land parcel comes with complete legal verification and due diligence</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="mb-4 flex items-center justify-center w-16 h-16 rounded-full bg-white/20">
+                  <i className="fas fa-certificate text-2xl"></i>
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold mb-2">Clear Title</h3>
+                <p className="text-blue-100">All properties have clear, marketable title with no legal encumbrances</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <div className="mb-4 flex items-center justify-center w-16 h-16 rounded-full bg-white/20">
+                  <i className="fas fa-stamp text-2xl"></i>
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold mb-2">Government Approved TP Schemes</h3>
+                <p className="text-blue-100">All land deals are part of government-approved Town Planning Schemes</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Filter Section */}
       <section id="land-deals" className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4">
