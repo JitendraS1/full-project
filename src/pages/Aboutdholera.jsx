@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import TabsComponent from '../components/TabsComponent';
 import ParallaxSection from '../components/ParallaxSection';
@@ -8,6 +8,12 @@ import futuredholera from '/src/assets/img/futuredholera.webp'
 import dholeraconnectivity from '/src/assets/img/dholeraconnectivity.webp'
 
 function Aboutdholera() {
+  // Typewriter effect state
+  const [searchValue, setSearchValue] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [showCursor, setShowCursor] = useState(true);
+  
   // Form state
   const [formData, setFormData] = useState({
     name: '',
@@ -20,6 +26,49 @@ function Aboutdholera() {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  
+  // Typewriter effect
+  useEffect(() => {
+    const targetText = 'https://dholera.gujarat.gov.in/';
+    const typingSpeed = 100; // Speed of typing
+    const deletingSpeed = 50; // Speed of deleting
+    const pauseDuration = 1500; // Pause duration before deleting
+    
+    const timer = setTimeout(() => {
+      if (!isDeleting) {
+        // Typing phase
+        setSearchValue(targetText.substring(0, currentIndex + 1));
+        setCurrentIndex(prev => prev + 1);
+        
+        if (currentIndex === targetText.length) {
+          // Finished typing, pause then start deleting
+          setTimeout(() => {
+            setIsDeleting(true);
+          }, pauseDuration);
+        }
+      } else {
+        // Deleting phase
+        setSearchValue(targetText.substring(0, currentIndex - 1));
+        setCurrentIndex(prev => prev - 1);
+        
+        if (currentIndex === 0) {
+          // Finished deleting, start typing again
+          setIsDeleting(false);
+        }
+      }
+    }, isDeleting ? deletingSpeed : typingSpeed);
+    
+    return () => clearTimeout(timer);
+  }, [currentIndex, isDeleting]);
+  
+  // Cursor blinking effect
+  useEffect(() => {
+    const cursorTimer = setInterval(() => {
+      setShowCursor(prev => !prev);
+    }, 500);
+    
+    return () => clearInterval(cursorTimer);
+  }, []);
   
   // Handle form input changes
   const handleChange = (e) => {
@@ -101,8 +150,29 @@ function Aboutdholera() {
       }
     }
   };
+  // Function to handle search click
+  const handleSearchClick = () => {
+    // Add animation class
+    const searchInput = document.getElementById('dholera-search-input');
+    if (searchInput) {
+      searchInput.classList.add('animate-pulse');
+      
+      // Remove animation class after animation completes
+      setTimeout(() => {
+        searchInput.classList.remove('animate-pulse');
+      }, 500);
+    }
+    
+    // Redirect after a short delay to show the animation
+    setTimeout(() => {
+      window.open('https://dholera.gujarat.gov.in/', '_blank');
+    }, 300);
+  };
+  
   return (
     <>
+     
+
       {/* Header Start */}
        <ParallaxSection
         backgroundImage={aboutdholeraimg}
@@ -113,7 +183,43 @@ function Aboutdholera() {
         backgroundSize="cover"
       >
         <div className="container mx-auto px-4 relative z-10 w-full h-full flex items-center justify-center">
+          
           <div className="max-w-6xl mx-auto">
+             {/* Google-like Search Bar */}
+      <section className="py-8 md:py-12 bg-gradient-to-b ">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto">
+            <div className="flex flex-col items-center">
+              <div className="w-full relative">
+                <div className="flex items-center bg-white border-2 border-blue-200 rounded-full px-6 py-4 shadow-xl hover:shadow-2xl transition-all duration-300 focus-within:shadow-2xl focus-within:border-blue-500 transform hover:scale-[1.02]">
+                  <i className="fas fa-search text-blue-500 text-xl mr-4"></i>
+                  <input
+                    type="text"
+                    id="dholera-search-input"
+                    value={searchValue}
+                    readOnly
+                    className="w-full outline-none text-lg bg-transparent text-gray-700 font-medium"
+                    placeholder="Search Dholera SIR..."
+                  />
+                  {showCursor && (
+                    <span className="ml-1 text-blue-600 text-xl font-bold animate-pulse">|</span>
+                  )}
+                  <button 
+                    onClick={handleSearchClick}
+                    className="ml-4 bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white rounded-full p-3 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center justify-center"
+                    aria-label="Search"
+                  >
+                    <i className="fas fa-external-link-alt text-lg"></i>
+                  </button>
+                </div>
+                <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-sm text-gray-500 italic">
+                  Click to visit official Dholera SIR website
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight">
               About <span className="text-blue-300">Dholera SIR</span>
             </h1>
@@ -124,7 +230,7 @@ function Aboutdholera() {
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 animate-slide-up opacity-0 animation-delay-500">
               <Link
                 to="/land-deals"
-                className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center relative overflow-hidden"
+                className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center relative overflow-hidden focus:outline-none focus:ring-0"
               >
                 <span className="relative z-10 flex items-center justify-center">
                   <i className="fas fa-search mr-2"></i>
@@ -134,7 +240,7 @@ function Aboutdholera() {
               </Link>
               <Link
                 to="/contact"
-                className="group bg-transparent hover:bg-white/10 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center backdrop-blur-sm"
+                className="group bg-transparent hover:bg-white/10 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center backdrop-blur-sm focus:outline-none focus:ring-0"
               >
                 <span className="flex items-center justify-center">
                   <i className="fas fa-phone mr-2"></i>
@@ -145,8 +251,10 @@ function Aboutdholera() {
           </div>
         </div>
       </ParallaxSection>
-     
+           
       {/* Header End */}
+      
+     
 
       {/* Introduction Section */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
@@ -186,7 +294,7 @@ function Aboutdholera() {
               </div>
               <Link 
                 to="/land-deals" 
-                className="group inline-flex items-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-8 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
+                className="group inline-flex items-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-8 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-0"
                 aria-label="Explore Land Deals"
               >
                 <span>Explore Opportunities</span>

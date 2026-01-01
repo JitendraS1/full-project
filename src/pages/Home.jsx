@@ -19,16 +19,13 @@ import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
 import dholeraBanner from "../assets/img/Home-banner.svg";
 import aboutimage from "../assets/img/about.webp";
 
-// Import project images for slider
-import dholeraBhoomi from "../assets/img/project/Dholera-Bhoomi.webp";
-import dholeraBhoomi2 from "../assets/img/project/Dhollera-Bhoomi2 .webp";
-import dholeraBhoomi3 from "../assets/img/project/DHOLERA BHOOMI-III .webp";
-import orchidLuxury from "../assets/img/project/ORCHID LUXURY-BROSER.webp";
-import orchidRiverView from "../assets/img/project/ORCHID-RIVER-VIEW.webp";
-import orchidVillaGreens from "../assets/img/project/ORCHID VILLA GREENS-BROSHER.webp";
-import orchidVillaLuxuriya from "../assets/img/project/ORCHID VILLA LUXURIYA-BROSHER.webp";
-import orchidVillaParadise from "../assets/img/project/ORCHID VILLA PARADISE 2 NEW 12-12-2023 POXI.webp";
-import orchidVillaGold from "../assets/img/project/ORCHILD-VILLA-GOLD.webp";
+// Import Slider images
+import slider1 from "../assets/img/Slider/Artboard 1-100.jpg";
+import slider2 from "../assets/img/Slider/Artboard 2-100.jpg";
+import slider3 from "../assets/img/Slider/Artboard 3-100.jpg";
+import slider4 from "../assets/img/Slider/Artboard 5-100.jpg";
+import slider5 from "../assets/img/Slider/Artboard 6-100.jpg";
+import slider6 from "../assets/img/Slider/Artboard 7-100.jpg";
 import leadershipImage from "../assets/img/team/team-dis.webp"; // Leadership image
 
 // Import team images
@@ -40,6 +37,7 @@ import nitinji from "../assets/img/team/management/nitinji.webp";
 function Home() {
   return (
     <div className="overflow-hidden bg-[#673a37]">
+
 
       {/* Hero Section */}
       <ParallaxSection
@@ -120,9 +118,9 @@ function Home() {
                     Discover Nestoria
                   </span>
                 </div>
-                <div className="absolute top-3 sm:top-4 left-3 sm:left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1.5 sm:px-4 sm:py-2">
+                {/* <div className="absolute top-3 sm:top-4 left-3 sm:left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1.5 sm:px-4 sm:py-2">
                   <span className="text-blue-600 font-semibold text-xs sm:text-sm">Since 2010</span>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="w-full lg:w-1/2">
@@ -384,12 +382,13 @@ function Home() {
             <div className="h-1 w-24 sm:w-32 bg-blue-600 mx-auto mt-4"></div>
           </div>
 
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-full mx-auto px-4">
             <Swiper
               effect={'coverflow'}
               grabCursor={true}
               centeredSlides={true}
               slidesPerView={'auto'}
+              spaceBetween={30}
               coverflowEffect={{
                 rotate: 50,
                 stretch: 0,
@@ -406,34 +405,43 @@ function Home() {
               }}
               loop={true}
               modules={[EffectCoverflow, Pagination, Autoplay]}
-              className="mySwiper"
+              className="mySwiper w-full"
+              style={{
+                '--swiper-coverflow-modifier': '1',
+                '--swiper-coverflow-stretch': '0',
+                '--swiper-coverflow-rotate': '50',
+                '--swiper-coverflow-depth': '100',
+              }}
             >
-              <SwiperSlide>
-                <img src={dholeraBhoomi} alt="Dholera Bhoomi Project" className="w-full h-full object-cover" />
+              <SwiperSlide className="!w-auto !h-auto">
+                <div className="flex items-center justify-center">
+                  <img src={slider1} alt="Slider Image 1" className="w-auto h-auto max-w-full max-h-64 object-contain" />
+                </div>
               </SwiperSlide>
-              <SwiperSlide>
-                <img src={dholeraBhoomi2} alt="Dholera Bhoomi 2 Project" className="w-full h-full object-cover" />
+              <SwiperSlide className="!w-auto !h-auto">
+                <div className="flex items-center justify-center">
+                  <img src={slider2} alt="Slider Image 2" className="w-auto h-auto max-w-full max-h-64 object-contain" />
+                </div>
               </SwiperSlide>
-              <SwiperSlide>
-                <img src={dholeraBhoomi3} alt="Dholera Bhoomi III Project" className="w-full h-full object-cover" />
+              <SwiperSlide className="!w-auto !h-auto">
+                <div className="flex items-center justify-center">
+                  <img src={slider3} alt="Slider Image 3" className="w-auto h-auto max-w-full max-h-64 object-contain" />
+                </div>
               </SwiperSlide>
-              <SwiperSlide>
-                <img src={orchidLuxury} alt="Orchid Luxury Project" className="w-full h-full object-cover" />
+              <SwiperSlide className="!w-auto !h-auto">
+                <div className="flex items-center justify-center">
+                  <img src={slider4} alt="Slider Image 4" className="w-auto h-auto max-w-full max-h-64 object-contain" />
+                </div>
               </SwiperSlide>
-              <SwiperSlide>
-                <img src={orchidRiverView} alt="Orchid River View Project" className="w-full h-full object-cover" />
+              <SwiperSlide className="!w-auto !h-auto">
+                <div className="flex items-center justify-center">
+                  <img src={slider5} alt="Slider Image 5" className="w-auto h-auto max-w-full max-h-64 object-contain" />
+                </div>
               </SwiperSlide>
-              <SwiperSlide>
-                <img src={orchidVillaGreens} alt="Orchid Villa Greens Project" className="w-full h-full object-cover" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={orchidVillaLuxuriya} alt="Orchid Villa Luxuriya Project" className="w-full h-full object-cover" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={orchidVillaParadise} alt="Orchid Villa Paradise Project" className="w-full h-full object-cover" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src={orchidVillaGold} alt="Orchid Villa Gold Project" className="w-full h-full object-cover" />
+              <SwiperSlide className="!w-auto !h-auto">
+                <div className="flex items-center justify-center">
+                  <img src={slider6} alt="Slider Image 6" className="w-auto h-auto max-w-full max-h-64 object-contain" />
+                </div>
               </SwiperSlide>
             </Swiper>
           </div>
@@ -578,7 +586,7 @@ function Home() {
       </section>
 
       {/* Testimonials Section */}
-      {/* <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto mb-12 md:mb-20">
             <h6 className="text-blue-600 font-semibold text-lg md:text-xl mb-4 uppercase tracking-wider">
@@ -597,7 +605,7 @@ function Home() {
             <Carousel />
           </div>
         </div>
-      </section> */}
+      </section>
 
       
 
@@ -670,6 +678,59 @@ function Home() {
 
       {/* Parallax Scroll Showcase */}
       <ParallaxScroll />
+      {/* Sticky Bottom Stats Bar */}
+      <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-gray-900 to-blue-900 text-white z-50 py-3 shadow-lg">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap justify-center md:justify-between items-center gap-4 md:gap-0">
+            <div className="flex items-center justify-center px-2">
+              
+              <span className="font-bold text-white">15+</span>
+              <span className="ml-2 text-sm text-gray-300 hidden md:inline">Years Experience</span>
+            </div>
+            <div className="flex items-center justify-center md:justify-start px-2">
+              
+              <span className="font-bold text-white">5+</span>
+              <span className="ml-2 text-sm text-gray-300 hidden md:inline">Years of Dedicate To Dholera SIR</span>
+            </div>
+            <div className="flex items-center justify-center px-2">
+              
+              <span className="font-bold text-white">5000+</span>
+              <span className="ml-2 text-sm text-gray-300 hidden md:inline">Delighted Clients</span>
+            </div>
+             <div className="flex items-center justify-center md:justify-end px-2">
+              
+              <span className="font-bold text-white">9+</span>
+              <span className="ml-2 text-sm text-gray-300 hidden md:inline">Countries </span>
+            </div>
+            <div className="flex items-center justify-center px-2">
+             
+              <span className="font-bold text-white">15+</span>
+              <span className="ml-2 text-sm text-gray-300 hidden md:inline">States</span>
+            </div>
+            
+            <div className="flex items-center justify-center px-2">
+              
+              <span className="font-bold text-white">50+</span>
+              <span className="ml-2 text-sm text-gray-300 hidden md:inline">Cities </span>
+            </div>
+            <div className="flex items-center justify-center md:justify-end px-2">
+              
+              <span className="font-bold text-white">75+</span>
+              <span className="ml-2 text-sm text-gray-300 hidden md:inline">Team Members</span>
+            </div>
+             <div className="flex items-center justify-center md:justify-end px-2">
+              
+              <span className="font-bold text-white">50+</span>
+              <span className="ml-2 text-sm text-gray-300 hidden md:inline">Projects</span>
+            </div>
+             <div className="flex items-center justify-center md:justify-end px-2">
+              
+              <span className="font-bold text-white">51000+</span>
+              <span className="ml-2 text-sm text-gray-300 hidden md:inline">Visiters</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

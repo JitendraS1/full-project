@@ -129,18 +129,7 @@ function Team() {
           position: "HR & Admin",
           image: garimajiiImg,
         },
-        // {
-        //   id: 2,
-        //   name: "Divya Joshi",
-        //   position: "Senior Project Manager",
-        //   image: "https://images.unsplash.com/photo-1573497019940-b1c1722653e1?q=80&w=2187"
-        // },
-        // {
-        //   id: 3,
-        //   name: "Arjun Kumar",
-        //   position: "Project Engineer",
-        //   image: "https://images.unsplash.com/photo-1552058544-f2b08422138a?q=80&w=2199"
-        // }
+        
       ],
     },
     {
@@ -303,7 +292,7 @@ function Team() {
       </section>
 
       {/* Department Teams Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-gray-100 to-white">
+      {/* <section className="py-16 md:py-24 bg-gradient-to-br from-gray-100 to-white">
         <div className="container mx-auto px-4">
           <div className="mb-16">
             <div className="text-center max-w-4xl mx-auto">
@@ -371,7 +360,7 @@ function Team() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Company Culture Section */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-white to-gray-50">
