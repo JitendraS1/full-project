@@ -20,12 +20,12 @@ import dholeraBanner from "../assets/img/Home-banner.svg";
 import aboutimage from "../assets/img/about.webp";
 
 // Import Slider images
-import slider1 from "../assets/img/Slider/Artboard 1-100.jpg";
-import slider2 from "../assets/img/Slider/Artboard 2-100.jpg";
-import slider3 from "../assets/img/Slider/Artboard 3-100.jpg";
-import slider4 from "../assets/img/Slider/Artboard 5-100.jpg";
-import slider5 from "../assets/img/Slider/Artboard 6-100.jpg";
-import slider6 from "../assets/img/Slider/Artboard 7-100.jpg";
+import slider1 from "../assets/img/Slider/image 1.webp";
+import slider2 from "../assets/img/Slider/image 7.webp";
+import slider3 from "../assets/img/Slider/image 8.webp";
+import slider4 from "../assets/img/Slider/image 9.webp";
+import slider5 from "../assets/img/Slider/image 10+.webp";
+import slider6 from "../assets/img/Slider/image 11.webp";
 import leadershipImage from "../assets/img/team/team-dis.webp"; // Leadership image
 
 // Import team images
@@ -50,11 +50,11 @@ function Home() {
       >
         <div className="relative z-10 w-full h-full flex items-center justify-center">
           <div className="max-w-6xl mx-auto px-4 py-16 sm:py-20 md:py-32">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight drop-shadow-lg ">
-              Leading Real Estate Developer in Dholera SIR
-            </h1>
+           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-blue-900 mb-4 md:mb-6 animate-slide-up font-condor leading-tight drop-shadow-[0_0_10px_rgba(255,255,255,0.9)]">
+  Leading Real Estate Developer in <span className="text-blue-200"> Dholera SIR </span> 
+</h1>
             <div className="h-1 w-24 sm:w-32 bg-blue-600 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
-            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 md:mb-10 animate-slide-up opacity-0 animation-delay-300 max-w-3xl mx-auto leading-relaxed ">
+            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 md:mb-10 animate-slide-up opacity-0 animation-delay-300 max-w-3xl mx-auto leading-relaxed drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
               Discover exclusive properties and investment opportunities in
               India's first smart city with world-class infrastructure and unlimited growth potential.
             </p>
@@ -415,32 +415,32 @@ function Home() {
             >
               <SwiperSlide className="!w-auto !h-auto">
                 <div className="flex items-center justify-center">
-                  <img src={slider1} alt="Slider Image 1" className="w-auto h-auto max-w-full max-h-64 object-contain" />
+                  <img src={slider1} alt="Modern Homes Exterior View" className="w-auto h-auto max-w-full max-h-64 object-contain" />
                 </div>
               </SwiperSlide>
               <SwiperSlide className="!w-auto !h-auto">
                 <div className="flex items-center justify-center">
-                  <img src={slider2} alt="Slider Image 2" className="w-auto h-auto max-w-full max-h-64 object-contain" />
+                  <img src={slider2} alt="Luxury Apartment Living Room" className="w-auto h-auto max-w-full max-h-64 object-contain" />
                 </div>
               </SwiperSlide>
               <SwiperSlide className="!w-auto !h-auto">
                 <div className="flex items-center justify-center">
-                  <img src={slider3} alt="Slider Image 3" className="w-auto h-auto max-w-full max-h-64 object-contain" />
+                  <img src={slider3} alt="Apartment Amenities" className="w-auto h-auto max-w-full max-h-64 object-contain" />
                 </div>
               </SwiperSlide>
               <SwiperSlide className="!w-auto !h-auto">
                 <div className="flex items-center justify-center">
-                  <img src={slider4} alt="Slider Image 4" className="w-auto h-auto max-w-full max-h-64 object-contain" />
+                  <img src={slider4} alt="Home Features" className="w-auto h-auto max-w-full max-h-64 object-contain" />
                 </div>
               </SwiperSlide>
               <SwiperSlide className="!w-auto !h-auto">
                 <div className="flex items-center justify-center">
-                  <img src={slider5} alt="Slider Image 5" className="w-auto h-auto max-w-full max-h-64 object-contain" />
+                  <img src={slider5} alt="Property Documentation" className="w-auto h-auto max-w-full max-h-64 object-contain" />
                 </div>
               </SwiperSlide>
               <SwiperSlide className="!w-auto !h-auto">
                 <div className="flex items-center justify-center">
-                  <img src={slider6} alt="Slider Image 6" className="w-auto h-auto max-w-full max-h-64 object-contain" />
+                  <img src={slider6} alt="Residential Area Overview" className="w-auto h-auto max-w-full max-h-64 object-contain" />
                 </div>
               </SwiperSlide>
             </Swiper>
