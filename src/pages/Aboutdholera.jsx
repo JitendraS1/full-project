@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import TabsComponent from '../components/TabsComponent';
 import ParallaxSection from '../components/ParallaxSection';
@@ -174,19 +174,10 @@ function Aboutdholera() {
      
 
       {/* Header Start */}
-       <ParallaxSection
-        backgroundImage={aboutdholeraimg}
-        height="100vh"
-        overlayColor="#673a377e"
-        speed={0.4}
-        className="flex items-center justify-center text-center"
-        backgroundSize="cover"
-      >
-        <div className="container mx-auto px-4 relative z-10 w-full h-full flex items-center justify-center">
-          
-          <div className="max-w-6xl mx-auto">
-             {/* Google-like Search Bar */}
-      <section className="py-8 md:py-12 bg-gradient-to-b ">
+       <div className="relative bg-blue-600 text-white py-16 sm:py-20 md:py-32 overflow-hidden">
+         {/* Google-like Search Bar */}
+         
+         <section className="py-8 md:py-12 bg-gradient-to-b ">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="flex flex-col items-center">
@@ -212,7 +203,7 @@ function Aboutdholera() {
                     <i className="fas fa-external-link-alt text-lg"></i>
                   </button>
                 </div>
-                <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-sm text-gray-500 italic">
+                <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-sm text-white italic">
                   Click to visit official Dholera SIR website
                 </div>
               </div>
@@ -220,6 +211,13 @@ function Aboutdholera() {
           </div>
         </div>
       </section>
+       
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-6xl mx-auto text-center">
+            
+            <div className="max-w-6xl mx-auto">
+            
+     
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight">
               About <span className="text-blue-300">Dholera SIR</span>
             </h1>
@@ -227,7 +225,12 @@ function Aboutdholera() {
             <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 md:mb-10 animate-slide-up opacity-0 animation-delay-300 max-w-3xl mx-auto leading-relaxed">
               India's First Planned Smart Industrial City with unlimited growth potential
             </p>
+           
+          </div>
+           
+           
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 animate-slide-up opacity-0 animation-delay-500">
+               <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 animate-slide-up opacity-0 animation-delay-500">
               <Link
                 to="/land-deals"
                 className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-base md:text-lg py-4 px-8 md:px-10 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center relative overflow-hidden focus:outline-none focus:ring-0"
@@ -247,10 +250,13 @@ function Aboutdholera() {
                   Contact Us
                 </span>
               </Link>
+              
+            </div>
             </div>
           </div>
         </div>
-      </ParallaxSection>
+      </div>
+      
            
       {/* Header End */}
       
@@ -292,14 +298,25 @@ function Aboutdholera() {
                   </div>
                 ))}
               </div>
-              <Link 
+              {/* <Link 
                 to="/land-deals" 
                 className="group inline-flex items-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-8 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-0"
                 aria-label="Explore Land Deals"
               >
                 <span>Explore Opportunities</span>
                 <i className="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
-              </Link>
+              </Link> */}
+              <a
+                href="https://dholera.gujarat.gov.in/dholera_virtual_tours/static/src/Dholera%20SIR/data/index.htm"
+                className="group inline-flex items-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-4 px-8 rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-0"
+                aria-label="Virtual Tour" target="_blank"
+              >
+                <span className="flex items-center justify-center">
+                  <i className="fas fa-street-view"></i>
+                  Virtual Tour
+                </span>
+              </a>
+              
             </div>
             <div className="w-full lg:w-1/2">
               <div className="relative overflow-hidden rounded-2xl shadow-2xl group">
@@ -317,10 +334,13 @@ function Aboutdholera() {
                   <span className="text-blue-600 font-semibold text-sm">Smart City</span>
                 </div>
               </div>
+              
             </div>
+            
           </div>
         </div>
       </section>
+      
 
       {/* Dholera SIR Tabs Section */}
       <section id='tab-section' className="py-16 md:py-24 bg-gradient-to-br from-white to-gray-50">
@@ -534,7 +554,7 @@ function Aboutdholera() {
       <ParallaxSection
         backgroundImage={aboutdholeraimg}
         height="auto"
-        overlayColor="#673a377e"
+        overlayGradient="linear-gradient(to bottom, rgba(3, 22, 65, 0.6), rgba(3, 22, 65, 0.25))"
         speed={0.3}
         className="py-16 md:py-24"
       >

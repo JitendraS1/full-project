@@ -193,10 +193,10 @@ function Footer() {
             <p className="flex items-center mb-4">
               <i className="fas fa-phone-alt mr-3 text-primary-200"></i>
               <a
-                href="tel:+919274411705"
+                href="tel:+919213005611"
                 className="text-gray-400 hover:text-primary-400 transition duration-300"
               >
-                +919274411705
+                +919213005611
               </a>
             </p>
             <p className="flex items-center mb-4">
@@ -212,33 +212,28 @@ function Footer() {
               <h4 className="text-lg font-semibold mb-3 text-primary-200 font-condor">
                 Subscribe to Our Newsletter
               </h4>
-              <form className="flex" onSubmit={(e) => {
+              <form className="flex" onSubmit={async (e) => {
                 e.preventDefault();
                 const email = e.target.elements.email.value;
-                fetch('/send-email.php', {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify({
+                try {
+                  const { ContactService } = await import("../services/ContactService");
+                  const result = await ContactService.sendContactForm({
                     name: "Newsletter Subscriber",
                     email,
                     phone: "",
                     subject: "Newsletter Subscription",
                     message: `Please subscribe ${email} to the newsletter.`,
-                    formType: 'contact'
-                  })
-                })
-                .then(res => res.json())
-                .then(data => {
-                  if (data.success) {
+                  });
+
+                  if (result.success) {
                     alert("Thank you for subscribing!");
                     e.target.reset();
                   } else {
-                    alert(data.message || "Failed to subscribe.");
+                    alert(result.message || "Failed to subscribe.");
                   }
-                })
-                .catch(() => {
+                } catch (error) {
                   alert("Failed to subscribe. Please try again later.");
-                });
+                }
               }}>
                 <input
                   type="email"

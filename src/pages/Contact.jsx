@@ -187,7 +187,8 @@ const Contact = () => {
       <ParallaxSection
         backgroundImage={contactbannerimg}
         height="100vh"
-        overlayColor="#673a377e"
+        overlayGradient="linear-gradient(to bottom, rgba(3, 22, 65, 0.75), rgba(3, 22, 65, 0.35))"
+        shapeDivider
         speed={0.4}
         className="flex items-center justify-center text-center"
         backgroundSize="cover"
@@ -213,7 +214,7 @@ const Contact = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
               <a
-                href="tel:+919274411705"
+                href="tel:+919213005611"
                 className="group bg-transparent hover:bg-white/10 text-white font-bold text-base md:text-lg py-3 px-6 md:py-4 md:px-8 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center backdrop-blur-sm"
               >
                 <span className="flex items-center justify-center">
@@ -268,10 +269,10 @@ const Contact = () => {
                   </h3>
                   <p className="text-gray-600 mb-2 sm:mb-3 text-xs sm:text-sm md:text-base">
                     <a
-                      href="tel:+919274411705"
+                      href="tel:+919213005611"
                       className="hover:text-green-600 transition-colors font-semibold text-base sm:text-lg"
                     >
-                      +919274411705
+                      +919213005611
                     </a>
                   </p>
                   <p className="text-gray-600 text-xs sm:text-sm md:text-base">
@@ -331,10 +332,10 @@ const Contact = () => {
                   <p className="text-gray-600 text-xs sm:text-sm md:text-base">
                     <strong className="text-gray-800">Support Phone:</strong>{" "}
                     <a
-                      href="tel:+919274411705"
+                      href="tel:+919213005611"
                       className="text-blue-600 hover:text-blue-500 transition-colors font-semibold"
                     >
-                      +919274411705
+                      +919213005611
                     </a>
                   </p>
                 </div>

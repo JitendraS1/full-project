@@ -17,6 +17,7 @@ import './styles.css';
 import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
 
 import dholeraBanner from "../assets/img/Home-banner.svg";
+import dholeraBanner0 from "../assets/img/Home-banner.svg";
 import aboutimage from "../assets/img/about.webp";
 
 // Import Slider images
@@ -628,34 +629,24 @@ function Home() {
               onSubmit={(e) => {
                 e.preventDefault();
                 const email = e.target.elements.email.value;
-                fetch(
-                  (process.env.NODE_ENV === "production"
-                    ? "/api"
-                    : "http://localhost:5000/api") + "/send-email",
-                  {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                      name: "Newsletter Subscriber",
-                      email,
-                      phone: "",
-                      subject: "Newsletter Subscription",
-                      message: `Please subscribe ${email} to the newsletter.`,
-                    }),
-                  }
-                )
-                  .then((res) => res.json())
-                  .then((data) => {
-                    if (data.success) {
-                      alert("Thank you for subscribing!");
-                      e.target.reset();
-                    } else {
-                      alert(data.message || "Failed to subscribe.");
-                    }
-                  })
-                  .catch(() => {
-                    alert("Failed to subscribe. Please try again later.");
+                try {
+                  const { ContactService } = await import("../services/ContactService");
+                  const result = await ContactService.sendContactForm({
+                    name: "Newsletter Subscriber",
+                    email,
+                    phone: "",
+                    subject: "Newsletter Subscription",
+                    message: `Please subscribe ${email} to the newsletter.`,
                   });
+                  if (result.success) {
+                    alert("Thank you for subscribing!");
+                    e.target.reset();
+                  } else {
+                    alert(result.message || "Failed to subscribe.");
+                  }
+                } catch {
+                  alert("Failed to subscribe. Please try again later.");
+                }
               }}
             >
               <input

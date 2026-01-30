@@ -732,6 +732,7 @@ function Testimonial() {
                       name: e.target.elements.name.value,
                       email: e.target.elements.email.value,
                       phone: e.target.elements.phone.value,
+                      propertyType: e.target.elements["property-type"].value,
                       subject: "Testimonial Submission",
                       message: `Testimonial from ${e.target.elements.name.value}
 

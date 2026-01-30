@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ParallaxSection from "../components/ParallaxSection";
 import kuldeepSoniImg from "../assets/img/team/sales/Kuldeepsoni.webp";
 import ankitjiiImg from "../assets/img/team/sales/ankitji.webp";
 import arvindjiiImg from "../assets/img/team/sales/arvindji.webp";
@@ -209,21 +210,25 @@ function Team() {
 
   return (
     <div className="team-page">
-      {/* Page Header */}
-      <div
-        className="bg-blue-800 text-white py-16 sm:py-20 md:py-32"
-        style={{backgroundImage: `url(${teamBg})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}
+      <ParallaxSection
+        backgroundImage={teamBg}
+        height="100vh"
+        overlayGradient="linear-gradient(to bottom, rgba(3, 22, 65, 0.75), rgba(3, 22, 65, 0.35))"
+        shapeDivider
+        speed={0.4}
+        className="flex items-center justify-center text-center"
+        backgroundSize="cover"
       >
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 relative z-10 w-full h-full flex items-center justify-center">
           <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 animate-slide-up">Our Team</h1>
-            <div className="h-1 w-24 sm:w-32 bg-white mx-auto mb-6 md:mb-8 animate-slide-up"></div>
-            <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed animate-slide-up opacity-0 animation-delay-300">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 animate-slide-up text-white">Our Team</h1>
+            <div className="h-1 w-24 sm:w-32 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
+            <p className="text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed animate-slide-up opacity-0 animation-delay-300 text-white/90">
               Meet the dedicated professionals behind Nestoria Group's success in Dholera SIR
             </p>
           </div>
         </div>
-      </div>
+      </ParallaxSection>
 
       {/* Leadership Team Section */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-white to-gray-50">

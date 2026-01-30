@@ -176,7 +176,8 @@ function Projects() {
       <ParallaxSection
         backgroundImage={projectbanner}
         height="100vh"
-        overlayColor="#673a377e"
+        overlayGradient="linear-gradient(to bottom, rgba(3, 22, 65, 0.75), rgba(3, 22, 65, 0.35))"
+        shapeDivider
         speed={0.4}
         className="flex items-center justify-center text-center"
         backgroundSize="cover"
@@ -316,7 +317,7 @@ function Projects() {
       <ParallaxSection
         backgroundImage={projectbanner}
         height="auto"
-        overlayColor="#673a377e"
+        overlayGradient="linear-gradient(to bottom, rgba(3, 22, 65, 0.6), rgba(3, 22, 65, 0.25))"
         speed={0.3}
         className="py-20 flex items-center justify-center text-center"
       >
@@ -349,38 +350,33 @@ function Projects() {
                 <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
                   Subscribe to Our <span className="text-blue-200">Newsletter</span>
                 </h2>
-                <div class="h-1 w-32 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
+                <div className="h-1 w-32 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
                 <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
                   Stay updated with our latest projects, property listings, and investment opportunities in Dholera SIR.
                 </p>
               </div>
-              <form className="flex flex-col md:flex-row gap-4" onSubmit={(e) => {
+              <form className="flex flex-col md:flex-row gap-4" onSubmit={async (e) => {
                 e.preventDefault();
                 const email = e.target.elements.email.value;
-                fetch('/send-email.php', {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify({
+                try {
+                  const { ContactService } = await import("../services/ContactService");
+                  const result = await ContactService.sendContactForm({
                     name: "Newsletter Subscriber",
                     email,
                     phone: "",
                     subject: "Newsletter Subscription",
                     message: `Please subscribe ${email} to the newsletter.`,
-                    formType: 'contact'
-                  })
-                })
-                .then(res => res.json())
-                .then(data => {
-                  if (data.success) {
+                  });
+
+                  if (result.success) {
                     alert("Thank you for subscribing!");
                     e.target.reset();
                   } else {
-                    alert(data.message || "Failed to subscribe.");
+                    alert(result.message || "Failed to subscribe.");
                   }
-                })
-                .catch(() => {
+                } catch (error) {
                   alert("Failed to subscribe. Please try again later.");
-                });
+                }
               }}>
                 <input 
                   type="email" 

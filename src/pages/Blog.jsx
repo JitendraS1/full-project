@@ -129,7 +129,8 @@ const Blog = () => {
       <ParallaxSection
         backgroundImage={blogbanner}
         height="100vh"
-        overlayColor="#673a377e"
+        overlayGradient="linear-gradient(to bottom, rgba(3, 22, 65, 0.75), rgba(3, 22, 65, 0.35))"
+        shapeDivider
         speed={0.4}
         className="flex items-center justify-center text-center"
         backgroundSize="cover"

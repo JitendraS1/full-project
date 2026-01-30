@@ -35,7 +35,7 @@ const Faq = () => {
       },
       {
         question: "How can I contact Nestoria Group?",
-        answer: "You can contact us through multiple channels: visit our office in Dholera SIR, call us at +91 98765 43210, email us at info@nestoriagroup.com, or fill out the contact form on our website. Our customer support team is available Monday to Saturday during business hours."
+        answer: "You can contact us through multiple channels: visit our office in Dholera SIR, call us at +919213005611, email us at info@nestoriagroup.com, or fill out the contact form on our website. Our customer support team is available Monday to Saturday during business hours."
       },
       {
         question: "Does Nestoria Group have any ongoing projects?",
@@ -143,7 +143,8 @@ const Faq = () => {
       <ParallaxSection
         backgroundImage={faqbanner}
         height="100vh"
-        overlayColor="#673a377e"
+        overlayGradient="linear-gradient(to bottom, rgba(3, 22, 65, 0.75), rgba(3, 22, 65, 0.35))"
+        shapeDivider
         speed={0.4}
         className="flex items-center justify-center text-center"
         backgroundSize="cover"

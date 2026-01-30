@@ -13,7 +13,8 @@ function Services() {
       <ParallaxSection
         backgroundImage={servicebanner}
         height="100vh"
-        overlayColor="#673a377e"
+        overlayGradient="linear-gradient(to bottom, rgba(3, 22, 65, 0.75), rgba(3, 22, 65, 0.35))"
+        shapeDivider
         speed={0.4}
         className="flex items-center justify-center text-center"
         backgroundSize="cover"
@@ -212,7 +213,7 @@ function Services() {
       <ParallaxSection
         backgroundImage={servicebanner}
         height="auto"
-        overlayColor="rgba(243, 244, 246, 0.92)"
+        overlayGradient="linear-gradient(to bottom, rgba(243, 244, 246, 0.95), rgba(243, 244, 246, 0.85))"
         speed={0.3}
         className="py-20"
       >

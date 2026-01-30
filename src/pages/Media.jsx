@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+
+
 function Media() {
   // State for active media filter
   const [activeFilter, setActiveFilter] = useState('all');
@@ -11,75 +13,75 @@ function Media() {
   const mediaData = [
     {
       id: 1,
-      title: "Nestoria Group Featured in Economic Times",
-      excerpt: "Read about how Nestoria Group is revolutionizing real estate development in Dholera SIR.",
-      date: "June 15, 2023",
-      type: "News",
-      image: '/src/assets/img/Residential-project.webp',
-      link: "#"
+      title: "Gujarat CM reviews on-site progress of overall development works at Dholera SIR",
+      excerpt: "on Friday visited Dholera to personally assess the progress of development works at Dholera Special Investment Region (SIR).",
+      date: "May 02, 2025 18:49",
+      type: "News ANI",
+      image: 'https://d3lzcn6mbbadaf.cloudfront.net/media/details/ANI-20250502125106.jpg',
+      link: "https://www.aninews.in/news/national/general-news/gujarat-cm-reviews-on-site-progress-of-overall-development-works-at-dholera-sir20250502184936/"
     },
     {
       id: 2,
-      title: "Interview: CEO on Smart City Vision",
-      excerpt: "Our CEO shares insights on the future of Dholera SIR and sustainable development.",
-      date: "May 28, 2023",
+      title: "Gujarat CM reviews development works at Dholera Special Investment Region",
+      excerpt: "Gujarat CM Bhupendra Patel assessed the progress of the Tata Electronics semiconductor plant and the Dholera International Airport, crucial components of the developing 'Semicon City' ecosystem...",
+      date: "May 03, 2025 07:39",
       type: "Interview",
-      image: '/src/assets/img/connectivity.webp',
-      link: "#"
+      image: 'https://etimg.etb2bimg.com/photo/120839350.cms',
+      link: "https://infra.economictimes.indiatimes.com/news/urban-infrastructure/gujarat-cm-reviews-development-works-at-dholera-special-investment-region/120839327"
     },
     {
       id: 3,
-      title: "Dholera SIR Development Progress Report",
-      excerpt: "Latest updates on infrastructure development and project milestones.",
-      date: "April 10, 2023",
+      title: "P.K. Mishra reviews Gujarat infra projects, inspects expressway & heritage complex",
+      excerpt: "Dr. P.K. Mishra, Principal Secretary to the Prime Minister, conducted site inspections and chaired high-level review meetings in Dholera and Lothal, Gujarat, on Monday to assess the progress of key infrastructure projects. These initiatives align with Prime Minister Narendra Modi’s vision for industrial growth and economic development in the region.",
+      date: "16/06/25 | 22:56 ",
       type: "Report",
-      image: '/src/assets/img/futuredholera.webp',
-      link: "#"
+      image: 'https://ddnews.gov.in/wp-content/uploads/2025/06/GettyImages-633657840.jpg',
+      link: "https://ddnews.gov.in/en/p-k-mishra-reviews-gujarat-infra-projects-inspects-expressway-heritage-complex/"
     },
     {
       id: 4,
-      title: "Sustainability Initiatives in Dholera",
-      excerpt: "Exploring eco-friendly practices and green technologies in our projects.",
-      date: "March 22, 2023",
+      title: "Greenfield Expressway: हाईवे से अहमदाबाद-धोलेरा की यात्रा में बचेंगे 45 मिनट, PM के प्रधान सचिव ने की समीक्षा",
+      excerpt: "डॉ. मिश्र ने वैश्विक स्तरीय अहमदाबाद-धोलेरा ग्रीनफील्ड एक्सप्रेसवे को समय पर पूरा करने को लेकर निर्देश दिए। साथ ही धोलेरा विशेष निवेश क्षेत्र (डीएसआईआर) में डॉ. मिश्र ने हवाईअड्डे की प्रगति की भी समीक्षा की। यहां कार्गो संचालन अक्तूबर 2025 तक शुरू हो जाएगा।",
+      date: "Jun 2025 05:45",
       type: "Feature",
-      image: '/src/assets/img/masterplan.webp',
-      link: "#"
+      image: 'https://staticimg.amarujala.com/assets/images/2024/11/02/india-committed-to-sendai-framework-for-disaster-risk-reduction-principal-secretary-to-pm_910ff360ae04c23f026bcb89c8044da5.jpeg?w=674&dpr=1.0&q=80',
+      link: "https://www.amarujala.com/india-news/pk-mishra-says-greenfield-expressway-construction-tol-save-45-minutes-in-travel-between-ahmedabad-and-dholera-2025-06-17"
     },
     {
       id: 5,
-      title: "Investment Opportunities in Dholera SIR",
-      excerpt: "An overview of current and upcoming investment opportunities.",
-      date: "February 15, 2023",
+      title: "Japan fully committed to India's journey to manufacture semiconductors: Envoy Ono Keiichi",
+      excerpt: "The visit marked a significant milestone in advancing industrial cooperation between India and Japan, built on shared values of innovation, sustainability and inclusive development.",
+      date: " Jul 12, 2025 10:51 ",
       type: "Analysis",
-      image: '/src/assets/img/growth.webp',
-      link: "#"
+      image: 'https://etimg.etb2bimg.com/photo/122400124.cms',
+      link: "https://manufacturing.economictimes.indiatimes.com/news/hi-tech/japan-fully-committed-to-indias-journey-to-manufacture-semiconductors-envoy-ono-keiichi/122400107"
     },
     {
       id: 6,
-      title: "Commercial Development Update",
-      excerpt: "Latest developments in commercial real estate in Dholera SIR.",
-      date: "January 30, 2023",
+      title: "Japanese Ambassador leads high-level delegation to Dholera to advance Japan-India industrial cooperation",
+      excerpt: "The Ambassador of Japan to India, Keiichi Ono, led a high-level delegation of leading Japanese companies on an official visit to Dholera Special Investment Region (Dholera SIR), marking a significant milestone in advancing industrial cooperation between India and Japan.",
+      date: " July 10, 2025 23:20",
       type: "Update",
-      image: '/src/assets/img/COMMERCIAL-project.webp',
-      link: "#"
+      image: 'https://images.moneycontrol.com/static-mcnews/2025/07/20250710174410_Dholera.png?impolicy=website&width=770&height=431',
+      link: "https://www.moneycontrol.com/world/japanese-ambassador-leads-high-level-delegation-to-dholera-to-advance-japan-india-industrial-cooperation-article-13262814.html"
     },
     {
       id: 7,
-      title: "Community Development Program",
-      excerpt: "Our commitment to community development and social impact.",
-      date: "January 12, 2023",
+      title: "ધોલેરા SIRની મુલાકાતે જાહેર હિસાબ સમિતિ:ટાટા સેમિકન્ડક્ટર પ્લાન્ટ અને વોટર ટ્રીટમેન્ટ પ્લાન્ટની મુલાકાત લીધી",
+      excerpt: "ગુજરાત વિધાનસભાની જાહેર હિસાબ સમિતિ (PAC)એ ધોલેરા SIRની મુલાકાત લીધી હતી. સમિતિએ કાદીપુર ખાતે આવેલા 50 MLD વોટર એન્ડ વેસ્ટ વોટર ટ્રીટમેન્ટ પ્લાન્ટની મુલાકાત લીધી. તેમણે ધોલેરામાં નિર્માણાધીન ટાટા સેમિકન્ડક્ટર પ્લાન્ટ અને એક્ટિવેશન સેન્ટરનું પણ નિરીક્",
+      date: "Aug 12, 2025 07:39",
       type: "Community",
-      image: '/src/assets/img/who_we_are.webp',
-      link: "#"
+      image: 'https://images.bhaskarassets.com/webp/thumb/512x0/web2images/960/2025/07/17/17da5a72-507c-4304-bdd9-37f8f8c245a6_1752723650762.jpg',
+      link: "https://www.divyabhaskar.co.in/local/gujarat/ahmedabad/dholera/news/gujarat-assembly-pac-dholera-sir-visit-tata-semiconductor-plant-water-treatment-135467086.html"
     },
     {
       id: 8,
-      title: "Industrial Zone Expansion",
-      excerpt: "Details about the expansion of industrial zones in Dholera SIR.",
-      date: "December 5, 2022",
+      title: "Product nation: Dholera and India's quest to build factories for the world",
+      excerpt: "A guided tour of the Dholera Special Investment Region (SIR) typically starts with a short audio-visual presentation titled “New Vision for New India”. ",
+      date: "Jan 30, 2026 | 17:37 ",
       type: "Development",
-      image: '/src/assets/img/Industrial-project.webp',
-      link: "#"
+      image: 'https://bsmedia.business-standard.com/_media/bs/img/article/2025-05/28/full/1748453868-4954.jpg?im=FitAndFill=(826,465)',
+      link: "https://www.business-standard.com/economy/news/product-nation-dholera-and-india-s-quest-to-build-factories-for-the-world-125052801923_1.html"
     }
   ];
 
@@ -225,7 +227,7 @@ function Media() {
                 <i className="fas fa-newspaper ml-2 mr-2"></i>{item.source}
               </p>
               <p className="text-gray-700 mb-6 leading-relaxed">{item.description}</p>
-              <a href={item.link} className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+              <a href={item.link} target="_blank" rel="noopener noreferrer" className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
                 <i className="fas fa-arrow-right mr-2"></i>Read More
               </a>
             </div>
@@ -273,31 +275,31 @@ function Media() {
       )}
 
       {/* Page Header */}
-      <div className="relative bg-blue-700 text-white py-16 sm:py-20 md:py-32 overflow-hidden">
+      <div className="relative bg-blue-600 text-white py-16 sm:py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight">
-              Media <span className="text-blue-300">Center</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight drop-shadow-[0_0_10px_rgba(0,0,0,0.9)]">
+              Media <span className="text-blue-400 drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">Center</span>
             </h1>
             <div className="h-1 w-24 sm:w-32 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
-            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 md:mb-10 animate-slide-up opacity-0 animation-delay-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 md:mb-10 animate-slide-up opacity-0 animation-delay-300 max-w-3xl mx-auto leading-relaxed drop-shadow-[0_0_10px_rgba(0,0,0,0.9)]">
               Stay updated with the latest news, press releases, videos, and photos from Nestoria Group and Dholera SIR
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 animate-slide-up opacity-0 animation-delay-500">
-              <button className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-base md:text-lg py-3 px-6 md:py-4 md:px-8 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center relative overflow-hidden">
+              {/* <button className="group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-base md:text-lg py-3 px-6 md:py-4 md:px-8 rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center relative overflow-hidden">
                 <span className="relative z-10 flex items-center justify-center">
                   <i className="fas fa-play mr-2"></i>
                   Watch Videos
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </button>
-              <button className="group bg-transparent hover:bg-white/10 text-white font-bold text-base md:text-lg py-3 px-6 md:py-4 md:px-8 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center backdrop-blur-sm">
+              </button> */}
+              {/* <button className="group bg-transparent hover:bg-white/10 text-white font-bold text-base md:text-lg py-3 px-6 md:py-4 md:px-8 border-2 border-white hover:border-blue-300 rounded-lg transition-all duration-300 transform hover:-translate-y-2 hover:scale-105 w-full sm:w-auto text-center backdrop-blur-sm">
                 <span className="flex items-center justify-center">
                   <i className="fas fa-download mr-2"></i>
                   Download Press Kit
                 </span>
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
@@ -400,8 +402,8 @@ function Media() {
                   </div>
                   <h4 className="text-2xl font-bold mb-4 text-white">Email Us</h4>
                   <p className="text-blue-100 mb-6 leading-relaxed">Send your media inquiries directly to our press team.</p>
-                  <a href="mailto:media@nestoriagroup.com" className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                    <i className="fas fa-paper-plane mr-2"></i>media@nestoriagroup.com
+                  <a href="mailto:marketing@nestoriagroup.com" className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
+                    <i className="fas fa-paper-plane mr-2"></i>marketing@nestoriagroup.com
                   </a>
                 </div>
               </div>
@@ -415,7 +417,7 @@ function Media() {
                   <h4 className="text-2xl font-bold mb-4 text-white">Call Us</h4>
                   <p className="text-blue-100 mb-6 leading-relaxed">Speak directly with our media relations team.</p>
                   <a href="tel:+919876543210" className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                    <i className="fas fa-phone mr-2"></i>+91 98765 43210
+                    <i className="fas fa-phone mr-2"></i>+919213005611
                   </a>
                 </div>
               </div>
