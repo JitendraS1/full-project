@@ -41,8 +41,8 @@ const Contact = () => {
       addressCountry: "IN"
     },
     geo: {
-      latitude: "22.2472",
-      longitude: "72.1833"
+      latitude: "23.0269442",
+      longitude: "72.5094251"
     },
     openingHours: "Mo,Tu,We,Th,Fr,Sa 09:00-18:00"
   });
@@ -186,14 +186,12 @@ const Contact = () => {
       {/* Page Header */}
       <ParallaxSection
         backgroundImage={contactbannerimg}
-        height="100vh"
-        overlayGradient="linear-gradient(to bottom, rgba(3, 22, 65, 0.75), rgba(3, 22, 65, 0.35))"
-        shapeDivider
-        speed={0.4}
-        className="flex items-center justify-center text-center"
-        backgroundSize="cover"
+        height="auto"
+        overlayGradient="linear-gradient(to bottom, rgba(3, 22, 65, 0.6), rgba(3, 22, 65, 0.25))"
+        speed={0.3}
+        className="py-20 flex items-center justify-center text-center"
       >
-        <div className="container mx-auto px-4 relative z-10 w-full h-full flex items-center justify-center">
+         <div className="container mx-auto px-4 relative z-10 w-full h-full flex items-center justify-center">
           <div className="max-w-6xl mx-auto">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 md:mb-6 animate-slide-up font-condor leading-tight">
               Contact <span className="text-blue-300">Us</span>
@@ -225,7 +223,9 @@ const Contact = () => {
             </div>
           </div>
         </div>
+        
       </ParallaxSection>
+      
 
       {/* Contact Information Section */}
       <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
@@ -660,12 +660,12 @@ const Contact = () => {
             </div>
             <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white animate-fade-in animation-delay-1 group hover:shadow-3xl transition-all duration-500">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.0394654146404!2d72.52113907596398!3d23.02730447917881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84faa946ad7b%3A0x8c4f4b53e3e1e4eb!2sSarthik%20Annex%2C%20Satellite%2C%20Ahmedabad%2C%20Gujarat%20380015!5e0!3m2!1sen!2sin!4v1698000000000!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14688.181259658562!2d72.508794!3d23.0265226!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b0011439e3d%3A0x5d04ddda8181c13e!2sNestoria%20Group!5e0!3m2!1sen!2sin!4v1706572800000!5m2!1sen!2sin"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}
                 allowFullScreen=""
-
+                loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Nestoria Group Office Location"
                 className="w-full h-full group-hover:scale-105 transition-transform duration-700"

@@ -212,14 +212,12 @@ function Team() {
     <div className="team-page">
       <ParallaxSection
         backgroundImage={teamBg}
-        height="100vh"
-        overlayGradient="linear-gradient(to bottom, rgba(3, 22, 65, 0.75), rgba(3, 22, 65, 0.35))"
-        shapeDivider
-        speed={0.4}
-        className="flex items-center justify-center text-center"
-        backgroundSize="cover"
+        height="auto"
+        overlayGradient="linear-gradient(to bottom, rgba(3, 22, 65, 0.6), rgba(3, 22, 65, 0.25))"
+        speed={0.3}
+        className="py-20 flex items-center justify-center text-center"
       >
-        <div className="container mx-auto px-4 relative z-10 w-full h-full flex items-center justify-center">
+         <div className="container mx-auto px-4 relative z-10 w-full h-full flex items-center justify-center">
           <div className="text-center">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 animate-slide-up text-white">Our Team</h1>
             <div className="h-1 w-24 sm:w-32 bg-gradient-to-r from-blue-400 to-blue-600 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
@@ -229,6 +227,7 @@ function Team() {
           </div>
         </div>
       </ParallaxSection>
+      
 
       {/* Leadership Team Section */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-white to-gray-50">
@@ -439,7 +438,7 @@ function Team() {
               
               <div className="mt-8">
                 <a 
-                  href="#join-us" 
+                  href="mailto:careers@nestoriagroup.com"
                   className="inline-flex items-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   Join Our Team
