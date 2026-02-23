@@ -121,6 +121,24 @@ function Footer() {
                   Contact
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/privacy-policy"
+                  className="text-gray-400 hover:text-primary-400 transition duration-300 flex items-center"
+                >
+                  <i className="fas fa-chevron-right mr-2 text-blue-200 text-xs"></i>
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/terms-and-conditions"
+                  className="text-gray-400 hover:text-primary-400 transition duration-300 flex items-center"
+                >
+                  <i className="fas fa-chevron-right mr-2 text-blue-200 text-xs"></i>
+                  Terms & Conditions
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -259,16 +277,16 @@ function Footer() {
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link
-              to="#"
+              to="/privacy-policy"
               className="text-gray-400 hover:text-primary-400 text-sm transition duration-300"
             >
               Privacy Policy
             </Link>
             <Link
-              to="#"
+              to="/terms-and-conditions"
               className="text-gray-400 hover:text-primary-400 text-sm transition duration-300"
             >
-              Terms of Service
+              Terms & Conditions
             </Link>
             <Link
               to="/"

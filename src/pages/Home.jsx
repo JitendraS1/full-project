@@ -41,6 +41,7 @@ function Home() {
 
 
       {/* Hero Section */}
+      
       <ParallaxSection
         backgroundImage={dholeraBanner}
         height="100vh"
@@ -52,8 +53,8 @@ function Home() {
         <div className="relative z-10 w-full h-full flex items-center justify-center">
           <div className="max-w-6xl mx-auto px-4 py-16 sm:py-20 md:py-32">
            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-blue-900 mb-4 md:mb-6 animate-slide-up font-condor leading-tight drop-shadow-[0_0_10px_rgba(255,255,255,0.9)]">
-  Leading Real Estate Developer in <span className="text-blue-200"> Dholera SIR </span> 
-</h1>
+             Leading Real Estate Developer in <span className="text-blue-200"> Dholera SIR </span> 
+            </h1>
             <div className="h-1 w-24 sm:w-32 bg-blue-600 mx-auto mb-6 md:mb-8 animate-slide-up"></div>
             <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 md:mb-10 animate-slide-up opacity-0 animation-delay-300 max-w-3xl mx-auto leading-relaxed drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]">
               Discover exclusive properties and investment opportunities in
@@ -101,6 +102,7 @@ function Home() {
           </a>
         </div>
       </ParallaxSection>
+      
 
       {/* About Section */}
       <section id="about" className="py-12 sm:py-16 md:py-24 bg-gray-50">

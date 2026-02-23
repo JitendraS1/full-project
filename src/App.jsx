@@ -20,6 +20,8 @@ const LandDeals = lazy(() => import('./pages/LandDeal'));
 const Projects = lazy(() => import('./pages/Projects'));
 const Services = lazy(() => import('./pages/Services'));
 const Testimonial = lazy(() => import('./pages/Testimonial'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsAndConditions = lazy(() => import('./pages/TermsAndConditions'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 import Seo from './components/Seo'; // Import Seo component
@@ -127,6 +129,8 @@ function App() {
               <Route path="/services" element={<Suspense fallback={<div className="flex justify-center items-center h-64" role="status" aria-label="Loading services page"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div></div>}><><Seo title="Services - Nestoria Group" description="Learn about our real estate services in Dholera SIR." keywords="services, real estate, Dholera SIR" /><Services /></></Suspense>} />
               <Route path="/achievements" element={<Suspense fallback={<div className="flex justify-center items-center h-64" role="status" aria-label="Loading achievements page"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div></div>}><><Seo title="Achievements - Nestoria Group" description="Our achievements and milestones in real estate development." keywords="achievements, Nestoria Group, real estate" /><Achievements /></></Suspense>} />
               <Route path="/testimonial" element={<Suspense fallback={<div className="flex justify-center items-center h-64" role="status" aria-label="Loading testimonials page"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div></div>}><><Seo title="Testimonials - Nestoria Group" description="Hear from our satisfied clients about their investment experience." keywords="testimonials, Nestoria Group, real estate investment" /><Testimonial /></></Suspense>} />
+              <Route path="/privacy-policy" element={<Suspense fallback={<div className="flex justify-center items-center h-64" role="status" aria-label="Loading privacy policy page"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div></div>}><><Seo title="Privacy Policy - Nestoria Group" description="Our privacy policy outlining how we collect, use, and protect your personal information." keywords="privacy policy, data protection, personal information" /><PrivacyPolicy /></></Suspense>} />
+              <Route path="/terms-and-conditions" element={<Suspense fallback={<div className="flex justify-center items-center h-64" role="status" aria-label="Loading terms and conditions page"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div></div>}><><Seo title="Terms & Conditions - Nestoria Group" description="Our terms and conditions governing the use of our website and services." keywords="terms and conditions, legal agreement, website terms" /><TermsAndConditions /></></Suspense>} />
               <Route path="*" element={<Suspense fallback={<div className="flex justify-center items-center h-64" role="status" aria-label="Loading page"><div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div></div>}><><Seo title="404 - Page Not Found" description="The page you are looking for does not exist." keywords="404, page not found" /><NotFound /></></Suspense>} />
             </Routes>
               </main>
